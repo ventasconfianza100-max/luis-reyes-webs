@@ -32,8 +32,8 @@ const socialLinks = [
 
 export default function Hero() {
   return (
-    <section className="flex justify-center px-4 pt-10 pb-6">
-      <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg border border-white/60 p-8 md:p-12 max-w-2xl w-full text-center">
+    <section className="flex justify-center pt-8 pb-4">
+      <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg border border-white/60 p-8 md:p-10 w-full text-center">
         {/* Profile photo */}
         <div className="flex justify-center mb-6">
           <div className="w-28 h-28 rounded-full border-4 border-violet-300 overflow-hidden shadow-md">

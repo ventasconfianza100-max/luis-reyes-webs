@@ -30,7 +30,7 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section className="px-4 py-4 max-w-4xl mx-auto">
+    <section className="py-4">
       <div className="grid grid-cols-3 gap-4">
         {stats.map((s, i) => (
           <div key={i} className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-md border border-white/60 p-5 text-center flex flex-col items-center gap-2">

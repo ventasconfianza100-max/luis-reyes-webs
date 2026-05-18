@@ -39,7 +39,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="px-4 py-6 max-w-4xl mx-auto">
+    <section className="py-6">
       <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-md border border-white/60 p-8 md:p-10">
         <h2 className="text-2xl md:text-3xl font-bold text-slate-800 text-center mb-8">
           ¿Qué incluye tu página web?

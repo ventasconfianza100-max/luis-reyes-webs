@@ -1,3 +1,4 @@
+import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
 import Stats from './components/Stats'
@@ -6,12 +7,19 @@ import Footer from './components/Footer'
 
 export default function App() {
   return (
-    <div className="min-h-screen py-6">
-      <main className="max-w-4xl mx-auto">
-        <Hero />
-        <Services />
+    <div className="min-h-screen">
+      <Navbar />
+      <main className="max-w-2xl mx-auto px-4">
+        <section id="inicio">
+          <Hero />
+        </section>
+        <section id="servicios">
+          <Services />
+        </section>
         <Stats />
-        <Features />
+        <section id="incluye">
+          <Features />
+        </section>
       </main>
       <Footer />
     </div>
