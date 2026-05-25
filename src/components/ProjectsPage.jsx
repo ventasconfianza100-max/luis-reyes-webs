@@ -1,5 +1,6 @@
 const projects = [
   {
+    href: '/proyectos/sitio-psicologa-clinica',
     title: 'Sitio para psicóloga clínica',
     category: 'Landing profesional',
     description:
@@ -7,6 +8,7 @@ const projects = [
     points: ['Perfil profesional', 'Servicios principales', 'Contacto rápido'],
   },
   {
+    href: '/proyectos',
     title: 'Consulta terapéutica online',
     category: 'Captación de pacientes',
     description:
@@ -14,6 +16,7 @@ const projects = [
     points: ['Diseño responsive', 'Secciones de confianza', 'Mensaje orientado al paciente'],
   },
   {
+    href: '/proyectos',
     title: 'Perfil profesional para redes',
     category: 'Presencia digital',
     description:
@@ -55,9 +58,14 @@ export default function ProjectsPage({ onNavigate }) {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {projects.map((project) => (
-            <article
+            <a
               key={project.title}
-              className="rounded-2xl border border-violet-100 bg-violet-50/60 p-5 flex flex-col"
+              href={project.href}
+              onClick={(event) => {
+                event.preventDefault()
+                onNavigate(project.href)
+              }}
+              className="rounded-2xl border border-violet-100 bg-violet-50/60 p-5 flex flex-col transition-all hover:-translate-y-1 hover:shadow-md hover:border-violet-200"
             >
               <div className="w-12 h-12 rounded-2xl bg-white text-violet-500 flex items-center justify-center shadow-sm mb-5">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className="w-6 h-6">
@@ -76,7 +84,7 @@ export default function ProjectsPage({ onNavigate }) {
                   </li>
                 ))}
               </ul>
-            </article>
+            </a>
           ))}
         </div>
 

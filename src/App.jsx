@@ -9,6 +9,7 @@ import Footer from './components/Footer'
 import Decorations from './components/Decorations'
 import ProjectsPage from './components/ProjectsPage'
 import BusinessProjectsPage from './components/BusinessProjectsPage'
+import ClinicalPsychologistProjectPage from './components/ClinicalPsychologistProjectPage'
 
 export default function App() {
   const [path, setPath] = useState(window.location.pathname)
@@ -28,6 +29,16 @@ export default function App() {
 
   const isProjectsPage = path === '/proyectos'
   const isBusinessProjectsPage = path === '/proyectos-empresas'
+  const isClinicalProjectPage = path === '/proyectos/sitio-psicologa-clinica'
+
+  if (isClinicalProjectPage) {
+    return (
+      <div className="min-h-screen">
+        <Decorations />
+        <ClinicalPsychologistProjectPage onNavigate={navigateTo} />
+      </div>
+    )
+  }
 
   if (isProjectsPage) {
     return (
