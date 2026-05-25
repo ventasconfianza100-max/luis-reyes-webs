@@ -57,6 +57,22 @@ export default function Features() {
             </div>
           ))}
         </div>
+
+        <div className="mt-10 border-t border-violet-100 pt-8">
+          <h3 className="text-xl font-bold text-slate-800 text-center mb-6">
+            Preguntas frecuentes
+          </h3>
+          <div className="rounded-2xl bg-violet-50/70 border border-violet-100 p-6 text-left">
+            <p className="font-semibold text-slate-800 mb-2">
+              ¿Cuál es el valor de una página web?
+            </p>
+            <p className="text-slate-500 text-sm leading-relaxed">
+              Por lanzamiento, las páginas web para psicólogos tienen un valor promocional desde{' '}
+              <strong className="text-violet-600">$90.000 CLP</strong>. Incluye una landing page
+              responsive, secciones principales y publicación básica.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   )
