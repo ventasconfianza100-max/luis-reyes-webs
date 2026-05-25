@@ -36,19 +36,16 @@ export default function Hero() {
       <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg border border-white/60 p-8 md:p-10 w-full text-center">
         {/* Profile photo */}
         <div className="flex justify-center mb-6">
-          <div className="w-28 h-28 rounded-full border-4 border-violet-300 overflow-hidden shadow-md">
+          <div className="w-28 h-28 rounded-full border-4 border-violet-300 overflow-hidden shadow-md bg-violet-50">
             <img
               src={profilePhoto}
-              alt="Luis Reyes Castro"
+              alt=""
+              width="112"
+              height="112"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className="w-full h-full object-cover"
-              onError={(e) => {
-                e.target.style.display = 'none'
-                e.target.parentElement.innerHTML = '<span style="font-size:2.5rem;font-weight:700;color:#7c3aed">LR</span>'
-                e.target.parentElement.style.display = 'flex'
-                e.target.parentElement.style.alignItems = 'center'
-                e.target.parentElement.style.justifyContent = 'center'
-                e.target.parentElement.style.background = '#ede9fe'
-              }}
             />
           </div>
         </div>
