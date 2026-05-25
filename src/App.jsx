@@ -94,7 +94,7 @@ export default function App() {
   return (
     <div className="min-h-screen">
       <Decorations />
-      <Navbar />
+      <Navbar onNavigate={navigateTo} />
       <main className="max-w-2xl mx-auto px-4">
         <section id="inicio">
           <Hero />
