@@ -10,6 +10,8 @@ import Decorations from './components/Decorations'
 import ProjectsPage from './components/ProjectsPage'
 import BusinessProjectsPage from './components/BusinessProjectsPage'
 import ClinicalPsychologistProjectPage from './components/ClinicalPsychologistProjectPage'
+import TherapyOnlineProjectPage from './components/TherapyOnlineProjectPage'
+import ProfessionalProfileProjectPage from './components/ProfessionalProfileProjectPage'
 
 export default function App() {
   const [path, setPath] = useState(window.location.pathname)
@@ -30,12 +32,32 @@ export default function App() {
   const isProjectsPage = path === '/proyectos'
   const isBusinessProjectsPage = path === '/proyectos-empresas'
   const isClinicalProjectPage = path === '/proyectos/sitio-psicologa-clinica'
+  const isTherapyOnlineProjectPage = path === '/proyectos/consulta-terapeutica-online'
+  const isProfessionalProfileProjectPage = path === '/proyectos/perfil-profesional-redes'
 
   if (isClinicalProjectPage) {
     return (
       <div className="min-h-screen">
         <Decorations />
         <ClinicalPsychologistProjectPage onNavigate={navigateTo} />
+      </div>
+    )
+  }
+
+  if (isTherapyOnlineProjectPage) {
+    return (
+      <div className="min-h-screen">
+        <Decorations />
+        <TherapyOnlineProjectPage onNavigate={navigateTo} />
+      </div>
+    )
+  }
+
+  if (isProfessionalProfileProjectPage) {
+    return (
+      <div className="min-h-screen">
+        <Decorations />
+        <ProfessionalProfileProjectPage onNavigate={navigateTo} />
       </div>
     )
   }

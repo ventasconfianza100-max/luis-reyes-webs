@@ -5,12 +5,12 @@ const projects = [
     category: 'Landing profesional',
   },
   {
-    href: '/proyectos',
+    href: '/proyectos/consulta-terapeutica-online',
     title: 'Consulta terapéutica online',
     category: 'Captación de pacientes',
   },
   {
-    href: '/proyectos',
+    href: '/proyectos/perfil-profesional-redes',
     title: 'Perfil profesional para redes',
     category: 'Presencia digital',
   },
