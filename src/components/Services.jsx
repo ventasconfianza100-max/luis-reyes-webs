@@ -35,7 +35,7 @@ const services = [
   },
 ]
 
-export default function Services() {
+export default function Services({ onNavigate }) {
   return (
     <section className="py-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -60,8 +60,12 @@ export default function Services() {
             {/* CTA */}
             <a
               href={s.ctaHref}
-              target={s.available ? '_blank' : undefined}
-              rel={s.available ? 'noopener noreferrer' : undefined}
+              onClick={(event) => {
+                if (!s.available) return
+
+                event.preventDefault()
+                onNavigate(s.ctaHref)
+              }}
               className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all w-fit ${
                 s.available
                   ? 'bg-violet-500 text-white hover:bg-violet-600 shadow-sm hover:shadow-md'

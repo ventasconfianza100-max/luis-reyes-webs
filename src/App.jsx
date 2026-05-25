@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
@@ -10,14 +11,29 @@ import ProjectsPage from './components/ProjectsPage'
 import BusinessProjectsPage from './components/BusinessProjectsPage'
 
 export default function App() {
-  const isProjectsPage = window.location.pathname === '/proyectos'
-  const isBusinessProjectsPage = window.location.pathname === '/proyectos-empresas'
+  const [path, setPath] = useState(window.location.pathname)
+
+  useEffect(() => {
+    const handlePopState = () => setPath(window.location.pathname)
+
+    window.addEventListener('popstate', handlePopState)
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, [])
+
+  const navigateTo = (nextPath) => {
+    window.history.pushState({}, '', nextPath)
+    setPath(nextPath)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const isProjectsPage = path === '/proyectos'
+  const isBusinessProjectsPage = path === '/proyectos-empresas'
 
   if (isProjectsPage) {
     return (
       <div className="min-h-screen">
         <Decorations />
-        <ProjectsPage />
+        <ProjectsPage onNavigate={navigateTo} />
       </div>
     )
   }
@@ -26,7 +42,7 @@ export default function App() {
     return (
       <div className="min-h-screen">
         <Decorations />
-        <BusinessProjectsPage />
+        <BusinessProjectsPage onNavigate={navigateTo} />
       </div>
     )
   }
@@ -40,7 +56,7 @@ export default function App() {
           <Hero />
         </section>
         <section id="servicios">
-          <Services />
+          <Services onNavigate={navigateTo} />
         </section>
         <Stats />
         <section id="incluye">
