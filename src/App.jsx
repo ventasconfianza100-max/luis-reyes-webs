@@ -7,15 +7,26 @@ import FAQ from './components/FAQ'
 import Footer from './components/Footer'
 import Decorations from './components/Decorations'
 import ProjectsPage from './components/ProjectsPage'
+import BusinessProjectsPage from './components/BusinessProjectsPage'
 
 export default function App() {
   const isProjectsPage = window.location.pathname === '/proyectos'
+  const isBusinessProjectsPage = window.location.pathname === '/proyectos-empresas'
 
   if (isProjectsPage) {
     return (
       <div className="min-h-screen">
         <Decorations />
         <ProjectsPage />
+      </div>
+    )
+  }
+
+  if (isBusinessProjectsPage) {
+    return (
+      <div className="min-h-screen">
+        <Decorations />
+        <BusinessProjectsPage />
       </div>
     )
   }

@@ -24,14 +24,14 @@ const services = [
       </svg>
     ),
     iconBg: 'bg-emerald-400',
-    tag: 'Próximamente',
-    tagStyle: 'bg-slate-50 text-slate-400 border border-slate-200',
+    tag: 'Proyecto Disponible',
+    tagStyle: 'bg-emerald-50 text-emerald-500 border border-emerald-200',
     title: 'Páginas web para empresas',
     description:
       'Soluciones web profesionales para negocios, clínicas y empresas que quieren destacar en el mercado',
     cta: 'Ver ejemplos',
-    ctaHref: '#ejemplos-empresas',
-    available: false,
+    ctaHref: '/proyectos-empresas',
+    available: true,
   },
 ]
 
