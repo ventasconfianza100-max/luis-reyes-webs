@@ -3,7 +3,7 @@ import { useState } from 'react'
 const faqs = [
   {
     q: '¿Cuánto cuesta una página web para psicólogos en Chile?',
-    a: 'El valor depende del tipo de proyecto. Una página web profesional para psicólogos o terapeutas parte desde $250.000 CLP. Agendemos una reunión gratuita para cotizar según lo que necesitas.',
+    a: 'El valor depende del tipo de proyecto. Una página web profesional para psicólogos o terapeutas parte desde $90.000 CLP. Agendemos una reunión gratuita para cotizar según lo que necesitas.',
   },
   {
     q: '¿Cuánto tiempo tarda en estar lista mi página web?',
