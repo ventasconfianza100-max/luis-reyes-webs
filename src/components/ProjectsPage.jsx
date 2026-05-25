@@ -3,25 +3,16 @@ const projects = [
     href: '/proyectos/sitio-psicologa-clinica',
     title: 'Sitio para psicóloga clínica',
     category: 'Landing profesional',
-    description:
-      'Una página clara para presentar especialidades, enfoque terapéutico, modalidad de atención y contacto directo por WhatsApp.',
-    points: ['Perfil profesional', 'Servicios principales', 'Contacto rápido'],
   },
   {
     href: '/proyectos',
     title: 'Consulta terapéutica online',
     category: 'Captación de pacientes',
-    description:
-      'Un sitio pensado para resolver dudas iniciales, transmitir confianza y acompañar al paciente hacia una primera conversación.',
-    points: ['Diseño responsive', 'Secciones de confianza', 'Mensaje orientado al paciente'],
   },
   {
     href: '/proyectos',
     title: 'Perfil profesional para redes',
     category: 'Presencia digital',
-    description:
-      'Una web simple y elegante para reunir trayectoria, estilo de trabajo y canales de atención en un solo enlace.',
-    points: ['Link para Instagram', 'Biografía profesional', 'SEO básico'],
   },
 ]
 
@@ -57,7 +48,7 @@ export default function ProjectsPage({ onNavigate }) {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <a
               key={project.title}
               href={project.href}
@@ -65,25 +56,32 @@ export default function ProjectsPage({ onNavigate }) {
                 event.preventDefault()
                 onNavigate(project.href)
               }}
-              className="rounded-2xl border border-violet-100 bg-violet-50/60 p-5 flex flex-col transition-all hover:-translate-y-1 hover:shadow-md hover:border-violet-200"
+              className="group min-h-64 rounded-3xl border border-violet-100 bg-violet-50/60 p-5 flex flex-col justify-between overflow-hidden relative transition-all hover:-translate-y-1 hover:shadow-lg hover:border-violet-300"
             >
-              <div className="w-12 h-12 rounded-2xl bg-white text-violet-500 flex items-center justify-center shadow-sm mb-5">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className="w-6 h-6">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75A2.25 2.25 0 016 4.5h12a2.25 2.25 0 012.25 2.25v10.5A2.25 2.25 0 0118 19.5H6a2.25 2.25 0 01-2.25-2.25V6.75z"/>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 8.25h9m-9 3h5.25m-5.25 3h7.5"/>
-                </svg>
+              <div className="absolute -right-8 -top-8 w-28 h-28 rounded-full bg-violet-200/40 transition-transform group-hover:scale-125" />
+              <div className="relative flex items-start justify-between gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-white text-violet-500 flex items-center justify-center shadow-sm">
+                  <span className="font-extrabold text-sm">{String(index + 1).padStart(2, '0')}</span>
+                </div>
+                <div className="w-10 h-10 rounded-full bg-white/80 text-violet-500 flex items-center justify-center transition-transform group-hover:translate-x-1">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+                  </svg>
+                </div>
               </div>
-              <p className="text-xs font-semibold text-violet-500 mb-2">{project.category}</p>
-              <h2 className="text-lg font-bold text-slate-800 mb-3">{project.title}</h2>
-              <p className="text-slate-500 text-sm leading-relaxed mb-5 flex-1">{project.description}</p>
-              <ul className="space-y-2">
-                {project.points.map((point) => (
-                  <li key={point} className="flex items-center gap-2 text-sm text-slate-500">
-                    <span className="w-1.5 h-1.5 rounded-full bg-violet-400" />
-                    {point}
-                  </li>
-                ))}
-              </ul>
+
+              <div className="relative mt-8">
+                <p className="text-xs font-semibold uppercase tracking-wide text-violet-500 mb-3">
+                  {project.category}
+                </p>
+                <h2 className="text-2xl font-extrabold text-slate-800 leading-tight">
+                  {project.title}
+                </h2>
+              </div>
+
+              <p className="relative text-violet-500 font-bold text-sm mt-8">
+                Ver proyecto
+              </p>
             </a>
           ))}
         </div>
