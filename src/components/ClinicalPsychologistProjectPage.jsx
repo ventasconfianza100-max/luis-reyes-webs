@@ -70,15 +70,15 @@ export default function ClinicalPsychologistProjectPage({ onNavigate }) {
           Volver a proyectos
         </a>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
-          <div>
+        <div className="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-6 items-start">
+          <div className="space-y-5">
             <span className="text-xs font-semibold uppercase tracking-wide text-violet-400">
               Landing profesional
             </span>
-            <h1 className="text-3xl md:text-5xl font-extrabold text-slate-800 mt-3 mb-5">
+            <h1 className="text-3xl md:text-4xl font-extrabold text-slate-800 leading-tight">
               Sitio para psicóloga clínica
             </h1>
-            <p className="text-slate-500 leading-relaxed mb-6">
+            <p className="text-slate-500 leading-relaxed">
               Una página pensada para que una psicóloga pueda presentarse con claridad, transmitir
               confianza y facilitar que un paciente dé el primer paso sin sentirse presionado.
             </p>
@@ -92,6 +92,18 @@ export default function ClinicalPsychologistProjectPage({ onNavigate }) {
                   {tag}
                 </span>
               ))}
+            </div>
+
+            <div className="rounded-2xl border border-violet-100 bg-white/70 p-5">
+              <h2 className="text-lg font-bold text-slate-800 mb-4">Qué incluiría</h2>
+              <ul className="space-y-3">
+                {sections.map((section) => (
+                  <li key={section} className="flex items-start gap-3 text-slate-500 text-sm leading-relaxed">
+                    <span className="w-2 h-2 rounded-full bg-violet-400 mt-2 flex-shrink-0" />
+                    {section}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
@@ -160,27 +172,13 @@ export default function ClinicalPsychologistProjectPage({ onNavigate }) {
           </div>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div className="rounded-2xl border border-violet-100 bg-white/70 p-6">
-            <h2 className="text-xl font-bold text-slate-800 mb-4">Qué incluiría</h2>
-            <ul className="space-y-3">
-              {sections.map((section) => (
-                <li key={section} className="flex items-start gap-3 text-slate-500 text-sm leading-relaxed">
-                  <span className="w-2 h-2 rounded-full bg-violet-400 mt-2 flex-shrink-0" />
-                  {section}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="rounded-2xl border border-violet-100 bg-white/70 p-6">
-            <h2 className="text-xl font-bold text-slate-800 mb-4">Objetivo del diseño</h2>
-            <p className="text-slate-500 text-sm leading-relaxed">
-              No se trata solo de una página bonita. La idea es que la web ayude a que el paciente entienda
-              si esa profesional puede acompañarlo, resuelva dudas básicas y tenga un camino simple para
-              escribir sin fricción.
-            </p>
-          </div>
+        <div className="mt-6 rounded-2xl border border-violet-100 bg-white/70 p-6">
+          <h2 className="text-xl font-bold text-slate-800 mb-3">Objetivo del diseño</h2>
+          <p className="text-slate-500 text-sm leading-relaxed">
+            No se trata solo de una página bonita. La idea es que la web ayude a que el paciente entienda
+            si esa profesional puede acompañarlo, resuelva dudas básicas y tenga un camino simple para
+            escribir sin fricción.
+          </p>
         </div>
 
         <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-5">
