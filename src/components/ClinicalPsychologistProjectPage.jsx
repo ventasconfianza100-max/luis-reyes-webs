@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 const sections = [
   'Presentación profesional y enfoque clínico',
   'Especialidades o problemáticas que atiende',
@@ -21,7 +23,36 @@ const flow = [
   },
 ]
 
+const palettes = [
+  {
+    name: 'Violeta calma',
+    accent: '#8b5cf6',
+    soft: '#ede9fe',
+    border: '#c4b5fd',
+  },
+  {
+    name: 'Verde sereno',
+    accent: '#10b981',
+    soft: '#d1fae5',
+    border: '#6ee7b7',
+  },
+  {
+    name: 'Azul confianza',
+    accent: '#38bdf8',
+    soft: '#e0f2fe',
+    border: '#7dd3fc',
+  },
+  {
+    name: 'Rosa cálido',
+    accent: '#f472b6',
+    soft: '#fce7f3',
+    border: '#f9a8d4',
+  },
+]
+
 export default function ClinicalPsychologistProjectPage({ onNavigate }) {
+  const [activePalette, setActivePalette] = useState(palettes[0])
+
   return (
     <main className="max-w-4xl mx-auto px-4 py-8 md:py-12">
       <section className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg border border-white/60 p-8 md:p-10">
@@ -64,18 +95,68 @@ export default function ClinicalPsychologistProjectPage({ onNavigate }) {
             </div>
           </div>
 
-          <div className="rounded-3xl border border-violet-100 bg-violet-50/70 p-6">
+          <div
+            className="rounded-3xl border p-6 transition-colors duration-300"
+            style={{
+              backgroundColor: `${activePalette.soft}99`,
+              borderColor: activePalette.border,
+            }}
+          >
             <div className="rounded-2xl bg-white p-5 shadow-sm mb-4">
-              <div className="w-14 h-14 rounded-full bg-violet-100 border-4 border-violet-200 mb-4" />
+              <div
+                className="w-14 h-14 rounded-full border-4 mb-4 transition-colors duration-300"
+                style={{
+                  backgroundColor: activePalette.soft,
+                  borderColor: activePalette.border,
+                }}
+              />
               <div className="h-4 w-2/3 rounded-full bg-slate-200 mb-3" />
               <div className="h-3 w-full rounded-full bg-slate-100 mb-2" />
               <div className="h-3 w-5/6 rounded-full bg-slate-100 mb-5" />
-              <div className="h-10 w-36 rounded-xl bg-violet-500" />
+              <div
+                className="h-10 w-36 rounded-xl transition-colors duration-300"
+                style={{ backgroundColor: activePalette.accent }}
+              />
             </div>
             <p className="text-slate-500 text-sm leading-relaxed">
               Estructura visual sobria, cálida y enfocada en guiar al paciente desde la primera impresión
               hasta el contacto.
             </p>
+
+            <div className="mt-5 pt-5 border-t border-white/70">
+              <p className="text-slate-700 text-sm font-semibold mb-3">
+                Paleta de colores
+              </p>
+              <div className="grid grid-cols-2 gap-3">
+                {palettes.map((palette) => (
+                  <button
+                    key={palette.name}
+                    type="button"
+                    onClick={() => setActivePalette(palette)}
+                    className={`rounded-2xl bg-white/80 border p-3 text-left transition-all hover:-translate-y-0.5 hover:shadow-sm ${
+                      activePalette.name === palette.name ? 'ring-2 ring-offset-2' : ''
+                    }`}
+                    style={{
+                      borderColor: palette.border,
+                      '--tw-ring-color': palette.accent,
+                    }}
+                    aria-pressed={activePalette.name === palette.name}
+                  >
+                    <span className="flex items-center gap-2 mb-2">
+                      <span
+                        className="w-5 h-5 rounded-full border"
+                        style={{ backgroundColor: palette.accent, borderColor: palette.border }}
+                      />
+                      <span
+                        className="w-5 h-5 rounded-full border"
+                        style={{ backgroundColor: palette.soft, borderColor: palette.border }}
+                      />
+                    </span>
+                    <span className="text-xs font-semibold text-slate-600">{palette.name}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
