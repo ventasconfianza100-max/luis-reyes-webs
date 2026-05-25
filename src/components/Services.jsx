@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 const services = [
   {
     id: 'profesionales',
@@ -15,7 +13,7 @@ const services = [
     description:
       'Diseños pensados para psicólogos, terapeutas y profesionales independientes que buscan captar clientes online',
     cta: 'Ver ejemplos',
-    ctaHref: '#ejemplos',
+    ctaHref: '/proyectos',
     available: true,
   },
   {
@@ -37,30 +35,7 @@ const services = [
   },
 ]
 
-const projects = [
-  {
-    title: 'Sitio para psicóloga clínica',
-    type: 'Landing profesional',
-    description:
-      'Página enfocada en transmitir confianza, presentar especialidades y facilitar el contacto desde WhatsApp.',
-  },
-  {
-    title: 'Consulta terapéutica online',
-    type: 'Captación de pacientes',
-    description:
-      'Diseño pensado para explicar servicios, resolver dudas iniciales y guiar a una primera conversación.',
-  },
-  {
-    title: 'Perfil profesional para redes',
-    type: 'Presencia digital',
-    description:
-      'Web simple y elegante para ordenar trayectoria, enfoque clínico y canales de atención en un solo lugar.',
-  },
-]
-
 export default function Services() {
-  const [showProjects, setShowProjects] = useState(false)
-
   return (
     <section className="py-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -83,82 +58,24 @@ export default function Services() {
             <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-1">{s.description}</p>
 
             {/* CTA */}
-            <button
-              type="button"
-              onClick={() => s.available && setShowProjects((current) => !current)}
+            <a
+              href={s.ctaHref}
+              target={s.available ? '_blank' : undefined}
+              rel={s.available ? 'noopener noreferrer' : undefined}
               className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all w-fit ${
                 s.available
                   ? 'bg-violet-500 text-white hover:bg-violet-600 shadow-sm hover:shadow-md'
                   : 'bg-slate-100 text-slate-400 cursor-not-allowed pointer-events-none'
               }`}
-              aria-expanded={s.available ? showProjects : undefined}
-              aria-controls={s.available ? 'ejemplos' : undefined}
             >
               {s.cta}
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
               </svg>
-            </button>
+            </a>
           </div>
         ))}
       </div>
-
-      {showProjects && (
-        <div
-          id="ejemplos"
-          className="mt-6 bg-white/80 backdrop-blur-sm rounded-3xl shadow-md border border-white/60 p-7 md:p-8"
-        >
-          <div className="flex flex-col gap-2 text-center mb-6">
-            <span className="text-xs font-semibold uppercase tracking-wide text-violet-400">
-              Proyectos
-            </span>
-            <h2 className="text-2xl font-bold text-slate-800">
-              Ejemplos de páginas que puedo crear
-            </h2>
-            <p className="text-slate-500 text-sm leading-relaxed">
-              Diseños limpios, profesionales y pensados para que tus pacientes entiendan rápido quién eres,
-              cómo trabajas y cómo contactarte.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 gap-4">
-            {projects.map((project) => (
-              <article
-                key={project.title}
-                className="rounded-2xl border border-violet-100 bg-violet-50/60 p-5"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-2xl bg-white text-violet-500 flex items-center justify-center shadow-sm flex-shrink-0">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className="w-5 h-5">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75A2.25 2.25 0 016 4.5h12a2.25 2.25 0 012.25 2.25v10.5A2.25 2.25 0 0118 19.5H6a2.25 2.25 0 01-2.25-2.25V6.75z"/>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 8.25h9m-9 3h5.25m-5.25 3h7.5"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold text-violet-500 mb-1">{project.type}</p>
-                    <h3 className="font-bold text-slate-800 mb-1">{project.title}</h3>
-                    <p className="text-slate-500 text-sm leading-relaxed">{project.description}</p>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <div className="mt-6 text-center">
-            <a
-              href="https://wa.me/56922012534?text=Hola%20Luis%2C%20quiero%20ver%20ejemplos%20de%20p%C3%A1ginas%20web%20para%20psic%C3%B3logos"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-violet-500 hover:bg-violet-600 text-white font-semibold px-6 py-3 rounded-xl text-sm transition-all shadow-sm"
-            >
-              Quiero una página parecida
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-      )}
     </section>
   )
 }

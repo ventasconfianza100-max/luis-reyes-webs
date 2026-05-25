@@ -6,8 +6,20 @@ import Features from './components/Features'
 import FAQ from './components/FAQ'
 import Footer from './components/Footer'
 import Decorations from './components/Decorations'
+import ProjectsPage from './components/ProjectsPage'
 
 export default function App() {
+  const isProjectsPage = window.location.pathname === '/proyectos'
+
+  if (isProjectsPage) {
+    return (
+      <div className="min-h-screen">
+        <Decorations />
+        <ProjectsPage />
+      </div>
+    )
+  }
+
   return (
     <div className="min-h-screen">
       <Decorations />
