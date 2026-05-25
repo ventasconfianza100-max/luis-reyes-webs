@@ -1,24 +1,18 @@
 const projects = [
   {
+    href: '/proyectos-empresas/clinica-centro-atencion',
     title: 'Sitio para clínica o centro de atención',
     category: 'Web institucional',
-    description:
-      'Una página profesional para presentar servicios, equipo, ubicación y canales de contacto de forma clara.',
-    points: ['Servicios por área', 'Equipo profesional', 'Contacto directo'],
   },
   {
+    href: '/proyectos-empresas',
     title: 'Página para negocio local',
     category: 'Presencia comercial',
-    description:
-      'Un sitio simple y moderno para mostrar lo que ofrece tu negocio, generar confianza y recibir consultas.',
-    points: ['Información ordenada', 'Botón de WhatsApp', 'Diseño responsive'],
   },
   {
+    href: '/proyectos-empresas',
     title: 'Landing para servicio específico',
     category: 'Captación de clientes',
-    description:
-      'Una página enfocada en explicar una oferta concreta y guiar al visitante hacia una cotización o reunión.',
-    points: ['Mensaje comercial', 'Secciones de confianza', 'CTA claro'],
   },
 ]
 
@@ -54,30 +48,41 @@ export default function BusinessProjectsPage({ onNavigate }) {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {projects.map((project) => (
-            <article
+          {projects.map((project, index) => (
+            <a
               key={project.title}
-              className="rounded-2xl border border-emerald-100 bg-emerald-50/60 p-5 flex flex-col"
+              href={project.href}
+              onClick={(event) => {
+                event.preventDefault()
+                onNavigate(project.href)
+              }}
+              className="group min-h-64 rounded-3xl border border-emerald-100 bg-emerald-50/60 p-5 flex flex-col justify-between overflow-hidden relative transition-all hover:-translate-y-1 hover:shadow-lg hover:border-emerald-300"
             >
-              <div className="w-12 h-12 rounded-2xl bg-white text-emerald-500 flex items-center justify-center shadow-sm mb-5">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className="w-6 h-6">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25"/>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 14.15A23.978 23.978 0 0012 15.75c2.648 0 5.195-.429 7.577-1.22"/>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 6.144V5.25A2.25 2.25 0 0110.5 3h3a2.25 2.25 0 012.25 2.25v.894"/>
-                </svg>
+              <div className="absolute -right-8 -top-8 w-28 h-28 rounded-full bg-emerald-200/40 transition-transform group-hover:scale-125" />
+              <div className="relative flex items-start justify-between gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-white text-emerald-500 flex items-center justify-center shadow-sm">
+                  <span className="font-extrabold text-sm">{String(index + 1).padStart(2, '0')}</span>
+                </div>
+                <div className="w-10 h-10 rounded-full bg-white/80 text-emerald-500 flex items-center justify-center transition-transform group-hover:translate-x-1">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+                  </svg>
+                </div>
               </div>
-              <p className="text-xs font-semibold text-emerald-500 mb-2">{project.category}</p>
-              <h2 className="text-lg font-bold text-slate-800 mb-3">{project.title}</h2>
-              <p className="text-slate-500 text-sm leading-relaxed mb-5 flex-1">{project.description}</p>
-              <ul className="space-y-2">
-                {project.points.map((point) => (
-                  <li key={point} className="flex items-center gap-2 text-sm text-slate-500">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </article>
+
+              <div className="relative mt-8">
+                <p className="text-xs font-semibold uppercase tracking-wide text-emerald-500 mb-3">
+                  {project.category}
+                </p>
+                <h2 className="text-2xl font-extrabold text-slate-800 leading-tight">
+                  {project.title}
+                </h2>
+              </div>
+
+              <p className="relative text-emerald-500 font-bold text-sm mt-8">
+                Ver proyecto
+              </p>
+            </a>
           ))}
         </div>
 

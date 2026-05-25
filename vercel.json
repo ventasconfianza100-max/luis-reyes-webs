@@ -22,6 +22,10 @@
     {
       "source": "/proyectos/perfil-profesional-redes",
       "destination": "/index.html"
+    },
+    {
+      "source": "/proyectos-empresas/clinica-centro-atencion",
+      "destination": "/index.html"
     }
   ]
 }

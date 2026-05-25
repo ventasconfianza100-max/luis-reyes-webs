@@ -12,6 +12,7 @@ import BusinessProjectsPage from './components/BusinessProjectsPage'
 import ClinicalPsychologistProjectPage from './components/ClinicalPsychologistProjectPage'
 import TherapyOnlineProjectPage from './components/TherapyOnlineProjectPage'
 import ProfessionalProfileProjectPage from './components/ProfessionalProfileProjectPage'
+import ClinicBusinessProjectPage from './components/ClinicBusinessProjectPage'
 
 export default function App() {
   const [path, setPath] = useState(window.location.pathname)
@@ -34,6 +35,7 @@ export default function App() {
   const isClinicalProjectPage = path === '/proyectos/sitio-psicologa-clinica'
   const isTherapyOnlineProjectPage = path === '/proyectos/consulta-terapeutica-online'
   const isProfessionalProfileProjectPage = path === '/proyectos/perfil-profesional-redes'
+  const isClinicBusinessProjectPage = path === '/proyectos-empresas/clinica-centro-atencion'
 
   if (isClinicalProjectPage) {
     return (
@@ -58,6 +60,15 @@ export default function App() {
       <div className="min-h-screen">
         <Decorations />
         <ProfessionalProfileProjectPage onNavigate={navigateTo} />
+      </div>
+    )
+  }
+
+  if (isClinicBusinessProjectPage) {
+    return (
+      <div className="min-h-screen">
+        <Decorations />
+        <ClinicBusinessProjectPage onNavigate={navigateTo} />
       </div>
     )
   }
