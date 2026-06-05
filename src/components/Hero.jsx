@@ -62,7 +62,7 @@ export default function Hero({ onNavigate }) {
 
         {/* Subtitle */}
         <p className="text-violet-400 font-medium text-base md:text-lg mb-6">
-          Psicólogo titulado UTalca · Diseño webs para psicólogos en Chile
+          Psicólogo titulado UTalca · Diseño de páginas web para psicólogos en Talca y todo Chile
         </p>
 
         {/* Bio */}
