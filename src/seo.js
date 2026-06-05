@@ -104,7 +104,7 @@ const SAME_AS = [
   'https://www.instagram.com/luis.rey3z/',
   // Otra faceta profesional de la misma persona: su consulta de psicólogo.
   // Cruza ambos sitios para que Google entienda "misma persona, dos negocios".
-  'https://www.psicologoluisreyes.cl',
+  'https://www.luisreyespsicologo.cl',
   GOOGLE_BUSINESS_URL,
 ].filter(Boolean)
 
