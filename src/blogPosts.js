@@ -20,78 +20,6 @@
 
 export const blogPosts = [
   {
-    slug: 'como-conseguir-mas-pacientes-psicologo',
-    title: 'Cómo conseguir más pacientes como psicólogo en Chile (guía práctica)',
-    description:
-      'Estrategias reales para que un psicólogo consiga más pacientes en Chile: presencia online, confianza, derivaciones y una página web que convierte visitas en sesiones.',
-    category: 'Captación de pacientes',
-    datePublished: '2026-06-04',
-    dateModified: '2026-06-04',
-    readingMinutes: 7,
-    excerpt:
-      'Tener buena formación clínica no basta si los pacientes no te encuentran. Te muestro las vías que de verdad funcionan para llenar tu agenda en Chile.',
-    blocks: [
-      {
-        t: 'p',
-        text: 'Si eres psicólogo y sientes que tu agenda no se llena al ritmo que esperabas, casi nunca es un problema de tu trabajo clínico. Es un problema de **visibilidad y confianza**: los pacientes que te elegirían no te encuentran, o cuando te encuentran no tienen suficiente información para dar el paso. En esta guía te explico las vías que de verdad mueven la aguja en Chile, ordenadas por impacto.',
-      },
-      { t: 'h2', text: '1. Aparece donde el paciente te busca: Google' },
-      {
-        t: 'p',
-        text: 'Cuando una persona decide empezar terapia, lo más común es que escriba en Google algo como "psicólogo ansiedad online" o "psicóloga Talca". Si no tienes una presencia que Google pueda mostrar, simplemente no existes en ese momento decisivo.',
-      },
-      {
-        t: 'ul',
-        items: [
-          'Crea una **ficha de Google Business Profile** (gratis): te hace aparecer en el mapa y en las búsquedas locales.',
-          'Ten una **página web propia**, aunque sea sencilla: es tu espacio, no dependes del algoritmo de una red social.',
-          'Pide **reseñas** a pacientes con los que ya cerraste proceso. Las reseñas son uno de los factores que más confianza generan y mejor te posicionan localmente.',
-        ],
-      },
-      { t: 'h2', text: '2. Convierte la confianza en sesiones agendadas' },
-      {
-        t: 'p',
-        text: 'Elegir psicólogo es una decisión íntima. La persona quiere saber **quién eres, cómo trabajas y si va a sentirse cómoda contigo** antes de escribir. Aquí es donde la mayoría pierde pacientes: tienen presencia, pero no transmiten cercanía ni claridad.',
-      },
-      {
-        t: 'ul',
-        items: [
-          'Muestra tu rostro y tu nombre. La cara visible reduce la ansiedad de contactar a un desconocido.',
-          'Explica tu enfoque en lenguaje simple, no en jerga clínica. El paciente no busca "terapia cognitivo-conductual", busca "dejar de sentirme así".',
-          'Deja **un solo paso claro** para contactarte (un botón de WhatsApp o agenda). Si hay que buscar cómo escribirte, se pierde el impulso.',
-        ],
-      },
-      { t: 'h2', text: '3. Activa el boca a boca digital' },
-      {
-        t: 'p',
-        text: 'Las derivaciones siguen siendo la principal fuente de pacientes para muchos psicólogos. La diferencia hoy es que ese boca a boca pasa por un link: alguien te recomienda y la persona te busca antes de decidir.',
-      },
-      {
-        t: 'p',
-        text: 'Por eso conviene tener un lugar al que mandar a la gente: un sitio o perfil donde, en 30 segundos, la persona entienda que eres profesional, confiable y que puede contactarte fácil. Cada recomendación rinde mucho más cuando aterriza en una página que cierra la decisión.',
-      },
-      { t: 'h2', text: '4. Usa las redes para mostrar, no solo para publicar' },
-      {
-        t: 'p',
-        text: 'Instagram y TikTok ayudan a que te conozcan, pero son el comienzo del camino, no el final. Sirven para que alguien te descubra; la decisión de escribirte casi siempre ocurre cuando revisa tu perfil con calma o llega a tu web. Trata tus redes como una vitrina que lleva tráfico hacia tu espacio propio.',
-      },
-      {
-        t: 'quote',
-        text: 'Regla simple: las redes sociales te dan alcance, tu página web te da pacientes. Lo ideal es que trabajen juntas.',
-      },
-      { t: 'h2', text: 'En resumen' },
-      {
-        t: 'p',
-        text: 'Conseguir más pacientes no es cuestión de suerte ni de publicar más. Es asegurarte de **aparecer cuando te buscan**, **generar confianza en segundos** y **dejar un paso clarísimo para contactarte**. Si esas tres piezas están bien puestas, tu agenda empieza a llenarse de forma constante.',
-      },
-      {
-        t: 'p',
-        text: 'Soy psicólogo titulado de la Universidad de Talca y diseño páginas web pensadas exactamente para esto: que un paciente que te encuentra termine escribiéndote. Si quieres revisar cómo está hoy tu presencia online, conversémoslo sin compromiso.',
-      },
-    ],
-  },
-
-  {
     slug: 'pagina-web-o-instagram-psicologos',
     title: '¿Necesito una página web si ya tengo Instagram? (psicólogos)',
     description:
@@ -156,10 +84,6 @@ export const blogPosts = [
         t: 'p',
         text: 'Si solo quieres mantener presencia y compartir contenido, Instagram puede bastarte. Pero si quieres **aparecer en Google, proyectar más profesionalismo y no depender de un algoritmo ajeno**, una página web propia deja de ser un lujo y pasa a ser tu base. Lo bueno es que no tiene por qué ser cara ni complicada: una página simple y bien pensada ya marca la diferencia.',
       },
-      {
-        t: 'p',
-        text: 'Diseño webs específicamente para psicólogos, conectadas con tus redes para que todo trabaje junto. Si tienes dudas sobre qué necesitas en tu caso, escríbeme y lo vemos sin compromiso.',
-      },
     ],
   },
 
@@ -177,7 +101,7 @@ export const blogPosts = [
     blocks: [
       {
         t: 'p',
-        text: 'Una página web de psicólogo no se trata de verse "bonita". Se trata de que una persona que está pasando por un momento difícil sienta, en pocos segundos, que **puede confiar en ti**. Después de diseñar varias webs para colegas, estos son los elementos que de verdad marcan la diferencia entre una web que decora y una que consigue pacientes.',
+        text: 'Una página web de psicólogo no se trata de verse "bonita". Se trata de que una persona que está pasando por un momento difícil sienta, en pocos segundos, que **puede confiar en ti**. Estos son los elementos que de verdad marcan la diferencia entre una web que decora y una que genera confianza.',
       },
       { t: 'h2', text: '1. Tu rostro y tu nombre, visibles de inmediato' },
       {
@@ -229,10 +153,6 @@ export const blogPosts = [
       {
         t: 'p',
         text: 'Una buena web de psicólogo combina **confianza humana** (tu cara, tu enfoque, tu cercanía) con **claridad práctica** (un contacto simple, carga rápida y buen SEO). Cuando esos elementos están bien resueltos, la web deja de ser una tarjeta de presentación y se convierte en una fuente constante de pacientes.',
-      },
-      {
-        t: 'p',
-        text: 'Es justo lo que diseño: páginas para psicólogos pensadas desde la lógica del paciente que está decidiendo. Si quieres revisar tu caso, conversémoslo sin compromiso.',
       },
     ],
   },
