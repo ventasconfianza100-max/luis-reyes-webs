@@ -102,6 +102,9 @@ const GOOGLE_BUSINESS_URL = ''
 const SAME_AS = [
   'https://www.linkedin.com/in/luis-reyes-castro-959261339/',
   'https://www.instagram.com/luis.rey3z/',
+  // Otra faceta profesional de la misma persona: su consulta de psicólogo.
+  // Cruza ambos sitios para que Google entienda "misma persona, dos negocios".
+  'https://www.psicologoluisreyes.cl',
   GOOGLE_BUSINESS_URL,
 ].filter(Boolean)
 
