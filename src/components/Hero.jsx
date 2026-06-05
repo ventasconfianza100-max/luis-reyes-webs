@@ -39,7 +39,7 @@ export default function Hero({ onNavigate }) {
           <div className="w-28 h-28 rounded-full border-4 border-violet-300 overflow-hidden shadow-md bg-violet-50">
             <img
               src={profilePhoto}
-              alt=""
+              alt="Luis Reyes Castro, psicólogo y diseñador web para psicólogos en Talca, Chile"
               width="112"
               height="112"
               loading="eager"
