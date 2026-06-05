@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { ROUTES, getMeta, canonicalFor } from '../src/seo.js'
+import { ROUTES, getMeta, canonicalFor, jsonLdScriptsFor } from '../src/seo.js'
 import { render } from '../dist-server/entry-server.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -25,6 +25,9 @@ function applyMeta(html, routePath) {
   html = replaceAttr(html, '<meta property="og:title" content="', meta.title)
   html = replaceAttr(html, '<meta property="og:description" content="', meta.description)
   html = replaceAttr(html, '<meta property="og:url" content="', canonical)
+
+  // Inyecta el JSON-LD que corresponde a esta ruta.
+  html = html.replace('<!--SSR_JSONLD-->', jsonLdScriptsFor(routePath))
   return html
 }
 

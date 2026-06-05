@@ -52,3 +52,202 @@ export function getMeta(path) {
 export function canonicalFor(path) {
   return path === '/' ? SITE_URL : `${SITE_URL}${path}`
 }
+
+// ─────────────────────────────────────────────────────────────
+// Datos estructurados (JSON-LD)
+// ─────────────────────────────────────────────────────────────
+
+// 👉 Cuando crees tu ficha de Google Business Profile, copia aquí la URL
+//    pública (la que aparece al hacer clic en tu negocio en Maps) para
+//    conectar el sitio con la ficha. Déjalo vacío si aún no la tienes.
+const GOOGLE_BUSINESS_URL = ''
+
+const SAME_AS = [
+  'https://www.linkedin.com/in/luis-reyes-castro-959261339/',
+  'https://www.instagram.com/luis.rey3z/',
+  GOOGLE_BUSINESS_URL,
+].filter(Boolean)
+
+// Negocio principal — se incluye en todas las páginas
+const businessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  '@id': `${SITE_URL}/#business`,
+  name: 'Luis Reyes Castro — Diseño Web para Psicólogos',
+  description:
+    'Diseño de sitios web profesionales para psicólogos en Chile. Psicólogo titulado por la Universidad de Talca que entiende el rubro desde adentro.',
+  url: SITE_URL,
+  image: `${SITE_URL}/og-image.jpg`,
+  logo: `${SITE_URL}/profile.jpg`,
+  telephone: '+56922012534',
+  priceRange: '$$',
+  currenciesAccepted: 'CLP',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Talca',
+    addressRegion: 'Región del Maule',
+    addressCountry: 'CL',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: -35.4264,
+    longitude: -71.6554,
+  },
+  areaServed: [
+    { '@type': 'Country', name: 'Chile' },
+    { '@type': 'City', name: 'Talca' },
+    { '@type': 'AdministrativeArea', name: 'Región del Maule' },
+  ],
+  knowsLanguage: 'es',
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+56922012534',
+    contactType: 'sales',
+    availableLanguage: 'Spanish',
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Servicios de diseño web para psicólogos',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Página web para psicólogos y terapeutas',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Página web para clínicas y centros de atención',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Perfil profesional para redes (link en bio)',
+        },
+      },
+    ],
+  },
+  founder: {
+    '@type': 'Person',
+    name: 'Luis Reyes Castro',
+    jobTitle: 'Psicólogo y Diseñador Web',
+    alumniOf: {
+      '@type': 'EducationalOrganization',
+      name: 'Universidad de Talca',
+    },
+  },
+  sameAs: SAME_AS,
+}
+
+// FAQ — SOLO en la home, que es donde se muestra el contenido visible.
+// (Google pide que el FAQ estructurado solo esté en páginas que lo muestran.)
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: '¿Cuánto cuesta una página web para psicólogos en Chile?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'El valor depende del tipo de proyecto. Una página web profesional para psicólogos o terapeutas parte desde $90.000 CLP. Agendemos una reunión gratuita para cotizar según lo que necesitas.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Cuánto tiempo tarda en estar lista mi página web?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'El tiempo promedio de entrega es 2 semanas desde que confirmamos el proyecto.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Por qué contratar a un psicólogo para diseñar mi web?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Porque entiendo el rubro desde adentro. Sé cómo piensa un paciente cuando busca psicólogo online, qué le genera confianza y cómo redactar tu perfil para que conecte de verdad.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Puedo tener una página web si soy psicólogo independiente en Talca o regiones?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Absolutamente. Trabajo con psicólogos de todo Chile de forma 100% online. He atendido profesionales en Talca, Santiago, Concepción y otras ciudades.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Mi página web va a aparecer en Google?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Sí. Todas las páginas incluyen optimización SEO básica: título, descripción, palabras clave y configuración técnica para que Google pueda indexarla correctamente.',
+      },
+    },
+  ],
+}
+
+// Etiquetas legibles para construir las migas de pan (breadcrumbs)
+const breadcrumbLabels = {
+  '/proyectos': 'Proyectos para profesionales',
+  '/proyectos-empresas': 'Proyectos para empresas',
+  '/proyectos/sitio-psicologa-clinica': 'Sitio para psicóloga clínica',
+  '/proyectos/consulta-terapeutica-online': 'Consulta terapéutica online',
+  '/proyectos/perfil-profesional-redes': 'Perfil profesional para redes',
+  '/proyectos-empresas/clinica-centro-atencion': 'Clínica y centro de atención',
+  '/agenda': 'Agenda una reunión',
+}
+
+function breadcrumbSchema(path) {
+  if (path === '/') return null
+
+  const items = [{ name: 'Inicio', url: SITE_URL }]
+  const segments = path.split('/').filter(Boolean)
+  let acc = ''
+  for (const seg of segments) {
+    acc += `/${seg}`
+    items.push({
+      name: breadcrumbLabels[acc] || seg,
+      url: `${SITE_URL}${acc}`,
+    })
+  }
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((it, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: it.name,
+      item: it.url,
+    })),
+  }
+}
+
+// Devuelve el array de objetos JSON-LD que corresponde a cada ruta.
+export function jsonLdFor(path) {
+  const schemas = [businessSchema]
+  if (path === '/') {
+    schemas.push(faqSchema)
+  } else {
+    const bc = breadcrumbSchema(path)
+    if (bc) schemas.push(bc)
+  }
+  return schemas
+}
+
+// Genera las etiquetas <script> de JSON-LD listas para inyectar en el HTML.
+export function jsonLdScriptsFor(path) {
+  return jsonLdFor(path)
+    .map(
+      (schema) =>
+        `<script type="application/ld+json">${JSON.stringify(schema)}</script>`
+    )
+    .join('\n    ')
+}
