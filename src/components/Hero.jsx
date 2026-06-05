@@ -30,7 +30,7 @@ const socialLinks = [
   },
 ]
 
-export default function Hero() {
+export default function Hero({ onNavigate }) {
   return (
     <section className="flex justify-center pt-8 pb-4">
       <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg border border-white/60 p-8 md:p-10 w-full text-center">
@@ -100,9 +100,11 @@ export default function Hero() {
 
         {/* CTA button */}
         <a
-          href="https://wa.me/56922012534?text=Hola%20Luis%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20tu%20servicio%20de%20dise%C3%B1o%20web"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/agenda"
+          onClick={(event) => {
+            event.preventDefault()
+            onNavigate('/agenda')
+          }}
           className="inline-flex items-center gap-2 bg-violet-500 hover:bg-violet-600 text-white font-semibold px-8 py-4 rounded-xl text-base transition-all shadow-md hover:shadow-lg mb-3"
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
@@ -116,7 +118,7 @@ export default function Hero() {
 
         {/* CTA subtitle */}
         <p className="text-slate-400 text-xs mb-6">
-          Conversamos por WhatsApp, sin compromisos, para ver cómo puedo ayudarte
+          Elige Meet, Zoom o WhatsApp · sin compromisos, para ver cómo puedo ayudarte
         </p>
 
         {/* Location */}

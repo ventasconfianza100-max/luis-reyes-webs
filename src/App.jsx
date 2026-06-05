@@ -13,6 +13,7 @@ import ClinicalPsychologistProjectPage from './components/ClinicalPsychologistPr
 import TherapyOnlineProjectPage from './components/TherapyOnlineProjectPage'
 import ProfessionalProfileProjectPage from './components/ProfessionalProfileProjectPage'
 import ClinicBusinessProjectPage from './components/ClinicBusinessProjectPage'
+import SchedulePage from './components/SchedulePage'
 
 export default function App() {
   const [path, setPath] = useState(window.location.pathname)
@@ -36,6 +37,16 @@ export default function App() {
   const isTherapyOnlineProjectPage = path === '/proyectos/consulta-terapeutica-online'
   const isProfessionalProfileProjectPage = path === '/proyectos/perfil-profesional-redes'
   const isClinicBusinessProjectPage = path === '/proyectos-empresas/clinica-centro-atencion'
+  const isSchedulePage = path === '/agenda'
+
+  if (isSchedulePage) {
+    return (
+      <div className="min-h-screen">
+        <Decorations />
+        <SchedulePage onNavigate={navigateTo} />
+      </div>
+    )
+  }
 
   if (isClinicalProjectPage) {
     return (
@@ -97,7 +108,7 @@ export default function App() {
       <Navbar onNavigate={navigateTo} />
       <main className="max-w-2xl mx-auto px-4">
         <section id="inicio">
-          <Hero />
+          <Hero onNavigate={navigateTo} />
         </section>
         <section id="servicios">
           <Services onNavigate={navigateTo} />
