@@ -1,4 +1,4 @@
-import { blogPosts } from './blogPosts'
+import { blogPosts } from './blogPosts.js'
 
 // URL base del sitio
 export const SITE_URL = 'https://www.luisreyesweb.cl'
