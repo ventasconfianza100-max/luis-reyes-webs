@@ -3,6 +3,7 @@ const links = [
   { label: 'Servicios', href: '#servicios' },
   { label: 'Profesionales', href: '/proyectos', route: true },
   { label: 'Empresas', href: '/proyectos-empresas', route: true },
+  { label: 'Blog', href: '/blog', route: true },
   { label: '¿Qué incluye?', href: '#incluye' },
   { label: 'Contacto', href: 'https://wa.me/56922012534', external: true },
 ]

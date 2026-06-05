@@ -1,3 +1,6 @@
+import { blogPosts } from './blogPosts'
+
+// URL base del sitio
 export const SITE_URL = 'https://www.luisreyesweb.cl'
 
 export const metaByPath = {
@@ -41,6 +44,19 @@ export const metaByPath = {
     description:
       'Agenda una reunión sin compromiso con Luis Reyes Castro por Google Meet, Zoom o WhatsApp para cotizar la página web de tu consulta psicológica.',
   },
+  '/blog': {
+    title: 'Blog para psicólogos: más pacientes y presencia online | Luis Reyes Castro',
+    description:
+      'Artículos prácticos sobre cómo conseguir más pacientes, presencia digital y diseño web para psicólogos y terapeutas en Chile. Escrito por un psicólogo.',
+  },
+}
+
+// Agrega automáticamente una entrada de meta por cada artículo del blog.
+for (const post of blogPosts) {
+  metaByPath[`/blog/${post.slug}`] = {
+    title: `${post.title} | Luis Reyes Castro`,
+    description: post.description,
+  }
 }
 
 export const ROUTES = Object.keys(metaByPath)
@@ -202,6 +218,72 @@ const breadcrumbLabels = {
   '/proyectos/perfil-profesional-redes': 'Perfil profesional para redes',
   '/proyectos-empresas/clinica-centro-atencion': 'Clínica y centro de atención',
   '/agenda': 'Agenda una reunión',
+  '/blog': 'Blog',
+}
+
+// Etiqueta de cada artículo para las migas de pan.
+for (const post of blogPosts) {
+  breadcrumbLabels[`/blog/${post.slug}`] = post.title
+}
+
+// Convierte los bloques de un artículo en texto plano (para articleBody).
+function blocksToPlainText(blocks) {
+  return blocks
+    .map((b) => {
+      if (b.t === 'ul' || b.t === 'ol') return b.items.join(' ')
+      return b.text || ''
+    })
+    .join(' ')
+    .replace(/\*\*/g, '')
+}
+
+function blogPostSchema(post) {
+  const url = `${SITE_URL}/blog/${post.slug}`
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.description,
+    articleBody: blocksToPlainText(post.blocks),
+    datePublished: post.datePublished,
+    dateModified: post.dateModified || post.datePublished,
+    inLanguage: 'es-CL',
+    image: `${SITE_URL}/og-image.jpg`,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    url,
+    author: {
+      '@type': 'Person',
+      name: 'Luis Reyes Castro',
+      jobTitle: 'Psicólogo y Diseñador Web',
+      url: SITE_URL,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Luis Reyes Castro — Diseño Web para Psicólogos',
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}/profile.jpg` },
+    },
+  }
+}
+
+function blogIndexSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    '@id': `${SITE_URL}/blog#blog`,
+    name: 'Blog — Luis Reyes Castro',
+    description:
+      'Artículos sobre cómo conseguir más pacientes, presencia digital y diseño web para psicólogos en Chile.',
+    url: `${SITE_URL}/blog`,
+    inLanguage: 'es-CL',
+    publisher: { '@id': `${SITE_URL}/#business` },
+    blogPost: blogPosts.map((post) => ({
+      '@type': 'BlogPosting',
+      headline: post.title,
+      description: post.description,
+      datePublished: post.datePublished,
+      url: `${SITE_URL}/blog/${post.slug}`,
+    })),
+  }
 }
 
 function breadcrumbSchema(path) {
@@ -233,12 +315,23 @@ function breadcrumbSchema(path) {
 // Devuelve el array de objetos JSON-LD que corresponde a cada ruta.
 export function jsonLdFor(path) {
   const schemas = [businessSchema]
+
   if (path === '/') {
     schemas.push(faqSchema)
-  } else {
-    const bc = breadcrumbSchema(path)
-    if (bc) schemas.push(bc)
+    return schemas
   }
+
+  const bc = breadcrumbSchema(path)
+  if (bc) schemas.push(bc)
+
+  if (path === '/blog') {
+    schemas.push(blogIndexSchema())
+  } else if (path.startsWith('/blog/')) {
+    const slug = path.replace('/blog/', '')
+    const post = blogPosts.find((p) => p.slug === slug)
+    if (post) schemas.push(blogPostSchema(post))
+  }
+
   return schemas
 }
 

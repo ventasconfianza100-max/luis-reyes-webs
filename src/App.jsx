@@ -14,6 +14,8 @@ import TherapyOnlineProjectPage from './components/TherapyOnlineProjectPage'
 import ProfessionalProfileProjectPage from './components/ProfessionalProfileProjectPage'
 import ClinicBusinessProjectPage from './components/ClinicBusinessProjectPage'
 import SchedulePage from './components/SchedulePage'
+import BlogPage from './components/BlogPage'
+import BlogPostPage from './components/BlogPostPage'
 
 import { getMeta, canonicalFor } from './seo'
 
@@ -59,12 +61,32 @@ export default function App({ initialPath }) {
   const isProfessionalProfileProjectPage = path === '/proyectos/perfil-profesional-redes'
   const isClinicBusinessProjectPage = path === '/proyectos-empresas/clinica-centro-atencion'
   const isSchedulePage = path === '/agenda'
+  const isBlogIndex = path === '/blog'
+  const isBlogPost = path.startsWith('/blog/')
 
   if (isSchedulePage) {
     return (
       <div className="min-h-screen">
         <Decorations />
         <SchedulePage onNavigate={navigateTo} />
+      </div>
+    )
+  }
+
+  if (isBlogIndex) {
+    return (
+      <div className="min-h-screen">
+        <Decorations />
+        <BlogPage onNavigate={navigateTo} />
+      </div>
+    )
+  }
+
+  if (isBlogPost) {
+    return (
+      <div className="min-h-screen">
+        <Decorations />
+        <BlogPostPage slug={path.replace('/blog/', '')} onNavigate={navigateTo} />
       </div>
     )
   }
