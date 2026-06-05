@@ -2,33 +2,10 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
+  "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/proyectos",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/proyectos-empresas",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/proyectos/sitio-psicologa-clinica",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/proyectos/consulta-terapeutica-online",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/proyectos/perfil-profesional-redes",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/proyectos-empresas/clinica-centro-atencion",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/agenda",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ]

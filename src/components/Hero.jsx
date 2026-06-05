@@ -43,7 +43,7 @@ export default function Hero({ onNavigate }) {
               width="112"
               height="112"
               loading="eager"
-              fetchPriority="high"
+              fetchpriority="high"
               decoding="async"
               className="w-full h-full object-cover"
             />
