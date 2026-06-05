@@ -26,6 +26,10 @@
     {
       "source": "/proyectos-empresas/clinica-centro-atencion",
       "destination": "/index.html"
+    },
+    {
+      "source": "/agenda",
+      "destination": "/index.html"
     }
   ]
 }
