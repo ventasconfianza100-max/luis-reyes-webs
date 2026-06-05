@@ -37,16 +37,19 @@ export default function Hero({ onNavigate }) {
         {/* Profile photo */}
         <div className="flex justify-center mb-6">
           <div className="w-28 h-28 rounded-full border-4 border-violet-300 overflow-hidden shadow-md bg-violet-50">
-            <img
-              src={profilePhoto}
-              alt="Luis Reyes Castro, psicólogo y diseñador web para psicólogos en Talca, Chile"
-              width="112"
-              height="112"
-              loading="eager"
-              fetchpriority="high"
-              decoding="async"
-              className="w-full h-full object-cover"
-            />
+            <picture>
+              <source srcSet="/profile.webp" type="image/webp" />
+              <img
+                src={profilePhoto}
+                alt="Luis Reyes Castro, psicólogo y diseñador web para psicólogos en Talca, Chile"
+                width="112"
+                height="112"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+                className="w-full h-full object-cover"
+              />
+            </picture>
           </div>
         </div>
 

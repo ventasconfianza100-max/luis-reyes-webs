@@ -122,14 +122,17 @@ export default function BlogPostPage({ slug, onNavigate }) {
 
         {/* Autor */}
         <div className="mt-10 flex items-center gap-4 rounded-2xl border border-violet-100 bg-violet-50/50 p-5">
-          <img
-            src="/profile.jpg"
-            alt="Luis Reyes Castro, psicólogo y diseñador web"
-            width="56"
-            height="56"
-            loading="lazy"
-            className="w-14 h-14 rounded-full object-cover border-2 border-violet-200 shrink-0"
-          />
+          <picture>
+            <source srcSet="/profile.webp" type="image/webp" />
+            <img
+              src="/profile.jpg"
+              alt="Luis Reyes Castro, psicólogo y diseñador web"
+              width="56"
+              height="56"
+              loading="lazy"
+              className="w-14 h-14 rounded-full object-cover border-2 border-violet-200 shrink-0"
+            />
+          </picture>
           <div>
             <p className="font-bold text-slate-800 text-sm">Luis Reyes Castro</p>
             <p className="text-slate-500 text-sm">

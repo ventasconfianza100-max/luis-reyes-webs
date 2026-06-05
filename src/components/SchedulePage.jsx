@@ -62,15 +62,18 @@ export default function SchedulePage({ onNavigate }) {
 
         <div className="text-center mb-8">
           <div className="mx-auto mb-5 w-24 h-24 rounded-full border-4 border-violet-300 overflow-hidden shadow-md bg-violet-50">
-            <img
-              src="/profile.jpg"
-              alt="Luis Reyes Castro"
-              width="96"
-              height="96"
-              loading="eager"
-              decoding="async"
-              className="w-full h-full object-cover"
-            />
+            <picture>
+              <source srcSet="/profile.webp" type="image/webp" />
+              <img
+                src="/profile.jpg"
+                alt="Luis Reyes Castro, psicólogo y diseñador web"
+                width="96"
+                height="96"
+                loading="eager"
+                decoding="async"
+                className="w-full h-full object-cover"
+              />
+            </picture>
           </div>
           <h1 className="text-3xl md:text-4xl font-extrabold text-slate-800 mb-3">
             Agenda una reunión conmigo
