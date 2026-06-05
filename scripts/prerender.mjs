@@ -1,7 +1,14 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { ROUTES, getMeta, canonicalFor, jsonLdScriptsFor } from '../src/seo.js'
+import {
+  ROUTES,
+  getMeta,
+  canonicalFor,
+  jsonLdScriptsFor,
+  ogTypeFor,
+  articleMetaTagsFor,
+} from '../src/seo.js'
 import { render } from '../dist-server/entry-server.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -25,6 +32,14 @@ function applyMeta(html, routePath) {
   html = replaceAttr(html, '<meta property="og:title" content="', meta.title)
   html = replaceAttr(html, '<meta property="og:description" content="', meta.description)
   html = replaceAttr(html, '<meta property="og:url" content="', canonical)
+  html = replaceAttr(html, '<meta property="og:type" content="', ogTypeFor(routePath))
+
+  // Twitter Card (refleja título y descripción de la ruta).
+  html = replaceAttr(html, '<meta name="twitter:title" content="', meta.title)
+  html = replaceAttr(html, '<meta name="twitter:description" content="', meta.description)
+
+  // Meta de artículo (fechas/autor) solo para los posts del blog.
+  html = html.replace('<!--SSR_ARTICLE_META-->', articleMetaTagsFor(routePath))
 
   // Inyecta el JSON-LD que corresponde a esta ruta.
   html = html.replace('<!--SSR_JSONLD-->', jsonLdScriptsFor(routePath))

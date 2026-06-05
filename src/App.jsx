@@ -162,7 +162,7 @@ export default function App({ initialPath }) {
         </section>
         <FAQ />
       </main>
-      <Footer />
+      <Footer onNavigate={navigateTo} />
     </div>
   )
 }

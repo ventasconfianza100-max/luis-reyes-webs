@@ -69,6 +69,27 @@ export function canonicalFor(path) {
   return path === '/' ? SITE_URL : `${SITE_URL}${path}`
 }
 
+// Tipo de Open Graph: los artículos del blog son "article", el resto "website".
+export function ogTypeFor(path) {
+  return path.startsWith('/blog/') ? 'article' : 'website'
+}
+
+// Etiquetas <meta> específicas de artículo (fechas y autor) para blog posts.
+// Devuelve string vacío si la ruta no es un artículo.
+export function articleMetaTagsFor(path) {
+  if (!path.startsWith('/blog/')) return ''
+  const slug = path.replace('/blog/', '')
+  const post = blogPosts.find((p) => p.slug === slug)
+  if (!post) return ''
+  const modified = post.dateModified || post.datePublished
+  return [
+    `<meta property="article:published_time" content="${post.datePublished}" />`,
+    `<meta property="article:modified_time" content="${modified}" />`,
+    `<meta property="article:author" content="Luis Reyes Castro" />`,
+    `<meta property="article:section" content="${post.category}" />`,
+  ].join('\n    ')
+}
+
 // ─────────────────────────────────────────────────────────────
 // Datos estructurados (JSON-LD)
 // ─────────────────────────────────────────────────────────────
