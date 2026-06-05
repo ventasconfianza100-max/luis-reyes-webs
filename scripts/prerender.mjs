@@ -78,7 +78,7 @@ const today = new Date().toISOString().slice(0, 10)
 const urls = ROUTES.map((routePath) => {
   const { priority, changefreq } = sitemapMeta(routePath)
   return `  <url>
-    <loc>${canonicalFor(routePath)}${routePath === '/' ? '/' : ''}</loc>
+    <loc>${canonicalFor(routePath)}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
