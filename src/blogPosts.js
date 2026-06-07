@@ -312,6 +312,176 @@ export const blogPosts = [
       },
     ],
   },
+  {
+    slug: 'errores-comunes-en-la-web-de-un-psicologo',
+    title: '5 errores en la página web de un psicólogo (y cómo evitarlos)',
+    description:
+      'Los errores más comunes en las webs de psicólogos que hacen perder pacientes: contacto escondido, textos fríos, lentitud y más. Aprende a evitarlos.',
+    category: 'Diseño web',
+    datePublished: '2026-06-05',
+    dateModified: '2026-06-05',
+    readingMinutes: 6,
+    excerpt:
+      'Una web puede estar bonita y aun así espantar pacientes. Estos son los 5 errores que veo más seguido en webs de psicólogos, y cómo solucionarlos.',
+    blocks: [
+      {
+        t: 'p',
+        text: 'He revisado muchas webs de psicólogos y casi todas repiten los mismos errores. Lo peor es que no son errores "feos" a primera vista: son fallas que, en silencio, hacen que la persona se vaya sin escribir. Estos son los 5 más comunes.',
+      },
+      { t: 'h2', text: '1. Esconder el contacto' },
+      {
+        t: 'p',
+        text: 'El error más caro. Si para escribirte hay que buscar el teléfono o llenar un formulario largo, pierdes pacientes. El contacto (WhatsApp o agendamiento) debe estar visible desde el primer segundo y repetido a lo largo de la página.',
+      },
+      { t: 'h2', text: '2. Hablar de ti y no del paciente' },
+      {
+        t: 'p',
+        text: 'Muchas webs empiezan con "Soy psicólogo titulado en…". Tu formación importa, pero lo primero que la persona necesita ver es que **entiendes lo que le pasa**. Habla de su problema antes que de tu currículum.',
+      },
+      { t: 'h2', text: '3. Textos fríos o demasiado técnicos' },
+      {
+        t: 'p',
+        text: 'Palabras como "abordaje cognitivo-conductual" no conectan con alguien angustiado. Usa un lenguaje cercano y humano, el mismo que usarías en una primera sesión para que la persona se sienta acogida.',
+      },
+      { t: 'h2', text: '4. Que cargue lento o se vea mal en el celular' },
+      {
+        t: 'p',
+        text: 'La mayoría de tus visitas llegan desde el teléfono. Si la web tarda en cargar o se ve desordenada en móvil, se van antes de leerte. Velocidad y diseño responsive no son lujo: son cuántos pacientes te escriben.',
+      },
+      { t: 'h2', text: '5. No aparecer en Google' },
+      {
+        t: 'p',
+        text: 'Una web preciosa que nadie encuentra no sirve. Sin SEO básico (títulos, descripciones, datos estructurados) y sin ficha de Google Business, dependes solo de que compartas el link. El tráfico orgánico es el que trabaja por ti a largo plazo.',
+      },
+      {
+        t: 'quote',
+        text: 'Una buena web de psicólogo no es la más bonita: es la que hace que la persona correcta sienta confianza y te escriba.',
+      },
+      {
+        t: 'p',
+        text: 'Como psicólogo que diseña webs para psicólogos, cuido justamente estos puntos. Si quieres una revisión honesta de tu web actual o partir de cero, agenda una reunión sin compromiso.',
+      },
+    ],
+  },
+  {
+    slug: 'plantilla-wix-o-web-a-medida-psicologos',
+    title: '¿Plantilla (Wix) o web a medida? Qué le conviene a un psicólogo',
+    description:
+      '¿Hacer tu web en Wix con una plantilla o encargar una a medida? Comparo costos, tiempo, confianza y posicionamiento en Google para psicólogos en Chile.',
+    category: 'Diseño web',
+    datePublished: '2026-06-05',
+    dateModified: '2026-06-05',
+    readingMinutes: 6,
+    excerpt:
+      'Una plantilla parece más barata, pero tiene un costo oculto. Comparo plantilla vs. web a medida para que decidas con criterio, no por impulso.',
+    blocks: [
+      {
+        t: 'p',
+        text: 'Cuando un psicólogo decide tener web, casi siempre aparece la misma duda: "¿lo hago yo en Wix con una plantilla o pago por una a medida?". Las dos opciones son válidas según tu momento. Te ayudo a decidir sin venderte humo.',
+      },
+      { t: 'h2', text: 'La plantilla (Wix, Squarespace, etc.)' },
+      {
+        t: 'p',
+        text: 'Es la opción de entrada: más barata al principio y la puedes armar tú.',
+      },
+      {
+        t: 'ul',
+        items: [
+          '✅ Costo inicial bajo y rapidez para publicar algo.',
+          '⚠️ Te quita horas que podrías dedicar a tus pacientes.',
+          '⚠️ Se ve genérica: muchas consultas terminan con la misma plantilla.',
+          '⚠️ Suele cargar más lento y posicionar peor en Google.',
+        ],
+      },
+      { t: 'h2', text: 'La web a medida' },
+      {
+        t: 'p',
+        text: 'Es una inversión mayor, pero pensada para un objetivo: que tu web trabaje para captar pacientes.',
+      },
+      {
+        t: 'ul',
+        items: [
+          '✅ Diseño y textos hechos para ti, no una plantilla repetida.',
+          '✅ Optimizada en velocidad y SEO desde la base.',
+          '✅ Pensada desde la lógica del paciente que está decidiendo.',
+          '✅ Te ahorra el tiempo de hacerlo y mantenerlo tú.',
+        ],
+      },
+      { t: 'h2', text: '¿Cuál te conviene?' },
+      {
+        t: 'p',
+        text: 'Si recién partes y necesitas presencia mínima ya, una plantilla simple puede servir como primer paso. Pero si quieres que tu web realmente te traiga pacientes y transmita la seriedad de tu trabajo, una web a medida se paga sola con uno o dos pacientes nuevos.',
+      },
+      {
+        t: 'quote',
+        text: 'Lo barato a veces sale caro: una web que no convierte es plata y tiempo invertidos en algo que no trae pacientes.',
+      },
+      {
+        t: 'p',
+        text: 'Soy Luis Reyes Castro, psicólogo y diseñador web, y trabajo con planes desde $90.000 para distintos momentos. Si tienes dudas sobre qué te conviene, conversémoslo en una reunión sin compromiso.',
+      },
+    ],
+  },
+  {
+    slug: 'que-poner-en-la-web-de-tu-consulta-psicologica',
+    title: 'Qué poner en la página web de tu consulta psicológica',
+    description:
+      'Las secciones imprescindibles que toda web de psicólogo debería tener: presentación, especialidades, cómo es la terapia, contacto y más. Guía práctica.',
+    category: 'Diseño web',
+    datePublished: '2026-06-05',
+    dateModified: '2026-06-05',
+    readingMinutes: 6,
+    excerpt:
+      '¿No sabes qué secciones incluir en tu web? Te dejo la estructura que mejor funciona para una consulta psicológica, pensada para generar confianza.',
+    blocks: [
+      {
+        t: 'p',
+        text: 'Una de las preguntas más frecuentes es: "¿y qué pongo en mi web?". La respuesta no es "todo lo posible", sino lo justo para acompañar la decisión del paciente. Esta es la estructura que mejor convierte para una consulta psicológica.',
+      },
+      { t: 'h2', text: '1. Una presentación clara (quién eres)' },
+      {
+        t: 'p',
+        text: 'Tu nombre, tu foto real y una frase que diga a quién ayudas y con qué. La foto importa: ver tu cara genera confianza antes de cualquier texto.',
+      },
+      { t: 'h2', text: '2. En qué puedes ayudar (especialidades)' },
+      {
+        t: 'p',
+        text: 'Lista tus áreas en el lenguaje del paciente: "ansiedad", "duelo", "problemas de pareja"… no en términos técnicos. La persona debe reconocerse en lo que lee.',
+      },
+      { t: 'h2', text: '3. Cómo es la terapia contigo' },
+      {
+        t: 'p',
+        text: 'Explica cómo son las sesiones, dónde (online o presencial), cuánto duran y qué puede esperar. Reducir la incertidumbre baja el miedo a dar el paso.',
+      },
+      { t: 'h2', text: '4. Prueba de confianza' },
+      {
+        t: 'ul',
+        items: [
+          'Tu formación y número de registro profesional.',
+          'Testimonios de pacientes (cuidando la confidencialidad).',
+          'Enlaces a tu Instagram o perfiles profesionales.',
+        ],
+      },
+      { t: 'h2', text: '5. Un contacto simple y visible' },
+      {
+        t: 'p',
+        text: 'WhatsApp directo o un agendamiento en un clic, repetido a lo largo de la página. Que escribirte sea lo más fácil del mundo.',
+      },
+      { t: 'h2', text: '6. Preguntas frecuentes' },
+      {
+        t: 'p',
+        text: 'Responde de antemano las dudas típicas (precio, modalidad, cómo agendar). Resuelve objeciones sin que la persona tenga que preguntar.',
+      },
+      {
+        t: 'quote',
+        text: 'Tu web no necesita ser larga: necesita responder, en orden, lo que tu próximo paciente se está preguntando.',
+      },
+      {
+        t: 'p',
+        text: 'Si quieres una web con esta estructura, ya pensada y redactada para tu consulta, agenda una reunión conmigo. Soy psicólogo, así que hablamos el mismo idioma.',
+      },
+    ],
+  },
 ]
 
 export const blogPostsBySlug = Object.fromEntries(
