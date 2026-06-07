@@ -1,3 +1,5 @@
+import Section from './Section'
+
 const stats = [
   {
     icon: (
@@ -30,18 +32,18 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section className="py-4">
-      <div className="grid grid-cols-3 gap-4">
+    <Section spacing="py-6 md:py-8">
+      <div className="grid grid-cols-3 gap-4 md:gap-6">
         {stats.map((s, i) => (
-          <div key={i} className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-md border border-white/60 p-5 text-center flex flex-col items-center gap-2">
-            <div className="w-10 h-10 rounded-full bg-violet-50 flex items-center justify-center">
+          <div key={i} className="bg-white rounded-2xl shadow-soft border border-slate-100 p-5 md:p-7 text-center flex flex-col items-center gap-2">
+            <div className="w-11 h-11 rounded-full bg-brand-50 flex items-center justify-center">
               {s.icon}
             </div>
-            <p className="text-xl font-bold text-slate-800 leading-tight">{s.value}</p>
-            <p className="text-slate-400 text-xs leading-tight">{s.label}</p>
+            <p className="font-display text-2xl md:text-3xl font-extrabold text-slate-900 leading-tight">{s.value}</p>
+            <p className="text-slate-400 text-xs md:text-sm leading-tight">{s.label}</p>
           </div>
         ))}
       </div>
-    </section>
+    </Section>
   )
 }

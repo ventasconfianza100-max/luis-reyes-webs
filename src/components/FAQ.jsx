@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Section from './Section'
 
 const faqs = [
   {
@@ -31,14 +32,16 @@ export default function FAQ() {
   const [open, setOpen] = useState(null)
 
   return (
-    <section id="faq" className="py-6">
-      <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-md border border-white/60 p-8 md:p-10">
-        <h2 className="text-2xl md:text-3xl font-bold text-slate-800 text-center mb-2">
-          Preguntas frecuentes
-        </h2>
-        <p className="text-slate-400 text-center text-sm mb-8">
-          Sobre diseño web para psicólogos en Chile
-        </p>
+    <Section id="faq" width="narrow">
+      <div className="bg-white rounded-3xl shadow-soft border border-slate-100 p-8 md:p-10">
+        <div className="text-center mb-8">
+          <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600 mb-3">
+            Preguntas frecuentes
+          </span>
+          <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
+            ¿Tienes dudas?
+          </h2>
+        </div>
 
         <div className="space-y-3">
           {faqs.map((faq, i) => (
@@ -86,6 +89,6 @@ export default function FAQ() {
           </a>
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

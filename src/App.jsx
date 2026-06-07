@@ -152,20 +152,20 @@ export default function App({ initialPath }) {
     <div className="min-h-screen">
       <Decorations />
       <Navbar onNavigate={navigateTo} />
-      <main className="max-w-2xl mx-auto px-4">
-        <section id="inicio">
+      <main>
+        <div id="inicio">
           <Hero onNavigate={navigateTo} />
-        </section>
-        <section id="servicios">
+        </div>
+        <div id="servicios">
           <Services onNavigate={navigateTo} />
-        </section>
+        </div>
         <Stats />
         {/* Testimonios ocultos hasta tener reseñas REALES. Para reactivar,
             quita el comentario y reemplaza el contenido en Testimonials.jsx. */}
         {/* <Testimonials /> */}
-        <section id="incluye">
+        <div id="incluye">
           <Features />
-        </section>
+        </div>
         <Pricing />
         <FAQ />
         <LeadMagnet />

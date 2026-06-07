@@ -18,11 +18,18 @@ export default function Navbar({ onNavigate }) {
 
   return (
     <nav className="sticky top-0 z-50 bg-white/70 backdrop-blur-md border-b border-white/50 shadow-sm">
-      <div className="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <span className="font-bold text-slate-800 text-lg">
-          Luis <span className="text-violet-500">Reyes</span>
-        </span>
+        <a
+          href="/"
+          onClick={(event) => {
+            event.preventDefault()
+            onNavigate('/')
+          }}
+          className="font-display font-bold text-slate-900 text-lg tracking-tight"
+        >
+          Luis Reyes <span className="text-brand-600">Castro</span>
+        </a>
 
         {/* Links — desktop */}
         <div className="hidden sm:flex items-center gap-1">

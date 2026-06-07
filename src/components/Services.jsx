@@ -1,3 +1,5 @@
+import Section from './Section'
+
 const services = [
   {
     id: 'profesionales',
@@ -37,10 +39,18 @@ const services = [
 
 export default function Services({ onNavigate }) {
   return (
-    <section className="py-6">
+    <Section>
+      <div className="text-center max-w-2xl mx-auto mb-12">
+        <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600 mb-3">
+          Servicios
+        </span>
+        <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
+          Webs a medida para tu rubro
+        </h2>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {services.map((s) => (
-          <div key={s.id} className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-md border border-white/60 p-7 flex flex-col relative">
+          <div key={s.id} className="bg-white rounded-3xl shadow-soft border border-slate-100 p-8 flex flex-col relative transition-all hover:-translate-y-1 hover:shadow-lift">
             {/* Tag */}
             <span className={`absolute top-5 right-5 text-xs font-medium px-3 py-1 rounded-full ${s.tagStyle}`}>
               {s.tag}
@@ -80,6 +90,6 @@ export default function Services({ onNavigate }) {
           </div>
         ))}
       </div>
-    </section>
+    </Section>
   )
 }

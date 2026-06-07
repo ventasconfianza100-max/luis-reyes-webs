@@ -1,3 +1,5 @@
+import Section from './Section'
+
 const WHATSAPP = '56922012534'
 
 const waLink = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
@@ -12,10 +14,10 @@ const items = [
 
 export default function LeadMagnet() {
   return (
-    <section id="checklist" className="py-6">
-      <div className="rounded-3xl bg-violet-500 text-white shadow-lg p-8 md:p-10 text-center">
+    <Section id="checklist">
+      <div className="rounded-3xl bg-brand-600 text-white shadow-lift p-10 md:p-14 text-center">
         <span className="inline-block text-3xl mb-3">🎁</span>
-        <h2 className="text-2xl md:text-3xl font-bold mb-2">Checklist gratis para psicólogos</h2>
+        <h2 className="font-display text-3xl md:text-4xl font-bold mb-2">Checklist gratis para psicólogos</h2>
         <p className="text-violet-100 text-sm md:text-base mb-6 max-w-md mx-auto">
           Las 7 cosas que la web de un psicólogo necesita para convertir visitas en pacientes. Te lo
           envío por WhatsApp, sin costo.
@@ -44,6 +46,6 @@ export default function LeadMagnet() {
           Pídeme el checklist gratis
         </a>
       </div>
-    </section>
+    </Section>
   )
 }

@@ -1,3 +1,5 @@
+import Section from './Section'
+
 const features = [
   {
     icon: (
@@ -39,12 +41,17 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="py-6">
-      <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-md border border-white/60 p-8 md:p-10">
-        <h2 className="text-2xl md:text-3xl font-bold text-slate-800 text-center mb-8">
-          ¿Qué incluye tu página web para psicólogos?
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <Section>
+      <div className="bg-white rounded-3xl shadow-soft border border-slate-100 p-8 md:p-12">
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600 mb-3">
+            Qué incluye
+          </span>
+          <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
+            Todo lo que tu página web necesita
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8">
           {features.map((f, i) => (
             <div key={i} className="flex gap-4 items-start">
               <div className="w-10 h-10 rounded-xl bg-violet-50 flex items-center justify-center flex-shrink-0">
@@ -80,6 +87,6 @@ export default function Features() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   )
 }
