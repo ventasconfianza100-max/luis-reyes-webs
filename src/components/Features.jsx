@@ -59,18 +59,24 @@ export default function Features() {
         </div>
 
         <div className="mt-10 border-t border-violet-100 pt-8">
-          <h3 className="text-xl font-bold text-slate-800 text-center mb-6">
-            Preguntas frecuentes
-          </h3>
-          <div className="rounded-2xl bg-violet-50/70 border border-violet-100 p-6 text-left">
+          <div className="rounded-2xl bg-violet-50/70 border border-violet-100 p-6 text-center">
             <p className="font-semibold text-slate-800 mb-2">
               ¿Cuál es el valor de una página web?
             </p>
-            <p className="text-slate-500 text-sm leading-relaxed">
-              Por lanzamiento, las páginas web para psicólogos tienen un valor promocional desde{' '}
-              <strong className="text-violet-600">$90.000 CLP</strong>. Incluye una landing page
-              responsive, secciones principales y publicación básica.
+            <p className="text-slate-500 text-sm leading-relaxed mb-4">
+              Tengo tres planes según tu momento, desde{' '}
+              <strong className="text-violet-600">$90.000 CLP</strong>. Cada uno deja claro qué incluye,
+              sin sorpresas.
             </p>
+            <a
+              href="#planes"
+              className="inline-flex items-center gap-2 text-violet-600 font-semibold text-sm hover:text-violet-700 transition-colors"
+            >
+              Ver los planes
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </a>
           </div>
         </div>
       </div>

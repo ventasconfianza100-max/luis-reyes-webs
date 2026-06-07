@@ -4,7 +4,7 @@ const links = [
   { label: 'Profesionales', href: '/proyectos', route: true },
   { label: 'Empresas', href: '/proyectos-empresas', route: true },
   { label: 'Blog', href: '/blog', route: true },
-  { label: '¿Qué incluye?', href: '#incluye' },
+  { label: 'Planes', href: '#planes' },
   { label: 'Contacto', href: 'https://wa.me/56922012534', external: true },
 ]
 

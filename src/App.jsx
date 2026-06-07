@@ -3,7 +3,10 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
 import Stats from './components/Stats'
+import Testimonials from './components/Testimonials'
 import Features from './components/Features'
+import Pricing from './components/Pricing'
+import LeadMagnet from './components/LeadMagnet'
 import FAQ from './components/FAQ'
 import Footer from './components/Footer'
 import Decorations from './components/Decorations'
@@ -157,10 +160,13 @@ export default function App({ initialPath }) {
           <Services onNavigate={navigateTo} />
         </section>
         <Stats />
+        <Testimonials />
         <section id="incluye">
           <Features />
         </section>
+        <Pricing />
         <FAQ />
+        <LeadMagnet />
       </main>
       <Footer onNavigate={navigateTo} />
     </div>
