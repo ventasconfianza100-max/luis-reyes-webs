@@ -18,6 +18,14 @@ body {
   font-family: 'Sora', 'Inter', system-ui, sans-serif;
 }
 
+/* Accesibilidad: foco visible claro y consistente en interactivos */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
 /* Aparición suave al entrar en viewport (reveal on scroll).
    Se activa añadiendo la clase .is-visible vía IntersectionObserver. */
 .reveal {

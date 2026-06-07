@@ -7,6 +7,9 @@ import Stats from './components/Stats'
 import Features from './components/Features'
 import Pricing from './components/Pricing'
 import LeadMagnet from './components/LeadMagnet'
+import ProjectsShowcase from './components/ProjectsShowcase'
+import WhyPsychologist from './components/WhyPsychologist'
+import Reveal from './components/Reveal'
 import FAQ from './components/FAQ'
 import Footer from './components/Footer'
 import Decorations from './components/Decorations'
@@ -156,19 +159,36 @@ export default function App({ initialPath }) {
         <div id="inicio">
           <Hero onNavigate={navigateTo} />
         </div>
-        <div id="servicios">
-          <Services onNavigate={navigateTo} />
-        </div>
-        <Stats />
+        <Reveal>
+          <Stats />
+        </Reveal>
+        <Reveal>
+          <div id="servicios">
+            <Services onNavigate={navigateTo} />
+          </div>
+        </Reveal>
+        <Reveal>
+          <ProjectsShowcase onNavigate={navigateTo} />
+        </Reveal>
+        {/* Sección oscura de contraste (ritmo premium) */}
+        <WhyPsychologist />
         {/* Testimonios ocultos hasta tener reseñas REALES. Para reactivar,
             quita el comentario y reemplaza el contenido en Testimonials.jsx. */}
         {/* <Testimonials /> */}
-        <div id="incluye">
-          <Features />
-        </div>
-        <Pricing />
-        <FAQ />
-        <LeadMagnet />
+        <Reveal>
+          <div id="incluye">
+            <Features />
+          </div>
+        </Reveal>
+        <Reveal>
+          <Pricing />
+        </Reveal>
+        <Reveal>
+          <FAQ />
+        </Reveal>
+        <Reveal>
+          <LeadMagnet />
+        </Reveal>
       </main>
       <Footer onNavigate={navigateTo} />
     </div>
