@@ -3,7 +3,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
 import Stats from './components/Stats'
-import Testimonials from './components/Testimonials'
+// import Testimonials from './components/Testimonials' // oculto hasta tener reseñas reales
 import Features from './components/Features'
 import Pricing from './components/Pricing'
 import LeadMagnet from './components/LeadMagnet'
@@ -160,7 +160,9 @@ export default function App({ initialPath }) {
           <Services onNavigate={navigateTo} />
         </section>
         <Stats />
-        <Testimonials />
+        {/* Testimonios ocultos hasta tener reseñas REALES. Para reactivar,
+            quita el comentario y reemplaza el contenido en Testimonials.jsx. */}
+        {/* <Testimonials /> */}
         <section id="incluye">
           <Features />
         </section>
