@@ -73,7 +73,7 @@ export default function ProjectsShowcase({ onNavigate }) {
               event.preventDefault()
               onNavigate(p.href)
             }}
-            className="group block rounded-3xl bg-white border border-slate-100 shadow-soft p-5 transition-all hover:-translate-y-1.5 hover:shadow-lift focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
+            className="group block rounded-3xl bg-white border border-slate-100 shadow-soft p-5 transition-all hover:-translate-y-1 hover:shadow-lift focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
           >
             <MiniMock accent={p.accent} />
             <div className="mt-5">

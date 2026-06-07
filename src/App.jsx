@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import Services from './components/Services'
 import Stats from './components/Stats'
 // import Testimonials from './components/Testimonials' // oculto hasta tener reseñas reales
 import Features from './components/Features'
@@ -94,11 +93,8 @@ export default function App({ initialPath }) {
           </Reveal>
           <Reveal>
             <div id="servicios">
-              <Services onNavigate={navigateTo} />
+              <ProjectsShowcase onNavigate={navigateTo} />
             </div>
-          </Reveal>
-          <Reveal>
-            <ProjectsShowcase onNavigate={navigateTo} />
           </Reveal>
           {/* Sección oscura de contraste (ritmo premium) */}
           <WhyPsychologist />

@@ -62,6 +62,12 @@ function BrowserMockup() {
           <p className="text-slate-400 text-xs mt-1">desde Google</p>
         </div>
       </div>
+
+      {/* Segunda micro-señal */}
+      <div className="absolute -top-4 -right-3 bg-white rounded-xl shadow-soft border border-slate-100 px-3 py-2 hidden sm:flex items-center gap-2">
+        <span className="w-2 h-2 rounded-full bg-green-500" />
+        <p className="text-slate-700 font-semibold text-xs">Responde en 24 h</p>
+      </div>
     </div>
   )
 }

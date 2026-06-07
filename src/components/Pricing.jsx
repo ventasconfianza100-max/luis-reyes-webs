@@ -53,7 +53,7 @@ const plans = [
 
 function Check() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4 text-violet-500 flex-shrink-0 mt-0.5">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4 text-brand-500 flex-shrink-0 mt-0.5">
       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
     </svg>
   )
@@ -78,21 +78,21 @@ export default function Pricing() {
         {plans.map((plan) => (
           <div
             key={plan.name}
-            className={`relative rounded-3xl p-7 flex flex-col ${
+            className={`relative rounded-3xl p-7 flex flex-col transition-all hover:-translate-y-1 ${
               plan.highlight
-                ? 'bg-white shadow-xl border-2 border-violet-400 ring-4 ring-violet-100'
-                : 'bg-white/80 backdrop-blur-sm shadow-md border border-white/60'
+                ? 'bg-white shadow-lift border-2 border-brand-400 ring-4 ring-brand-100'
+                : 'bg-white shadow-soft border border-slate-100'
             }`}
           >
             {plan.highlight && (
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-violet-500 text-white text-xs font-semibold px-4 py-1 rounded-full shadow-sm">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-500 text-white text-xs font-semibold px-4 py-1 rounded-full shadow-sm">
                 ⭐ Más elegido
               </span>
             )}
 
             <h3 className="text-lg font-bold text-slate-800">{plan.name}</h3>
             <div className="mt-2 mb-1 flex items-baseline gap-1">
-              <span className="text-3xl font-extrabold text-violet-600">{plan.price}</span>
+              <span className="text-3xl font-extrabold text-brand-600">{plan.price}</span>
               <span className="text-slate-400 text-sm">CLP</span>
             </div>
             <p className="text-slate-500 text-sm leading-relaxed mb-5">{plan.pitch}</p>
@@ -112,8 +112,8 @@ export default function Pricing() {
               rel="noopener noreferrer"
               className={`inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm transition-all w-full ${
                 plan.highlight
-                  ? 'bg-violet-500 text-white hover:bg-violet-600 shadow-sm hover:shadow-md'
-                  : 'bg-violet-50 text-violet-600 hover:bg-violet-100 border border-violet-200'
+                  ? 'bg-brand-600 text-white hover:bg-brand-700 shadow-soft hover:shadow-lift'
+                  : 'bg-brand-50 text-brand-600 hover:bg-brand-100 border border-brand-200'
               }`}
             >
               {plan.cta}
@@ -127,7 +127,7 @@ export default function Pricing() {
 
       {/* Garantía / reversión de riesgo */}
       <div className="mt-8 max-w-3xl mx-auto rounded-2xl bg-brand-50/70 border border-brand-100 p-5 flex items-start gap-3">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 text-violet-500 flex-shrink-0">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 text-brand-500 flex-shrink-0">
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
         </svg>
         <p className="text-sm text-slate-600 leading-relaxed">
