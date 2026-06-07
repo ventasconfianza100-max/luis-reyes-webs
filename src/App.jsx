@@ -9,7 +9,9 @@ import Pricing from './components/Pricing'
 import LeadMagnet from './components/LeadMagnet'
 import ProjectsShowcase from './components/ProjectsShowcase'
 import WhyPsychologist from './components/WhyPsychologist'
+import Process from './components/Process'
 import Reveal from './components/Reveal'
+import FloatingWhatsApp from './components/FloatingWhatsApp'
 import FAQ from './components/FAQ'
 import Footer from './components/Footer'
 import Decorations from './components/Decorations'
@@ -60,137 +62,77 @@ export default function App({ initialPath }) {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  const isProjectsPage = path === '/proyectos'
-  const isBusinessProjectsPage = path === '/proyectos-empresas'
-  const isClinicalProjectPage = path === '/proyectos/sitio-psicologa-clinica'
-  const isTherapyOnlineProjectPage = path === '/proyectos/consulta-terapeutica-online'
-  const isProfessionalProfileProjectPage = path === '/proyectos/perfil-profesional-redes'
-  const isClinicBusinessProjectPage = path === '/proyectos-empresas/clinica-centro-atencion'
-  const isSchedulePage = path === '/agenda'
-  const isBlogIndex = path === '/blog'
-  const isBlogPost = path.startsWith('/blog/')
-
-  if (isSchedulePage) {
-    return (
-      <div className="min-h-screen">
-        <Decorations />
-        <SchedulePage onNavigate={navigateTo} />
-      </div>
-    )
-  }
-
-  if (isBlogIndex) {
-    return (
-      <div className="min-h-screen">
-        <Decorations />
-        <BlogPage onNavigate={navigateTo} />
-      </div>
-    )
-  }
-
-  if (isBlogPost) {
-    return (
-      <div className="min-h-screen">
-        <Decorations />
-        <BlogPostPage slug={path.replace('/blog/', '')} onNavigate={navigateTo} />
-      </div>
-    )
-  }
-
-  if (isClinicalProjectPage) {
-    return (
-      <div className="min-h-screen">
-        <Decorations />
-        <ClinicalPsychologistProjectPage onNavigate={navigateTo} />
-      </div>
-    )
-  }
-
-  if (isTherapyOnlineProjectPage) {
-    return (
-      <div className="min-h-screen">
-        <Decorations />
-        <TherapyOnlineProjectPage onNavigate={navigateTo} />
-      </div>
-    )
-  }
-
-  if (isProfessionalProfileProjectPage) {
-    return (
-      <div className="min-h-screen">
-        <Decorations />
-        <ProfessionalProfileProjectPage onNavigate={navigateTo} />
-      </div>
-    )
-  }
-
-  if (isClinicBusinessProjectPage) {
-    return (
-      <div className="min-h-screen">
-        <Decorations />
-        <ClinicBusinessProjectPage onNavigate={navigateTo} />
-      </div>
-    )
-  }
-
-  if (isProjectsPage) {
-    return (
-      <div className="min-h-screen">
-        <Decorations />
-        <ProjectsPage onNavigate={navigateTo} />
-      </div>
-    )
-  }
-
-  if (isBusinessProjectsPage) {
-    return (
-      <div className="min-h-screen">
-        <Decorations />
-        <BusinessProjectsPage onNavigate={navigateTo} />
-      </div>
+  let content
+  if (path === '/agenda') {
+    content = <SchedulePage onNavigate={navigateTo} />
+  } else if (path === '/blog') {
+    content = <BlogPage onNavigate={navigateTo} />
+  } else if (path.startsWith('/blog/')) {
+    content = <BlogPostPage slug={path.replace('/blog/', '')} onNavigate={navigateTo} />
+  } else if (path === '/proyectos/sitio-psicologa-clinica') {
+    content = <ClinicalPsychologistProjectPage onNavigate={navigateTo} />
+  } else if (path === '/proyectos/consulta-terapeutica-online') {
+    content = <TherapyOnlineProjectPage onNavigate={navigateTo} />
+  } else if (path === '/proyectos/perfil-profesional-redes') {
+    content = <ProfessionalProfileProjectPage onNavigate={navigateTo} />
+  } else if (path === '/proyectos-empresas/clinica-centro-atencion') {
+    content = <ClinicBusinessProjectPage onNavigate={navigateTo} />
+  } else if (path === '/proyectos') {
+    content = <ProjectsPage onNavigate={navigateTo} />
+  } else if (path === '/proyectos-empresas') {
+    content = <BusinessProjectsPage onNavigate={navigateTo} />
+  } else {
+    content = (
+      <>
+        <Navbar onNavigate={navigateTo} />
+        <main>
+          <div id="inicio">
+            <Hero onNavigate={navigateTo} />
+          </div>
+          <Reveal>
+            <Stats />
+          </Reveal>
+          <Reveal>
+            <div id="servicios">
+              <Services onNavigate={navigateTo} />
+            </div>
+          </Reveal>
+          <Reveal>
+            <ProjectsShowcase onNavigate={navigateTo} />
+          </Reveal>
+          {/* Sección oscura de contraste (ritmo premium) */}
+          <WhyPsychologist />
+          <Reveal>
+            <Process />
+          </Reveal>
+          {/* Testimonios ocultos hasta tener reseñas REALES. Para reactivar,
+              quita el comentario y reemplaza el contenido en Testimonials.jsx. */}
+          {/* <Testimonials /> */}
+          <Reveal>
+            <div id="incluye">
+              <Features />
+            </div>
+          </Reveal>
+          <Reveal>
+            <Pricing />
+          </Reveal>
+          <Reveal>
+            <FAQ />
+          </Reveal>
+          <Reveal>
+            <LeadMagnet />
+          </Reveal>
+        </main>
+        <Footer onNavigate={navigateTo} />
+      </>
     )
   }
 
   return (
     <div className="min-h-screen">
       <Decorations />
-      <Navbar onNavigate={navigateTo} />
-      <main>
-        <div id="inicio">
-          <Hero onNavigate={navigateTo} />
-        </div>
-        <Reveal>
-          <Stats />
-        </Reveal>
-        <Reveal>
-          <div id="servicios">
-            <Services onNavigate={navigateTo} />
-          </div>
-        </Reveal>
-        <Reveal>
-          <ProjectsShowcase onNavigate={navigateTo} />
-        </Reveal>
-        {/* Sección oscura de contraste (ritmo premium) */}
-        <WhyPsychologist />
-        {/* Testimonios ocultos hasta tener reseñas REALES. Para reactivar,
-            quita el comentario y reemplaza el contenido en Testimonials.jsx. */}
-        {/* <Testimonials /> */}
-        <Reveal>
-          <div id="incluye">
-            <Features />
-          </div>
-        </Reveal>
-        <Reveal>
-          <Pricing />
-        </Reveal>
-        <Reveal>
-          <FAQ />
-        </Reveal>
-        <Reveal>
-          <LeadMagnet />
-        </Reveal>
-      </main>
-      <Footer onNavigate={navigateTo} />
+      {content}
+      <FloatingWhatsApp />
     </div>
   )
 }

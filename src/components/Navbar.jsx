@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 const links = [
   { label: 'Inicio', href: '#inicio' },
   { label: 'Servicios', href: '#servicios' },
@@ -9,15 +11,18 @@ const links = [
 ]
 
 export default function Navbar({ onNavigate }) {
-  const handleClick = (event, link) => {
-    if (!link.route) return
+  const [open, setOpen] = useState(false)
 
-    event.preventDefault()
-    onNavigate(link.href)
+  const handleClick = (event, link) => {
+    if (link.route) {
+      event.preventDefault()
+      onNavigate(link.href)
+    }
+    setOpen(false)
   }
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/70 backdrop-blur-md border-b border-white/50 shadow-sm">
+    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <a
@@ -25,6 +30,7 @@ export default function Navbar({ onNavigate }) {
           onClick={(event) => {
             event.preventDefault()
             onNavigate('/')
+            setOpen(false)
           }}
           className="font-display font-bold text-slate-900 text-lg tracking-tight"
         >
@@ -32,7 +38,7 @@ export default function Navbar({ onNavigate }) {
         </a>
 
         {/* Links — desktop */}
-        <div className="hidden sm:flex items-center gap-1">
+        <div className="hidden md:flex items-center gap-1">
           {links.map((link) => (
             <a
               key={link.label}
@@ -42,8 +48,8 @@ export default function Navbar({ onNavigate }) {
               rel={link.external ? 'noopener noreferrer' : undefined}
               className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
                 link.external
-                  ? 'bg-violet-500 text-white hover:bg-violet-600 ml-2'
-                  : 'text-slate-600 hover:text-violet-600 hover:bg-violet-50'
+                  ? 'bg-brand-600 text-white hover:bg-brand-700 ml-2'
+                  : 'text-slate-600 hover:text-brand-700 hover:bg-brand-50'
               }`}
             >
               {link.label}
@@ -51,18 +57,47 @@ export default function Navbar({ onNavigate }) {
           ))}
         </div>
 
-        {/* Mobile — solo botón contacto */}
-        <a
-          href="/proyectos"
-          onClick={(event) => {
-            event.preventDefault()
-            onNavigate('/proyectos')
-          }}
-          className="sm:hidden bg-violet-500 text-white text-sm font-medium px-4 py-2 rounded-lg hover:bg-violet-600 transition-all"
+        {/* Botón hamburguesa — móvil */}
+        <button
+          type="button"
+          aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+          className="md:hidden w-10 h-10 flex items-center justify-center rounded-lg text-slate-700 hover:bg-brand-50"
         >
-          Proyectos
-        </a>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
+            {open ? (
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+            )}
+          </svg>
+        </button>
       </div>
+
+      {/* Panel móvil */}
+      {open && (
+        <div className="md:hidden border-t border-slate-200/60 bg-white">
+          <div className="px-6 py-4 flex flex-col gap-1">
+            {links.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={(event) => handleClick(event, link)}
+                target={link.external ? '_blank' : undefined}
+                rel={link.external ? 'noopener noreferrer' : undefined}
+                className={`px-3 py-2.5 rounded-lg text-sm font-medium transition-all ${
+                  link.external
+                    ? 'bg-brand-600 text-white hover:bg-brand-700 text-center mt-1'
+                    : 'text-slate-700 hover:text-brand-700 hover:bg-brand-50'
+                }`}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   )
 }
