@@ -10,14 +10,14 @@ export const metaByPath = {
       'Diseño y programación de páginas web para negocios en Chile: tiendas online, empresas de servicios y profesionales. Sitios rápidos, optimizados para Google y pensados para captar clientes. Talca, Región del Maule.',
   },
   '/proyectos': {
-    title: 'Proyectos de páginas web para psicólogos | Luis Reyes Castro',
+    title: 'Proyectos de páginas web para profesionales | Luis Reyes Castro',
     description:
-      'Ejemplos reales de sitios web para psicólogos y terapeutas en Chile: consulta clínica, terapia online y perfil profesional para redes. Mira los proyectos.',
+      'Ejemplos de sitios web para profesionales independientes en Chile: landing profesional, captación de clientes y presencia digital. Mira los proyectos.',
   },
   '/proyectos-empresas': {
-    title: 'Páginas web para clínicas y centros de salud | Luis Reyes Castro',
+    title: 'Páginas web para empresas, negocios y tiendas | Luis Reyes Castro',
     description:
-      'Diseño web para clínicas, centros de atención psicológica y empresas de salud en Chile. Sitios profesionales que generan confianza y captan pacientes.',
+      'Diseño web para empresas, negocios locales y tiendas online en Chile. Sitios profesionales que ordenan tu oferta, generan confianza y captan clientes.',
   },
   '/proyectos/sitio-psicologa-clinica': {
     title: 'Sitio web para psicóloga clínica — Proyecto | Luis Reyes Castro',

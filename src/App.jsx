@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Stats from './components/Stats'
+import Services from './components/Services'
 // import Testimonials from './components/Testimonials' // oculto hasta tener reseñas reales
 import Features from './components/Features'
 import Pricing from './components/Pricing'
@@ -93,8 +94,11 @@ export default function App({ initialPath }) {
           </Reveal>
           <Reveal>
             <div id="servicios">
-              <ProjectsShowcase onNavigate={navigateTo} />
+              <Services onNavigate={navigateTo} />
             </div>
+          </Reveal>
+          <Reveal>
+            <ProjectsShowcase />
           </Reveal>
           {/* Sección oscura de contraste (ritmo premium) */}
           <WhyChooseMe />
