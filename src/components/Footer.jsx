@@ -1,6 +1,6 @@
 const footerLinks = [
   { label: 'Inicio', href: '/' },
-  { label: 'Profesionales', href: '/proyectos' },
+  { label: 'Proyectos', href: '/proyectos' },
   { label: 'Empresas', href: '/proyectos-empresas' },
   { label: 'Blog', href: '/blog' },
   { label: 'Agenda', href: '/agenda' },
@@ -53,7 +53,7 @@ export default function Footer({ onNavigate }) {
               Luis Reyes <span className="text-brand-400">Castro</span>
             </p>
             <p className="mt-3 text-sm text-slate-400 leading-relaxed max-w-xs">
-              Psicólogo titulado UTalca que diseña páginas web para psicólogos en todo Chile.
+              Diseño y desarrollo de páginas web para negocios en todo Chile: tiendas online, empresas y profesionales.
             </p>
             <div className="mt-5 flex gap-3">
               {socials.map((s) => (
@@ -92,7 +92,7 @@ export default function Footer({ onNavigate }) {
           <div>
             <p className="text-sm font-semibold text-white uppercase tracking-wider mb-4">¿Hablamos?</p>
             <p className="text-sm text-slate-400 mb-4 leading-relaxed">
-              Una reunión sin compromiso para ver cómo tu web puede traerte más pacientes.
+              Una reunión sin compromiso para ver cómo tu web puede traerte más clientes.
             </p>
             <a
               href="/agenda"
@@ -113,7 +113,7 @@ export default function Footer({ onNavigate }) {
         </div>
 
         <div className="mt-12 pt-6 border-t border-white/10 text-center text-xs text-slate-500">
-          © {new Date().getFullYear()} Luis Reyes Castro · Diseño web para psicólogos en Chile
+          © {new Date().getFullYear()} Luis Reyes Castro · Diseño y desarrollo web en Chile
         </div>
       </div>
     </footer>

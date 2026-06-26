@@ -3,20 +3,20 @@ import Section from './Section'
 
 const faqs = [
   {
-    q: '¿Cuánto cuesta una página web para psicólogos en Chile?',
-    a: 'Trabajo con tres planes claros: Esencial ($90.000), Profesional ($190.000) y Premium ($320.000), según lo que necesites. Todos parten con una reunión gratuita para definir el alcance, sin sorpresas en el precio.',
+    q: '¿Cuánto cuesta una página web en Chile?',
+    a: 'Trabajo con tres planes claros: Esencial ($90.000), Profesional ($190.000) y Premium ($320.000), según lo que necesites. Una tienda online o un sitio multipágina se cotiza aparte según el alcance. Todos parten con una reunión gratuita, sin sorpresas en el precio.',
   },
   {
     q: '¿Cuánto tiempo tarda en estar lista mi página web?',
     a: 'El tiempo promedio de entrega es 2 semanas desde que confirmamos el proyecto. Trabajo de forma organizada para cumplir los plazos sin apuros de último minuto.',
   },
   {
-    q: '¿Por qué contratar a un psicólogo para diseñar mi web?',
-    a: 'Porque entiendo el rubro desde adentro. Sé cómo piensa un paciente cuando busca psicólogo online, qué lo genera confianza, qué le genera dudas, y cómo redactar tu perfil para que conecte de verdad. No es solo diseño bonito, es estrategia.',
+    q: '¿Qué tipo de páginas web haces?',
+    a: 'Sitios para profesionales independientes, tiendas online con carrito y panel de administración, y webs multipágina para empresas de servicios con SEO local. He desarrollado proyectos reales en estos tres rubros; en una reunión puedo mostrarte ejemplos según lo que necesites.',
   },
   {
-    q: '¿Puedo tener una página web si soy psicólogo independiente en Talca o regiones?',
-    a: 'Absolutamente. Trabajo con psicólogos de todo Chile de forma 100% online. He atendido profesionales en Talca, Santiago, Concepción y otras ciudades. La reunión de coordinación también es por videollamada.',
+    q: '¿Puedo tener una página web si estoy en Talca o en regiones?',
+    a: 'Absolutamente. Trabajo con clientes de todo Chile de forma 100% online. La reunión de coordinación es por videollamada o WhatsApp, así que la distancia no es problema.',
   },
   {
     q: '¿Qué pasa después de que me entregan la página web?',

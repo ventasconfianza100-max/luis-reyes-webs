@@ -3,7 +3,7 @@ import { useState } from 'react'
 const links = [
   { label: 'Inicio', href: '#inicio' },
   { label: 'Servicios', href: '#servicios' },
-  { label: 'Profesionales', href: '/proyectos', route: true },
+  { label: 'Proyectos', href: '/proyectos', route: true },
   { label: 'Empresas', href: '/proyectos-empresas', route: true },
   { label: 'Blog', href: '/blog', route: true },
   { label: 'Planes', href: '#planes' },

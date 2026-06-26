@@ -15,7 +15,7 @@ function BrowserMockup() {
           <span className="w-3 h-3 rounded-full bg-amber-400" />
           <span className="w-3 h-3 rounded-full bg-green-400" />
           <div className="ml-3 flex-1 h-5 rounded-md bg-white border border-slate-200 text-[10px] text-slate-400 flex items-center px-2">
-            tuconsulta.cl
+            tunegocio.cl
           </div>
         </div>
 
@@ -58,7 +58,7 @@ function BrowserMockup() {
           </svg>
         </div>
         <div>
-          <p className="text-slate-800 font-bold text-sm leading-none">+ Pacientes</p>
+          <p className="text-slate-800 font-bold text-sm leading-none">+ Clientes</p>
           <p className="text-slate-400 text-xs mt-1">desde Google</p>
         </div>
       </div>
@@ -79,18 +79,19 @@ export default function Hero({ onNavigate }) {
         {/* Columna texto */}
         <div>
           <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600 mb-5">
-            Psicólogo + Diseñador web · Talca
+            Desarrollo web · Talca, Chile
           </span>
 
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05] text-slate-900">
-            Webs para psicólogos que convierten visitas en{' '}
-            <span className="text-brand-600">pacientes</span>.
+            Sitios web que traen{' '}
+            <span className="text-brand-600">clientes</span> a tu negocio.
           </h1>
 
           <p className="mt-6 text-lg text-slate-600 leading-relaxed max-w-xl">
-            Soy Luis Reyes Castro, psicólogo titulado UTalca. Diseño sitios pensados
-            desde la lógica del paciente que está decidiendo, para que tu web no solo
-            se vea bien: que te llene la agenda.
+            Soy Luis Reyes Castro. Diseño y programo sitios rápidos, que rankean en
+            Google y están pensados para que tu negocio reciba más contactos —
+            tiendas online, empresas de servicios y profesionales. Mi formación como
+            psicólogo me ayuda a entender a quien decide del otro lado.
           </p>
 
           {/* Doble CTA */}

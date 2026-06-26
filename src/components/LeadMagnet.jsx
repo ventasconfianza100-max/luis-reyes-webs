@@ -3,13 +3,13 @@ import Section from './Section'
 const WHATSAPP = '56922012534'
 
 const waLink = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
-  'Hola Luis, quiero el checklist gratis: las 7 cosas que la web de un psicólogo necesita para conseguir pacientes.'
+  'Hola Luis, quiero el checklist gratis: las 7 cosas que la web de un negocio necesita para conseguir clientes.'
 )}`
 
 const items = [
-  'Qué secciones generan confianza en un paciente',
-  'El error que hace que te escriban por Instagram y no agenden',
-  'Cómo aparecer en Google cuando buscan psicólogo en tu ciudad',
+  'Qué secciones generan confianza en un cliente nuevo',
+  'El error que hace que te escriban por Instagram y no compren ni coticen',
+  'Cómo aparecer en Google cuando buscan lo que ofreces en tu ciudad',
 ]
 
 export default function LeadMagnet() {
@@ -17,9 +17,9 @@ export default function LeadMagnet() {
     <Section id="checklist">
       <div className="rounded-3xl bg-brand-600 text-white shadow-lift p-10 md:p-14 text-center">
         <span className="inline-block text-3xl mb-3">🎁</span>
-        <h2 className="font-display text-3xl md:text-4xl font-bold mb-2">Checklist gratis para psicólogos</h2>
+        <h2 className="font-display text-3xl md:text-4xl font-bold mb-2">Checklist gratis para tu web</h2>
         <p className="text-brand-100 text-sm md:text-base mb-6 max-w-md mx-auto">
-          Las 7 cosas que la web de un psicólogo necesita para convertir visitas en pacientes. Te lo
+          Las 7 cosas que la web de un negocio necesita para convertir visitas en clientes. Te lo
           envío por WhatsApp, sin costo.
         </p>
 

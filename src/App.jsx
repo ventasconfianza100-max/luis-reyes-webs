@@ -7,7 +7,7 @@ import Features from './components/Features'
 import Pricing from './components/Pricing'
 import LeadMagnet from './components/LeadMagnet'
 import ProjectsShowcase from './components/ProjectsShowcase'
-import WhyPsychologist from './components/WhyPsychologist'
+import WhyChooseMe from './components/WhyChooseMe'
 import Process from './components/Process'
 import Reveal from './components/Reveal'
 import FloatingWhatsApp from './components/FloatingWhatsApp'
@@ -97,7 +97,7 @@ export default function App({ initialPath }) {
             </div>
           </Reveal>
           {/* Sección oscura de contraste (ritmo premium) */}
-          <WhyPsychologist />
+          <WhyChooseMe />
           <Reveal>
             <Process />
           </Reveal>

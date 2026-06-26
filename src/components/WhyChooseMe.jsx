@@ -1,14 +1,14 @@
 const points = [
   {
-    title: 'Entiendo el rubro desde adentro',
-    text: 'Soy psicólogo titulado UTalca. Sé cómo se siente un paciente buscando ayuda y qué le genera confianza.',
+    title: 'Entiendo a quien decide',
+    text: 'Soy psicólogo titulado UTalca. Eso me ayuda a leer al cliente que está del otro lado y a ordenar tu web para que genere confianza y acción, no solo para que se vea bonita.',
     icon: (
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
     ),
   },
   {
-    title: 'Diseño desde la lógica del paciente',
-    text: 'Cada sección, texto y botón está pensado para acompañar la decisión de quien está eligiendo psicólogo.',
+    title: 'Experiencia real, no plantillas',
+    text: 'He desarrollado sitios para clientes de rubros distintos: tiendas online con su propio panel, empresas de servicios y profesionales. Experiencia que aplico a tu proyecto.',
     icon: (
       <path strokeLinecap="round" strokeLinejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
     ),
@@ -22,7 +22,7 @@ const points = [
   },
 ]
 
-export default function WhyPsychologist() {
+export default function WhyChooseMe() {
   return (
     <section className="bg-ink text-white">
       <div className="max-w-6xl mx-auto px-6 py-20 md:py-28">
@@ -31,11 +31,11 @@ export default function WhyPsychologist() {
             La diferencia
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight leading-tight">
-            ¿Por qué un <span className="text-brand-400">psicólogo</span> diseña tu web?
+            ¿Por qué trabajar <span className="text-brand-400">conmigo</span>?
           </h2>
           <p className="mt-5 text-slate-300 text-lg leading-relaxed">
-            No es solo diseño bonito. Es una web hecha por alguien que entiende a tu paciente
-            tan bien como tú.
+            No es solo diseño bonito. Es una web hecha por alguien que entiende a tu
+            cliente y que ya tiene proyectos funcionando de verdad.
           </p>
         </div>
 

@@ -11,7 +11,7 @@ const plans = [
   {
     name: 'Plan Esencial',
     price: '$90.000',
-    pitch: 'Para el psicólogo que recién parte y necesita estar online ya.',
+    pitch: 'Para el negocio o profesional que recién parte y necesita estar online ya.',
     features: [
       'Landing page de una sección, 100% responsive',
       'Botón de WhatsApp y formulario de contacto',
@@ -24,12 +24,12 @@ const plans = [
   {
     name: 'Plan Profesional',
     price: '$190.000',
-    pitch: 'El más elegido: pensado para captar pacientes de verdad.',
+    pitch: 'El más elegido: pensado para captar clientes de verdad.',
     features: [
       'Sitio de 3-4 secciones a tu medida',
-      'Sistema de agendamiento de citas',
+      'Agendamiento o cotización por WhatsApp',
       'SEO local + ficha de Google Business',
-      'Textos escritos desde la lógica del paciente',
+      'Textos escritos para convertir visitas en contactos',
       'Blog para posicionar en Google',
     ],
     cta: 'Quiero el Profesional',
@@ -38,7 +38,7 @@ const plans = [
   {
     name: 'Plan Premium',
     price: '$320.000',
-    pitch: 'Para consultas y centros que quieren destacar y escalar.',
+    pitch: 'Para tiendas, empresas y negocios que quieren destacar y escalar.',
     features: [
       'Sitio multi-página completo',
       'Agendamiento + integraciones a medida',

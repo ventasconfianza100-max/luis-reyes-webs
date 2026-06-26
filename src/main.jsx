@@ -2,6 +2,10 @@ import { StrictMode } from 'react'
 import { createRoot, hydrateRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
+import { inject } from '@vercel/analytics'
+
+// Vercel Web Analytics — registra page views y navegación SPA (solo cliente).
+inject()
 
 const rootEl = document.getElementById('root')
 const initialPath = window.location.pathname

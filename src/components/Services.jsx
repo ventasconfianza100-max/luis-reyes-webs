@@ -9,13 +9,30 @@ const services = [
       </svg>
     ),
     iconBg: 'bg-violet-400',
-    tag: 'Proyecto Disponible',
+    tag: 'Disponible',
     tagStyle: 'bg-violet-50 text-violet-500 border border-violet-200',
-    title: 'Páginas web para profesionales',
+    title: 'Profesionales independientes',
     description:
-      'Diseños pensados para psicólogos, terapeutas y profesionales independientes que buscan captar clientes online',
+      'Sitios para psicólogos, terapeutas, consultores y profesionales que quieren captar clientes desde Google y redes.',
     cta: 'Ver ejemplos',
     ctaHref: '/proyectos',
+    available: true,
+  },
+  {
+    id: 'tiendas',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" className="w-7 h-7">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/>
+      </svg>
+    ),
+    iconBg: 'bg-amber-400',
+    tag: 'Disponible',
+    tagStyle: 'bg-amber-50 text-amber-600 border border-amber-200',
+    title: 'Tiendas y e-commerce',
+    description:
+      'Catálogo, carrito, pagos y panel de administración propio para vender online y gestionar tus productos.',
+    cta: 'Ver ejemplos',
+    ctaHref: '/proyectos-empresas',
     available: true,
   },
   {
@@ -26,11 +43,11 @@ const services = [
       </svg>
     ),
     iconBg: 'bg-emerald-400',
-    tag: 'Proyecto Disponible',
+    tag: 'Disponible',
     tagStyle: 'bg-emerald-50 text-emerald-500 border border-emerald-200',
-    title: 'Páginas web para empresas',
+    title: 'Empresas y servicios',
     description:
-      'Soluciones web profesionales para negocios, clínicas y empresas que quieren destacar en el mercado',
+      'Sitios multipágina con SEO local y cotización por WhatsApp para negocios de servicios que captan en su ciudad.',
     cta: 'Ver ejemplos',
     ctaHref: '/proyectos-empresas',
     available: true,
@@ -48,7 +65,7 @@ export default function Services({ onNavigate }) {
           Webs a medida para tu rubro
         </h2>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {services.map((s) => (
           <div key={s.id} className="bg-white rounded-3xl shadow-soft border border-slate-100 p-8 flex flex-col relative transition-all hover:-translate-y-1 hover:shadow-lift">
             {/* Tag */}

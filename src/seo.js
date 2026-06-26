@@ -5,9 +5,9 @@ export const SITE_URL = 'https://www.luisreyesweb.cl'
 
 export const metaByPath = {
   '/': {
-    title: 'Diseño Web para Psicólogos en Chile | Luis Reyes Castro — Talca',
+    title: 'Diseño y Desarrollo Web en Talca, Chile | Luis Reyes Castro',
     description:
-      'Psicólogo titulado UTalca que diseña sitios web para psicólogos en Chile. Páginas web profesionales pensadas desde la lógica del paciente que está decidiendo. Talca, Región del Maule.',
+      'Diseño y programación de páginas web para negocios en Chile: tiendas online, empresas de servicios y profesionales. Sitios rápidos, optimizados para Google y pensados para captar clientes. Talca, Región del Maule.',
   },
   '/proyectos': {
     title: 'Proyectos de páginas web para psicólogos | Luis Reyes Castro',
@@ -113,9 +113,9 @@ const businessSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
   '@id': `${SITE_URL}/#business`,
-  name: 'Luis Reyes Castro — Diseño Web para Psicólogos',
+  name: 'Luis Reyes Castro — Diseño y Desarrollo Web',
   description:
-    'Diseño de sitios web profesionales para psicólogos en Chile. Psicólogo titulado por la Universidad de Talca que entiende el rubro desde adentro.',
+    'Diseño y desarrollo de sitios web para negocios en Chile: tiendas online, empresas de servicios y profesionales. Talca, Región del Maule.',
   url: SITE_URL,
   image: `${SITE_URL}/og-image.jpg`,
   logo: `${SITE_URL}/profile.jpg`,
@@ -147,27 +147,27 @@ const businessSchema = {
   },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: 'Servicios de diseño web para psicólogos',
+    name: 'Servicios de diseño y desarrollo web',
     itemListElement: [
       {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'Página web para psicólogos y terapeutas',
+          name: 'Página web para profesionales independientes',
         },
       },
       {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'Página web para clínicas y centros de atención',
+          name: 'Tienda online / e-commerce con panel de administración',
         },
       },
       {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'Perfil profesional para redes (link en bio)',
+          name: 'Sitio web para empresas y negocios de servicios',
         },
       },
     ],
@@ -175,7 +175,7 @@ const businessSchema = {
   founder: {
     '@type': 'Person',
     name: 'Luis Reyes Castro',
-    jobTitle: 'Psicólogo y Diseñador Web',
+    jobTitle: 'Desarrollador y Diseñador Web',
     alumniOf: {
       '@type': 'EducationalOrganization',
       name: 'Universidad de Talca',
@@ -192,10 +192,10 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: '¿Cuánto cuesta una página web para psicólogos en Chile?',
+      name: '¿Cuánto cuesta una página web en Chile?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'El valor depende del tipo de proyecto. Una página web profesional para psicólogos o terapeutas parte desde $90.000 CLP. Agendemos una reunión gratuita para cotizar según lo que necesitas.',
+        text: 'El valor depende del tipo de proyecto. Una página web profesional parte desde $90.000 CLP, y una tienda online o sitio multipágina tiene un valor mayor según el alcance. Agendemos una reunión gratuita para cotizar según lo que necesitas.',
       },
     },
     {
@@ -208,18 +208,18 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: '¿Por qué contratar a un psicólogo para diseñar mi web?',
+      name: '¿Qué tipo de páginas web haces?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Porque entiendo el rubro desde adentro. Sé cómo piensa un paciente cuando busca psicólogo online, qué le genera confianza y cómo redactar tu perfil para que conecte de verdad.',
+        text: 'Hago sitios para profesionales independientes, tiendas online con carrito y panel de administración, y webs multipágina para empresas de servicios con SEO local. He desarrollado proyectos reales en estos tres rubros.',
       },
     },
     {
       '@type': 'Question',
-      name: '¿Puedo tener una página web si soy psicólogo independiente en Talca o regiones?',
+      name: '¿Puedo tener una página web si estoy en Talca o en regiones?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Absolutamente. Trabajo con psicólogos de todo Chile de forma 100% online. He atendido profesionales en Talca, Santiago, Concepción y otras ciudades.',
+        text: 'Absolutamente. Trabajo con clientes de todo Chile de forma 100% online. La reunión de coordinación también es por videollamada o WhatsApp.',
       },
     },
     {
@@ -278,12 +278,12 @@ function blogPostSchema(post) {
     author: {
       '@type': 'Person',
       name: 'Luis Reyes Castro',
-      jobTitle: 'Psicólogo y Diseñador Web',
+      jobTitle: 'Desarrollador y Diseñador Web',
       url: SITE_URL,
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Luis Reyes Castro — Diseño Web para Psicólogos',
+      name: 'Luis Reyes Castro — Diseño y Desarrollo Web',
       logo: { '@type': 'ImageObject', url: `${SITE_URL}/profile.jpg` },
     },
   }

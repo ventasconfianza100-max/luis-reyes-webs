@@ -17,7 +17,7 @@ const stats = [
       </svg>
     ),
     value: 'Atención directa',
-    label: 'Con un psicólogo, no una agencia',
+    label: 'Trabajas conmigo, no con una agencia',
   },
   {
     icon: (

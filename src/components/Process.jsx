@@ -4,12 +4,12 @@ const steps = [
   {
     n: '01',
     title: 'Reunión sin compromiso',
-    text: 'Conversamos por Meet, Zoom o WhatsApp sobre tu consulta, tus pacientes y qué necesitas. Sin costo y sin presión.',
+    text: 'Conversamos por Meet, Zoom o WhatsApp sobre tu negocio, tus clientes y qué necesitas. Sin costo y sin presión.',
   },
   {
     n: '02',
     title: 'Diseño a tu medida',
-    text: 'Creo tu web pensada desde la lógica del paciente: estructura, textos y diseño que generan confianza y agendan.',
+    text: 'Creo tu web pensada desde la lógica del cliente: estructura, textos y diseño que generan confianza y contactos.',
   },
   {
     n: '03',
