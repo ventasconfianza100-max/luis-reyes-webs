@@ -16,13 +16,11 @@ export default function Hero({ onNavigate }) {
             className="w-full h-full object-cover"
           />
         </picture>
-        {/* Fundido a la izquierda para que el texto se lea perfecto */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/50 to-transparent" />
-        {/* Toque cálido/lavanda en el borde inferior */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-brand-50/40 via-transparent to-transparent" />
+        {/* Fundido suave solo en el borde izquierdo: el texto se lee sin tapar la imagen */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white from-0% via-white/0 via-30% to-transparent" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 pt-16 pb-20 md:pt-24 md:pb-28">
+      <div className="relative max-w-7xl mx-auto px-6 pt-10 pb-12 md:pt-14 md:pb-16">
         <div className="md:w-[48%] md:pr-6">
           <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600 mb-5">
             Desarrollo web · Talca, Chile
