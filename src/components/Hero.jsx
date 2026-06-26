@@ -1,15 +1,29 @@
-import Section from './Section'
-
 export default function Hero({ onNavigate }) {
   return (
-    <Section
-      width="wide"
-      spacing="pt-16 pb-20 md:pt-24 md:pb-28"
-      className="relative bg-gradient-to-br from-white via-white to-brand-50/70"
-    >
-      <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-        {/* Columna texto */}
-        <div>
+    <section className="relative overflow-hidden bg-gradient-to-br from-white via-white to-brand-50/70">
+      {/* Imagen a sangre completa en la mitad derecha (desktop) */}
+      <div className="hidden md:block absolute inset-y-0 right-0 w-[55%] lg:w-[52%]">
+        <picture>
+          <source srcSet="/hero-workspace.webp" type="image/webp" />
+          <img
+            src="/hero-workspace.jpg"
+            alt="Escritorio de madera con una laptop mostrando un sitio web diseñado por Luis Reyes y un cuaderno con bocetos de wireframe — desarrollo web en Talca"
+            width="1200"
+            height="900"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            className="w-full h-full object-cover"
+          />
+        </picture>
+        {/* Fundido a la izquierda para que el texto se lea perfecto */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/50 to-transparent" />
+        {/* Toque cálido/lavanda en el borde inferior */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-brand-50/40 via-transparent to-transparent" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-6 pt-16 pb-20 md:pt-24 md:pb-28">
+        <div className="md:w-[48%] md:pr-6">
           <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600 mb-5">
             Desarrollo web · Talca, Chile
           </span>
@@ -53,8 +67,24 @@ export default function Hero({ onNavigate }) {
             </a>
           </div>
 
+          {/* Imagen en móvil: a todo el ancho, debajo del texto */}
+          <div className="md:hidden mt-10 -mx-6">
+            <picture>
+              <source srcSet="/hero-workspace.webp" type="image/webp" />
+              <img
+                src="/hero-workspace.jpg"
+                alt="Escritorio de madera con una laptop mostrando un sitio web diseñado por Luis Reyes y un cuaderno con bocetos de wireframe — desarrollo web en Talca"
+                width="1200"
+                height="900"
+                loading="eager"
+                decoding="async"
+                className="w-full object-cover"
+              />
+            </picture>
+          </div>
+
           {/* Tira de credibilidad */}
-          <div className="mt-11 flex items-center gap-4">
+          <div className="mt-10 md:mt-11 flex items-center gap-4">
             <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-brand-200 shadow-sm flex-shrink-0">
               <picture>
                 <source srcSet="/profile.webp" type="image/webp" />
@@ -80,29 +110,7 @@ export default function Hero({ onNavigate }) {
             </div>
           </div>
         </div>
-
-        {/* Columna visual: foto real del espacio de trabajo */}
-        <div className="md:pl-6">
-          <div className="relative">
-            {/* Halo morado (identidad) + tono cálido detrás */}
-            <div className="absolute -inset-6 bg-gradient-to-tr from-brand-200/40 via-amber-100/30 to-brand-300/20 blur-3xl rounded-[3rem] -z-10" />
-
-            <picture>
-              <source srcSet="/hero-workspace.webp" type="image/webp" />
-              <img
-                src="/hero-workspace.jpg"
-                alt="Escritorio de madera con una laptop mostrando un sitio web diseñado por Luis Reyes y un cuaderno con bocetos de wireframe — desarrollo web en Talca"
-                width="1200"
-                height="900"
-                loading="eager"
-                fetchpriority="high"
-                decoding="async"
-                className="w-full rounded-[1.5rem] border border-stone-200/70 shadow-lift object-cover"
-              />
-            </picture>
-          </div>
-        </div>
       </div>
-    </Section>
+    </section>
   )
 }
