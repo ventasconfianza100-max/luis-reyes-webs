@@ -97,7 +97,7 @@ export function articleMetaTagsFor(path) {
 // 👉 Cuando crees tu ficha de Google Business Profile, copia aquí la URL
 //    pública (la que aparece al hacer clic en tu negocio en Maps) para
 //    conectar el sitio con la ficha. Déjalo vacío si aún no la tienes.
-const GOOGLE_BUSINESS_URL = ''
+const GOOGLE_BUSINESS_URL = 'https://www.google.com/search?kgmid=/g/11z7ktq60d'
 
 const SAME_AS = [
   'https://www.linkedin.com/in/luis-reyes-castro-959261339/',
