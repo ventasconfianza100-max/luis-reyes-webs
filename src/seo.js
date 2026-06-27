@@ -14,6 +14,11 @@ export const metaByPath = {
     description:
       'Diseño y desarrollo de páginas web en Talca: tiendas online, empresas de servicios y profesionales. Sitios rápidos, optimizados para Google y pensados para captar clientes en Talca y la Región del Maule.',
   },
+  '/tienda-online-chile': {
+    title: 'Tienda Online en Chile | Catálogo y e-commerce a medida — Luis Reyes Castro',
+    description:
+      'Tiendas online y catálogos a medida en Chile: categorías, tallas, stock, carrito o consulta por WhatsApp y panel de administración propio, sin mensualidades. Envíos a todo Chile.',
+  },
   '/proyectos': {
     title: 'Proyectos de páginas web para profesionales | Luis Reyes Castro',
     description:
@@ -241,6 +246,7 @@ const faqSchema = {
 // Etiquetas legibles para construir las migas de pan (breadcrumbs)
 const breadcrumbLabels = {
   '/diseno-web-talca': 'Diseño web en Talca',
+  '/tienda-online-chile': 'Tienda online en Chile',
   '/proyectos': 'Proyectos para profesionales',
   '/proyectos-empresas': 'Proyectos para empresas',
   '/proyectos/sitio-psicologa-clinica': 'Sitio para psicóloga clínica',

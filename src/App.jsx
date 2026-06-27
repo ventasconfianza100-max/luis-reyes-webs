@@ -25,6 +25,7 @@ import SchedulePage from './components/SchedulePage'
 import BlogPage from './components/BlogPage'
 import BlogPostPage from './components/BlogPostPage'
 import DisenoWebTalcaPage from './components/DisenoWebTalcaPage'
+import TiendaOnlineChilePage from './components/TiendaOnlineChilePage'
 
 import { getMeta, canonicalFor } from './seo'
 
@@ -66,6 +67,8 @@ export default function App({ initialPath }) {
   let content
   if (path === '/diseno-web-talca') {
     content = <DisenoWebTalcaPage onNavigate={navigateTo} />
+  } else if (path === '/tienda-online-chile') {
+    content = <TiendaOnlineChilePage onNavigate={navigateTo} />
   } else if (path === '/agenda') {
     content = <SchedulePage onNavigate={navigateTo} />
   } else if (path === '/blog') {
