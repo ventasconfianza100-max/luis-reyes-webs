@@ -20,6 +20,143 @@
 
 export const blogPosts = [
   {
+    slug: 'cuanto-cuesta-una-pagina-web-en-chile',
+    title: '¿Cuánto cuesta una página web en Chile en 2026?',
+    description:
+      'Cuánto cuesta una página web en Chile en 2026: rangos reales según el tipo de sitio (landing, web de empresa o tienda online), qué influye en el precio y cómo no pagar de más.',
+    category: 'Precios',
+    datePublished: '2026-06-27',
+    dateModified: '2026-06-27',
+    readingMinutes: 7,
+    excerpt:
+      'Una landing simple, una web de empresa y una tienda online no cuestan lo mismo. Te muestro los rangos reales en Chile y qué hace que un presupuesto suba o baje.',
+    blocks: [
+      {
+        t: 'p',
+        text: 'Es la primera pregunta de casi todos: "¿cuánto me va a costar?". Y la respuesta honesta es **depende de lo que necesites**, igual que un auto no tiene un precio único. Pero "depende" no te sirve para decidir, así que acá van rangos reales en Chile en 2026 y, más importante, **qué hace que un presupuesto suba o baje**.',
+      },
+      { t: 'h2', text: 'Rangos de precio según el tipo de sitio' },
+      {
+        t: 'p',
+        text: 'A grandes rasgos, los proyectos se ordenan en tres niveles:',
+      },
+      {
+        t: 'ul',
+        items: [
+          '**Landing / sitio de una página (desde ~$90.000):** ideal para profesionales o negocios que recién parten. Una sola página bien hecha, con contacto por WhatsApp y SEO básico.',
+          '**Web de empresa multipágina (~$190.000 a $350.000):** varias secciones o servicios, blog, SEO local y agendamiento. Para negocios que quieren aparecer en Google y recibir cotizaciones.',
+          '**Tienda online / catálogo (desde ~$350.000):** productos, categorías, carrito o consulta por WhatsApp y un panel para administrar precios y stock. El precio varía mucho según cuántas funciones necesites.',
+        ],
+      },
+      {
+        t: 'quote',
+        text: 'Un precio muy por debajo de estos rangos casi siempre significa plantilla genérica, sin SEO real y sin nadie que responda después de la entrega.',
+      },
+      { t: 'h2', text: 'Qué hace subir o bajar el precio' },
+      {
+        t: 'ul',
+        items: [
+          '**Cantidad de páginas y secciones:** más contenido, más trabajo.',
+          '**Funciones especiales:** carrito, pagos, reservas, login, panel de administración.',
+          '**Quién escribe los textos:** si los redactas tú, baja; si los escribo yo pensados para convertir, sube un poco pero rinde más.',
+          '**Diseño a medida vs. plantilla:** una identidad propia cuesta más que adaptar una plantilla, pero te diferencia.',
+          '**SEO y velocidad:** un sitio realmente optimizado para Google requiere trabajo técnico que una plantilla no trae.',
+        ],
+      },
+      { t: 'h2', text: 'Lo que SÍ debería venir incluido siempre' },
+      {
+        t: 'ul',
+        items: [
+          'Diseño responsive (se ve bien en celular).',
+          'Configuración de dominio y publicación.',
+          'SEO base: títulos, descripciones y estructura para que Google pueda indexarte.',
+          'Contacto fácil: WhatsApp, formulario o agenda.',
+          'Acompañamiento después de la entrega.',
+        ],
+      },
+      { t: 'h2', text: 'El costo que casi nadie menciona' },
+      {
+        t: 'p',
+        text: 'Además del desarrollo, considera el **dominio** (~$10.000 al año) y, según el caso, el **hosting**. Muchos sitios modernos se publican en plataformas con plan gratuito, así que ese costo puede ser cero. Te lo aclaro siempre antes de empezar, sin letra chica.',
+      },
+      { t: 'h2', text: 'Cómo pedir un presupuesto que se entienda' },
+      {
+        t: 'ol',
+        items: [
+          'Cuenta **qué vendes** y a quién.',
+          'Di si necesitas **vender online** o solo recibir contactos.',
+          'Junta ejemplos de webs que te gusten.',
+          'Pregunta **qué incluye y qué no** (dominio, soporte, cambios).',
+        ],
+      },
+      {
+        t: 'p',
+        text: 'Si quieres un número concreto para tu caso, **agenda una reunión sin costo** y lo vemos juntos. Trabajo con clientes de Talca y de todo Chile de forma online.',
+      },
+    ],
+  },
+  {
+    slug: 'pagina-web-para-tu-negocio-en-talca',
+    title: 'Página web para tu negocio en Talca: por dónde empezar',
+    description:
+      'Guía simple para tener la página web de tu negocio en Talca: qué tipo de sitio necesitas, cómo aparecer en Google localmente y los pasos para partir sin complicarte.',
+    category: 'Negocios',
+    datePublished: '2026-06-26',
+    dateModified: '2026-06-26',
+    readingMinutes: 6,
+    excerpt:
+      'Si tienes un negocio en Talca y todavía dependes solo de Instagram o del boca a boca, una web propia te ayuda a aparecer en Google cuando te buscan. Acá, por dónde partir.',
+    blocks: [
+      {
+        t: 'p',
+        text: 'Cada día, gente en Talca busca en Google "lo que tú vendes" más el nombre de la ciudad: "fumigación Talca", "tienda de ropa Talca", "kinesiólogo Talca". Si no tienes una web propia, **esos clientes están encontrando a tu competencia, no a ti**. Te explico cómo empezar sin complicarte.',
+      },
+      { t: 'h2', text: '1. Define qué tipo de web necesitas' },
+      {
+        t: 'p',
+        text: 'No todos los negocios necesitan lo mismo. En general:',
+      },
+      {
+        t: 'ul',
+        items: [
+          '**Si vendes servicios** (salud, técnico, mantención, educación): una web de varias páginas que explique lo que haces y reciba cotizaciones.',
+          '**Si vendes productos:** un catálogo o tienda online con categorías y consulta por WhatsApp.',
+          '**Si vendes tu trabajo personal** (profesional independiente): un sitio que genere confianza y facilite agendar.',
+        ],
+      },
+      { t: 'h2', text: '2. Apunta a aparecer en Google localmente' },
+      {
+        t: 'p',
+        text: 'Para un negocio local, dos cosas mueven la aguja más que cualquier otra:',
+      },
+      {
+        t: 'ul',
+        items: [
+          '**Tu ficha de Google Business:** es gratis y es lo que te hace aparecer en el mapa y en el "pack" de resultados locales. Créala y mantenla con fotos y horarios reales.',
+          '**Una web que mencione Talca y tu rubro:** Google necesita entender dónde estás y qué ofreces. Eso se logra con buenos títulos, textos y datos de tu zona.',
+        ],
+      },
+      {
+        t: 'quote',
+        text: 'La web y la ficha de Google se potencian: la ficha te da visibilidad local y la web te da la seriedad para que elijan llamarte a ti.',
+      },
+      { t: 'h2', text: '3. Haz que el contacto sea de un solo toque' },
+      {
+        t: 'p',
+        text: 'La mayoría de tus clientes te verá desde el celular. Un botón de WhatsApp visible, tu teléfono y tu ubicación a la mano convierten muchas más visitas en mensajes reales.',
+      },
+      { t: 'h2', text: '4. Empieza simple y crece después' },
+      {
+        t: 'p',
+        text: 'No necesitas el sitio perfecto el primer día. Es mejor publicar una web clara y honesta ahora, e ir agregando secciones, fotos o una tienda más adelante. Lo importante es **estar presente cuando te busquen**.',
+      },
+      {
+        t: 'p',
+        text: 'Si quieres, lo conversamos: **agenda una reunión sin costo** y vemos qué tipo de web le conviene a tu negocio. Trabajo en Talca y en todo Chile de forma online.',
+      },
+    ],
+  },
+  {
     slug: 'pagina-web-o-instagram-psicologos',
     title: '¿Necesito una página web si ya tengo Instagram? (psicólogos)',
     description:

@@ -45,9 +45,9 @@ export const metaByPath = {
       'Agenda una reunión sin compromiso con Luis Reyes Castro por Google Meet, Zoom o WhatsApp para cotizar la página web de tu consulta psicológica.',
   },
   '/blog': {
-    title: 'Blog para psicólogos: más pacientes y presencia online | Luis Reyes Castro',
+    title: 'Blog sobre diseño web, negocios y presencia online | Luis Reyes Castro',
     description:
-      'Artículos prácticos sobre cómo conseguir más pacientes, presencia digital y diseño web para psicólogos y terapeutas en Chile. Escrito por un psicólogo.',
+      'Artículos prácticos sobre diseño web, precios, presencia digital y cómo captar más clientes para tu negocio en Chile. Tiendas online, empresas y profesionales.',
   },
 }
 
@@ -296,7 +296,7 @@ function blogIndexSchema() {
     '@id': `${SITE_URL}/blog#blog`,
     name: 'Blog — Luis Reyes Castro',
     description:
-      'Artículos sobre cómo conseguir más pacientes, presencia digital y diseño web para psicólogos en Chile.',
+      'Artículos sobre diseño web, precios, presencia digital y cómo captar más clientes para tu negocio en Chile.',
     url: `${SITE_URL}/blog`,
     inLanguage: 'es-CL',
     publisher: { '@id': `${SITE_URL}/#business` },
