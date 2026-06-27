@@ -9,6 +9,11 @@ export const metaByPath = {
     description:
       'Diseño y programación de páginas web para negocios en Chile: tiendas online, empresas de servicios y profesionales. Sitios rápidos, optimizados para Google y pensados para captar clientes. Talca, Región del Maule.',
   },
+  '/diseno-web-talca': {
+    title: 'Diseño Web en Talca | Páginas web para negocios — Luis Reyes Castro',
+    description:
+      'Diseño y desarrollo de páginas web en Talca: tiendas online, empresas de servicios y profesionales. Sitios rápidos, optimizados para Google y pensados para captar clientes en Talca y la Región del Maule.',
+  },
   '/proyectos': {
     title: 'Proyectos de páginas web para profesionales | Luis Reyes Castro',
     description:
@@ -235,6 +240,7 @@ const faqSchema = {
 
 // Etiquetas legibles para construir las migas de pan (breadcrumbs)
 const breadcrumbLabels = {
+  '/diseno-web-talca': 'Diseño web en Talca',
   '/proyectos': 'Proyectos para profesionales',
   '/proyectos-empresas': 'Proyectos para empresas',
   '/proyectos/sitio-psicologa-clinica': 'Sitio para psicóloga clínica',

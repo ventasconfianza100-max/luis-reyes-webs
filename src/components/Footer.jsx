@@ -1,5 +1,6 @@
 const footerLinks = [
   { label: 'Inicio', href: '/' },
+  { label: 'Diseño web en Talca', href: '/diseno-web-talca' },
   { label: 'Proyectos', href: '/proyectos' },
   { label: 'Empresas', href: '/proyectos-empresas' },
   { label: 'Blog', href: '/blog' },

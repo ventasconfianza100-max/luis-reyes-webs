@@ -24,6 +24,7 @@ import ClinicBusinessProjectPage from './components/ClinicBusinessProjectPage'
 import SchedulePage from './components/SchedulePage'
 import BlogPage from './components/BlogPage'
 import BlogPostPage from './components/BlogPostPage'
+import DisenoWebTalcaPage from './components/DisenoWebTalcaPage'
 
 import { getMeta, canonicalFor } from './seo'
 
@@ -63,7 +64,9 @@ export default function App({ initialPath }) {
   }
 
   let content
-  if (path === '/agenda') {
+  if (path === '/diseno-web-talca') {
+    content = <DisenoWebTalcaPage onNavigate={navigateTo} />
+  } else if (path === '/agenda') {
     content = <SchedulePage onNavigate={navigateTo} />
   } else if (path === '/blog') {
     content = <BlogPage onNavigate={navigateTo} />
