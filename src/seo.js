@@ -19,6 +19,11 @@ export const metaByPath = {
     description:
       'Tiendas online y catálogos a medida en Chile: categorías, tallas, stock, carrito o consulta por WhatsApp y panel de administración propio, sin mensualidades. Envíos a todo Chile.',
   },
+  '/paginas-web-empresas-servicios': {
+    title: 'Páginas Web para Empresas de Servicios en Chile | Luis Reyes Castro',
+    description:
+      'Páginas web para empresas de servicios en Chile: fumigación, mantención, salud, educación, limpieza y servicios técnicos. Sitios multipágina con SEO local que captan cotizaciones por WhatsApp.',
+  },
   '/proyectos': {
     title: 'Proyectos de páginas web para profesionales | Luis Reyes Castro',
     description:
@@ -247,6 +252,7 @@ const faqSchema = {
 const breadcrumbLabels = {
   '/diseno-web-talca': 'Diseño web en Talca',
   '/tienda-online-chile': 'Tienda online en Chile',
+  '/paginas-web-empresas-servicios': 'Páginas web para empresas de servicios',
   '/proyectos': 'Proyectos para profesionales',
   '/proyectos-empresas': 'Proyectos para empresas',
   '/proyectos/sitio-psicologa-clinica': 'Sitio para psicóloga clínica',

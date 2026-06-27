@@ -26,6 +26,7 @@ import BlogPage from './components/BlogPage'
 import BlogPostPage from './components/BlogPostPage'
 import DisenoWebTalcaPage from './components/DisenoWebTalcaPage'
 import TiendaOnlineChilePage from './components/TiendaOnlineChilePage'
+import EmpresasServiciosPage from './components/EmpresasServiciosPage'
 
 import { getMeta, canonicalFor } from './seo'
 
@@ -69,6 +70,8 @@ export default function App({ initialPath }) {
     content = <DisenoWebTalcaPage onNavigate={navigateTo} />
   } else if (path === '/tienda-online-chile') {
     content = <TiendaOnlineChilePage onNavigate={navigateTo} />
+  } else if (path === '/paginas-web-empresas-servicios') {
+    content = <EmpresasServiciosPage onNavigate={navigateTo} />
   } else if (path === '/agenda') {
     content = <SchedulePage onNavigate={navigateTo} />
   } else if (path === '/blog') {
