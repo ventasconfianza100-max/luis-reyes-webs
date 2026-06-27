@@ -20,6 +20,128 @@
 
 export const blogPosts = [
   {
+    slug: 'como-aparecer-en-google-con-tu-negocio',
+    title: 'Cómo aparecer en Google con tu negocio (guía simple)',
+    description:
+      'Guía práctica para que tu negocio aparezca en Google: ficha de Google Business, página web con SEO local, reseñas y contenido. Pasos claros, sin tecnicismos.',
+    category: 'SEO',
+    datePublished: '2026-06-27',
+    dateModified: '2026-06-27',
+    readingMinutes: 7,
+    excerpt:
+      'Aparecer en Google no es magia ni suerte: es la suma de tu ficha de Google, una web bien hecha y reseñas reales. Te explico cada pieza en orden.',
+    blocks: [
+      {
+        t: 'p',
+        text: 'Casi todos los días alguien busca en Google exactamente lo que tú ofreces. La pregunta es: ¿te encuentran a ti o a tu competencia? Aparecer en Google **no es suerte**: es la suma de varias piezas que puedes ir armando. Te las explico en orden de impacto.',
+      },
+      { t: 'h2', text: '1. Tu ficha de Google Business (lo más rápido)' },
+      {
+        t: 'p',
+        text: 'Es gratis y es lo que te mete en el mapa y en el bloque de resultados locales (esos 3 negocios que salen arriba con estrellas). Si tienes un negocio local, **esto es lo primero**.',
+      },
+      {
+        t: 'ul',
+        items: [
+          'Créala en google.com/business y verifícala.',
+          'Elige bien la **categoría** (es lo que más influye en para qué búsquedas apareces).',
+          'Completa horario, zona de servicio, teléfono y sube fotos reales.',
+          'Enlaza tu página web desde la ficha.',
+        ],
+      },
+      { t: 'h2', text: '2. Una página web que Google entienda' },
+      {
+        t: 'p',
+        text: 'La ficha te da visibilidad, pero la web es la que te da seriedad y te permite posicionarte por más búsquedas. Para que Google la muestre necesita:',
+      },
+      {
+        t: 'ul',
+        items: [
+          '**Velocidad:** un sitio lento pierde posiciones y visitas.',
+          '**Títulos y textos claros** que mencionen lo que haces y tu ciudad.',
+          '**Estructura técnica** correcta: títulos, descripciones y un sitemap.',
+          '**Que se vea bien en el celular**, donde está la mayoría de tus clientes.',
+        ],
+      },
+      {
+        t: 'quote',
+        text: 'La ficha y la web se potencian: juntas, le dicen a Google que eres un negocio real, activo y relevante para tu zona.',
+      },
+      { t: 'h2', text: '3. Reseñas reales' },
+      {
+        t: 'p',
+        text: 'Las reseñas en tu ficha de Google son de lo que más mueve el ranking local, y además convencen a quien duda. Pídelas a tus clientes contentos: un mensaje simple con el enlace directo a dejar la reseña funciona mejor que esperar a que lo hagan solos.',
+      },
+      { t: 'h2', text: '4. Contenido que responde lo que la gente busca' },
+      {
+        t: 'p',
+        text: 'Cada artículo o página que responde una duda real ("cuánto cuesta", "cuál me conviene", "cómo funciona") es una puerta de entrada nueva desde Google. No necesitas escribir mucho: necesitas responder bien lo que tu cliente se pregunta antes de comprarte.',
+      },
+      { t: 'h2', text: 'Lo que tienes que recordar' },
+      {
+        t: 'p',
+        text: 'Aparecer en Google es un proceso, no un botón. Pero el orden es claro: **ficha + web bien hecha + reseñas + contenido**. Si quieres que tu negocio dé ese paso, conversémoslo: **agenda una reunión sin costo** y vemos por dónde partir.',
+      },
+    ],
+  },
+  {
+    slug: 'tienda-online-o-instagram-negocio',
+    title: '¿Tienda online o vender solo por Instagram? Qué te conviene',
+    description:
+      'Instagram o tienda online: ventajas, límites y cuándo conviene cada uno para vender productos en Chile. Cómo decidir según tu negocio sin perder ventas.',
+    category: 'Negocios',
+    datePublished: '2026-06-27',
+    dateModified: '2026-06-27',
+    readingMinutes: 6,
+    excerpt:
+      'Instagram es genial para mostrarte, pero vender ahí tiene límites: sin buscador, sin catálogo ordenado y sin aparecer en Google. Te ayudo a decidir.',
+    blocks: [
+      {
+        t: 'p',
+        text: 'Muchos negocios venden solo por Instagram y les funciona… hasta cierto punto. Llega un momento en que responder precios por DM, perder mensajes y no aparecer en Google empieza a costar ventas. ¿Conviene dar el salto a una tienda online? Veámoslo sin exagerar para ningún lado.',
+      },
+      { t: 'h2', text: 'Lo que Instagram hace bien' },
+      {
+        t: 'ul',
+        items: [
+          'Te da **alcance** y gente nueva que te descubre.',
+          'Muestra tu día a día y crea cercanía.',
+          'Es rápido y gratis para partir.',
+        ],
+      },
+      { t: 'h2', text: 'Dónde Instagram te empieza a frenar' },
+      {
+        t: 'ul',
+        items: [
+          '**No tiene buscador real:** quien quiere "el producto azul talla M" tiene que revisar fotos una por una.',
+          '**No aparece en Google:** quien busca tu producto en Google no te encuentra.',
+          '**Todo pasa por DM:** precios, stock y dudas se acumulan y se pierden mensajes (y ventas).',
+          '**No es tuyo:** si te suspenden la cuenta, pierdes tu catálogo y tus contactos.',
+        ],
+      },
+      { t: 'h2', text: 'Qué te da una tienda o catálogo online' },
+      {
+        t: 'ul',
+        items: [
+          'Productos **ordenados por categoría** con precios visibles.',
+          '**Búsqueda** para que encuentren rápido lo que quieren.',
+          'Aparecer en **Google** cuando buscan lo que vendes.',
+          'Carrito o **consulta directa por WhatsApp**, según prefieras.',
+          'Un **panel propio** para cambiar precios y stock cuando quieras.',
+        ],
+      },
+      { t: 'h2', text: 'Entonces, ¿cuál elijo?' },
+      {
+        t: 'p',
+        text: 'La respuesta no es "uno u otro": es **usar Instagram para mostrarte y una tienda para vender ordenado**. Instagram atrae, la tienda convierte y aparece en Google. Si ya pasas el día respondiendo precios por DM o tienes muchos productos, es señal clara de que te conviene una tienda.',
+      },
+      {
+        t: 'p',
+        text: 'Si quieres ver qué tipo de tienda le calza a tu negocio (y cuánto costaría), **escríbeme y lo vemos juntos**, sin compromiso.',
+      },
+    ],
+  },
+  {
     slug: 'cuanto-cuesta-una-pagina-web-en-chile',
     title: '¿Cuánto cuesta una página web en Chile en 2026?',
     description:
