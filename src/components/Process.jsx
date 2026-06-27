@@ -3,23 +3,23 @@ import Section from './Section'
 const steps = [
   {
     n: '01',
-    title: 'Reunión sin compromiso',
-    text: 'Conversamos por Meet, Zoom o WhatsApp sobre tu negocio, tus clientes y qué necesitas. Sin costo y sin presión.',
+    title: 'Conversamos',
+    text: 'Por Meet, Zoom o WhatsApp vemos tu negocio, tus clientes y qué necesitas. Sin costo y sin presión.',
   },
   {
     n: '02',
     title: 'Diseño a tu medida',
-    text: 'Creo tu web pensada desde la lógica del cliente: estructura, textos y diseño que generan confianza y contactos.',
+    text: 'Armo la estructura, los textos y el diseño pensados desde la lógica de quien decide contratarte.',
   },
   {
     n: '03',
-    title: 'Revisiones contigo',
-    text: 'Te muestro avances y ajustamos juntos hasta que quede como la necesitas. Tu opinión guía el resultado.',
+    title: 'Revisamos juntos',
+    text: 'Te muestro avances y ajustamos hasta que quede como la necesitas. Tu opinión guía el resultado.',
   },
   {
     n: '04',
     title: 'Entrega y soporte',
-    text: 'Publico tu sitio con dominio y SEO listos. Y no desaparezco: te acompaño después con dudas y mejoras.',
+    text: 'Publico tu sitio con dominio y SEO listos. Y no desaparezco: te acompaño con dudas y mejoras.',
   },
 ]
 
@@ -34,21 +34,25 @@ export default function Process() {
           Simple, claro y sin sorpresas
         </h2>
         <p className="text-slate-500">
-          De la primera conversación a tu web publicada, en un proceso ordenado.
+          De la primera conversación a tu web publicada, paso a paso y siempre contigo.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        {steps.map((s) => (
-          <div
-            key={s.n}
-            className="relative rounded-3xl bg-white border border-slate-100 shadow-soft p-6 transition-all hover:-translate-y-1 hover:shadow-lift"
-          >
-            <span className="font-display text-4xl font-extrabold text-brand-100">{s.n}</span>
-            <h3 className="font-display text-lg font-bold text-slate-900 mt-2 mb-2">{s.title}</h3>
-            <p className="text-slate-500 text-sm leading-relaxed">{s.text}</p>
-          </div>
-        ))}
+      <div className="relative">
+        {/* Línea conectora (desktop) */}
+        <div className="hidden md:block absolute top-6 left-[12%] right-[12%] h-px bg-gradient-to-r from-transparent via-brand-200 to-transparent" />
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-6">
+          {steps.map((s) => (
+            <div key={s.n} className="relative text-center md:px-2">
+              <div className="relative z-10 mx-auto w-12 h-12 rounded-full bg-white border border-brand-100 shadow-sm flex items-center justify-center font-display text-lg font-extrabold text-brand-600 mb-4">
+                {s.n}
+              </div>
+              <h3 className="font-display text-lg font-bold text-slate-900 mb-1.5">{s.title}</h3>
+              <p className="text-slate-500 text-sm leading-relaxed max-w-[15rem] mx-auto">{s.text}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </Section>
   )
