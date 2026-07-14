@@ -9,6 +9,7 @@ export default function FloatingWhatsApp() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Escríbeme por WhatsApp"
+      data-analytics="whatsapp_click_floating"
       className="fixed bottom-6 sm:bottom-5 right-5 z-50 flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-white font-semibold shadow-lg shadow-green-900/20 transition-transform hover:scale-105 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-700"
     >
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">

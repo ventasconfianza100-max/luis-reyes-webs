@@ -7,6 +7,7 @@ const links = [
   { label: 'Empresas', href: '/proyectos-empresas', route: true },
   { label: 'Blog', href: '/blog', route: true },
   { label: 'Planes', href: '#planes' },
+  { label: 'Diagnóstico', href: '/diagnostico-web', route: true },
   { label: 'Contacto', href: 'https://wa.me/56922012534', external: true },
 ]
 

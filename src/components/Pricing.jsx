@@ -70,7 +70,7 @@ export default function Pricing() {
           Planes claros, sin sorpresas
         </h2>
         <p className="text-slate-500">
-          Elige el que se ajusta a tu momento. Todos incluyen reunión inicial sin costo.
+          Elige el punto de partida que se ajusta a tu momento. Todos incluyen reunión inicial sin costo; el alcance final se confirma contigo.
         </p>
       </div>
 
@@ -86,7 +86,7 @@ export default function Pricing() {
           >
             {plan.highlight && (
               <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-500 text-white text-xs font-semibold px-4 py-1 rounded-full shadow-sm">
-                ⭐ Más elegido
+                Recomendado para captar consultas
               </span>
             )}
 
@@ -110,6 +110,7 @@ export default function Pricing() {
               href={wa(plan.name)}
               target="_blank"
               rel="noopener noreferrer"
+              data-analytics={`pricing_click_${plan.name.toLowerCase().replaceAll(' ', '_')}`}
               className={`inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm transition-all w-full ${
                 plan.highlight
                   ? 'bg-brand-600 text-white hover:bg-brand-700 shadow-soft hover:shadow-lift'
