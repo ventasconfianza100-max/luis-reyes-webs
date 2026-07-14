@@ -13,7 +13,7 @@ const services = [
       'Sitios para psicólogos, terapeutas, consultores y profesionales que necesitan explicar bien lo que hacen, mostrar experiencia y facilitar el contacto.',
     detail: 'agenda, WhatsApp, servicios, sobre mí y confianza inicial.',
     cta: 'Ver ejemplo profesional',
-    ctaHref: '/proyectos',
+    ctaHref: '/paginas-web-para-psicologos',
   },
   {
     num: '02',
@@ -27,7 +27,7 @@ const services = [
       'Catálogos o tiendas online con categorías, búsqueda, precios, stock, carrito o consulta directa por WhatsApp.',
     detail: 'productos, tallas, marcas, envíos o muchas categorías.',
     cta: 'Ver ejemplo de tienda',
-    ctaHref: '/proyectos-empresas',
+    ctaHref: '/catalogo-online-con-whatsapp',
   },
   {
     num: '03',

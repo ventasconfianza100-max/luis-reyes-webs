@@ -24,6 +24,24 @@ export const metaByPath = {
     description:
       'Páginas web para empresas de servicios en Chile: fumigación, mantención, salud, educación, limpieza y servicios técnicos. Sitios multipágina con SEO local que captan cotizaciones por WhatsApp.',
   },
+  '/paginas-web-para-psicologos': {
+    title: 'Páginas web para psicólogos en Chile | Luis Reyes Web',
+    description:
+      'Webs profesionales para psicólogos y consultas: presentación, enfoque, servicios, agendamiento, WhatsApp, privacidad y SEO local. Atención online en Chile.',
+  },
+  '/catalogo-online-con-whatsapp': {
+    title: 'Catálogo online con WhatsApp en Chile | Luis Reyes Web',
+    description:
+      'Catálogo online con fichas, categorías, precios y consulta por WhatsApp. Una alternativa simple a una tienda con pago online para negocios en Chile.',
+  },
+  '/sobre-luis': {
+    title: 'Sobre Luis Reyes | Psicólogo y desarrollador web en Talca',
+    description: 'Conoce a Luis Reyes Castro, psicólogo y desarrollador web en Talca. Diseño páginas claras, estratégicas y orientadas a generar confianza y contactos.',
+  },
+  '/diagnostico-web': {
+    title: 'Diagnóstico web para tu negocio | Luis Reyes Web',
+    description: 'Responde tres preguntas y recibe orientación para saber qué tipo de página web necesita tu negocio en Chile.',
+  },
   '/proyectos': {
     title: 'Proyectos de páginas web para profesionales | Luis Reyes Castro',
     description:
@@ -77,7 +95,7 @@ for (const post of blogPosts) {
 export const ROUTES = Object.keys(metaByPath)
 
 export function getMeta(path) {
-  return metaByPath[path] || metaByPath['/']
+  return metaByPath[path] || { title: 'Página no encontrada | Luis Reyes Web', description: 'La página solicitada no existe.', noindex: true }
 }
 
 export function canonicalFor(path) {
@@ -253,6 +271,10 @@ const breadcrumbLabels = {
   '/diseno-web-talca': 'Diseño web en Talca',
   '/tienda-online-chile': 'Tienda online en Chile',
   '/paginas-web-empresas-servicios': 'Páginas web para empresas de servicios',
+  '/paginas-web-para-psicologos': 'Páginas web para psicólogos',
+  '/catalogo-online-con-whatsapp': 'Catálogo online con WhatsApp',
+  '/sobre-luis': 'Sobre Luis',
+  '/diagnostico-web': 'Diagnóstico web',
   '/proyectos': 'Proyectos para profesionales',
   '/proyectos-empresas': 'Proyectos para empresas',
   '/proyectos/sitio-psicologa-clinica': 'Sitio para psicóloga clínica',
@@ -356,15 +378,53 @@ function breadcrumbSchema(path) {
 
 // Devuelve el array de objetos JSON-LD que corresponde a cada ruta.
 export function jsonLdFor(path) {
-  const schemas = [businessSchema]
+  const schemas = [businessSchema, {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE_URL}/#website`,
+    name: 'Luis Reyes Web',
+    url: SITE_URL,
+    publisher: { '@id': `${SITE_URL}/#business` },
+    inLanguage: 'es-CL',
+  }]
 
   if (path === '/') {
     schemas.push(faqSchema)
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: getMeta(path).title,
+      description: getMeta(path).description,
+      url: SITE_URL,
+      isPartOf: { '@id': `${SITE_URL}/#website` },
+      inLanguage: 'es-CL',
+    })
     return schemas
   }
 
   const bc = breadcrumbSchema(path)
   if (bc) schemas.push(bc)
+  schemas.push({
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: getMeta(path).title,
+    description: getMeta(path).description,
+    url: canonicalFor(path),
+    isPartOf: { '@id': `${SITE_URL}/#website` },
+    inLanguage: 'es-CL',
+  })
+
+  if (path === '/paginas-web-para-psicologos' || path === '/catalogo-online-con-whatsapp') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: getMeta(path).title.split(' | ')[0],
+      description: getMeta(path).description,
+      provider: { '@id': `${SITE_URL}/#business` },
+      areaServed: { '@type': 'Country', name: 'Chile' },
+      url: canonicalFor(path),
+    })
+  }
 
   if (path === '/blog') {
     schemas.push(blogIndexSchema())

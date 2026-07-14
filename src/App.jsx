@@ -27,6 +27,10 @@ import BlogPostPage from './components/BlogPostPage'
 import DisenoWebTalcaPage from './components/DisenoWebTalcaPage'
 import TiendaOnlineChilePage from './components/TiendaOnlineChilePage'
 import EmpresasServiciosPage from './components/EmpresasServiciosPage'
+import CommercialLandingPage from './components/CommercialLandingPage'
+import NotFoundPage from './components/NotFoundPage'
+import AboutPage from './components/AboutPage'
+import DiagnosticPage from './components/DiagnosticPage'
 
 import { getMeta, canonicalFor } from './seo'
 
@@ -57,6 +61,7 @@ export default function App({ initialPath }) {
     setTag('meta[property="og:title"]', 'content', meta.title)
     setTag('meta[property="og:description"]', 'content', meta.description)
     setTag('meta[property="og:url"]', 'content', canonicalUrl)
+    setTag('meta[name="robots"]', 'content', meta.noindex ? 'noindex, nofollow' : 'index, follow')
   }, [path])
 
   const navigateTo = (nextPath) => {
@@ -72,6 +77,14 @@ export default function App({ initialPath }) {
     content = <TiendaOnlineChilePage onNavigate={navigateTo} />
   } else if (path === '/paginas-web-empresas-servicios') {
     content = <EmpresasServiciosPage onNavigate={navigateTo} />
+  } else if (path === '/paginas-web-para-psicologos') {
+    content = <><Navbar onNavigate={navigateTo} /><CommercialLandingPage kind="psychologist" onNavigate={navigateTo} /><Footer onNavigate={navigateTo} /></>
+  } else if (path === '/catalogo-online-con-whatsapp') {
+    content = <><Navbar onNavigate={navigateTo} /><CommercialLandingPage kind="catalog" onNavigate={navigateTo} /><Footer onNavigate={navigateTo} /></>
+  } else if (path === '/sobre-luis') {
+    content = <AboutPage onNavigate={navigateTo} />
+  } else if (path === '/diagnostico-web') {
+    content = <DiagnosticPage onNavigate={navigateTo} />
   } else if (path === '/agenda') {
     content = <SchedulePage onNavigate={navigateTo} />
   } else if (path === '/blog') {
@@ -90,51 +103,12 @@ export default function App({ initialPath }) {
     content = <ProjectsPage onNavigate={navigateTo} />
   } else if (path === '/proyectos-empresas') {
     content = <BusinessProjectsPage onNavigate={navigateTo} />
-  } else {
+  } else if (path === '/') {
     content = (
-      <>
-        <Navbar onNavigate={navigateTo} />
-        <main>
-          <div id="inicio">
-            <Hero onNavigate={navigateTo} />
-          </div>
-          <Reveal>
-            <Stats />
-          </Reveal>
-          <Reveal>
-            <div id="servicios">
-              <Services onNavigate={navigateTo} />
-            </div>
-          </Reveal>
-          <Reveal>
-            <ProjectsShowcase />
-          </Reveal>
-          {/* Sección oscura de contraste (ritmo premium) */}
-          <WhyChooseMe />
-          <Reveal>
-            <Process />
-          </Reveal>
-          {/* Testimonios ocultos hasta tener reseñas REALES. Para reactivar,
-              quita el comentario y reemplaza el contenido en Testimonials.jsx. */}
-          {/* <Testimonials /> */}
-          <Reveal>
-            <div id="incluye">
-              <Features />
-            </div>
-          </Reveal>
-          <Reveal>
-            <Pricing />
-          </Reveal>
-          <Reveal>
-            <FAQ />
-          </Reveal>
-          <Reveal>
-            <LeadMagnet />
-          </Reveal>
-        </main>
-        <Footer onNavigate={navigateTo} />
-      </>
+      <><Navbar onNavigate={navigateTo} /><main><div id="inicio"><Hero onNavigate={navigateTo} /></div><Reveal><Stats /></Reveal><Reveal><div id="servicios"><Services onNavigate={navigateTo} /></div></Reveal><Reveal><ProjectsShowcase /></Reveal><WhyChooseMe /><Reveal><Process /></Reveal><Reveal><div id="incluye"><Features /></div></Reveal><Reveal><Pricing /></Reveal><Reveal><FAQ /></Reveal><Reveal><LeadMagnet /></Reveal></main><Footer onNavigate={navigateTo} /></>
     )
+  } else {
+    content = <><Navbar onNavigate={navigateTo} /><NotFoundPage onNavigate={navigateTo} /><Footer onNavigate={navigateTo} /></>
   }
 
   return (
