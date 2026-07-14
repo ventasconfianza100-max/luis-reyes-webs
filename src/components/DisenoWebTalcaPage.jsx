@@ -119,6 +119,10 @@ export default function DisenoWebTalcaPage({ onNavigate }) {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>
               </a>
+              <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+                <a href="/paginas-web-para-psicologos" onClick={(e) => go(e, '/paginas-web-para-psicologos')} className="text-brand-700 font-semibold">Web para psicólogos →</a>
+                <a href="/catalogo-online-con-whatsapp" onClick={(e) => go(e, '/catalogo-online-con-whatsapp')} className="text-brand-700 font-semibold">Catálogo con WhatsApp →</a>
+              </div>
             </div>
             <ul className="space-y-3">
               {incluye.map((item) => (

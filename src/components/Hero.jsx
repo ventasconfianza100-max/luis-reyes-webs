@@ -1,8 +1,9 @@
 export default function Hero({ onNavigate }) {
+  const whatsapp = 'https://wa.me/56922012534?text=' + encodeURIComponent('Hola Luis, vi tu página y quiero cotizar una web para mi negocio.')
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-white via-white to-brand-50/70">
       {/* Imagen a sangre completa en la mitad derecha (desktop) */}
-      <div className="hidden md:block absolute inset-y-0 right-0 w-[55%] lg:w-[52%]">
+      <div className="hidden md:block absolute inset-y-6 right-6 w-[48%] lg:w-[47%] rounded-[2rem] overflow-hidden border border-white shadow-[0_24px_70px_-28px_rgba(15,23,42,0.45)]">
         <picture>
           <source srcSet="/hero-workspace.webp" type="image/webp" />
           <img
@@ -17,7 +18,11 @@ export default function Hero({ onNavigate }) {
           />
         </picture>
         {/* Fundido suave solo en el borde izquierdo: el texto se lee sin tapar la imagen */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white from-0% via-white/0 via-30% to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-slate-950/35 via-transparent to-transparent" />
+        <div className="absolute left-5 bottom-5 right-5 rounded-2xl bg-white/90 backdrop-blur-md border border-white/70 p-4 shadow-lg">
+          <p className="text-xs font-semibold uppercase tracking-wider text-brand-600">Diseño con intención</p>
+          <p className="mt-1 text-sm font-semibold text-slate-900">Una web que explica, convence y facilita el contacto.</p>
+        </div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 pt-10 pb-12 md:pt-14 md:pb-16">
@@ -27,28 +32,25 @@ export default function Hero({ onNavigate }) {
           </span>
 
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08] text-slate-900">
-            Sitios web que traen{' '}
-            <span className="text-brand-600">clientes</span> a tu negocio.
+            Páginas web para negocios, tiendas y profesionales en Chile
           </h1>
 
           <p className="mt-7 text-lg text-slate-600 leading-relaxed max-w-xl">
-            Soy Luis Reyes Castro. Diseño y programo sitios rápidos, que rankean en
-            Google y están pensados para que tu negocio reciba más contactos —
-            tiendas online, empresas de servicios y profesionales. Mi formación como
-            psicólogo me ayuda a entender a quien decide del otro lado.
+            Diseño sitios rápidos, administrables y preparados para aparecer en Google.
+            Trabajo desde Talca con clientes de todo Chile y adapto la estructura a la
+            forma en que vendes: por WhatsApp, agenda, cotizaciones o tienda online.
           </p>
 
           {/* Doble CTA */}
           <div className="mt-9 flex flex-wrap gap-3">
             <a
-              href="/agenda"
-              onClick={(event) => {
-                event.preventDefault()
-                onNavigate('/agenda')
-              }}
+              href={whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-analytics="whatsapp_click_home"
               className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-7 py-3.5 rounded-2xl text-sm transition-all shadow-[0_8px_24px_-10px_rgba(124,58,237,0.6)] hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
             >
-              Agenda una reunión
+              Cotizar por WhatsApp
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
@@ -64,6 +66,10 @@ export default function Hero({ onNavigate }) {
               Ver proyectos
             </a>
           </div>
+
+          <p className="mt-3 text-sm text-slate-500">
+            Atención directa desde Talca · Diseño adaptable a celular · Sin compromiso
+          </p>
 
           {/* Imagen en móvil: a todo el ancho, debajo del texto */}
           <div className="md:hidden mt-10 -mx-6">
@@ -107,6 +113,12 @@ export default function Hero({ onNavigate }) {
               </p>
             </div>
           </div>
+          <div className="mt-7 flex flex-wrap gap-2 text-xs font-medium text-slate-600">
+            {['Web para profesionales', 'Catálogos y tiendas', 'Empresas de servicios'].map((item) => (
+              <span key={item} className="rounded-full border border-slate-200 bg-white/80 px-3 py-1.5 shadow-sm">{item}</span>
+            ))}
+          </div>
+          <a href="/diagnostico-web" onClick={(event) => { event.preventDefault(); onNavigate('/diagnostico-web') }} className="inline-flex mt-4 text-sm font-semibold text-brand-700 hover:text-brand-800">¿No sabes qué necesitas? Haz el diagnóstico web →</a>
         </div>
       </div>
     </section>

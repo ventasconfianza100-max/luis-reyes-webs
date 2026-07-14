@@ -7,7 +7,8 @@ const projects = [
     result:
       'Web de varias páginas para un negocio de servicios que necesitaba aparecer en Google y recibir consultas sin intermediarios.',
     built: ['Páginas por cada servicio', 'SEO local para su ciudad', 'Cotización directa por WhatsApp', 'Sitemap + datos para Google'],
-    accent: 'from-rose-300 to-rose-500',
+    image: '/portfolio-servicios.webp',
+    alt: 'Sitio web real de una empresa de servicios en Talca, desarrollado por Luis Reyes',
     chip: 'bg-rose-50 text-rose-600 border-rose-200',
   },
   {
@@ -16,7 +17,8 @@ const projects = [
     result:
       'Tienda completa con su propio panel para que el dueño gestione productos, precios y stock sin depender de nadie ni pagar mensualidades.',
     built: ['Catálogo por categorías', 'Carrito de compras', 'Panel de administración propio', 'Envíos a todo Chile'],
-    accent: 'from-amber-300 to-amber-600',
+    image: '/portfolio-tienda.webp',
+    alt: 'Tienda online real con catálogo y carrito de compras, desarrollada por Luis Reyes',
     chip: 'bg-amber-50 text-amber-600 border-amber-200',
   },
   {
@@ -25,12 +27,13 @@ const projects = [
     result:
       'Web pensada para transmitir confianza y convertir la visita en contacto, para alguien que vende su servicio de forma personal.',
     built: ['Diseño que genera confianza', 'Agendamiento y contacto directo', 'Textos orientados a convertir', 'Optimizado para celular'],
-    accent: 'from-brand-300 to-brand-500',
+    image: '/portfolio-profesional.webp',
+    alt: 'Sitio web real de un profesional independiente con agendamiento online, desarrollado por Luis Reyes',
     chip: 'bg-brand-50 text-brand-600 border-brand-200',
   },
 ]
 
-function MiniMock({ accent }) {
+function SiteCapture({ image, alt }) {
   return (
     <div className="rounded-xl bg-white border border-slate-200 overflow-hidden shadow-soft">
       <div className="flex items-center gap-1.5 px-3 py-2 bg-slate-100 border-b border-slate-200">
@@ -38,16 +41,15 @@ function MiniMock({ accent }) {
         <span className="w-2 h-2 rounded-full bg-amber-300" />
         <span className="w-2 h-2 rounded-full bg-green-300" />
       </div>
-      <div className="p-4">
-        <div className={`h-20 rounded-lg bg-gradient-to-br ${accent} mb-3`} />
-        <div className="h-2 w-3/4 rounded bg-slate-200 mb-2" />
-        <div className="h-2 w-1/2 rounded bg-slate-200 mb-3" />
-        <div className="grid grid-cols-3 gap-2">
-          {[0, 1, 2].map((i) => (
-            <div key={i} className="h-8 rounded bg-slate-100" />
-          ))}
-        </div>
-      </div>
+      <img
+        src={image}
+        alt={alt}
+        width="1360"
+        height="900"
+        loading="lazy"
+        decoding="async"
+        className="w-full aspect-[1360/900] object-cover object-top"
+      />
     </div>
   )
 }
@@ -71,8 +73,8 @@ export default function ProjectsShowcase() {
           Lo que he construido
         </h2>
         <p className="text-slate-500">
-          Proyectos reales que he desarrollado para clientes. Por privacidad no muestro las marcas,
-          pero esto es exactamente lo que entregué en cada uno.
+          Capturas reales de sitios que he desarrollado y que hoy están funcionando.
+          Esto es exactamente lo que entregué en cada uno.
         </p>
       </div>
 
@@ -82,7 +84,7 @@ export default function ProjectsShowcase() {
             key={p.name}
             className="flex flex-col rounded-3xl bg-white border border-slate-100 shadow-soft p-5 transition-all hover:-translate-y-1 hover:shadow-lift"
           >
-            <MiniMock accent={p.accent} />
+            <SiteCapture image={p.image} alt={p.alt} />
             <div className="mt-5 flex flex-col flex-1">
               <span className={`inline-block w-fit text-xs font-semibold px-2.5 py-1 rounded-full border ${p.chip} mb-3`}>
                 {p.type}

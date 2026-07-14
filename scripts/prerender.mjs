@@ -33,6 +33,7 @@ function applyMeta(html, routePath) {
   html = replaceAttr(html, '<meta property="og:description" content="', meta.description)
   html = replaceAttr(html, '<meta property="og:url" content="', canonical)
   html = replaceAttr(html, '<meta property="og:type" content="', ogTypeFor(routePath))
+  html = replaceAttr(html, '<meta name="robots" content="', meta.noindex ? 'noindex, nofollow' : 'index, follow')
 
   // Twitter Card (refleja título y descripción de la ruta).
   html = replaceAttr(html, '<meta name="twitter:title" content="', meta.title)
@@ -59,6 +60,15 @@ for (const routePath of ROUTES) {
   fs.mkdirSync(path.dirname(outPath), { recursive: true })
   fs.writeFileSync(outPath, html)
   console.log('✓ prerendered', routePath, '→', path.relative(root, outPath))
+}
+
+// Fallback HTML real para rutas desconocidas; Vercel puede servirlo mediante rewrite.
+{
+  const notFoundPath = path.join(distDir, '404.html')
+  let html = applyMeta(template, '/__404__')
+  html = html.replace('<div id="root"></div>', `<div id="root">${render('/__404__')}</div>`)
+  fs.writeFileSync(notFoundPath, html)
+  console.log('✓ 404 prerendered → dist/404.html')
 }
 
 // ── Sitemap automático ───────────────────────────────────────
