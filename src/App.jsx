@@ -27,6 +27,7 @@ import BlogPostPage from './components/BlogPostPage'
 import DisenoWebTalcaPage from './components/DisenoWebTalcaPage'
 import TiendaOnlineChilePage from './components/TiendaOnlineChilePage'
 import EmpresasServiciosPage from './components/EmpresasServiciosPage'
+import SoftwareAplicacionesPage from './components/SoftwareAplicacionesPage'
 import CommercialLandingPage from './components/CommercialLandingPage'
 import NotFoundPage from './components/NotFoundPage'
 import AboutPage from './components/AboutPage'
@@ -77,6 +78,8 @@ export default function App({ initialPath }) {
     content = <TiendaOnlineChilePage onNavigate={navigateTo} />
   } else if (path === '/paginas-web-empresas-servicios') {
     content = <EmpresasServiciosPage onNavigate={navigateTo} />
+  } else if (path === '/desarrollo-software-aplicaciones') {
+    content = <SoftwareAplicacionesPage onNavigate={navigateTo} />
   } else if (path === '/paginas-web-para-psicologos') {
     content = <><Navbar onNavigate={navigateTo} /><CommercialLandingPage kind="psychologist" onNavigate={navigateTo} /><Footer onNavigate={navigateTo} /></>
   } else if (path === '/catalogo-online-con-whatsapp') {
