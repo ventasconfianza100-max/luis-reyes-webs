@@ -3,6 +3,7 @@ const footerLinks = [
   { label: 'Diseño web en Talca', href: '/diseno-web-talca' },
   { label: 'Tienda online en Chile', href: '/tienda-online-chile' },
   { label: 'Web para empresas de servicios', href: '/paginas-web-empresas-servicios' },
+  { label: 'Software y aplicaciones', href: '/desarrollo-software-aplicaciones' },
   { label: 'Web para psicólogos', href: '/paginas-web-para-psicologos' },
   { label: 'Catálogo con WhatsApp', href: '/catalogo-online-con-whatsapp' },
   { label: 'Sobre Luis', href: '/sobre-luis' },
