@@ -14,7 +14,7 @@ export default function Section({
   width = 'default',
   className = '',
   containerClassName = '',
-  spacing = 'py-16 md:py-24',
+  spacing = 'py-14 md:py-20',
 }) {
   return (
     <section id={id} className={`${spacing} ${className}`}>

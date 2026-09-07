@@ -23,8 +23,8 @@ export default function Navbar({ onNavigate }) {
   }
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60">
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <nav className="site-nav sticky top-0 z-50 border-b border-white/70">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-[4.5rem] flex items-center justify-between">
         {/* Logo */}
         <a
           href="/"
@@ -33,9 +33,10 @@ export default function Navbar({ onNavigate }) {
             onNavigate('/')
             setOpen(false)
           }}
-          className="font-display font-bold text-slate-900 text-lg tracking-tight"
+          className="group flex items-center gap-3 font-display font-bold text-slate-950 text-base sm:text-lg tracking-tight"
         >
-          Luis Reyes <span className="text-brand-600">Castro</span>
+          <span className="grid h-9 w-9 place-items-center rounded-xl bg-slate-950 text-[11px] font-extrabold tracking-widest text-white shadow-lg shadow-violet-900/20 transition-transform group-hover:-rotate-3">LR</span>
+          <span>Luis Reyes <span className="text-brand-600">Castro</span><small className="hidden lg:block font-sans text-[10px] font-semibold uppercase tracking-[.18em] text-slate-400 mt-0.5">Diseño & desarrollo web</small></span>
         </a>
 
         {/* Links — desktop */}
@@ -47,10 +48,10 @@ export default function Navbar({ onNavigate }) {
               onClick={(event) => handleClick(event, link)}
               target={link.external ? '_blank' : undefined}
               rel={link.external ? 'noopener noreferrer' : undefined}
-              className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
+              className={`px-3 py-2 rounded-xl text-sm font-semibold transition-all ${
                 link.external
-                  ? 'bg-brand-600 text-white hover:bg-brand-700 ml-2'
-                  : 'text-slate-600 hover:text-brand-700 hover:bg-brand-50'
+                  ? 'bg-slate-950 text-white hover:bg-brand-700 ml-2 shadow-md shadow-slate-900/15'
+                  : 'text-slate-600 hover:text-brand-700 hover:bg-white'
               }`}
             >
               {link.label}
@@ -78,7 +79,7 @@ export default function Navbar({ onNavigate }) {
 
       {/* Panel móvil */}
       {open && (
-        <div className="md:hidden border-t border-slate-200/60 bg-white">
+        <div className="md:hidden border-t border-slate-200/60 bg-white/95 backdrop-blur-xl shadow-xl">
           <div className="px-6 py-4 flex flex-col gap-1">
             {links.map((link) => (
               <a

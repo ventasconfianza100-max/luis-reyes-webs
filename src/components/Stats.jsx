@@ -27,20 +27,20 @@ const stats = [
 export default function Stats() {
   return (
     <Section spacing="py-6 md:py-8">
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div className="stats-strip grid grid-cols-1 sm:grid-cols-3 gap-3 rounded-3xl bg-slate-950 p-3 shadow-2xl shadow-violet-950/15">
         {stats.map((s) => (
           <div
             key={s.title}
-            className="flex items-center gap-4 bg-white rounded-2xl border border-slate-200/70 shadow-sm px-5 py-4"
+            className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[.06] px-5 py-4"
           >
-            <div className="w-11 h-11 rounded-xl bg-brand-50 text-brand-500 flex items-center justify-center flex-shrink-0">
+            <div className="w-11 h-11 rounded-xl bg-brand-500/20 text-brand-300 flex items-center justify-center flex-shrink-0">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5">
                 {s.icon}
               </svg>
             </div>
             <div>
-              <p className="font-semibold text-slate-800 text-sm leading-tight">{s.title}</p>
-              <p className="text-slate-500 text-xs mt-0.5 leading-snug">{s.sub}</p>
+              <p className="font-semibold text-white text-sm leading-tight">{s.title}</p>
+              <p className="text-slate-400 text-xs mt-0.5 leading-snug">{s.sub}</p>
             </div>
           </div>
         ))}

@@ -1,9 +1,9 @@
 export default function Hero({ onNavigate }) {
   const whatsapp = 'https://wa.me/56922012534?text=' + encodeURIComponent('Hola Luis, vi tu página y quiero cotizar una web para mi negocio.')
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-white via-white to-brand-50/70">
+    <section className="hero-section relative overflow-hidden">
       {/* Imagen a sangre completa en la mitad derecha (desktop) */}
-      <div className="hidden md:block absolute inset-y-6 right-6 w-[48%] lg:w-[47%] rounded-[2rem] overflow-hidden border border-white shadow-[0_24px_70px_-28px_rgba(15,23,42,0.45)]">
+      <div className="hero-visual hidden md:block absolute inset-y-7 right-7 w-[48%] lg:w-[47%] rounded-[2rem] overflow-hidden border border-white/60 shadow-[0_32px_90px_-32px_rgba(15,23,42,0.55)]">
         <picture>
           <source srcSet="/hero-workspace.webp" type="image/webp" />
           <img
@@ -19,26 +19,24 @@ export default function Hero({ onNavigate }) {
         </picture>
         {/* Fundido suave solo en el borde izquierdo: el texto se lee sin tapar la imagen */}
         <div className="absolute inset-0 bg-gradient-to-tr from-slate-950/35 via-transparent to-transparent" />
-        <div className="absolute left-5 bottom-5 right-5 rounded-2xl bg-white/90 backdrop-blur-md border border-white/70 p-4 shadow-lg">
-          <p className="text-xs font-semibold uppercase tracking-wider text-brand-600">Diseño con intención</p>
-          <p className="mt-1 text-sm font-semibold text-slate-900">Una web que explica, convence y facilita el contacto.</p>
+        <div className="absolute left-5 bottom-5 right-5 rounded-2xl bg-slate-950/82 backdrop-blur-xl border border-white/15 p-4 shadow-lg text-white">
+          <p className="text-[11px] font-semibold uppercase tracking-[.2em] text-cyan-300">Diseño con intención</p>
+          <p className="mt-1 text-sm font-semibold">Una web que explica, convence y facilita el contacto.</p>
         </div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 pt-10 pb-12 md:pt-14 md:pb-16">
+      <div className="relative max-w-7xl mx-auto px-6 pt-10 pb-12 md:pt-12 md:pb-14">
         <div className="md:w-[48%] md:pr-6">
-          <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600 mb-5">
-            Desarrollo web · Talca, Chile
+          <span className="eyebrow inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.18em] text-brand-700 mb-5">
+            <span className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_0_5px_rgba(34,211,238,.15)]" /> Desarrollo web · Talca, Chile
           </span>
 
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08] text-slate-900">
-            Páginas web para negocios, tiendas y profesionales en Chile
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.55rem] font-extrabold tracking-[-0.045em] leading-[1.05] text-slate-950">
+            Páginas web que hacen ver <span className="text-gradient">mejor a tu negocio</span>
           </h1>
 
-          <p className="mt-7 text-lg text-slate-600 leading-relaxed max-w-xl">
-            Diseño sitios rápidos, administrables y preparados para aparecer en Google.
-            Trabajo desde Talca con clientes de todo Chile y adapto la estructura a la
-            forma en que vendes: por WhatsApp, agenda, cotizaciones o tienda online.
+          <p className="mt-6 text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl">
+            Diseño sitios rápidos, administrables y preparados para Google, adaptados a cómo vendes: por WhatsApp, agenda, cotizaciones o tienda online.
           </p>
 
           {/* Doble CTA */}
@@ -48,7 +46,7 @@ export default function Hero({ onNavigate }) {
               target="_blank"
               rel="noopener noreferrer"
               data-analytics="whatsapp_click_home"
-              className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-7 py-3.5 rounded-2xl text-sm transition-all shadow-[0_8px_24px_-10px_rgba(124,58,237,0.6)] hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
+              className="primary-cta inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-7 py-3.5 rounded-2xl text-sm transition-all shadow-[0_12px_30px_-12px_rgba(109,40,217,0.75)] hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
             >
               Cotizar por WhatsApp
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
@@ -67,9 +65,9 @@ export default function Hero({ onNavigate }) {
             </a>
           </div>
 
-          <p className="mt-3 text-sm text-slate-500">
-            Atención directa desde Talca · Diseño adaptable a celular · Sin compromiso
-          </p>
+          <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-xs font-semibold text-slate-500">
+            {['Atención directa', '100% adaptable', 'Primera reunión gratis'].map((item) => <span key={item} className="inline-flex items-center gap-1.5"><span className="text-emerald-500">✓</span>{item}</span>)}
+          </div>
 
           {/* Imagen en móvil: a todo el ancho, debajo del texto */}
           <div className="md:hidden mt-10 -mx-6">
@@ -88,7 +86,7 @@ export default function Hero({ onNavigate }) {
           </div>
 
           {/* Tira de credibilidad */}
-          <div className="mt-10 md:mt-11 flex items-center gap-4">
+          <div className="mt-8 md:mt-9 flex items-center gap-4 rounded-2xl border border-white/80 bg-white/55 p-3.5 backdrop-blur-sm max-w-xl">
             <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-brand-200 shadow-sm flex-shrink-0">
               <picture>
                 <source srcSet="/profile.webp" type="image/webp" />
@@ -113,7 +111,7 @@ export default function Hero({ onNavigate }) {
               </p>
             </div>
           </div>
-          <div className="mt-7 flex flex-wrap gap-2 text-xs font-medium text-slate-600">
+          <div className="mt-5 flex flex-wrap gap-2 text-xs font-semibold text-slate-600">
             {['Web para profesionales', 'Catálogos y tiendas', 'Empresas de servicios'].map((item) => (
               <span key={item} className="rounded-full border border-slate-200 bg-white/80 px-3 py-1.5 shadow-sm">{item}</span>
             ))}

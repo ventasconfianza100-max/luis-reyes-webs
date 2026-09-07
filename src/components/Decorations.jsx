@@ -3,8 +3,9 @@
 export default function Decorations() {
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10" aria-hidden="true">
-      <div className="absolute -top-40 -left-32 w-[32rem] h-[32rem] bg-brand-200/35 rounded-full blur-3xl" />
-      <div className="absolute top-1/2 -right-40 w-[30rem] h-[30rem] bg-brand-100/40 rounded-full blur-3xl" />
+      <div className="absolute -top-40 -left-32 w-[32rem] h-[32rem] bg-brand-300/30 rounded-full blur-3xl" />
+      <div className="absolute top-1/3 -right-40 w-[30rem] h-[30rem] bg-cyan-200/30 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-1/3 w-[24rem] h-[24rem] bg-indigo-200/20 rounded-full blur-3xl" />
       {/* grano sutil */}
       <div
         className="absolute inset-0 opacity-[0.025] mix-blend-multiply"

@@ -112,7 +112,7 @@ export default function App({ initialPath }) {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="site-shell min-h-screen">
       <Decorations />
       {content}
       <FloatingWhatsApp />
