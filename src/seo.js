@@ -46,7 +46,7 @@ export const metaByPath = {
   '/proyectos': {
     title: 'Portafolio de Proyectos Web Reales | Luis Reyes Castro',
     description:
-      'Conoce proyectos web reales de Luis Reyes Castro: Trabalengua, 7ma Control, Munay Cueros, Escuela RDLF y Cuchillos Bravo. Tiendas, catálogos y sitios para empresas en Chile.',
+      'Conoce proyectos web reales de Luis Reyes Castro: Trabalengua, 7ma Control, Munay Cueros, Escuela RDLF, Cuchillos Bravo y Psicóloga Andrea Martínez.',
   },
   '/agenda': {
     title: 'Agenda una reunión — Meet, Zoom o WhatsApp | Luis Reyes Castro',

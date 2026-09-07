@@ -34,4 +34,11 @@ export const portfolioProjects = [
     image: '/portfolio-cuchillos-bravo.webp', alt: 'Portada actual de Cuchillos Bravo, tienda de campo desarrollada por Luis Reyes',
     chip: 'border-orange-200 bg-orange-50 text-orange-800', glow: 'from-orange-400/20 via-amber-200/10 to-transparent',
   },
+  {
+    name: 'Psicóloga Andrea Martínez', domain: 'psicoandreamartinez.cl', url: 'https://www.psicoandreamartinez.cl/', type: 'Marca profesional',
+    summary: 'Sitio profesional para presentar su enfoque terapéutico, experiencia y modalidades de atención con una estética cálida y cercana.',
+    built: ['Servicios y especialidades', 'Agenda y contacto directo', 'Testimonios y preguntas frecuentes', 'SEO local por modalidad y ciudad'],
+    image: '/portfolio-andrea.webp', alt: 'Portada actual de la psicóloga Andrea Martínez desarrollada por Luis Reyes',
+    chip: 'border-stone-200 bg-stone-50 text-stone-700', glow: 'from-orange-300/20 via-rose-200/10 to-transparent',
+  },
 ]

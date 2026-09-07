@@ -5,13 +5,13 @@ function Check() {
   return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-brand-500"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
 }
 
-function ProjectCard({ project, featured }) {
+function ProjectCard({ project }) {
   return (
-    <article className={`group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-lift ${featured ? 'lg:col-span-3' : 'lg:col-span-2'}`}>
+    <article className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-lift lg:col-span-3">
       <div className={`pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-br ${project.glow}`} />
       <div className="relative p-3 sm:p-4">
         <a href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Visitar ${project.name}`} className="block overflow-hidden rounded-2xl border border-white/90 bg-slate-100 shadow-sm">
-          <img src={project.image} alt={project.alt} width="1200" height="833" loading="lazy" decoding="async" className={`w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.025] ${featured ? 'aspect-[16/9]' : 'aspect-[16/10]'}`} />
+          <img src={project.image} alt={project.alt} width="1200" height="833" loading="lazy" decoding="async" className="aspect-[16/9] w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.025]" />
         </a>
       </div>
       <div className="relative px-5 pb-6 pt-2 sm:px-6">
@@ -39,7 +39,7 @@ export default function ProjectsShowcase() {
         <p className="mt-3 text-slate-500">Negocios, tiendas y organizaciones que hoy funcionan en línea. Explora cada proyecto y comprueba el trabajo directamente.</p>
       </div>
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-6">
-        {portfolioProjects.map((project, index) => <ProjectCard key={project.name} project={project} featured={index < 2} />)}
+        {portfolioProjects.map((project) => <ProjectCard key={project.name} project={project} />)}
       </div>
       <div className="mt-8 grid gap-3 rounded-3xl border border-slate-200 bg-slate-950 p-5 text-white sm:grid-cols-3 sm:p-6">
         {[['Soluciones reales', 'Cada proyecto responde a una operación y una marca distinta.'], ['Diseño + desarrollo', 'Estrategia, interfaz, código, SEO y publicación en un solo proceso.'], ['Preparados para crecer', 'Experiencias rápidas, administrables y cuidadas en móvil.']].map(([title, text]) => <div key={title} className="rounded-2xl border border-white/10 bg-white/[.04] p-4"><p className="font-display font-bold text-cyan-300">{title}</p><p className="mt-1 text-sm leading-relaxed text-slate-300">{text}</p></div>)}
