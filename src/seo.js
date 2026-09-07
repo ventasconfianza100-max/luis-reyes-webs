@@ -1,4 +1,5 @@
 import { blogPosts } from './blogPosts.js'
+import { portfolioProjects } from './portfolioProjects.js'
 
 // URL base del sitio
 export const SITE_URL = 'https://www.luisreyesweb.cl'
@@ -43,14 +44,14 @@ export const metaByPath = {
     description: 'Responde tres preguntas y recibe orientación para saber qué tipo de página web necesita tu negocio en Chile.',
   },
   '/proyectos': {
-    title: 'Proyectos Web para Empresas y Negocios | Luis Reyes Castro',
+    title: 'Portafolio de Proyectos Web Reales | Luis Reyes Castro',
     description:
-      'Proyectos de páginas web para empresas, tiendas y profesionales en Chile. Conoce soluciones con SEO local, e-commerce y contacto por WhatsApp.',
+      'Conoce proyectos web reales de Luis Reyes Castro: Trabalengua, 7ma Control, Munay Cueros, Escuela RDLF y Cuchillos Bravo. Tiendas, catálogos y sitios para empresas en Chile.',
   },
   '/agenda': {
     title: 'Agenda una reunión — Meet, Zoom o WhatsApp | Luis Reyes Castro',
     description:
-      'Agenda una reunión sin compromiso con Luis Reyes Castro por Google Meet, Zoom o WhatsApp para cotizar la página web de tu consulta psicológica.',
+      'Agenda una reunión sin compromiso con Luis Reyes Castro por Google Meet, Zoom o WhatsApp para cotizar la página web o solución digital de tu negocio.',
   },
   '/blog': {
     title: 'Blog sobre diseño web, negocios y presencia online | Luis Reyes Castro',
@@ -263,7 +264,7 @@ const breadcrumbLabels = {
   '/catalogo-online-con-whatsapp': 'Catálogo online con WhatsApp',
   '/sobre-luis': 'Sobre Luis',
   '/diagnostico-web': 'Diagnóstico web',
-  '/proyectos': 'Proyectos para profesionales',
+  '/proyectos': 'Portafolio de proyectos web',
   '/agenda': 'Agenda una reunión',
   '/blog': 'Blog',
 }
@@ -448,6 +449,22 @@ export function jsonLdFor(path) {
       description: getMeta(path).description,
       url: canonicalFor(path),
       isPartOf: { '@id': `${SITE_URL}/#website` },
+      mainEntity: {
+        '@type': 'ItemList',
+        numberOfItems: portfolioProjects.length,
+        itemListElement: portfolioProjects.map((project, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          item: {
+            '@type': 'WebSite',
+            name: project.name,
+            url: project.url,
+            description: project.summary,
+            image: `${SITE_URL}${project.image}`,
+            creator: { '@id': `${SITE_URL}/#luis-reyes` },
+          },
+        })),
+      },
     })
   }
 

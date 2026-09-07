@@ -1,131 +1,48 @@
 import Section from './Section'
-
-const projects = [
-  {
-    name: 'Empresa de servicios',
-    type: 'Sitio multipágina',
-    result:
-      'Web de varias páginas para un negocio de servicios que necesitaba aparecer en Google y recibir consultas sin intermediarios.',
-    built: ['Páginas por cada servicio', 'SEO local para su ciudad', 'Cotización directa por WhatsApp', 'Sitemap + datos para Google'],
-    image: '/portfolio-servicios.webp',
-    alt: 'Sitio web real de una empresa de servicios en Talca, desarrollado por Luis Reyes',
-    chip: 'bg-rose-50 text-rose-600 border-rose-200',
-  },
-  {
-    name: 'Tienda online',
-    type: 'E-commerce a medida',
-    result:
-      'Tienda completa con su propio panel para que el dueño gestione productos, precios y stock sin depender de nadie ni pagar mensualidades.',
-    built: ['Catálogo por categorías', 'Carrito de compras', 'Panel de administración propio', 'Envíos a todo Chile'],
-    image: '/portfolio-tienda.webp',
-    alt: 'Tienda online real con catálogo y carrito de compras, desarrollada por Luis Reyes',
-    chip: 'bg-amber-50 text-amber-600 border-amber-200',
-  },
-  {
-    name: 'Profesional independiente',
-    type: 'Marca profesional',
-    result:
-      'Web pensada para transmitir confianza y convertir la visita en contacto, para alguien que vende su servicio de forma personal.',
-    built: ['Diseño que genera confianza', 'Agendamiento y contacto directo', 'Textos orientados a convertir', 'Optimizado para celular'],
-    image: '/portfolio-profesional.webp',
-    alt: 'Sitio web real de un profesional independiente con agendamiento online, desarrollado por Luis Reyes',
-    chip: 'bg-brand-50 text-brand-600 border-brand-200',
-  },
-]
-
-function SiteCapture({ image, alt }) {
-  return (
-    <div className="rounded-xl bg-white border border-slate-200 overflow-hidden shadow-soft">
-      <div className="flex items-center gap-1.5 px-3 py-2 bg-slate-100 border-b border-slate-200">
-        <span className="w-2 h-2 rounded-full bg-red-300" />
-        <span className="w-2 h-2 rounded-full bg-amber-300" />
-        <span className="w-2 h-2 rounded-full bg-green-300" />
-      </div>
-      <img
-        src={image}
-        alt={alt}
-        width="1360"
-        height="900"
-        loading="lazy"
-        decoding="async"
-        className="w-full aspect-[1360/900] object-cover object-top"
-      />
-    </div>
-  )
-}
+import { portfolioProjects } from '../portfolioProjects'
 
 function Check() {
+  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-brand-500"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+}
+
+function ProjectCard({ project, featured }) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-3.5 h-3.5 text-brand-500 flex-shrink-0 mt-0.5">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-    </svg>
+    <article className={`group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-lift ${featured ? 'lg:col-span-3' : 'lg:col-span-2'}`}>
+      <div className={`pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-br ${project.glow}`} />
+      <div className="relative p-3 sm:p-4">
+        <a href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Visitar ${project.name}`} className="block overflow-hidden rounded-2xl border border-white/90 bg-slate-100 shadow-sm">
+          <img src={project.image} alt={project.alt} width="1200" height="833" loading="lazy" decoding="async" className={`w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.025] ${featured ? 'aspect-[16/9]' : 'aspect-[16/10]'}`} />
+        </a>
+      </div>
+      <div className="relative px-5 pb-6 pt-2 sm:px-6">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <span className={`rounded-full border px-2.5 py-1 text-[11px] font-bold uppercase tracking-[.12em] ${project.chip}`}>{project.type}</span>
+          <span className="flex items-center gap-1.5 text-xs font-semibold text-slate-400"><span className="h-2 w-2 rounded-full bg-emerald-400" />Proyecto publicado</span>
+        </div>
+        <h3 className="mt-4 font-display text-xl font-bold text-slate-950 sm:text-2xl">{project.name}</h3>
+        <p className="mt-2 text-sm leading-relaxed text-slate-600">{project.summary}</p>
+        <ul className="mt-4 grid gap-2 border-t border-slate-100 pt-4 sm:grid-cols-2">
+          {project.built.map((item) => <li key={item} className="flex gap-2 text-sm text-slate-600"><Check /><span>{item}</span></li>)}
+        </ul>
+        <a href={project.url} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-700 transition-colors hover:text-brand-900">Ver proyecto en {project.domain}<span className="transition-transform group-hover:translate-x-1">↗</span></a>
+      </div>
+    </article>
   )
 }
 
 export default function ProjectsShowcase() {
   return (
     <Section>
-      <div className="text-center max-w-2xl mx-auto mb-9">
-        <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600 mb-3">
-          Proyectos
-        </span>
-        <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-3">
-          Lo que he construido
-        </h2>
-        <p className="text-slate-500">
-          Capturas reales de sitios que he desarrollado y que hoy están funcionando.
-          Esto es exactamente lo que entregué en cada uno.
-        </p>
+      <div className="mx-auto mb-8 max-w-3xl text-center">
+        <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600">Portafolio real</span>
+        <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">Lo que he construido</h2>
+        <p className="mt-3 text-slate-500">Negocios, tiendas y organizaciones que hoy funcionan en línea. Explora cada proyecto y comprueba el trabajo directamente.</p>
       </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {projects.map((p) => (
-          <div
-            key={p.name}
-            className="flex flex-col rounded-3xl bg-white border border-slate-100 shadow-soft p-5 transition-all hover:-translate-y-1 hover:shadow-lift"
-          >
-            <SiteCapture image={p.image} alt={p.alt} />
-            <div className="mt-5 flex flex-col flex-1">
-              <span className={`inline-block w-fit text-xs font-semibold px-2.5 py-1 rounded-full border ${p.chip} mb-3`}>
-                {p.type}
-              </span>
-              <h3 className="font-display text-lg font-bold text-slate-900">{p.name}</h3>
-              <p className="text-slate-500 text-sm mt-1 leading-relaxed">{p.result}</p>
-
-              <div className="mt-4 pt-4 border-t border-slate-100">
-                <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2.5">
-                  Lo que construí
-                </p>
-                <ul className="space-y-1.5">
-                  {p.built.map((b) => (
-                    <li key={b} className="flex gap-2 text-sm text-slate-600 leading-snug">
-                      <Check />
-                      <span>{b}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        ))}
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-6">
+        {portfolioProjects.map((project, index) => <ProjectCard key={project.name} project={project} featured={index < 2} />)}
       </div>
-
-      {/* Tira de cierre: cómo trabajo */}
-      <div className="mt-10 rounded-3xl bg-slate-50 border border-slate-100 p-6 md:p-8">
-        <div className="grid gap-6 sm:grid-cols-3 text-center">
-          <div>
-            <p className="font-display text-2xl font-extrabold text-brand-600">A medida</p>
-            <p className="text-slate-500 text-sm mt-1">Código propio, sin plantillas genéricas ni mensualidades de plataformas.</p>
-          </div>
-          <div>
-            <p className="font-display text-2xl font-extrabold text-brand-600">Para Google</p>
-            <p className="text-slate-500 text-sm mt-1">SEO y velocidad cuidados desde el inicio, no como un agregado al final.</p>
-          </div>
-          <div>
-            <p className="font-display text-2xl font-extrabold text-brand-600">Acompañado</p>
-            <p className="text-slate-500 text-sm mt-1">Reuniones, revisiones y soporte después de entregar. No desaparezco.</p>
-          </div>
-        </div>
+      <div className="mt-8 grid gap-3 rounded-3xl border border-slate-200 bg-slate-950 p-5 text-white sm:grid-cols-3 sm:p-6">
+        {[['Soluciones reales', 'Cada proyecto responde a una operación y una marca distinta.'], ['Diseño + desarrollo', 'Estrategia, interfaz, código, SEO y publicación en un solo proceso.'], ['Preparados para crecer', 'Experiencias rápidas, administrables y cuidadas en móvil.']].map(([title, text]) => <div key={title} className="rounded-2xl border border-white/10 bg-white/[.04] p-4"><p className="font-display font-bold text-cyan-300">{title}</p><p className="mt-1 text-sm leading-relaxed text-slate-300">{text}</p></div>)}
       </div>
     </Section>
   )
