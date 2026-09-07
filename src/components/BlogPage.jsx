@@ -33,11 +33,11 @@ export default function BlogPage({ onNavigate }) {
         <div className="text-center max-w-2xl mx-auto mb-10">
           <span className="text-xs font-semibold uppercase tracking-wide text-violet-400">Blog</span>
           <h1 className="text-3xl md:text-5xl font-extrabold text-slate-800 mt-3 mb-4">
-            Ideas para psicólogos que quieren más pacientes
+            Guías de diseño web, SEO y ventas online en Chile
           </h1>
           <p className="text-slate-500 leading-relaxed">
-            Artículos prácticos sobre presencia online, confianza y diseño web para psicólogos y
-            terapeutas en Chile. Escrito por un psicólogo que entiende el rubro desde adentro.
+            Consejos prácticos para negocios, profesionales y psicólogos que quieren aparecer en
+            Google, mejorar su página y conseguir más consultas o ventas por internet.
           </p>
         </div>
 

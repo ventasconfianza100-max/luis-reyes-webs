@@ -82,22 +82,21 @@ export default function BlogPostPage({ slug, onNavigate }) {
     )
   }
 
+  const relatedPosts = blogPosts
+    .filter((candidate) => candidate.slug !== post.slug)
+    .sort((a, b) => Number(b.category === post.category) - Number(a.category === post.category))
+    .slice(0, 3)
+
   return (
     <main className="max-w-2xl mx-auto px-4 py-8 md:py-12">
       <article className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg border border-white/60 p-7 md:p-10">
-        <a
-          href="/blog"
-          onClick={(event) => {
-            event.preventDefault()
-            onNavigate('/blog')
-          }}
-          className="inline-flex items-center gap-2 text-violet-500 hover:text-violet-600 font-semibold text-sm mb-8"
-        >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-          </svg>
-          Volver al blog
-        </a>
+        <nav aria-label="Migas de pan" className="mb-7 flex flex-wrap items-center gap-2 text-sm">
+          <a href="/" onClick={(event) => { event.preventDefault(); onNavigate('/') }} className="font-semibold text-violet-600 hover:text-violet-700">Inicio</a>
+          <span className="text-slate-300">/</span>
+          <a href="/blog" onClick={(event) => { event.preventDefault(); onNavigate('/blog') }} className="font-semibold text-violet-600 hover:text-violet-700">Blog</a>
+          <span className="text-slate-300">/</span>
+          <span className="text-slate-500" aria-current="page">{post.category}</span>
+        </nav>
 
         <header className="mb-8">
           <div className="flex flex-wrap items-center gap-3 mb-4">
@@ -119,6 +118,25 @@ export default function BlogPostPage({ slug, onNavigate }) {
             <Block key={i} block={block} />
           ))}
         </div>
+
+        <aside className="mt-9 border-t border-slate-200 pt-7" aria-labelledby="related-title">
+          <h2 id="related-title" className="font-display text-xl font-bold text-slate-900">También te puede servir</h2>
+          <div className="mt-4 grid gap-3">
+            {relatedPosts.map((related) => (
+              <a
+                key={related.slug}
+                href={`/blog/${related.slug}`}
+                onClick={(event) => { event.preventDefault(); onNavigate(`/blog/${related.slug}`) }}
+                className="group rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 transition-colors hover:border-violet-300 hover:bg-violet-50"
+              >
+                <span className="text-xs font-semibold uppercase tracking-wide text-violet-600">{related.category}</span>
+                <span className="mt-1 flex items-center justify-between gap-3 font-semibold text-slate-800 group-hover:text-violet-800">
+                  {related.title}<span aria-hidden="true">→</span>
+                </span>
+              </a>
+            ))}
+          </div>
+        </aside>
 
         {/* Autor */}
         <div className="mt-10 flex items-center gap-4 rounded-2xl border border-violet-100 bg-violet-50/50 p-5">

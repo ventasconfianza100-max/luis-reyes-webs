@@ -59,6 +59,8 @@ export default function App({ initialPath }) {
     const canonicalUrl = canonicalFor(path)
     setTag('meta[name="description"]', 'content', meta.description)
     setTag('link[rel="canonical"]', 'href', canonicalUrl)
+    setTag('link[rel="alternate"][hreflang="es-CL"]', 'href', canonicalUrl)
+    setTag('link[rel="alternate"][hreflang="x-default"]', 'href', canonicalUrl)
     setTag('meta[property="og:title"]', 'content', meta.title)
     setTag('meta[property="og:description"]', 'content', meta.description)
     setTag('meta[property="og:url"]', 'content', canonicalUrl)
@@ -91,9 +93,9 @@ export default function App({ initialPath }) {
   } else if (path === '/agenda') {
     content = <SchedulePage onNavigate={navigateTo} />
   } else if (path === '/blog') {
-    content = <BlogPage onNavigate={navigateTo} />
+    content = <><Navbar onNavigate={navigateTo} /><BlogPage onNavigate={navigateTo} /><Footer onNavigate={navigateTo} /></>
   } else if (path.startsWith('/blog/')) {
-    content = <BlogPostPage slug={path.replace('/blog/', '')} onNavigate={navigateTo} />
+    content = <><Navbar onNavigate={navigateTo} /><BlogPostPage slug={path.replace('/blog/', '')} onNavigate={navigateTo} /><Footer onNavigate={navigateTo} /></>
   } else if (path === '/proyectos/sitio-psicologa-clinica') {
     content = <ClinicalPsychologistProjectPage onNavigate={navigateTo} />
   } else if (path === '/proyectos/consulta-terapeutica-online') {

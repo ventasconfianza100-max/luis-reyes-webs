@@ -29,6 +29,8 @@ function applyMeta(html, routePath) {
   html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${meta.title}</title>`)
   html = replaceAttr(html, '<meta name="description" content="', meta.description)
   html = replaceAttr(html, '<link rel="canonical" href="', canonical)
+  html = replaceAttr(html, '<link rel="alternate" hreflang="es-CL" href="', canonical)
+  html = replaceAttr(html, '<link rel="alternate" hreflang="x-default" href="', canonical)
   html = replaceAttr(html, '<meta property="og:title" content="', meta.title)
   html = replaceAttr(html, '<meta property="og:description" content="', meta.description)
   html = replaceAttr(html, '<meta property="og:url" content="', canonical)

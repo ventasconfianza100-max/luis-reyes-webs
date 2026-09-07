@@ -146,6 +146,21 @@ const SAME_AS = [
   GOOGLE_BUSINESS_URL,
 ].filter(Boolean)
 
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': `${SITE_URL}/#luis-reyes`,
+  name: 'Luis Reyes Castro',
+  url: `${SITE_URL}/sobre-luis`,
+  image: `${SITE_URL}/profile.jpg`,
+  jobTitle: 'Diseñador y desarrollador web',
+  description: 'Psicólogo titulado por la Universidad de Talca, diseñador y desarrollador de páginas web, tiendas online y software a medida en Chile.',
+  alumniOf: { '@type': 'EducationalOrganization', name: 'Universidad de Talca' },
+  worksFor: { '@id': `${SITE_URL}/#business` },
+  knowsAbout: ['Diseño web', 'Desarrollo web', 'SEO local', 'Tiendas online', 'Experiencia de usuario', 'Desarrollo de software'],
+  sameAs: SAME_AS,
+}
+
 // Negocio principal — se incluye en todas las páginas
 const businessSchema = {
   '@context': 'https://schema.org',
@@ -218,13 +233,7 @@ const businessSchema = {
     ],
   },
   founder: {
-    '@type': 'Person',
-    name: 'Luis Reyes Castro',
-    jobTitle: 'Desarrollador y Diseñador Web',
-    alumniOf: {
-      '@type': 'EducationalOrganization',
-      name: 'Universidad de Talca',
-    },
+    '@id': `${SITE_URL}/#luis-reyes`,
   },
   sameAs: SAME_AS,
 }
@@ -363,6 +372,37 @@ function blogIndexSchema() {
   }
 }
 
+const serviceNames = {
+  '/diseno-web-talca': 'Diseño y desarrollo de páginas web en Talca',
+  '/tienda-online-chile': 'Diseño de tiendas online y e-commerce en Chile',
+  '/paginas-web-empresas-servicios': 'Páginas web para empresas de servicios',
+  '/desarrollo-software-aplicaciones': 'Desarrollo de software y aplicaciones a medida',
+  '/paginas-web-para-psicologos': 'Páginas web para psicólogos y consultas',
+  '/catalogo-online-con-whatsapp': 'Catálogos online con ventas por WhatsApp',
+}
+
+function serviceSchema(path) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${canonicalFor(path)}#service`,
+    name: serviceNames[path],
+    description: getMeta(path).description,
+    provider: { '@id': `${SITE_URL}/#business` },
+    areaServed: [
+      { '@type': 'Country', name: 'Chile' },
+      { '@type': 'City', name: 'Talca' },
+      { '@type': 'AdministrativeArea', name: 'Región del Maule' },
+    ],
+    availableChannel: {
+      '@type': 'ServiceChannel',
+      serviceUrl: canonicalFor(path),
+      servicePhone: { '@type': 'ContactPoint', telephone: '+56922012534', contactType: 'sales', availableLanguage: 'Spanish' },
+    },
+    url: canonicalFor(path),
+  }
+}
+
 function breadcrumbSchema(path) {
   if (path === '/') return null
 
@@ -391,7 +431,7 @@ function breadcrumbSchema(path) {
 
 // Devuelve el array de objetos JSON-LD que corresponde a cada ruta.
 export function jsonLdFor(path) {
-  const schemas = [businessSchema, {
+  const schemas = [businessSchema, personSchema, {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     '@id': `${SITE_URL}/#website`,
@@ -427,19 +467,27 @@ export function jsonLdFor(path) {
     inLanguage: 'es-CL',
   })
 
-  if (
-    path === '/paginas-web-para-psicologos' ||
-    path === '/catalogo-online-con-whatsapp' ||
-    path === '/desarrollo-software-aplicaciones'
-  ) {
+  if (serviceNames[path]) schemas.push(serviceSchema(path))
+
+  if (path === '/sobre-luis') {
     schemas.push({
       '@context': 'https://schema.org',
-      '@type': 'Service',
-      name: getMeta(path).title.split(' | ')[0],
-      description: getMeta(path).description,
-      provider: { '@id': `${SITE_URL}/#business` },
-      areaServed: { '@type': 'Country', name: 'Chile' },
+      '@type': 'ProfilePage',
+      '@id': `${canonicalFor(path)}#profile`,
+      name: 'Sobre Luis Reyes Castro',
       url: canonicalFor(path),
+      mainEntity: { '@id': `${SITE_URL}/#luis-reyes` },
+    })
+  }
+
+  if (path === '/proyectos' || path === '/proyectos-empresas') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: getMeta(path).title,
+      description: getMeta(path).description,
+      url: canonicalFor(path),
+      isPartOf: { '@id': `${SITE_URL}/#website` },
     })
   }
 

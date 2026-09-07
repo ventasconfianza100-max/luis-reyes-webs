@@ -11,7 +11,12 @@ for (const route of ROUTES) {
   if (!title) throw new Error(`Falta title: ${route}`)
   if ((html.match(/<meta name="description"/g) || []).length !== 1) throw new Error(`Descripción inválida: ${route}`)
   if ((html.match(/<link rel="canonical"/g) || []).length !== 1 || !html.includes(SITE_URL)) throw new Error(`Canonical inválido: ${route}`)
+  if ((html.match(/hreflang="es-CL"/g) || []).length !== 1) throw new Error(`Hreflang es-CL inválido: ${route}`)
+  if ((html.match(/hreflang="x-default"/g) || []).length !== 1) throw new Error(`Hreflang x-default inválido: ${route}`)
   if ((html.match(/<h1\b/g) || []).length !== 1) throw new Error(`H1 inválido: ${route}`)
+  const jsonLdBlocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+  if (!jsonLdBlocks.length) throw new Error(`Faltan datos estructurados: ${route}`)
+  for (const [, json] of jsonLdBlocks) JSON.parse(json)
   if (titles.has(title)) throw new Error(`Title duplicado: ${route} y ${titles.get(title)}`)
   titles.set(title, route)
 }
