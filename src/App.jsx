@@ -28,6 +28,7 @@ import NotFoundPage from './components/NotFoundPage'
 import AboutPage from './components/AboutPage'
 import DiagnosticPage from './components/DiagnosticPage'
 import InstagramSection from './components/InstagramSection'
+import GrowthLandingPage from './components/GrowthLandingPage'
 
 import { getMeta, canonicalFor } from './seo'
 
@@ -65,7 +66,7 @@ export default function App({ initialPath }) {
     setTag('meta[property="og:title"]', 'content', meta.title)
     setTag('meta[property="og:description"]', 'content', meta.description)
     setTag('meta[property="og:url"]', 'content', canonicalUrl)
-    setTag('meta[name="robots"]', 'content', meta.noindex ? 'noindex, nofollow' : 'index, follow')
+    setTag('meta[name="robots"]', 'content', meta.noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1')
   }, [path])
 
   const navigateTo = (nextPath) => {
@@ -86,6 +87,10 @@ export default function App({ initialPath }) {
     content = <SoftwareAplicacionesPage onNavigate={navigateTo} />
   } else if (path === '/catalogo-online-con-whatsapp') {
     content = <><Navbar onNavigate={navigateTo} /><CommercialLandingPage kind="catalog" onNavigate={navigateTo} /><Footer onNavigate={navigateTo} /></>
+  } else if (path === '/paginas-web-pymes-chile') {
+    content = <GrowthLandingPage kind="pymes" onNavigate={navigateTo} />
+  } else if (path === '/seo-local-talca') {
+    content = <GrowthLandingPage kind="seo" onNavigate={navigateTo} />
   } else if (path === '/sobre-luis') {
     content = <AboutPage onNavigate={navigateTo} />
   } else if (path === '/diagnostico-web') {

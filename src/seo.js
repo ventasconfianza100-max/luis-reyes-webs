@@ -35,8 +35,16 @@ export const metaByPath = {
     description:
       'Catálogo online con fichas, categorías, precios y consulta por WhatsApp. Una alternativa simple a una tienda con pago online para negocios en Chile.',
   },
+  '/paginas-web-pymes-chile': {
+    title: 'Páginas Web para Pymes en Chile | Luis Reyes Castro',
+    description: 'Diseño páginas web profesionales para pymes en Chile: rápidas, claras, optimizadas para Google y preparadas para captar consultas por WhatsApp.',
+  },
+  '/seo-local-talca': {
+    title: 'SEO Local en Talca | Posicionamiento Web para Negocios',
+    description: 'SEO local en Talca para empresas y negocios: optimización técnica, contenido, estructura y medición para mejorar tu presencia en Google.',
+  },
   '/sobre-luis': {
-    title: 'Sobre Luis Reyes | Psicólogo y desarrollador web en Talca',
+    title: 'Sobre Luis Reyes | Diseñador y desarrollador web en Talca',
     description: 'Conoce a Luis Reyes Castro, diseñador y desarrollador web en Talca. Creo páginas claras, estratégicas y orientadas a generar confianza y oportunidades.',
   },
   '/diagnostico-web': {
@@ -262,6 +270,8 @@ const breadcrumbLabels = {
   '/paginas-web-empresas-servicios': 'Páginas web para empresas de servicios',
   '/desarrollo-software-aplicaciones': 'Desarrollo de software y aplicaciones',
   '/catalogo-online-con-whatsapp': 'Catálogo online con WhatsApp',
+  '/paginas-web-pymes-chile': 'Páginas web para pymes en Chile',
+  '/seo-local-talca': 'SEO local en Talca',
   '/sobre-luis': 'Sobre Luis',
   '/diagnostico-web': 'Diagnóstico web',
   '/proyectos': 'Portafolio de proyectos web',
@@ -340,6 +350,8 @@ const serviceNames = {
   '/paginas-web-empresas-servicios': 'Páginas web para empresas de servicios',
   '/desarrollo-software-aplicaciones': 'Desarrollo de software y aplicaciones a medida',
   '/catalogo-online-con-whatsapp': 'Catálogos online con ventas por WhatsApp',
+  '/paginas-web-pymes-chile': 'Diseño de páginas web para pymes en Chile',
+  '/seo-local-talca': 'SEO local y posicionamiento web en Talca',
 }
 
 function serviceSchema(path) {

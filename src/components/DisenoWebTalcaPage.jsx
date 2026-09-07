@@ -122,6 +122,8 @@ export default function DisenoWebTalcaPage({ onNavigate }) {
               <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm">
                 <a href="/proyectos" onClick={(e) => go(e, '/proyectos')} className="text-brand-700 font-semibold">Web para profesionales →</a>
                 <a href="/catalogo-online-con-whatsapp" onClick={(e) => go(e, '/catalogo-online-con-whatsapp')} className="text-brand-700 font-semibold">Catálogo con WhatsApp →</a>
+                <a href="/seo-local-talca" onClick={(e) => go(e, '/seo-local-talca')} className="text-brand-700 font-semibold">SEO local en Talca →</a>
+                <a href="/paginas-web-pymes-chile" onClick={(e) => go(e, '/paginas-web-pymes-chile')} className="text-brand-700 font-semibold">Páginas web para pymes →</a>
               </div>
             </div>
             <ul className="space-y-3">

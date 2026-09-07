@@ -35,7 +35,7 @@ function applyMeta(html, routePath) {
   html = replaceAttr(html, '<meta property="og:description" content="', meta.description)
   html = replaceAttr(html, '<meta property="og:url" content="', canonical)
   html = replaceAttr(html, '<meta property="og:type" content="', ogTypeFor(routePath))
-  html = replaceAttr(html, '<meta name="robots" content="', meta.noindex ? 'noindex, nofollow' : 'index, follow')
+  html = replaceAttr(html, '<meta name="robots" content="', meta.noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1')
 
   // Twitter Card (refleja título y descripción de la ruta).
   html = replaceAttr(html, '<meta name="twitter:title" content="', meta.title)
@@ -78,8 +78,10 @@ for (const routePath of ROUTES) {
 // así nunca queda desactualizado al agregar contenido nuevo.
 function sitemapMeta(routePath) {
   if (routePath === '/') return { priority: '1.0', changefreq: 'weekly' }
-  if (routePath === '/proyectos' || routePath === '/proyectos-empresas')
+  if (routePath === '/proyectos')
     return { priority: '0.9', changefreq: 'weekly' }
+  if (['/diseno-web-talca', '/tienda-online-chile', '/paginas-web-empresas-servicios', '/desarrollo-software-aplicaciones', '/catalogo-online-con-whatsapp', '/paginas-web-pymes-chile', '/seo-local-talca'].includes(routePath))
+    return { priority: '0.8', changefreq: 'monthly' }
   if (routePath === '/blog') return { priority: '0.8', changefreq: 'weekly' }
   if (routePath.startsWith('/blog/')) return { priority: '0.7', changefreq: 'monthly' }
   if (routePath === '/agenda') return { priority: '0.6', changefreq: 'monthly' }

@@ -5,6 +5,8 @@ const footerLinks = [
   { label: 'Web para empresas de servicios', href: '/paginas-web-empresas-servicios' },
   { label: 'Software y aplicaciones', href: '/desarrollo-software-aplicaciones' },
   { label: 'Catálogo con WhatsApp', href: '/catalogo-online-con-whatsapp' },
+  { label: 'Páginas web para pymes', href: '/paginas-web-pymes-chile' },
+  { label: 'SEO local en Talca', href: '/seo-local-talca' },
   { label: 'Sobre Luis', href: '/sobre-luis' },
   { label: 'Diagnóstico web', href: '/diagnostico-web' },
   { label: 'Proyectos', href: '/proyectos' },
