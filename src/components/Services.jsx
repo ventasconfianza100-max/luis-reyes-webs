@@ -112,6 +112,37 @@ export default function Services({ onNavigate }) {
         ))}
       </div>
 
+      {/* Franja destacada: software y aplicaciones a medida */}
+      <div className="mt-6 rounded-3xl border border-slate-100 bg-white shadow-soft p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-5 md:gap-8">
+        <div className="w-11 h-11 shrink-0 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+          </svg>
+        </div>
+        <div className="flex-1">
+          <h3 className="font-display text-lg font-bold text-slate-900">
+            ¿Necesitas algo más que una web? Software y aplicaciones a medida
+          </h3>
+          <p className="text-slate-500 text-sm leading-relaxed mt-1.5">
+            También creo programas, sistemas de gestión, apps web y automatizaciones hechos a la
+            medida de tu negocio. Código propio para resolver el problema concreto que te quita tiempo.
+          </p>
+        </div>
+        <a
+          href="/desarrollo-software-aplicaciones"
+          onClick={(event) => {
+            event.preventDefault()
+            onNavigate('/desarrollo-software-aplicaciones')
+          }}
+          className="shrink-0 inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm px-6 py-3 rounded-2xl transition-all hover:-translate-y-0.5 w-fit"
+        >
+          Ver desarrollo de software
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </div>
+
       {/* Micro-notas de cercanía */}
       <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-slate-400">
         {microNotes.map((note, i) => (

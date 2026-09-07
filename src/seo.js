@@ -24,6 +24,11 @@ export const metaByPath = {
     description:
       'Páginas web para empresas de servicios en Chile: fumigación, mantención, salud, educación, limpieza y servicios técnicos. Sitios multipágina con SEO local que captan cotizaciones por WhatsApp.',
   },
+  '/desarrollo-software-aplicaciones': {
+    title: 'Desarrollo de Software y Aplicaciones a Medida en Chile | Luis Reyes Castro',
+    description:
+      'Creación de software, programas y aplicaciones a medida en Chile: sistemas de gestión, apps web, automatizaciones e integraciones para tu negocio. Desarrollo propio, sin plantillas.',
+  },
   '/paginas-web-para-psicologos': {
     title: 'Páginas web para psicólogos en Chile | Luis Reyes Web',
     description:
@@ -203,6 +208,13 @@ const businessSchema = {
           name: 'Sitio web para empresas y negocios de servicios',
         },
       },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Desarrollo de software, programas y aplicaciones a medida',
+        },
+      },
     ],
   },
   founder: {
@@ -271,6 +283,7 @@ const breadcrumbLabels = {
   '/diseno-web-talca': 'Diseño web en Talca',
   '/tienda-online-chile': 'Tienda online en Chile',
   '/paginas-web-empresas-servicios': 'Páginas web para empresas de servicios',
+  '/desarrollo-software-aplicaciones': 'Desarrollo de software y aplicaciones',
   '/paginas-web-para-psicologos': 'Páginas web para psicólogos',
   '/catalogo-online-con-whatsapp': 'Catálogo online con WhatsApp',
   '/sobre-luis': 'Sobre Luis',
@@ -414,7 +427,11 @@ export function jsonLdFor(path) {
     inLanguage: 'es-CL',
   })
 
-  if (path === '/paginas-web-para-psicologos' || path === '/catalogo-online-con-whatsapp') {
+  if (
+    path === '/paginas-web-para-psicologos' ||
+    path === '/catalogo-online-con-whatsapp' ||
+    path === '/desarrollo-software-aplicaciones'
+  ) {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'Service',
