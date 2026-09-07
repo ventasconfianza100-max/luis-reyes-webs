@@ -36,7 +36,7 @@ export default function BlogPage({ onNavigate }) {
             Guías de diseño web, SEO y ventas online en Chile
           </h1>
           <p className="text-slate-500 leading-relaxed">
-            Consejos prácticos para negocios, profesionales y psicólogos que quieren aparecer en
+            Consejos prácticos para empresas, negocios y profesionales que quieren aparecer en
             Google, mejorar su página y conseguir más consultas o ventas por internet.
           </p>
         </div>
@@ -79,9 +79,9 @@ export default function BlogPage({ onNavigate }) {
         </div>
 
         <div className="mt-10 rounded-2xl border border-white/70 bg-white/70 p-6 text-center">
-          <p className="text-slate-800 font-bold text-xl mb-2">¿Quieres una web que haga todo esto por ti?</p>
+          <p className="text-slate-800 font-bold text-xl mb-2">¿Quieres una web preparada para crecer?</p>
           <p className="text-slate-500 text-sm mb-5">
-            Diseño páginas para psicólogos pensadas desde la lógica del paciente que está decidiendo.
+            Diseño páginas para empresas, negocios y profesionales que necesitan verse bien y generar oportunidades.
           </p>
           <a
             href="/agenda"

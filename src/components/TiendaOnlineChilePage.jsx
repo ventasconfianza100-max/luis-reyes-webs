@@ -122,8 +122,8 @@ export default function TiendaOnlineChilePage({ onNavigate }) {
                 misma forma en que he trabajado tiendas reales con envíos a todo Chile.
               </p>
               <a
-                href="/proyectos-empresas"
-                onClick={(e) => go(e, '/proyectos-empresas')}
+                href="/proyectos"
+                onClick={(e) => go(e, '/proyectos')}
                 className="mt-6 inline-flex items-center gap-2 text-brand-600 font-semibold text-sm hover:translate-x-1 transition-transform"
               >
                 Ver el tipo de trabajo que hago

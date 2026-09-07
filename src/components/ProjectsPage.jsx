@@ -1,109 +1,41 @@
 const projects = [
-  {
-    href: '/proyectos/sitio-psicologa-clinica',
-    title: 'Sitio para psicóloga clínica',
-    category: 'Landing profesional',
-  },
-  {
-    href: '/proyectos/consulta-terapeutica-online',
-    title: 'Consulta terapéutica online',
-    category: 'Captación de pacientes',
-  },
-  {
-    href: '/proyectos/perfil-profesional-redes',
-    title: 'Perfil profesional para redes',
-    category: 'Presencia digital',
-  },
+  { href: '/paginas-web-empresas-servicios', title: 'Empresa de servicios', category: 'Sitio multipágina + SEO local', text: 'Una estructura clara para explicar servicios, ganar confianza y recibir cotizaciones desde Google o WhatsApp.', image: '/portfolio-servicios.webp', color: 'from-cyan-500/20 to-blue-500/5' },
+  { href: '/tienda-online-chile', title: 'Tienda online', category: 'E-commerce a medida', text: 'Catálogo, categorías, carrito y administración propia para vender sin depender de una plantilla genérica.', image: '/portfolio-tienda.webp', color: 'from-amber-400/25 to-orange-500/5' },
+  { href: '/diseno-web-talca', title: 'Marca profesional', category: 'Presencia digital + captación', text: 'Una web personal con servicios, experiencia y contacto directo para profesionales de distintos rubros.', image: '/portfolio-profesional.webp', color: 'from-violet-500/20 to-fuchsia-500/5' },
 ]
 
 export default function ProjectsPage({ onNavigate }) {
   return (
-    <main className="max-w-4xl mx-auto px-4 py-8 md:py-12">
-      <section className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg border border-white/60 p-8 md:p-10">
-        <a
-          href="/"
-          onClick={(event) => {
-            event.preventDefault()
-            onNavigate('/')
-          }}
-          className="inline-flex items-center gap-2 text-violet-500 hover:text-violet-600 font-semibold text-sm mb-8"
-        >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/>
-          </svg>
-          Volver al inicio
-        </a>
-
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <span className="text-xs font-semibold uppercase tracking-wide text-violet-400">
-            Proyectos
-          </span>
-          <h1 className="text-3xl md:text-5xl font-extrabold text-slate-800 mt-3 mb-4">
-            Ejemplos de páginas web para profesionales
-          </h1>
-          <p className="text-slate-500 leading-relaxed">
-            Ideas de sitios limpios, modernos y enfocados en que tus pacientes entiendan quién eres,
-            cómo trabajas y cómo pueden contactarte.
-          </p>
+    <main>
+      <section className="page-hero px-5 py-11 md:py-14">
+        <div className="mx-auto max-w-6xl">
+          <nav aria-label="Migas de pan" className="mb-6 flex items-center gap-2 text-sm">
+            <a href="/" onClick={(event) => { event.preventDefault(); onNavigate('/') }} className="font-semibold text-brand-700 hover:text-brand-800">Inicio</a>
+            <span className="text-slate-300">/</span><span className="text-slate-500">Proyectos</span>
+          </nav>
+          <div className="max-w-3xl">
+            <span className="inline-flex rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-bold uppercase tracking-[.16em] text-brand-700">Trabajo seleccionado</span>
+            <h1 className="mt-4 font-display text-4xl font-extrabold tracking-[-.04em] text-slate-950 md:text-5xl">Proyectos pensados para negocios que quieren avanzar</h1>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-600 md:text-lg">Soluciones reales para ordenar una oferta, presentar una marca con claridad y convertir visitas en oportunidades comerciales.</p>
+          </div>
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {projects.map((project, index) => (
-            <a
-              key={project.title}
-              href={project.href}
-              onClick={(event) => {
-                event.preventDefault()
-                onNavigate(project.href)
-              }}
-              className="group min-h-52 rounded-3xl border border-violet-100 bg-violet-50/60 p-5 flex flex-col justify-between overflow-hidden relative transition-all hover:-translate-y-1 hover:shadow-lg hover:border-violet-300"
-            >
-              <div className="absolute -right-8 -top-8 w-28 h-28 rounded-full bg-violet-200/40 transition-transform group-hover:scale-125" />
-              <div className="relative flex items-start justify-between gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-white text-violet-500 flex items-center justify-center shadow-sm">
-                  <span className="font-extrabold text-sm">{String(index + 1).padStart(2, '0')}</span>
-                </div>
-                <div className="w-10 h-10 rounded-full bg-white/80 text-violet-500 flex items-center justify-center transition-transform group-hover:translate-x-1">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
-                  </svg>
-                </div>
-              </div>
-
-              <div className="relative mt-8">
-                <p className="text-xs font-semibold uppercase tracking-wide text-violet-500 mb-3">
-                  {project.category}
-                </p>
-                <h2 className="text-2xl font-extrabold text-slate-800 leading-tight">
-                  {project.title}
-                </h2>
-              </div>
-
-              <p className="relative text-violet-500 font-bold text-sm mt-8">
-                Ver proyecto
-              </p>
+      <section className="px-5 py-11 md:py-14">
+        <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-3">
+          {projects.map((project) => (
+            <a key={project.title} href={project.href} onClick={(event) => { event.preventDefault(); onNavigate(project.href) }} className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-soft transition-all hover:-translate-y-1 hover:border-brand-300 hover:shadow-lift">
+              <div className={`bg-gradient-to-br ${project.color} p-3`}><div className="overflow-hidden rounded-2xl border border-white/80 bg-white shadow-sm"><img src={project.image} alt={`Vista del proyecto ${project.title} desarrollado por Luis Reyes`} width="1360" height="900" loading="lazy" className="aspect-[16/10] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.025]" /></div></div>
+              <div className="p-5"><p className="text-xs font-bold uppercase tracking-[.14em] text-brand-600">{project.category}</p><h2 className="mt-2 font-display text-xl font-bold text-slate-950">{project.title}</h2><p className="mt-2 text-sm leading-relaxed text-slate-600">{project.text}</p><span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-brand-700">Conocer la solución <span className="transition-transform group-hover:translate-x-1">→</span></span></div>
             </a>
           ))}
         </div>
+      </section>
 
-        <div className="mt-10 rounded-2xl border border-white/70 bg-white/70 p-6 text-center">
-          <p className="text-slate-800 font-bold text-xl mb-2">
-            ¿Quieres una página parecida?
-          </p>
-          <p className="text-slate-500 text-sm mb-5">
-            La adaptamos a tu especialidad, tono profesional y forma de atender.
-          </p>
-          <a
-            href="https://wa.me/56922012534?text=Hola%20Luis%2C%20quiero%20una%20p%C3%A1gina%20web%20parecida%20a%20tus%20proyectos"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-violet-500 hover:bg-violet-600 text-white font-semibold px-6 py-3 rounded-xl text-sm transition-all shadow-sm"
-          >
-            Escríbeme por WhatsApp
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
-            </svg>
-          </a>
+      <section className="px-5 pb-14 md:pb-16">
+        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-5 rounded-3xl bg-slate-950 p-7 text-white md:flex-row md:items-center md:p-9">
+          <div><p className="text-xs font-bold uppercase tracking-[.18em] text-cyan-300">Tu proyecto puede ser el siguiente</p><h2 className="mt-2 font-display text-2xl font-bold md:text-3xl">Conversemos sobre lo que necesita tu negocio</h2><p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-300">Te ayudo a definir una solución clara, realista y preparada para crecer.</p></div>
+          <a href="https://wa.me/56922012534?text=Hola%20Luis%2C%20quiero%20conversar%20sobre%20una%20web%20para%20mi%20negocio" target="_blank" rel="noopener noreferrer" className="shrink-0 rounded-2xl bg-brand-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-brand-500">Hablemos por WhatsApp</a>
         </div>
       </section>
     </main>

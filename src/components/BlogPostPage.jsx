@@ -144,7 +144,7 @@ export default function BlogPostPage({ slug, onNavigate }) {
             <source srcSet="/profile.webp" type="image/webp" />
             <img
               src="/profile.jpg"
-              alt="Luis Reyes Castro, psicólogo y diseñador web"
+              alt="Luis Reyes Castro, diseñador y desarrollador web"
               width="56"
               height="56"
               loading="lazy"
@@ -154,7 +154,7 @@ export default function BlogPostPage({ slug, onNavigate }) {
           <div>
             <p className="font-bold text-slate-800 text-sm">Luis Reyes Castro</p>
             <p className="text-slate-500 text-sm">
-              Psicólogo titulado UTalca. Diseño webs para psicólogos en Chile.
+              Diseñador y desarrollador web para empresas, negocios y profesionales en Chile.
             </p>
           </div>
         </div>
@@ -163,7 +163,7 @@ export default function BlogPostPage({ slug, onNavigate }) {
         <div className="mt-8 rounded-2xl border border-white/70 bg-white/70 p-6 text-center">
           <p className="text-slate-800 font-bold text-xl mb-2">¿Hablamos de tu página web?</p>
           <p className="text-slate-500 text-sm mb-5">
-            Una reunión sin compromiso para ver cómo atraer más pacientes desde Google.
+            Una reunión sin compromiso para ver cómo atraer más oportunidades desde Google.
           </p>
           <a
             href="/agenda"

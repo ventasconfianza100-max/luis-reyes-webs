@@ -10,10 +10,10 @@ const services = [
     title: 'Profesionales independientes',
     lead: 'Para quienes venden confianza antes que productos.',
     description:
-      'Sitios para psicólogos, terapeutas, consultores y profesionales que necesitan explicar bien lo que hacen, mostrar experiencia y facilitar el contacto.',
+      'Sitios para consultores, especialistas, técnicos y profesionales que necesitan explicar bien lo que hacen, mostrar experiencia y facilitar el contacto.',
     detail: 'agenda, WhatsApp, servicios, sobre mí y confianza inicial.',
-    cta: 'Ver ejemplo profesional',
-    ctaHref: '/paginas-web-para-psicologos',
+    cta: 'Ver proyectos profesionales',
+    ctaHref: '/proyectos',
   },
   {
     num: '02',
@@ -41,7 +41,7 @@ const services = [
       'Webs multipágina pensadas para explicar servicios, aparecer mejor en Google y convertir visitas en mensajes reales.',
     detail: 'fumigación, mantención, salud, educación, limpieza, servicios técnicos o atención local.',
     cta: 'Ver ejemplo de empresa',
-    ctaHref: '/proyectos-empresas',
+    ctaHref: '/proyectos',
   },
 ]
 
@@ -62,7 +62,7 @@ export default function Services({ onNavigate }) {
           El tipo de web depende de lo que vendes
         </h2>
         <p className="mt-4 text-slate-500 leading-relaxed">
-          No es lo mismo una tienda con productos, una consulta profesional o una empresa que necesita
+          No es lo mismo una tienda con productos, un profesional independiente o una empresa que necesita
           cotizaciones. Por eso adapto la estructura, los textos y el diseño según el negocio.
         </p>
       </div>

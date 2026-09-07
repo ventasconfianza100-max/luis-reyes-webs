@@ -16,7 +16,7 @@ const paraQuien = [
   },
   {
     title: 'Profesionales independientes',
-    text: 'Psicólogos, terapeutas, consultores y oficios que necesitan transmitir confianza y facilitar el contacto.',
+    text: 'Consultores, especialistas, técnicos y oficios que necesitan transmitir confianza y facilitar el contacto.',
   },
 ]
 
@@ -120,7 +120,7 @@ export default function DisenoWebTalcaPage({ onNavigate }) {
                 </svg>
               </a>
               <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm">
-                <a href="/paginas-web-para-psicologos" onClick={(e) => go(e, '/paginas-web-para-psicologos')} className="text-brand-700 font-semibold">Web para psicólogos →</a>
+                <a href="/proyectos" onClick={(e) => go(e, '/proyectos')} className="text-brand-700 font-semibold">Web para profesionales →</a>
                 <a href="/catalogo-online-con-whatsapp" onClick={(e) => go(e, '/catalogo-online-con-whatsapp')} className="text-brand-700 font-semibold">Catálogo con WhatsApp →</a>
               </div>
             </div>

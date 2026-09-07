@@ -4,7 +4,7 @@ const links = [
   { label: 'Inicio', href: '#inicio' },
   { label: 'Servicios', href: '#servicios' },
   { label: 'Proyectos', href: '/proyectos', route: true },
-  { label: 'Empresas', href: '/proyectos-empresas', route: true },
+  { label: 'Software', href: '/desarrollo-software-aplicaciones', route: true },
   { label: 'Blog', href: '/blog', route: true },
   { label: 'Planes', href: '#planes' },
   { label: 'Diagnóstico', href: '/diagnostico-web', route: true },

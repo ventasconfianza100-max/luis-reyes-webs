@@ -1,6 +1,6 @@
 const whatsapp =
   'https://wa.me/56922012534?text=' +
-  encodeURIComponent('Hola Luis, quiero información sobre una página web para mi consulta.')
+  encodeURIComponent('Hola Luis, quiero información sobre una página web para mi negocio o proyecto.')
 
 export default function FloatingWhatsApp() {
   return (

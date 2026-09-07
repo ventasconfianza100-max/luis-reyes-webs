@@ -23,7 +23,7 @@ const projects = [
   },
   {
     name: 'Profesional independiente',
-    type: 'Sitio de consulta',
+    type: 'Marca profesional',
     result:
       'Web pensada para transmitir confianza y convertir la visita en contacto, para alguien que vende su servicio de forma personal.',
     built: ['Diseño que genera confianza', 'Agendamiento y contacto directo', 'Textos orientados a convertir', 'Optimizado para celular'],

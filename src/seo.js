@@ -29,11 +29,6 @@ export const metaByPath = {
     description:
       'Creación de software, programas y aplicaciones a medida en Chile: sistemas de gestión, apps web, automatizaciones e integraciones para tu negocio. Desarrollo propio, sin plantillas.',
   },
-  '/paginas-web-para-psicologos': {
-    title: 'Páginas web para psicólogos en Chile | Luis Reyes Web',
-    description:
-      'Webs profesionales para psicólogos y consultas: presentación, enfoque, servicios, agendamiento, WhatsApp, privacidad y SEO local. Atención online en Chile.',
-  },
   '/catalogo-online-con-whatsapp': {
     title: 'Catálogo online con WhatsApp en Chile | Luis Reyes Web',
     description:
@@ -41,41 +36,16 @@ export const metaByPath = {
   },
   '/sobre-luis': {
     title: 'Sobre Luis Reyes | Psicólogo y desarrollador web en Talca',
-    description: 'Conoce a Luis Reyes Castro, psicólogo y desarrollador web en Talca. Diseño páginas claras, estratégicas y orientadas a generar confianza y contactos.',
+    description: 'Conoce a Luis Reyes Castro, diseñador y desarrollador web en Talca. Creo páginas claras, estratégicas y orientadas a generar confianza y oportunidades.',
   },
   '/diagnostico-web': {
     title: 'Diagnóstico web para tu negocio | Luis Reyes Web',
     description: 'Responde tres preguntas y recibe orientación para saber qué tipo de página web necesita tu negocio en Chile.',
   },
   '/proyectos': {
-    title: 'Proyectos de páginas web para profesionales | Luis Reyes Castro',
+    title: 'Proyectos Web para Empresas y Negocios | Luis Reyes Castro',
     description:
-      'Ejemplos de sitios web para profesionales independientes en Chile: landing profesional, captación de clientes y presencia digital. Mira los proyectos.',
-  },
-  '/proyectos-empresas': {
-    title: 'Páginas web para empresas, negocios y tiendas | Luis Reyes Castro',
-    description:
-      'Diseño web para empresas, negocios locales y tiendas online en Chile. Sitios profesionales que ordenan tu oferta, generan confianza y captan clientes.',
-  },
-  '/proyectos/sitio-psicologa-clinica': {
-    title: 'Sitio web para psicóloga clínica — Proyecto | Luis Reyes Castro',
-    description:
-      'Caso de diseño web para una psicóloga clínica: estructura, enfoque y contacto pensados desde la lógica del paciente que está eligiendo profesional.',
-  },
-  '/proyectos/consulta-terapeutica-online': {
-    title: 'Web para consulta terapéutica online — Proyecto | Luis Reyes Castro',
-    description:
-      'Caso de diseño web para terapia y consulta psicológica 100% online en Chile, optimizada para agendar sesiones y transmitir confianza.',
-  },
-  '/proyectos/perfil-profesional-redes': {
-    title: 'Perfil profesional para redes — Proyecto | Luis Reyes Castro',
-    description:
-      'Página breve y elegante tipo link en bio para psicólogos: reúne trayectoria, enfoque y contacto para usar en Instagram, LinkedIn o WhatsApp.',
-  },
-  '/proyectos-empresas/clinica-centro-atencion': {
-    title: 'Web para clínica y centro de atención — Proyecto | Luis Reyes Castro',
-    description:
-      'Caso de diseño web para una clínica o centro de atención psicológica en Chile: servicios, equipo y agendamiento en un sitio profesional.',
+      'Proyectos de páginas web para empresas, tiendas y profesionales en Chile. Conoce soluciones con SEO local, e-commerce y contacto por WhatsApp.',
   },
   '/agenda': {
     title: 'Agenda una reunión — Meet, Zoom o WhatsApp | Luis Reyes Castro',
@@ -139,10 +109,7 @@ const GOOGLE_BUSINESS_URL = 'https://www.google.com/search?kgmid=/g/11z7ktq60d'
 
 const SAME_AS = [
   'https://www.linkedin.com/in/luisreyeswebs/',
-  'https://www.instagram.com/luis.rey3z/',
-  // Otra faceta profesional de la misma persona: su consulta de psicólogo.
-  // Cruza ambos sitios para que Google entienda "misma persona, dos negocios".
-  'https://www.luisreyespsicologo.cl',
+  'https://www.instagram.com/luisreyesweb.cl/',
   GOOGLE_BUSINESS_URL,
 ].filter(Boolean)
 
@@ -154,7 +121,7 @@ const personSchema = {
   url: `${SITE_URL}/sobre-luis`,
   image: `${SITE_URL}/profile.jpg`,
   jobTitle: 'Diseñador y desarrollador web',
-  description: 'Psicólogo titulado por la Universidad de Talca, diseñador y desarrollador de páginas web, tiendas online y software a medida en Chile.',
+  description: 'Diseñador y desarrollador de páginas web, tiendas online y software a medida para empresas, negocios y profesionales en Chile.',
   alumniOf: { '@type': 'EducationalOrganization', name: 'Universidad de Talca' },
   worksFor: { '@id': `${SITE_URL}/#business` },
   knowsAbout: ['Diseño web', 'Desarrollo web', 'SEO local', 'Tiendas online', 'Experiencia de usuario', 'Desarrollo de software'],
@@ -293,16 +260,10 @@ const breadcrumbLabels = {
   '/tienda-online-chile': 'Tienda online en Chile',
   '/paginas-web-empresas-servicios': 'Páginas web para empresas de servicios',
   '/desarrollo-software-aplicaciones': 'Desarrollo de software y aplicaciones',
-  '/paginas-web-para-psicologos': 'Páginas web para psicólogos',
   '/catalogo-online-con-whatsapp': 'Catálogo online con WhatsApp',
   '/sobre-luis': 'Sobre Luis',
   '/diagnostico-web': 'Diagnóstico web',
   '/proyectos': 'Proyectos para profesionales',
-  '/proyectos-empresas': 'Proyectos para empresas',
-  '/proyectos/sitio-psicologa-clinica': 'Sitio para psicóloga clínica',
-  '/proyectos/consulta-terapeutica-online': 'Consulta terapéutica online',
-  '/proyectos/perfil-profesional-redes': 'Perfil profesional para redes',
-  '/proyectos-empresas/clinica-centro-atencion': 'Clínica y centro de atención',
   '/agenda': 'Agenda una reunión',
   '/blog': 'Blog',
 }
@@ -377,7 +338,6 @@ const serviceNames = {
   '/tienda-online-chile': 'Diseño de tiendas online y e-commerce en Chile',
   '/paginas-web-empresas-servicios': 'Páginas web para empresas de servicios',
   '/desarrollo-software-aplicaciones': 'Desarrollo de software y aplicaciones a medida',
-  '/paginas-web-para-psicologos': 'Páginas web para psicólogos y consultas',
   '/catalogo-online-con-whatsapp': 'Catálogos online con ventas por WhatsApp',
 }
 
@@ -480,7 +440,7 @@ export function jsonLdFor(path) {
     })
   }
 
-  if (path === '/proyectos' || path === '/proyectos-empresas') {
+  if (path === '/proyectos') {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'CollectionPage',

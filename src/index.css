@@ -82,6 +82,12 @@ body {
   transition: transform .65s ease;
 }
 .primary-cta:hover::after { transform: translateX(120%); }
+.instagram-section {
+  background:
+    radial-gradient(circle at 92% 15%, rgba(236,72,153,.12), transparent 28%),
+    radial-gradient(circle at 8% 88%, rgba(249,115,22,.1), transparent 24%),
+    linear-gradient(135deg, #fff 0%, #fdf4ff 50%, #fff7ed 100%);
+}
 
 /* Ritmo visual compartido: más compacto, consistente y con mayor profundidad. */
 .site-shell main > .reveal:nth-of-type(even) > section { background: rgba(255,255,255,.72); }

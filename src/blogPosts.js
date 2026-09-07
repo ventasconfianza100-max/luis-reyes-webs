@@ -18,7 +18,7 @@
 // (debe ser único, sin tildes ni espacios) y su contenido. El resto
 // del sitio (rutas, sitemap, schema) se actualiza solo.
 
-export const blogPosts = [
+const allBlogPosts = [
   {
     slug: 'como-aparecer-en-google-con-tu-negocio',
     title: 'Cómo aparecer en Google con tu negocio (guía simple)',
@@ -742,6 +742,15 @@ export const blogPosts = [
     ],
   },
 ]
+
+const activeBlogSlugs = new Set([
+  'como-aparecer-en-google-con-tu-negocio',
+  'tienda-online-o-instagram-negocio',
+  'cuanto-cuesta-una-pagina-web-en-chile',
+  'pagina-web-para-tu-negocio-en-talca',
+])
+
+export const blogPosts = allBlogPosts.filter((post) => activeBlogSlugs.has(post.slug))
 
 export const blogPostsBySlug = Object.fromEntries(
   blogPosts.map((p) => [p.slug, p])

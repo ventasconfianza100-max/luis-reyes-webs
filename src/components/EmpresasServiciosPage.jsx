@@ -124,8 +124,8 @@ export default function EmpresasServiciosPage({ onNavigate }) {
           </div>
           <div className="mt-8">
             <a
-              href="/proyectos-empresas"
-              onClick={(e) => go(e, '/proyectos-empresas')}
+              href="/proyectos"
+              onClick={(e) => go(e, '/proyectos')}
               className="inline-flex items-center gap-2 text-brand-600 font-semibold text-sm hover:translate-x-1 transition-transform"
             >
               Ver el tipo de trabajo que hago

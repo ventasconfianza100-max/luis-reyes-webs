@@ -16,11 +16,6 @@ import FAQ from './components/FAQ'
 import Footer from './components/Footer'
 import Decorations from './components/Decorations'
 import ProjectsPage from './components/ProjectsPage'
-import BusinessProjectsPage from './components/BusinessProjectsPage'
-import ClinicalPsychologistProjectPage from './components/ClinicalPsychologistProjectPage'
-import TherapyOnlineProjectPage from './components/TherapyOnlineProjectPage'
-import ProfessionalProfileProjectPage from './components/ProfessionalProfileProjectPage'
-import ClinicBusinessProjectPage from './components/ClinicBusinessProjectPage'
 import SchedulePage from './components/SchedulePage'
 import BlogPage from './components/BlogPage'
 import BlogPostPage from './components/BlogPostPage'
@@ -32,16 +27,22 @@ import CommercialLandingPage from './components/CommercialLandingPage'
 import NotFoundPage from './components/NotFoundPage'
 import AboutPage from './components/AboutPage'
 import DiagnosticPage from './components/DiagnosticPage'
+import InstagramSection from './components/InstagramSection'
 
 import { getMeta, canonicalFor } from './seo'
 
+const normalizePath = (value) => {
+  if (!value || value === '/') return '/'
+  return value.replace(/\/+$/, '') || '/'
+}
+
 export default function App({ initialPath }) {
   const [path, setPath] = useState(
-    initialPath ?? (typeof window !== 'undefined' ? window.location.pathname : '/')
+    normalizePath(initialPath ?? (typeof window !== 'undefined' ? window.location.pathname : '/'))
   )
 
   useEffect(() => {
-    const handlePopState = () => setPath(window.location.pathname)
+    const handlePopState = () => setPath(normalizePath(window.location.pathname))
 
     window.addEventListener('popstate', handlePopState)
     return () => window.removeEventListener('popstate', handlePopState)
@@ -68,8 +69,9 @@ export default function App({ initialPath }) {
   }, [path])
 
   const navigateTo = (nextPath) => {
-    window.history.pushState({}, '', nextPath)
-    setPath(nextPath)
+    const normalized = normalizePath(nextPath)
+    window.history.pushState({}, '', normalized)
+    setPath(normalized)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
@@ -82,8 +84,6 @@ export default function App({ initialPath }) {
     content = <EmpresasServiciosPage onNavigate={navigateTo} />
   } else if (path === '/desarrollo-software-aplicaciones') {
     content = <SoftwareAplicacionesPage onNavigate={navigateTo} />
-  } else if (path === '/paginas-web-para-psicologos') {
-    content = <><Navbar onNavigate={navigateTo} /><CommercialLandingPage kind="psychologist" onNavigate={navigateTo} /><Footer onNavigate={navigateTo} /></>
   } else if (path === '/catalogo-online-con-whatsapp') {
     content = <><Navbar onNavigate={navigateTo} /><CommercialLandingPage kind="catalog" onNavigate={navigateTo} /><Footer onNavigate={navigateTo} /></>
   } else if (path === '/sobre-luis') {
@@ -96,21 +96,13 @@ export default function App({ initialPath }) {
     content = <><Navbar onNavigate={navigateTo} /><BlogPage onNavigate={navigateTo} /><Footer onNavigate={navigateTo} /></>
   } else if (path.startsWith('/blog/')) {
     content = <><Navbar onNavigate={navigateTo} /><BlogPostPage slug={path.replace('/blog/', '')} onNavigate={navigateTo} /><Footer onNavigate={navigateTo} /></>
-  } else if (path === '/proyectos/sitio-psicologa-clinica') {
-    content = <ClinicalPsychologistProjectPage onNavigate={navigateTo} />
-  } else if (path === '/proyectos/consulta-terapeutica-online') {
-    content = <TherapyOnlineProjectPage onNavigate={navigateTo} />
-  } else if (path === '/proyectos/perfil-profesional-redes') {
-    content = <ProfessionalProfileProjectPage onNavigate={navigateTo} />
-  } else if (path === '/proyectos-empresas/clinica-centro-atencion') {
-    content = <ClinicBusinessProjectPage onNavigate={navigateTo} />
   } else if (path === '/proyectos') {
-    content = <ProjectsPage onNavigate={navigateTo} />
+    content = <><Navbar onNavigate={navigateTo} /><ProjectsPage onNavigate={navigateTo} /><Footer onNavigate={navigateTo} /></>
   } else if (path === '/proyectos-empresas') {
-    content = <BusinessProjectsPage onNavigate={navigateTo} />
+    content = <><Navbar onNavigate={navigateTo} /><ProjectsPage onNavigate={navigateTo} /><Footer onNavigate={navigateTo} /></>
   } else if (path === '/') {
     content = (
-      <><Navbar onNavigate={navigateTo} /><main><div id="inicio"><Hero onNavigate={navigateTo} /></div><Reveal><Stats /></Reveal><Reveal><div id="servicios"><Services onNavigate={navigateTo} /></div></Reveal><Reveal><ProjectsShowcase /></Reveal><WhyChooseMe /><Reveal><Process /></Reveal><Reveal><div id="incluye"><Features /></div></Reveal><Reveal><Pricing /></Reveal><Reveal><FAQ /></Reveal><Reveal><LeadMagnet /></Reveal></main><Footer onNavigate={navigateTo} /></>
+      <><Navbar onNavigate={navigateTo} /><main><div id="inicio"><Hero onNavigate={navigateTo} /></div><Reveal><Stats /></Reveal><Reveal><div id="servicios"><Services onNavigate={navigateTo} /></div></Reveal><Reveal><ProjectsShowcase /></Reveal><WhyChooseMe /><Reveal><Process /></Reveal><Reveal><div id="incluye"><Features /></div></Reveal><Reveal><Pricing /></Reveal><Reveal><InstagramSection /></Reveal><Reveal><FAQ /></Reveal><Reveal><LeadMagnet /></Reveal></main><Footer onNavigate={navigateTo} /></>
     )
   } else {
     content = <><Navbar onNavigate={navigateTo} /><NotFoundPage onNavigate={navigateTo} /><Footer onNavigate={navigateTo} /></>
