@@ -3,7 +3,7 @@ export default function Hero({ onNavigate }) {
   return (
     <section className="hero-section relative overflow-hidden">
       {/* Imagen a sangre completa en la mitad derecha (desktop) */}
-      <div className="hero-visual hidden md:block absolute inset-y-7 right-7 w-[48%] lg:w-[47%] rounded-[2rem] overflow-hidden border border-white/60 shadow-[0_32px_90px_-32px_rgba(15,23,42,0.55)]">
+      <div className="hero-visual hidden md:block absolute inset-y-6 right-7 w-[46%] lg:w-[45%] rounded-[1.75rem] overflow-hidden border border-white/60 shadow-[0_32px_90px_-32px_rgba(15,23,42,0.55)]">
         <picture>
           <source srcSet="/hero-workspace.webp" type="image/webp" />
           <img
@@ -25,22 +25,22 @@ export default function Hero({ onNavigate }) {
         </div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 pt-10 pb-12 md:pt-12 md:pb-14">
-        <div className="md:w-[48%] md:pr-6">
+      <div className="relative max-w-7xl mx-auto px-6 pt-8 pb-9 md:pt-9 md:pb-10">
+        <div className="md:w-[52%] md:pr-8">
           <span className="eyebrow inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.18em] text-brand-700 mb-5">
             <span className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_0_5px_rgba(34,211,238,.15)]" /> Desarrollo web · Talca, Chile
           </span>
 
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.55rem] font-extrabold tracking-[-0.045em] leading-[1.05] text-slate-950">
+          <h1 className="font-display text-[2.45rem] sm:text-5xl lg:text-[3.15rem] font-extrabold tracking-[-0.045em] leading-[1.05] text-slate-950">
             Páginas web que hacen ver <span className="text-gradient">mejor a tu negocio</span>
           </h1>
 
-          <p className="mt-6 text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl">
+          <p className="mt-5 text-base text-slate-600 leading-relaxed max-w-xl">
             Diseño sitios rápidos, administrables y preparados para Google, adaptados a cómo vendes: por WhatsApp, agenda, cotizaciones o tienda online.
           </p>
 
           {/* Doble CTA */}
-          <div className="mt-9 flex flex-wrap gap-3">
+          <div className="mt-6 flex flex-wrap gap-3">
             <a
               href={whatsapp}
               target="_blank"
@@ -70,7 +70,7 @@ export default function Hero({ onNavigate }) {
           </div>
 
           {/* Imagen en móvil: a todo el ancho, debajo del texto */}
-          <div className="md:hidden mt-10 -mx-6">
+          <div className="md:hidden mt-7 -mx-6 h-52 overflow-hidden">
             <picture>
               <source srcSet="/hero-workspace.webp" type="image/webp" />
               <img
@@ -80,13 +80,13 @@ export default function Hero({ onNavigate }) {
                 height="900"
                 loading="eager"
                 decoding="async"
-                className="w-full object-cover"
+                className="w-full h-full object-cover"
               />
             </picture>
           </div>
 
           {/* Tira de credibilidad */}
-          <div className="mt-8 md:mt-9 flex items-center gap-4 rounded-2xl border border-white/80 bg-white/55 p-3.5 backdrop-blur-sm max-w-xl">
+          <div className="mt-6 flex items-center gap-3 rounded-2xl border border-white/80 bg-white/55 p-3 backdrop-blur-sm max-w-xl">
             <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-brand-200 shadow-sm flex-shrink-0">
               <picture>
                 <source srcSet="/profile.webp" type="image/webp" />
@@ -111,12 +111,12 @@ export default function Hero({ onNavigate }) {
               </p>
             </div>
           </div>
-          <div className="mt-5 flex flex-wrap gap-2 text-xs font-semibold text-slate-600">
+          <div className="mt-4 flex flex-wrap gap-2 text-xs font-semibold text-slate-600">
             {['Web para profesionales', 'Catálogos y tiendas', 'Empresas de servicios'].map((item) => (
               <span key={item} className="rounded-full border border-slate-200 bg-white/80 px-3 py-1.5 shadow-sm">{item}</span>
             ))}
           </div>
-          <a href="/diagnostico-web" onClick={(event) => { event.preventDefault(); onNavigate('/diagnostico-web') }} className="inline-flex mt-4 text-sm font-semibold text-brand-700 hover:text-brand-800">¿No sabes qué necesitas? Haz el diagnóstico web →</a>
+          <a href="/diagnostico-web" onClick={(event) => { event.preventDefault(); onNavigate('/diagnostico-web') }} className="inline-flex mt-3 text-sm font-semibold text-brand-700 hover:text-brand-800">¿No sabes qué necesitas? Haz el diagnóstico web →</a>
         </div>
       </div>
     </section>

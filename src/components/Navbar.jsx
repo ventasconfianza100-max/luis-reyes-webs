@@ -24,7 +24,7 @@ export default function Navbar({ onNavigate }) {
 
   return (
     <nav className="site-nav sticky top-0 z-50 border-b border-white/70">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-[4.5rem] flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <a
           href="/"
@@ -35,7 +35,7 @@ export default function Navbar({ onNavigate }) {
           }}
           className="group flex items-center gap-3 font-display font-bold text-slate-950 text-base sm:text-lg tracking-tight"
         >
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-slate-950 text-[11px] font-extrabold tracking-widest text-white shadow-lg shadow-violet-900/20 transition-transform group-hover:-rotate-3">LR</span>
+          <span className="grid h-8 w-8 place-items-center rounded-[.65rem] bg-slate-950 text-[10px] font-extrabold tracking-widest text-white shadow-lg shadow-violet-900/20 transition-transform group-hover:-rotate-3">LR</span>
           <span>Luis Reyes <span className="text-brand-600">Castro</span><small className="hidden lg:block font-sans text-[10px] font-semibold uppercase tracking-[.18em] text-slate-400 mt-0.5">Diseño & desarrollo web</small></span>
         </a>
 
@@ -48,7 +48,7 @@ export default function Navbar({ onNavigate }) {
               onClick={(event) => handleClick(event, link)}
               target={link.external ? '_blank' : undefined}
               rel={link.external ? 'noopener noreferrer' : undefined}
-              className={`px-3 py-2 rounded-xl text-sm font-semibold transition-all ${
+              className={`px-2.5 py-1.5 rounded-xl text-[13px] font-semibold transition-all ${
                 link.external
                   ? 'bg-slate-950 text-white hover:bg-brand-700 ml-2 shadow-md shadow-slate-900/15'
                   : 'text-slate-600 hover:text-brand-700 hover:bg-white'

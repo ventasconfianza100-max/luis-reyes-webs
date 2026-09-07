@@ -53,8 +53,8 @@ export default function Footer({ onNavigate }) {
 
   return (
     <footer className="bg-ink text-slate-300">
-      <div className="max-w-6xl mx-auto px-6 py-14">
-        <div className="grid gap-10 md:grid-cols-3">
+      <div className="max-w-6xl mx-auto px-6 py-10">
+        <div className="grid gap-7 md:grid-cols-3">
           {/* Marca */}
           <div>
             <p className="font-display text-xl font-bold text-white tracking-tight">
@@ -120,7 +120,7 @@ export default function Footer({ onNavigate }) {
           </div>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-white/10 text-center text-xs text-slate-500">
+        <div className="mt-8 pt-5 border-t border-white/10 text-center text-xs text-slate-500">
           © {new Date().getFullYear()} Luis Reyes Castro · Diseño y desarrollo web en Chile
         </div>
       </div>

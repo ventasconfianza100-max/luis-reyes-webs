@@ -26,7 +26,7 @@ const steps = [
 export default function Process() {
   return (
     <Section>
-      <div className="text-center max-w-2xl mx-auto mb-14">
+      <div className="text-center max-w-2xl mx-auto mb-9">
         <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600 mb-3">
           Cómo trabajamos
         </span>
@@ -42,7 +42,7 @@ export default function Process() {
         {/* Línea conectora (desktop) */}
         <div className="hidden md:block absolute top-6 left-[12%] right-[12%] h-px bg-gradient-to-r from-transparent via-brand-200 to-transparent" />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 md:gap-4">
           {steps.map((s) => (
             <div key={s.n} className="relative text-center md:px-2">
               <div className="relative z-10 mx-auto w-12 h-12 rounded-full bg-white border border-brand-100 shadow-sm flex items-center justify-center font-display text-lg font-extrabold text-brand-600 mb-4">

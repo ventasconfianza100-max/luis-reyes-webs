@@ -44,7 +44,7 @@ export default function TiendaOnlineChilePage({ onNavigate }) {
 
       <main>
         {/* Encabezado */}
-        <Section width="wide" spacing="pt-14 pb-12 md:pt-20 md:pb-16" className="bg-gradient-to-br from-white via-white to-brand-50/70">
+        <Section width="wide" spacing="pt-10 pb-9 md:pt-12 md:pb-11" className="page-hero bg-gradient-to-br from-white via-white to-brand-50/70">
           <div className="max-w-3xl">
             <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600 mb-4">
               E-commerce · Chile
@@ -156,7 +156,7 @@ export default function TiendaOnlineChilePage({ onNavigate }) {
         </Section>
 
         {/* Cierre / CTA */}
-        <Section spacing="pt-4 pb-20 md:pb-28">
+        <Section spacing="pt-3 pb-12 md:pb-16">
           <div className="rounded-3xl bg-ink text-white p-10 md:p-14 text-center">
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-3">
               ¿Vendes productos y quieres ordenarlo?

@@ -21,11 +21,11 @@ export default function CommercialLandingPage({ kind, onNavigate }) {
   const data = content[kind]
   const whatsapp = `https://wa.me/56922012534?text=${encodeURIComponent(data.message)}`
   return <main>
-    <section className="bg-gradient-to-br from-white via-white to-brand-50/70 px-6 py-20 md:py-28">
+    <section className="page-hero bg-gradient-to-br from-white via-white to-brand-50/70 px-6 py-12 md:py-16">
       <div className="max-w-5xl mx-auto">
         <p className="text-brand-600 font-semibold uppercase tracking-wider text-sm">Diseño web en Chile</p>
-        <h1 className="font-display text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 mt-4 max-w-4xl">{data.title}</h1>
-        <p className="mt-6 text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl">{data.intro}</p>
+        <h1 className="font-display text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mt-3 max-w-4xl">{data.title}</h1>
+        <p className="mt-4 text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl">{data.intro}</p>
         <div className="mt-9 flex flex-wrap gap-3"><a href={whatsapp} target="_blank" rel="noopener noreferrer" className="rounded-2xl bg-brand-600 px-6 py-3.5 text-white font-semibold">Cotizar por WhatsApp</a><a href="/proyectos" onClick={(e) => { e.preventDefault(); onNavigate('/proyectos') }} className="rounded-2xl border border-slate-200 bg-white px-6 py-3.5 text-slate-700 font-semibold">Ver proyectos</a></div>
       </div>
     </section>

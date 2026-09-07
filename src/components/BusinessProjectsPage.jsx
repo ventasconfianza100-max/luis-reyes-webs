@@ -56,7 +56,7 @@ export default function BusinessProjectsPage({ onNavigate }) {
                 event.preventDefault()
                 onNavigate(project.href)
               }}
-              className="group min-h-64 rounded-3xl border border-emerald-100 bg-emerald-50/60 p-5 flex flex-col justify-between overflow-hidden relative transition-all hover:-translate-y-1 hover:shadow-lg hover:border-emerald-300"
+              className="group min-h-52 rounded-3xl border border-emerald-100 bg-emerald-50/60 p-5 flex flex-col justify-between overflow-hidden relative transition-all hover:-translate-y-1 hover:shadow-lg hover:border-emerald-300"
             >
               <div className="absolute -right-8 -top-8 w-28 h-28 rounded-full bg-emerald-200/40 transition-transform group-hover:scale-125" />
               <div className="relative flex items-start justify-between gap-4">

@@ -65,7 +65,7 @@ function Check() {
 export default function ProjectsShowcase() {
   return (
     <Section>
-      <div className="text-center max-w-2xl mx-auto mb-12">
+      <div className="text-center max-w-2xl mx-auto mb-9">
         <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600 mb-3">
           Proyectos
         </span>
@@ -78,7 +78,7 @@ export default function ProjectsShowcase() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {projects.map((p) => (
           <div
             key={p.name}

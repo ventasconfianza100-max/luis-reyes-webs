@@ -54,7 +54,7 @@ const microNotes = [
 export default function Services({ onNavigate }) {
   return (
     <Section className="bg-gradient-to-b from-amber-50/40 via-white to-white">
-      <div className="max-w-2xl mx-auto text-center mb-12">
+      <div className="max-w-2xl mx-auto text-center mb-9">
         <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600 mb-3">
           Servicios
         </span>
@@ -67,7 +67,7 @@ export default function Services({ onNavigate }) {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {services.map((s) => (
           <div
             key={s.num}
