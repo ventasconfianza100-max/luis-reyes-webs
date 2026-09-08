@@ -76,10 +76,19 @@ for (const post of blogPosts) {
   }
 }
 
+// Rutas privadas: no se prerenderizan ni entran al sitemap, y van noindex.
+export const privateMetaByPath = {
+  '/admin': {
+    title: 'Panel interno | Luis Reyes Web',
+    description: 'Panel privado de cotizaciones, documentos y boletas de honorarios.',
+    noindex: true,
+  },
+}
+
 export const ROUTES = Object.keys(metaByPath)
 
 export function getMeta(path) {
-  return metaByPath[path] || { title: 'Página no encontrada | Luis Reyes Web', description: 'La página solicitada no existe.', noindex: true }
+  return metaByPath[path] || privateMetaByPath[path] || { title: 'Página no encontrada | Luis Reyes Web', description: 'La página solicitada no existe.', noindex: true }
 }
 
 export function canonicalFor(path) {
