@@ -24,7 +24,7 @@ export default function Navbar({ onNavigate }) {
 
   return (
     <nav className="site-nav sticky top-0 z-50 border-b border-white/70">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-[3.75rem] flex items-center justify-between">
         {/* Logo */}
         <a
           href="/"
@@ -40,7 +40,7 @@ export default function Navbar({ onNavigate }) {
         </a>
 
         {/* Links — desktop */}
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden items-center gap-0.5 rounded-2xl border border-white/80 bg-white/55 p-1 shadow-sm shadow-slate-900/5 md:flex">
           {links.map((link) => (
             <a
               key={link.label}
@@ -50,8 +50,8 @@ export default function Navbar({ onNavigate }) {
               rel={link.external ? 'noopener noreferrer' : undefined}
               className={`px-2.5 py-1.5 rounded-xl text-[13px] font-semibold transition-all ${
                 link.external
-                  ? 'bg-slate-950 text-white hover:bg-brand-700 ml-2 shadow-md shadow-slate-900/15'
-                  : 'text-slate-600 hover:text-brand-700 hover:bg-white'
+                  ? 'bg-slate-950 text-white hover:bg-brand-700 ml-1 shadow-md shadow-slate-900/15'
+                  : 'text-slate-600 hover:text-brand-700 hover:bg-white hover:shadow-sm'
               }`}
             >
               {link.label}
@@ -79,7 +79,7 @@ export default function Navbar({ onNavigate }) {
 
       {/* Panel móvil */}
       {open && (
-        <div className="md:hidden border-t border-slate-200/60 bg-white/95 backdrop-blur-xl shadow-xl">
+        <div className="rounded-b-2xl border-t border-slate-200/60 bg-white/95 shadow-xl shadow-slate-900/10 backdrop-blur-xl md:hidden">
           <div className="px-6 py-4 flex flex-col gap-1">
             {links.map((link) => (
               <a

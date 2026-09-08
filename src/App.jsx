@@ -29,7 +29,7 @@ import AboutPage from './components/AboutPage'
 import DiagnosticPage from './components/DiagnosticPage'
 import InstagramSection from './components/InstagramSection'
 import GrowthLandingPage from './components/GrowthLandingPage'
-import AdminPanel from './components/AdminPanel'
+import AdminAccess from './components/AdminAccess'
 
 import { getMeta, canonicalFor } from './seo'
 
@@ -79,7 +79,7 @@ export default function App({ initialPath }) {
 
   // El panel interno vive fuera del layout publico (sin navbar, footer ni WhatsApp).
   if (path === '/admin') {
-    return <AdminPanel />
+    return <AdminAccess />
   }
 
   let content

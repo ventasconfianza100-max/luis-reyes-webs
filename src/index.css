@@ -22,6 +22,14 @@ body {
   backdrop-filter: blur(18px) saturate(150%);
   box-shadow: 0 1px 0 rgba(15,23,42,.04);
 }
+.site-nav::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 -1px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(124,58,237,.2), rgba(6,182,212,.18), transparent);
+  pointer-events: none;
+}
 .hero-section {
   background:
     radial-gradient(circle at 6% 14%, rgba(124,58,237,.16), transparent 28%),
@@ -113,6 +121,17 @@ body {
 }
 .site-shell .rounded-3xl.bg-white:hover {
   border-color: rgba(139,92,246,.3);
+}
+.site-shell main section {
+  isolation: isolate;
+}
+.site-shell main h2 + p {
+  text-wrap: pretty;
+}
+.site-shell main h1,
+.site-shell main h2,
+.site-shell main h3 {
+  text-wrap: balance;
 }
 .site-shell a,
 .site-shell button { -webkit-tap-highlight-color: transparent; }

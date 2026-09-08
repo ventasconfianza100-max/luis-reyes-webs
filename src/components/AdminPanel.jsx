@@ -220,7 +220,7 @@ function DocumentoVista({ doc, registro }) {
 }
 
 // ── Panel ───────────────────────────────────────────────────
-export default function AdminPanel() {
+export default function AdminPanel({ onLogout }) {
   const [estado, setEstado] = useState(estadoInicial)
   const [listo, setListo] = useState(false)
   const [pestana, setPestana] = useState('proyecto')
@@ -367,6 +367,13 @@ export default function AdminPanel() {
             >
               Ver sitio
             </a>
+            <button
+              type="button"
+              onClick={onLogout}
+              className="rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-600 hover:border-red-200 hover:bg-red-50 hover:text-red-700"
+            >
+              Cerrar sesión
+            </button>
             <select
               value={estado.activo || activo.id}
               onChange={(e) => setEstado((prev) => ({ ...prev, activo: e.target.value }))}
