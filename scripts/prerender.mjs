@@ -3,6 +3,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import {
   ROUTES,
+  PRIVATE_ROUTES,
   getMeta,
   canonicalFor,
   jsonLdScriptsFor,
@@ -49,7 +50,9 @@ function applyMeta(html, routePath) {
   return html
 }
 
-for (const routePath of ROUTES) {
+// Las rutas privadas reciben HTML propio para evitar mostrar la portada
+// durante la carga. Permanecen fuera del sitemap y llevan noindex.
+for (const routePath of [...ROUTES, ...PRIVATE_ROUTES]) {
   const appHtml = render(routePath)
   let html = applyMeta(template, routePath)
   html = html.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)

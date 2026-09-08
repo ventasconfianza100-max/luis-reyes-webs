@@ -1,6 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { ROUTES, SITE_URL } from '../src/seo.js'
+import { PRIVATE_ROUTES, ROUTES, SITE_URL } from '../src/seo.js'
 const dist = path.resolve('dist')
 const titles = new Map()
 for (const route of ROUTES) {
@@ -21,5 +21,13 @@ for (const route of ROUTES) {
   titles.set(title, route)
 }
 if (!fs.existsSync(path.join(dist, 'sitemap.xml'))) throw new Error('Falta sitemap')
+const sitemap = fs.readFileSync(path.join(dist, 'sitemap.xml'), 'utf8')
+for (const route of PRIVATE_ROUTES) {
+  const file = path.join(dist, route.slice(1), 'index.html')
+  if (!fs.existsSync(file)) throw new Error(`Falta prerender privado: ${route}`)
+  const html = fs.readFileSync(file, 'utf8')
+  if (!html.includes('name="robots" content="noindex, nofollow"')) throw new Error(`Noindex inválido: ${route}`)
+  if (sitemap.includes(`${SITE_URL}${route}`)) throw new Error(`Ruta privada incluida en sitemap: ${route}`)
+}
 if (!fs.existsSync(path.join(dist, '404.html'))) throw new Error('Falta 404')
-console.log(`SEO OK: ${ROUTES.length} rutas prerenderizadas, sin titles duplicados.`)
+console.log(`SEO OK: ${ROUTES.length} rutas públicas y ${PRIVATE_ROUTES.length} privada(s) prerenderizadas.`)

@@ -86,6 +86,7 @@ export const privateMetaByPath = {
 }
 
 export const ROUTES = Object.keys(metaByPath)
+export const PRIVATE_ROUTES = Object.keys(privateMetaByPath)
 
 export function getMeta(path) {
   return metaByPath[path] || privateMetaByPath[path] || { title: 'Página no encontrada | Luis Reyes Web', description: 'La página solicitada no existe.', noindex: true }

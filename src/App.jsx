@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Stats from './components/Stats'
@@ -29,9 +29,7 @@ import AboutPage from './components/AboutPage'
 import DiagnosticPage from './components/DiagnosticPage'
 import InstagramSection from './components/InstagramSection'
 import GrowthLandingPage from './components/GrowthLandingPage'
-
-// Panel interno: se carga aparte para no pesar en el bundle publico.
-const AdminPanel = lazy(() => import('./components/AdminPanel'))
+import AdminPanel from './components/AdminPanel'
 
 import { getMeta, canonicalFor } from './seo'
 
@@ -81,11 +79,7 @@ export default function App({ initialPath }) {
 
   // El panel interno vive fuera del layout publico (sin navbar, footer ni WhatsApp).
   if (path === '/admin') {
-    return (
-      <Suspense fallback={<div className="p-10 text-sm text-slate-400">Cargando panel…</div>}>
-        <AdminPanel />
-      </Suspense>
-    )
+    return <AdminPanel />
   }
 
   let content

@@ -11,9 +11,11 @@ export default function Reveal({ children, className = '', delay = 0 }) {
     if (!el) return
 
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (reduce || !('IntersectionObserver' in window)) return
+    if (reduce || !('IntersectionObserver' in window)) {
+      el.classList.add('is-visible')
+      return
+    }
 
-    el.classList.add('reveal')
     if (delay) el.style.transitionDelay = `${delay}ms`
 
     const io = new IntersectionObserver(
@@ -32,7 +34,7 @@ export default function Reveal({ children, className = '', delay = 0 }) {
   }, [delay])
 
   return (
-    <div ref={ref} className={className}>
+    <div ref={ref} className={`reveal ${className}`}>
       {children}
     </div>
   )

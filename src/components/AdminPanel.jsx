@@ -361,6 +361,12 @@ export default function AdminPanel() {
             </p>
           </div>
           <div className="flex items-center gap-2">
+            <a
+              href="/"
+              className="rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-600 hover:bg-slate-50"
+            >
+              Ver sitio
+            </a>
             <select
               value={estado.activo || activo.id}
               onChange={(e) => setEstado((prev) => ({ ...prev, activo: e.target.value }))}
@@ -548,6 +554,17 @@ export default function AdminPanel() {
                 reservar {clp(retencionDe(brutoDesdeLiquido(p.total, tasa), tasa))} para el SII. Un pago bruto de{' '}
                 {clp(p.total)} deja {clp(liquidoDesdeBruto(p.total, tasa))} en tu bolsillo.
               </p>
+              <div className="mt-3 flex flex-wrap items-center gap-3 border-t border-slate-100 pt-3 text-xs">
+                <a
+                  href="https://www.sii.cl/destacados/boletas_honorarios/index.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-brand-700 hover:text-brand-800"
+                >
+                  Revisar información oficial del SII →
+                </a>
+                <span className="text-slate-400">Cálculo orientativo; confirma cada emisión en sii.cl.</span>
+              </div>
             </Tarjeta>
 
             <Tarjeta
