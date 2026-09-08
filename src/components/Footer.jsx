@@ -52,18 +52,19 @@ export default function Footer({ onNavigate }) {
   }
 
   return (
-    <footer className="bg-ink text-slate-300">
-      <div className="max-w-6xl mx-auto px-6 py-10">
-        <div className="grid gap-7 md:grid-cols-3">
+    <footer className="relative overflow-hidden border-t border-white/10 bg-ink text-slate-300">
+      <div aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-400/70 to-transparent" />
+      <div className="max-w-6xl mx-auto px-5 py-7 sm:px-6 md:py-8">
+        <div className="grid gap-7 md:grid-cols-[0.9fr_1.5fr_0.9fr] md:gap-9">
           {/* Marca */}
           <div>
             <p className="font-display text-xl font-bold text-white tracking-tight">
               Luis Reyes <span className="text-brand-400">Castro</span>
             </p>
-            <p className="mt-3 text-sm text-slate-400 leading-relaxed max-w-xs">
-              Diseño y desarrollo de páginas web para negocios en todo Chile: tiendas online, empresas y profesionales.
+            <p className="mt-2 max-w-xs text-sm leading-relaxed text-slate-400">
+              Diseño y desarrollo web para empresas, negocios y profesionales en Chile.
             </p>
-            <div className="mt-5 flex gap-3">
+            <div className="mt-4 flex gap-2.5">
               {socials.map((s) => (
                 <a
                   key={s.label}
@@ -71,7 +72,7 @@ export default function Footer({ onNavigate }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:bg-brand-600 hover:text-white hover:border-brand-600 transition-all"
+                  className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition-all hover:-translate-y-0.5 hover:border-brand-500 hover:bg-brand-600 hover:text-white"
                 >
                   {s.icon}
                 </a>
@@ -81,14 +82,14 @@ export default function Footer({ onNavigate }) {
 
           {/* Navegación */}
           <div>
-            <p className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Navegación</p>
-            <nav aria-label="Enlaces del sitio" className="flex flex-col gap-2.5">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-white">Navegación</p>
+            <nav aria-label="Enlaces del sitio" className="grid grid-cols-2 gap-x-6 gap-y-2">
               {footerLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={(event) => go(event, link.href)}
-                  className="text-sm text-slate-400 hover:text-brand-300 transition-colors w-fit"
+                  className="w-fit text-sm leading-snug text-slate-400 transition-colors hover:text-brand-300"
                 >
                   {link.label}
                 </a>
@@ -97,15 +98,15 @@ export default function Footer({ onNavigate }) {
           </div>
 
           {/* CTA */}
-          <div>
-            <p className="text-sm font-semibold text-white uppercase tracking-wider mb-4">¿Hablamos?</p>
-            <p className="text-sm text-slate-400 mb-4 leading-relaxed">
-              Una reunión sin compromiso para ver cómo tu web puede traerte más clientes.
+          <div className="md:border-l md:border-white/10 md:pl-7">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-white">¿Hablamos?</p>
+            <p className="mb-3 text-sm leading-relaxed text-slate-400">
+              Cuéntame qué necesitas y te orientaré sin compromiso.
             </p>
             <a
               href="/agenda"
               onClick={(event) => go(event, '/agenda')}
-              className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition-all"
+              className="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-brand-500"
             >
               Agenda una reunión
             </a>
@@ -113,15 +114,16 @@ export default function Footer({ onNavigate }) {
               href="https://wa.me/56922012534"
               target="_blank"
               rel="noopener noreferrer"
-              className="block mt-4 text-sm text-slate-400 hover:text-brand-300 transition-colors"
+              className="mt-3 block w-fit text-sm text-slate-400 transition-colors hover:text-brand-300"
             >
               +56 9 2201 2534
             </a>
           </div>
         </div>
 
-        <div className="mt-8 pt-5 border-t border-white/10 text-center text-xs text-slate-500">
-          © {new Date().getFullYear()} Luis Reyes Castro · Diseño y desarrollo web en Chile
+        <div className="mt-6 flex flex-col gap-1.5 border-t border-white/10 pt-4 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+          <span>© {new Date().getFullYear()} Luis Reyes Castro</span>
+          <span>Diseño y desarrollo web en Chile</span>
         </div>
       </div>
     </footer>
