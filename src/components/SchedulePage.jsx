@@ -66,7 +66,7 @@ export default function SchedulePage({ onNavigate }) {
               <source srcSet="/profile.webp" type="image/webp" />
               <img
                 src="/profile.jpg"
-                alt="Luis Reyes Castro, psicólogo y diseñador web"
+                alt="Retrato de Luis Reyes Castro, diseñador y desarrollador web"
                 width="96"
                 height="96"
                 loading="eager"
