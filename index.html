@@ -17,6 +17,10 @@
     <link rel="preload" as="image" href="/hero-workspace.webp" type="image/webp" fetchpriority="high" />
     <meta name="theme-color" content="#7c3aed" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /* Base crítica: evita saltos y SVG gigantes antes de cargar Tailwind. */
+      html{background:#f8fafc}body{margin:0;min-height:100vh;background:#f8fafc;color:#0f172a;font-family:Inter,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}*,*::before,*::after{box-sizing:border-box}img{display:block;max-width:100%}svg{width:1.5rem;height:1.5rem}.site-shell{min-height:100vh;overflow:hidden}.site-nav{height:3.75rem;background:rgba(248,250,252,.96)}.hero-section{min-height:34rem;background:linear-gradient(135deg,#fff,#f5f3ff)}@media(max-width:767px){.hero-section{min-height:0}.hero-section h1{font-size:2.45rem;line-height:1.05}.site-nav{position:relative}.reveal{opacity:1!important;transform:none!important}}
+    </style>
     <title>Diseño y Desarrollo Web en Talca, Chile | Luis Reyes Castro</title>
     <meta name="description" content="Diseño y programación de páginas web para negocios en Chile: tiendas online, empresas de servicios y profesionales. Sitios rápidos, optimizados para Google y pensados para captar clientes. Talca, Región del Maule." />
     <meta name="keywords" content="diseño web Talca, desarrollo web Talca, páginas web Talca, hacer página web Chile, diseñador web Talca, tienda online Chile, página web para empresa, página web para negocio" />
@@ -58,7 +62,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=optional" rel="stylesheet" />
   </head>
   <body>
     <div id="root"></div>
