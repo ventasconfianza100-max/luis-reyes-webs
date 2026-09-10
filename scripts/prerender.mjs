@@ -27,6 +27,16 @@ function applyMeta(html, routePath) {
   const meta = getMeta(routePath)
   const canonical = canonicalFor(routePath)
 
+  // La ruta de redes prioriza su retrato y evita descargar el hero de la home.
+  if (routePath === '/redes') {
+    html = html.replace('/hero-workspace.webp', '/profile.webp')
+    // Es una página de enlaces completamente funcional con HTML y CSS: no
+    // necesita hidratar React ni descargar el bundle principal en el móvil.
+    html = html.replace(/\s*<script type="module" crossorigin src="\/assets\/index-[^"]+\.js"><\/script>/, '')
+    // Evita un cambio tardío de tipografía en conexiones lentas.
+    html = html.replace('family=Sora:wght@600;700;800&display=swap', 'family=Sora:wght@600;700;800&display=optional')
+  }
+
   html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${meta.title}</title>`)
   html = replaceAttr(html, '<meta name="description" content="', meta.description)
   html = replaceAttr(html, '<link rel="canonical" href="', canonical)

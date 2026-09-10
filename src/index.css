@@ -306,6 +306,7 @@ button:focus-visible {
 .social-link-arrow { display: grid; place-items: center; color: #94a3b8; transition: transform .22s ease, color .22s ease; }
 .social-link-arrow svg { width: 1.15rem; height: 1.15rem; }
 .social-link:hover .social-link-arrow { color: var(--social-color); transform: translateX(3px); }
+.social-link:active { transform: scale(.985); transition-duration: .06s; }
 .social-link--website { --social-color: #7c3aed; background: linear-gradient(110deg,rgba(245,243,255,.96),rgba(255,255,255,.92)); }
 .social-link--whatsapp { --social-color: #16a34a; }
 .social-link--instagram { --social-color: #db2777; }
@@ -322,4 +323,19 @@ button:focus-visible {
   .social-intro { margin-bottom: 1.15rem; font-size: .85rem; }
   .social-link { min-height: 4.25rem; grid-template-columns: 2.55rem 1fr 1.3rem; padding: .62rem .8rem; border-radius: 1.05rem; }
   .social-link-icon { width: 2.55rem; height: 2.55rem; }
+}
+@media (max-width: 767px) {
+  .social-page { overflow: clip; }
+  .social-card { contain: layout paint style; }
+  .social-link {
+    backdrop-filter: none;
+    background: rgba(255,255,255,.96);
+    box-shadow: 0 5px 18px -14px rgba(15,23,42,.35);
+    touch-action: manipulation;
+    transition: transform .12s ease, border-color .12s ease;
+  }
+  .social-link:hover { transform: none; box-shadow: 0 5px 18px -14px rgba(15,23,42,.35); }
+  .social-link:active { transform: scale(.985); }
+  .social-orb { filter: none; animation-duration: 14s; opacity: .72; }
+  .social-card { animation-duration: .38s; }
 }
