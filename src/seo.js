@@ -10,6 +10,10 @@ export const metaByPath = {
     description:
       'Diseño y programación de páginas web para negocios en Chile: tiendas online, empresas de servicios y profesionales. Sitios rápidos, optimizados para Google y pensados para captar clientes. Talca, Región del Maule.',
   },
+  '/redes': {
+    title: 'Luis Reyes Web | Contacto y redes sociales',
+    description: 'Encuentra la página web, WhatsApp, Instagram, LinkedIn y Facebook de Luis Reyes, diseñador y desarrollador web en Talca, Chile.',
+  },
   '/diseno-web-talca': {
     title: 'Diseño Web en Talca | Páginas web para negocios — Luis Reyes Castro',
     description:
@@ -127,6 +131,7 @@ export function articleMetaTagsFor(path) {
 const GOOGLE_BUSINESS_URL = 'https://www.google.com/search?kgmid=/g/11z7ktq60d'
 
 const SAME_AS = [
+  'https://www.facebook.com/luisreyesweb.cl/',
   'https://www.linkedin.com/in/luisreyeswebs/',
   'https://www.instagram.com/luisreyesweb.cl/',
   GOOGLE_BUSINESS_URL,
@@ -275,6 +280,7 @@ const faqSchema = {
 
 // Etiquetas legibles para construir las migas de pan (breadcrumbs)
 const breadcrumbLabels = {
+  '/redes': 'Contacto y redes sociales',
   '/diseno-web-talca': 'Diseño web en Talca',
   '/tienda-online-chile': 'Tienda online en Chile',
   '/paginas-web-empresas-servicios': 'Páginas web para empresas de servicios',

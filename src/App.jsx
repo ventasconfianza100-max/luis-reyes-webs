@@ -30,6 +30,7 @@ import DiagnosticPage from './components/DiagnosticPage'
 import InstagramSection from './components/InstagramSection'
 import GrowthLandingPage from './components/GrowthLandingPage'
 import AdminAccess from './components/AdminAccess'
+import SocialLinksPage from './components/SocialLinksPage'
 
 import { getMeta, canonicalFor } from './seo'
 
@@ -83,7 +84,9 @@ export default function App({ initialPath }) {
   }
 
   let content
-  if (path === '/diseno-web-talca') {
+  if (path === '/redes') {
+    return <SocialLinksPage onNavigate={navigateTo} />
+  } else if (path === '/diseno-web-talca') {
     content = <DisenoWebTalcaPage onNavigate={navigateTo} />
   } else if (path === '/tienda-online-chile') {
     content = <TiendaOnlineChilePage onNavigate={navigateTo} />
