@@ -96,6 +96,11 @@ body {
     radial-gradient(circle at 8% 88%, rgba(249,115,22,.1), transparent 24%),
     linear-gradient(135deg, #fff 0%, #fdf4ff 50%, #fff7ed 100%);
 }
+.personal-intro-section {
+  background:
+    radial-gradient(circle at 88% 15%, rgba(34,211,238,.1), transparent 28%),
+    linear-gradient(135deg, #fff 0%, #fafaff 58%, #f0fdfa 100%);
+}
 
 /* Ritmo visual compartido: más compacto, consistente y con mayor profundidad. */
 .site-shell main > .reveal:nth-of-type(even) > section { background: rgba(255,255,255,.72); }
@@ -154,6 +159,9 @@ body {
   .site-shell a[class*="px-7"], .site-shell button[class*="px-7"] { padding-left: 1.25rem; padding-right: 1.25rem; }
   .site-shell a[class*="py-3.5"], .site-shell button[class*="py-3.5"] { padding-top: .7rem; padding-bottom: .7rem; }
   .reveal { transform: translateY(8px); }
+  .personal-intro-section { padding-top: 2.75rem; padding-bottom: 3rem; }
+  .personal-intro-section h2 { font-size: 1.85rem; line-height: 1.15; }
+  .personal-intro-section a { touch-action: manipulation; }
 }
 
 /* Titulares con fuente display */
