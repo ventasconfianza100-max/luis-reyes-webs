@@ -27,6 +27,15 @@ const links = [
     ),
   },
   {
+    name: 'TikTok',
+    label: '@luisreyesweb.cl',
+    href: 'https://www.tiktok.com/@luisreyesweb.cl',
+    color: 'social-link--tiktok',
+    icon: (
+      <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M14.5 3v11.1a4.6 4.6 0 1 1-4-4.55M14.5 3c.55 2.6 2.03 4.08 4.5 4.5" /></svg>
+    ),
+  },
+  {
     name: 'Facebook',
     label: 'Novedades de Luis Reyes Web',
     href: 'https://www.facebook.com/luisreyesweb.cl/',

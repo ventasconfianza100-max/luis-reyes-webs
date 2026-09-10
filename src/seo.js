@@ -12,7 +12,7 @@ export const metaByPath = {
   },
   '/redes': {
     title: 'Luis Reyes Web | Contacto y redes sociales',
-    description: 'Encuentra la página web, WhatsApp, Instagram, LinkedIn y Facebook de Luis Reyes, diseñador y desarrollador web en Talca, Chile.',
+    description: 'Encuentra la página web, WhatsApp, Instagram, TikTok, LinkedIn y Facebook de Luis Reyes, diseñador y desarrollador web en Talca, Chile.',
   },
   '/diseno-web-talca': {
     title: 'Diseño Web en Talca | Páginas web para negocios — Luis Reyes Castro',
@@ -134,6 +134,7 @@ const SAME_AS = [
   'https://www.facebook.com/luisreyesweb.cl/',
   'https://www.linkedin.com/in/luisreyeswebs/',
   'https://www.instagram.com/luisreyesweb.cl/',
+  'https://www.tiktok.com/@luisreyesweb.cl',
   GOOGLE_BUSINESS_URL,
 ].filter(Boolean)
 

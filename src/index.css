@@ -319,6 +319,7 @@ button:focus-visible {
 .social-link--whatsapp { --social-color: #16a34a; }
 .social-link--instagram { --social-color: #db2777; }
 .social-link--linkedin { --social-color: #0a66c2; }
+.social-link--tiktok { --social-color: #111827; }
 .social-link--facebook { --social-color: #1877f2; }
 .social-footer { margin-top: 1.35rem; color: #94a3b8; font-size: .68rem; font-weight: 600; letter-spacing: .05em; }
 .social-footer span { margin-left: .25rem; color: #8b5cf6; }
