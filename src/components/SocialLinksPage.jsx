@@ -32,7 +32,11 @@ const links = [
     href: 'https://www.tiktok.com/@luisreyesweb.cl',
     color: 'social-link--tiktok',
     icon: (
-      <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M14.5 3v11.1a4.6 4.6 0 1 1-4-4.55M14.5 3c.55 2.6 2.03 4.08 4.5 4.5" /></svg>
+      <svg className="tiktok-mark" viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true">
+        <path d="M14.2 3.5v10.1a4.35 4.35 0 1 1-3.6-4.28v2.55a1.9 1.9 0 1 0 1.25 1.78V3.5h2.35c.38 2.15 1.65 3.45 3.8 3.9v2.4a7.1 7.1 0 0 1-3.8-1.55" stroke="#25f4ee" strokeWidth="2.45" strokeLinecap="round" strokeLinejoin="round" transform="translate(-.45 .35)" />
+        <path d="M14.2 3.5v10.1a4.35 4.35 0 1 1-3.6-4.28v2.55a1.9 1.9 0 1 0 1.25 1.78V3.5h2.35c.38 2.15 1.65 3.45 3.8 3.9v2.4a7.1 7.1 0 0 1-3.8-1.55" stroke="#fe2c55" strokeWidth="2.45" strokeLinecap="round" strokeLinejoin="round" transform="translate(.45 -.2)" />
+        <path d="M14.2 3.5v10.1a4.35 4.35 0 1 1-3.6-4.28v2.55a1.9 1.9 0 1 0 1.25 1.78V3.5h2.35c.38 2.15 1.65 3.45 3.8 3.9v2.4a7.1 7.1 0 0 1-3.8-1.55" stroke="white" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
     ),
   },
   {
@@ -64,7 +68,8 @@ const criticalStyles = `
   .social-card h1{margin:.45rem 0 0;font:800 clamp(2rem,7vw,2.7rem)/1.08 system-ui,sans-serif;letter-spacing:-.055em}
   .social-intro{max-width:29rem;margin:.8rem auto 1.5rem;color:#64748b;font:400 .94rem/1.6 system-ui,sans-serif}
   .social-links{display:grid;gap:.72rem}.social-link{display:grid;grid-template-columns:2.85rem 1fr 1.8rem;align-items:center;gap:.85rem;min-height:4.6rem;padding:.75rem 1rem;border:1px solid #e2e8f0;border-radius:1.25rem;background:#fff;text-align:left;text-decoration:none}
-  .social-link-icon{display:grid;place-items:center;width:2.85rem;height:2.85rem}.social-link-icon svg{display:block;width:1.3rem;height:1.3rem}
+  .social-link-icon{display:grid;place-items:center;width:2.85rem;height:2.85rem;border-radius:.9rem;color:#fff;background:var(--social-color,#7c3aed)}.social-link-icon svg{display:block;width:1.3rem;height:1.3rem;fill:currentColor}
+  .social-link--website{--social-color:#7c3aed}.social-link--whatsapp{--social-color:#16a34a}.social-link--instagram{--social-color:#db2777}.social-link--linkedin{--social-color:#0a66c2}.social-link--tiktok{--social-color:#111827}.social-link--facebook{--social-color:#1877f2}.social-link--tiktok .tiktok-mark{width:1.45rem;height:1.45rem;fill:none}
   .social-link-copy{display:flex;min-width:0;flex-direction:column}.social-link-copy strong{color:#0f172a;font:700 .91rem system-ui,sans-serif}.social-link-copy small{color:#64748b;font:400 .74rem system-ui,sans-serif}
   .social-link-arrow svg{display:block;width:1.15rem;height:1.15rem}.social-footer{margin-top:1.35rem;color:#94a3b8;font:600 .68rem system-ui,sans-serif}
 `

@@ -306,7 +306,7 @@ button:focus-visible {
 .social-link { --social-color: #7c3aed; position: relative; display: grid; grid-template-columns: 2.85rem 1fr 1.8rem; align-items: center; gap: .85rem; min-height: 4.6rem; padding: .75rem 1rem; overflow: hidden; border: 1px solid rgba(148,163,184,.22); border-radius: 1.25rem; background: rgba(255,255,255,.86); box-shadow: 0 8px 30px -18px rgba(15,23,42,.28); text-align: left; backdrop-filter: blur(14px); transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease; }
 .social-link::before { content: ''; position: absolute; inset: 0 auto 0 0; width: 3px; background: var(--social-color); opacity: .75; }
 .social-link:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--social-color) 30%, transparent); box-shadow: 0 16px 38px -20px color-mix(in srgb, var(--social-color) 45%, #0f172a); }
-.social-link-icon { display: grid; place-items: center; width: 2.85rem; height: 2.85rem; border-radius: .9rem; color: var(--social-color); background: color-mix(in srgb, var(--social-color) 10%, white); }
+.social-link-icon { display: grid; place-items: center; width: 2.85rem; height: 2.85rem; border: 1px solid rgba(255,255,255,.72); border-radius: .9rem; color: white; background: var(--social-color); box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 6px 15px -10px var(--social-color); }
 .social-link-icon svg { width: 1.3rem; height: 1.3rem; fill: currentColor; }
 .social-link-copy { min-width: 0; display: flex; flex-direction: column; gap: .08rem; }
 .social-link-copy strong { color: #0f172a; font-family: 'Sora','Inter',sans-serif; font-size: .91rem; font-weight: 700; }
@@ -321,6 +321,9 @@ button:focus-visible {
 .social-link--linkedin { --social-color: #0a66c2; }
 .social-link--tiktok { --social-color: #111827; }
 .social-link--facebook { --social-color: #1877f2; }
+.social-link--instagram .social-link-icon { background: linear-gradient(145deg,#7c3aed 4%,#db2777 52%,#f97316 100%); }
+.social-link--tiktok .social-link-icon { background: #080b10; }
+.social-link--tiktok .tiktok-mark { width: 1.45rem; height: 1.45rem; fill: none; overflow: visible; }
 .social-footer { margin-top: 1.35rem; color: #94a3b8; font-size: .68rem; font-weight: 600; letter-spacing: .05em; }
 .social-footer span { margin-left: .25rem; color: #8b5cf6; }
 
