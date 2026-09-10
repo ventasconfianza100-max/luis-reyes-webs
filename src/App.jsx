@@ -32,6 +32,7 @@ import GrowthLandingPage from './components/GrowthLandingPage'
 import AdminAccess from './components/AdminAccess'
 import SocialLinksPage from './components/SocialLinksPage'
 import PersonalIntro from './components/PersonalIntro'
+import QuoteRequestForm from './components/QuoteRequestForm'
 
 import { getMeta, canonicalFor } from './seo'
 
@@ -117,7 +118,7 @@ export default function App({ initialPath }) {
     content = <><Navbar onNavigate={navigateTo} /><ProjectsPage onNavigate={navigateTo} /><Footer onNavigate={navigateTo} /></>
   } else if (path === '/') {
     content = (
-      <><Navbar onNavigate={navigateTo} /><main><div id="inicio"><Hero onNavigate={navigateTo} /></div><Reveal><Stats /></Reveal><Reveal><PersonalIntro onNavigate={navigateTo} /></Reveal><Reveal><div id="servicios"><Services onNavigate={navigateTo} /></div></Reveal><Reveal><ProjectsShowcase /></Reveal><WhyChooseMe /><Reveal><Process /></Reveal><Reveal><div id="incluye"><Features /></div></Reveal><Reveal><Pricing /></Reveal><Reveal><InstagramSection /></Reveal><Reveal><FAQ /></Reveal><Reveal><LeadMagnet /></Reveal></main><Footer onNavigate={navigateTo} /></>
+      <><Navbar onNavigate={navigateTo} /><main><div id="inicio"><Hero onNavigate={navigateTo} /></div><Reveal><Stats /></Reveal><Reveal><PersonalIntro onNavigate={navigateTo} /></Reveal><Reveal><div id="servicios"><Services onNavigate={navigateTo} /></div></Reveal><Reveal><ProjectsShowcase /></Reveal><WhyChooseMe /><Reveal><Process /></Reveal><Reveal><div id="incluye"><Features /></div></Reveal><Reveal><Pricing /></Reveal><Reveal><QuoteRequestForm /></Reveal><Reveal><InstagramSection /></Reveal><Reveal><FAQ /></Reveal><Reveal><LeadMagnet /></Reveal></main><Footer onNavigate={navigateTo} /></>
     )
   } else {
     content = <><Navbar onNavigate={navigateTo} /><NotFoundPage onNavigate={navigateTo} /><Footer onNavigate={navigateTo} /></>
