@@ -88,7 +88,7 @@ export default function SocialLinksPage({ onNavigate }) {
 
         <div className="social-profile-wrap">
           <span className="social-profile-ring" aria-hidden="true" />
-          <img className="social-profile" src="/profile.webp" alt="Luis Reyes Castro, diseñador y desarrollador web" width="160" height="160" />
+          <img className="social-profile" src="/luis-reyes-retrato-2026.webp" alt="Luis Reyes Castro, diseñador y desarrollador web" width="160" height="160" />
           <span className="social-status" title="Disponible para nuevos proyectos"><span className="sr-only">Disponible para nuevos proyectos</span></span>
         </div>
 

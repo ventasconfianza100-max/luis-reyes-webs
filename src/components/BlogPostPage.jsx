@@ -141,9 +141,9 @@ export default function BlogPostPage({ slug, onNavigate }) {
         {/* Autor */}
         <div className="mt-10 flex items-center gap-4 rounded-2xl border border-violet-100 bg-violet-50/50 p-5">
           <picture>
-            <source srcSet="/profile.webp" type="image/webp" />
+            <source srcSet="/luis-reyes-retrato-2026.webp" type="image/webp" />
             <img
-              src="/profile.jpg"
+              src="/luis-reyes-retrato-2026.jpg"
               alt="Luis Reyes Castro, diseñador y desarrollador web"
               width="56"
               height="56"

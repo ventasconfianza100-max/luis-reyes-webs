@@ -89,9 +89,9 @@ export default function Hero({ onNavigate }) {
           <div className="mt-6 flex items-center gap-3 rounded-2xl border border-white/80 bg-white/55 p-3 backdrop-blur-sm max-w-xl">
             <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-brand-200 shadow-sm flex-shrink-0">
               <picture>
-                <source srcSet="/profile.webp" type="image/webp" />
+                <source srcSet="/luis-reyes-retrato-2026.webp" type="image/webp" />
                 <img
-                  src="/profile.jpg"
+                  src="/luis-reyes-retrato-2026.jpg"
                   alt="Luis Reyes Castro, desarrollador y diseñador web en Talca"
                   width="48"
                   height="48"

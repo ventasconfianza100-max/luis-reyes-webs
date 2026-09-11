@@ -63,9 +63,9 @@ export default function SchedulePage({ onNavigate }) {
         <div className="text-center mb-8">
           <div className="mx-auto mb-5 w-24 h-24 rounded-full border-4 border-violet-300 overflow-hidden shadow-md bg-violet-50">
             <picture>
-              <source srcSet="/profile.webp" type="image/webp" />
+              <source srcSet="/luis-reyes-retrato-2026.webp" type="image/webp" />
               <img
-                src="/profile.jpg"
+                src="/luis-reyes-retrato-2026.jpg"
                 alt="Retrato de Luis Reyes Castro, diseñador y desarrollador web"
                 width="96"
                 height="96"

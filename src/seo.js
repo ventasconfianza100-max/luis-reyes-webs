@@ -144,7 +144,7 @@ const personSchema = {
   '@id': `${SITE_URL}/#luis-reyes`,
   name: 'Luis Reyes Castro',
   url: `${SITE_URL}/sobre-luis`,
-  image: `${SITE_URL}/profile.jpg`,
+  image: `${SITE_URL}/luis-reyes-retrato-2026.jpg`,
   jobTitle: 'Diseñador y desarrollador web',
   description: 'Diseñador y desarrollador de páginas web, tiendas online y software a medida para empresas, negocios y profesionales en Chile.',
   alumniOf: { '@type': 'EducationalOrganization', name: 'Universidad de Talca' },
@@ -163,7 +163,7 @@ const businessSchema = {
     'Diseño y desarrollo de sitios web para negocios en Chile: tiendas online, empresas de servicios y profesionales. Talca, Región del Maule.',
   url: SITE_URL,
   image: `${SITE_URL}/og-image.jpg`,
-  logo: `${SITE_URL}/profile.jpg`,
+  logo: `${SITE_URL}/luis-reyes-retrato-2026.jpg`,
   telephone: '+56922012534',
   priceRange: '$$',
   currenciesAccepted: 'CLP',
@@ -335,7 +335,7 @@ function blogPostSchema(post) {
     publisher: {
       '@type': 'Organization',
       name: 'Luis Reyes Castro — Diseño y Desarrollo Web',
-      logo: { '@type': 'ImageObject', url: `${SITE_URL}/profile.jpg` },
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}/luis-reyes-retrato-2026.jpg` },
     },
   }
 }
