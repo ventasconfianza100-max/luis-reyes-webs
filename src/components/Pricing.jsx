@@ -9,6 +9,7 @@ const wa = (plan) =>
 
 const plans = [
   {
+    code: 'START / 01',
     name: 'Plan Esencial',
     price: '$90.000',
     pitch: 'Para el negocio o profesional que recién parte y necesita estar online ya.',
@@ -22,6 +23,7 @@ const plans = [
     highlight: false,
   },
   {
+    code: 'GROW / 02',
     name: 'Plan Profesional',
     price: '$190.000',
     pitch: 'El más elegido: pensado para captar clientes de verdad.',
@@ -36,6 +38,7 @@ const plans = [
     highlight: true,
   },
   {
+    code: 'SCALE / 03',
     name: 'Plan Premium',
     price: '$320.000',
     pitch: 'Para tiendas, empresas y negocios que quieren destacar y escalar.',
@@ -74,33 +77,39 @@ export default function Pricing() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 items-start">
+      <div className="pricing-grid grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
         {plans.map((plan) => (
           <div
             key={plan.name}
-            className={`relative rounded-3xl p-7 flex flex-col transition-all hover:-translate-y-1 ${
+            className={`pricing-card relative p-6 md:p-7 flex flex-col transition-all hover:-translate-y-1 ${
               plan.highlight
-                ? 'bg-white shadow-lift border-2 border-brand-400 ring-4 ring-brand-100'
-                : 'bg-white shadow-soft border border-slate-100'
+                ? 'pricing-card--featured bg-slate-950 text-white shadow-[0_28px_70px_-32px_rgba(15,23,42,.8)] border border-cyan-300/20'
+                : 'bg-white/90 shadow-soft border border-slate-200/80'
             }`}
           >
             {plan.highlight && (
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-500 text-white text-xs font-semibold px-4 py-1 rounded-full shadow-sm">
-                Recomendado para captar consultas
+              <span className="pricing-recommended absolute right-5 top-5 inline-flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-[.13em] text-emerald-300">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-300 shadow-[0_0_0_4px_rgba(110,231,183,.1)]" /> Recomendado
               </span>
             )}
 
-            <h3 className="text-lg font-bold text-slate-800">{plan.name}</h3>
-            <div className="mt-2 mb-1 flex items-baseline gap-1">
-              <span className="text-3xl font-extrabold text-brand-600">{plan.price}</span>
-              <span className="text-slate-400 text-sm">CLP</span>
+            <div className="mb-7 flex items-center justify-between gap-3">
+              <span className={`font-mono text-[10px] font-bold tracking-[.17em] ${plan.highlight ? 'text-cyan-300' : 'text-brand-600'}`}>{plan.code}</span>
+              {!plan.highlight && <span className="pricing-pixels" aria-hidden="true" />}
             </div>
-            <p className="text-slate-500 text-sm leading-relaxed mb-5">{plan.pitch}</p>
 
-            <ul className="space-y-2.5 mb-7 flex-1">
+            <h3 className={`font-display text-xl font-bold ${plan.highlight ? 'text-white' : 'text-slate-900'}`}>{plan.name}</h3>
+            <div className="mt-3 mb-2 flex items-baseline gap-2">
+              <span className={`font-display text-4xl font-extrabold tracking-[-.055em] ${plan.highlight ? 'text-white' : 'text-slate-950'}`}>{plan.price}</span>
+              <span className={`text-[10px] font-bold tracking-[.14em] ${plan.highlight ? 'text-slate-400' : 'text-slate-400'}`}>CLP</span>
+            </div>
+            <p className={`${plan.highlight ? 'text-slate-300' : 'text-slate-500'} text-sm leading-relaxed mb-6 min-h-[2.75rem]`}>{plan.pitch}</p>
+
+            <div className={`mb-5 h-px ${plan.highlight ? 'bg-gradient-to-r from-cyan-300/35 via-brand-400/25 to-transparent' : 'bg-gradient-to-r from-slate-200 to-transparent'}`} />
+            <ul className="space-y-3 mb-8 flex-1">
               {plan.features.map((f) => (
-                <li key={f} className="flex gap-2 text-sm text-slate-600 leading-snug">
-                  <Check />
+                <li key={f} className={`flex gap-2.5 text-sm leading-snug ${plan.highlight ? 'text-slate-300' : 'text-slate-600'}`}>
+                  {plan.highlight ? <span className="mt-0.5 text-cyan-300">✓</span> : <Check />}
                   <span>{f}</span>
                 </li>
               ))}
@@ -113,8 +122,8 @@ export default function Pricing() {
               data-analytics={`pricing_click_${plan.name.toLowerCase().replaceAll(' ', '_')}`}
               className={`inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm transition-all w-full ${
                 plan.highlight
-                  ? 'bg-brand-600 text-white hover:bg-brand-700 shadow-soft hover:shadow-lift'
-                  : 'bg-brand-50 text-brand-600 hover:bg-brand-100 border border-brand-200'
+                  ? 'bg-white text-slate-950 hover:bg-cyan-50 shadow-lg shadow-black/20'
+                  : 'bg-slate-950 text-white hover:bg-brand-700 border border-slate-950'
               }`}
             >
               {plan.cta}
@@ -127,7 +136,7 @@ export default function Pricing() {
       </div>
 
       {/* Garantía / reversión de riesgo */}
-      <div className="mt-8 max-w-3xl mx-auto rounded-2xl bg-brand-50/70 border border-brand-100 p-5 flex items-start gap-3">
+      <div className="pricing-assurance mt-7 max-w-4xl mx-auto border border-brand-100/80 bg-white/60 p-5 flex items-start gap-3 backdrop-blur-sm">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 text-brand-500 flex-shrink-0">
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
         </svg>
