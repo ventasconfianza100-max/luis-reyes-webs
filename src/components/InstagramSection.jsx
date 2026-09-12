@@ -4,7 +4,7 @@ const INSTAGRAM_URL = 'https://www.instagram.com/luisreyesweb.cl/'
 
 export default function InstagramSection() {
   return (
-    <Section id="instagram" className="instagram-section">
+    <Section id="instagram" className="instagram-section decor-section decor-instagram">
       <div className="grid items-center gap-7 lg:grid-cols-[.85fr_1.15fr]">
         <div>
           <span className="inline-flex rounded-full border border-pink-200 bg-pink-50 px-3 py-1 text-xs font-bold uppercase tracking-[.16em] text-pink-600">Instagram</span>

@@ -59,8 +59,8 @@ body {
   box-shadow: 1.1rem 0 #2563eb, 1.1rem 1.1rem #8b5cf6;
   opacity: .7;
 }
-.hero-pixel--one { left: 3.5%; top: 19%; }
-.hero-pixel--two { left: 48%; bottom: 12%; transform: scale(.72); }
+.hero-pixel--one { left: 3.5%; top: 19%; animation: hero-pixel-drift 8s ease-in-out infinite; }
+.hero-pixel--two { left: 48%; bottom: 12%; transform: scale(.72); animation: hero-pixel-drift-small 10s ease-in-out infinite reverse; }
 .hero-signature { border-radius: 1rem 1rem .25rem 1rem; box-shadow: 0 12px 34px -24px rgba(15,23,42,.45); }
 .hero-signature-mark {
   display: grid;
@@ -172,6 +172,10 @@ body {
   opacity: .55;
 }
 .service-card { position: relative; overflow: hidden; }
+.service-card { border-radius: 1.35rem 1.35rem .35rem 1.35rem; }
+.service-card--violet { background: linear-gradient(145deg,rgba(245,243,255,.82),#fff 42%); }
+.service-card--amber { background: linear-gradient(145deg,rgba(255,251,235,.9),#fff 42%); }
+.service-card--cyan { background: linear-gradient(145deg,rgba(236,254,255,.75),#fff 42%); }
 .service-card::after {
   content: '';
   position: absolute;
@@ -183,13 +187,13 @@ body {
 }
 .service-card:hover::after { opacity: 1; }
 .service-icon { border-radius: .75rem .75rem .18rem .75rem; }
-.software-banner { position: relative; overflow: hidden; }
+.software-banner { position: relative; overflow: hidden; border-radius: 1.35rem 1.35rem .35rem 1.35rem; }
 .software-banner::after {
   content: '</>';
   position: absolute;
   right: 1rem;
   bottom: -1.4rem;
-  color: rgba(124,58,237,.045);
+  color: rgba(103,232,249,.055);
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 6rem;
   font-weight: 900;
@@ -348,9 +352,39 @@ body {
   letter-spacing: .12em;
   box-shadow: 3px 3px 0 rgba(124,58,237,.2);
 }
+@keyframes hero-pixel-drift { 0%,100% { transform: translate3d(0,0,0) rotate(0); } 50% { transform: translate3d(.7rem,1rem,0) rotate(8deg); } }
+@keyframes hero-pixel-drift-small { 0%,100% { transform: scale(.72) translate3d(0,0,0); } 50% { transform: scale(.72) translate3d(-1rem,.7rem,0); } }
 
 /* Decoración cinética por contexto. Solo escritorio y solo compositor CSS. */
 @media (min-width: 1024px) {
+  .decor-home-section { position: relative; isolation: isolate; overflow: hidden; }
+  .decor-home-section > div { position: relative; z-index: 1; }
+  .personal-intro-section::before {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    right: -3.8rem;
+    top: 18%;
+    width: 8rem;
+    height: 8rem;
+    border: 1px solid rgba(6,182,212,.2);
+    border-radius: 1.6rem .4rem 1.6rem 1.6rem;
+    box-shadow: inset 0 0 0 1.4rem rgba(34,211,238,.025);
+    animation: decor-spin 38s linear infinite;
+  }
+  .personal-intro-section::after {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    left: 3%;
+    bottom: 12%;
+    width: .45rem;
+    height: .45rem;
+    background: #22d3ee;
+    box-shadow: .9rem 0 #6366f1, .9rem .9rem #a78bfa;
+    animation: decor-float 8s ease-in-out infinite;
+    opacity: .48;
+  }
   .decor-section { position: relative; overflow: hidden; }
   .decor-section::before,
   .decor-section::after {
@@ -384,6 +418,28 @@ body {
     border-radius: 50%;
     box-shadow: inset 0 0 0 1.25rem rgba(6,182,212,.025);
     animation: decor-spin 28s linear infinite;
+  }
+
+  /* Servicios: órbita modular y matriz de píxeles. */
+  .decor-services::before {
+    left: -3.6rem;
+    top: 29%;
+    width: 8rem;
+    height: 8rem;
+    border: 1px dashed rgba(124,58,237,.22);
+    border-radius: 50%;
+    background: radial-gradient(circle at center,transparent 0 32%,rgba(124,58,237,.035) 33% 48%,transparent 49%);
+    animation: decor-spin 30s linear infinite;
+  }
+  .decor-services::after {
+    right: -2rem;
+    bottom: 15%;
+    width: 7rem;
+    height: 7rem;
+    background-image: radial-gradient(circle,rgba(6,182,212,.28) 1.4px,transparent 1.6px);
+    background-size: 14px 14px;
+    animation: decor-tilt 13s ease-in-out infinite;
+    opacity: .5;
   }
 
   /* Proceso: engranaje abstracto de pasos. */
@@ -450,6 +506,28 @@ body {
     box-shadow: 1rem 0 #6366f1, 1rem 1rem #a78bfa, 0 2rem rgba(34,211,238,.5);
     animation: decor-float 9s ease-in-out infinite reverse;
     opacity: .55;
+  }
+
+  /* Instagram: anillos inspirados en cámara y contenido en movimiento. */
+  .decor-instagram::before {
+    left: -3.3rem;
+    top: 22%;
+    width: 7.5rem;
+    height: 7.5rem;
+    border: 1px solid rgba(219,39,119,.18);
+    border-radius: 2rem .55rem 2rem 2rem;
+    box-shadow: inset 0 0 0 1.5rem rgba(236,72,153,.025);
+    animation: decor-spin 40s linear infinite reverse;
+  }
+  .decor-instagram::after {
+    right: 2.5%;
+    bottom: 13%;
+    width: .5rem;
+    height: .5rem;
+    background: #ec4899;
+    box-shadow: 1rem 0 #f97316, 1rem 1rem #8b5cf6;
+    animation: decor-float 10s ease-in-out infinite reverse;
+    opacity: .45;
   }
 
   /* Cotización: retícula de briefing y anillos de proceso. */

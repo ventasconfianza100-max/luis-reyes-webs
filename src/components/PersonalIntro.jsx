@@ -2,7 +2,7 @@ export default function PersonalIntro({ onNavigate }) {
   const whatsapp = 'https://wa.me/56922012534?text=' + encodeURIComponent('Hola Luis, vi tu página y quiero conversar sobre mi proyecto web.')
 
   return (
-    <section className="personal-intro-section px-6 py-12 md:py-16" aria-labelledby="personal-intro-title">
+    <section className="personal-intro-section decor-home-section px-6 py-12 md:py-16" aria-labelledby="personal-intro-title">
       <div className="mx-auto grid max-w-6xl items-center gap-8 md:grid-cols-[.82fr_1.18fr] md:gap-12">
         <div className="relative mx-auto w-full max-w-[21rem]">
           <div className="absolute -inset-3 -z-10 rotate-3 rounded-[2rem] bg-gradient-to-br from-brand-200/70 to-cyan-100/70" aria-hidden="true" />
