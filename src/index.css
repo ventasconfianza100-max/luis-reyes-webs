@@ -312,7 +312,7 @@ body {
   .personal-intro-section h2 { font-size: 1.85rem; line-height: 1.15; }
   .personal-intro-section a { touch-action: manipulation; }
   .hero-portrait { position: relative; border-radius: 1.1rem 1.1rem .3rem 1.1rem; }
-  .hero-portrait img { object-position: center 31%; }
+  .hero-portrait img { object-position: center; }
   .hero-pixel--two { display: none; }
   .services-section::before { right: 1.2rem; top: 1.5rem; }
   .project-preview::after { opacity: 1; transform: none; }

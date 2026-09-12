@@ -5,15 +5,15 @@ export default function Hero({ onNavigate }) {
       <div className="hero-pixel hero-pixel--one" aria-hidden="true" />
       <div className="hero-pixel hero-pixel--two" aria-hidden="true" />
 
-      {/* Retrato de marca: la estética pixelada pasa a ser parte del sistema visual. */}
+      {/* Imagen de trabajo: comunica el servicio antes de presentar a la persona. */}
       <div className="hero-portrait hidden md:block absolute inset-y-7 right-7 w-[43%] lg:w-[42%] overflow-hidden border border-white/15 shadow-[0_32px_90px_-28px_rgba(2,8,23,0.7)]">
         <picture>
-          <source srcSet="/luis-reyes-retrato-2026.webp" type="image/webp" />
+          <source srcSet="/hero-workspace.webp" type="image/webp" />
           <img
-            src="/luis-reyes-retrato-2026.jpg"
-            alt="Luis Reyes Castro, diseñador y desarrollador web en Talca"
-            width="900"
-            height="900"
+            src="/hero-workspace.jpg"
+            alt="Escritorio con una laptop mostrando un sitio web diseñado por Luis Reyes"
+            width="1000"
+            height="750"
             loading="eager"
             fetchpriority="high"
             decoding="async"
@@ -74,15 +74,15 @@ export default function Hero({ onNavigate }) {
             {['Atención directa', '100% adaptable', 'Primera reunión gratis'].map((item) => <span key={item} className="inline-flex items-center gap-1.5"><span className="text-emerald-500">✓</span>{item}</span>)}
           </div>
 
-          {/* En móvil el retrato conserva protagonismo sin desplazar los CTA. */}
+          {/* En móvil la imagen mantiene contexto sin desplazar los CTA. */}
           <div className="hero-portrait md:hidden mt-7 h-[21rem] overflow-hidden border border-white/15 shadow-[0_24px_60px_-28px_rgba(2,8,23,.75)]">
             <picture>
-              <source srcSet="/luis-reyes-retrato-2026.webp" type="image/webp" />
+              <source srcSet="/hero-workspace.webp" type="image/webp" />
               <img
-                src="/luis-reyes-retrato-2026.jpg"
-                alt="Luis Reyes Castro, diseñador y desarrollador web en Talca"
-                width="900"
-                height="900"
+                src="/hero-workspace.jpg"
+                alt="Escritorio con una laptop mostrando un sitio web diseñado por Luis Reyes"
+                width="1000"
+                height="750"
                 loading="eager"
                 decoding="async"
                 className="w-full h-full object-cover"
