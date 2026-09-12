@@ -25,7 +25,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <Section>
+    <Section className="process-section decor-section decor-process">
       <div className="text-center max-w-2xl mx-auto mb-9">
         <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600 mb-3">
           Cómo trabajamos

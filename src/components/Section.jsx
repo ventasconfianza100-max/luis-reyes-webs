@@ -18,7 +18,7 @@ export default function Section({
 }) {
   return (
     <section id={id} className={`${spacing} ${className}`}>
-      <div className={`${widths[width]} mx-auto px-6 ${containerClassName}`}>
+      <div className={`${widths[width]} relative z-10 mx-auto px-6 ${containerClassName}`}>
         {children}
       </div>
     </section>

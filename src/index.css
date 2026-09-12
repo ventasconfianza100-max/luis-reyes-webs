@@ -251,6 +251,146 @@ body {
   box-shadow: 3px 3px 0 rgba(124,58,237,.2);
 }
 
+/* Decoración cinética por contexto. Solo escritorio y solo compositor CSS. */
+@media (min-width: 1024px) {
+  .decor-section { position: relative; overflow: hidden; }
+  .decor-section::before,
+  .decor-section::after {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    will-change: transform;
+  }
+
+  /* Portafolio: marco de navegador y nodos conectados. */
+  .decor-projects::before {
+    left: -4.8rem;
+    top: 18%;
+    width: 9.5rem;
+    height: 7rem;
+    border: 1px solid rgba(99,102,241,.22);
+    border-radius: 1.25rem .35rem 1.25rem 1.25rem;
+    background:
+      radial-gradient(circle at 1rem .85rem, #22d3ee 0 .18rem, transparent .2rem),
+      radial-gradient(circle at 1.65rem .85rem, #818cf8 0 .18rem, transparent .2rem),
+      linear-gradient(rgba(99,102,241,.13),rgba(99,102,241,.13)) 0 1.65rem/100% 1px no-repeat;
+    animation: decor-orbit 19s ease-in-out infinite;
+  }
+  .decor-projects::after {
+    right: -2.5rem;
+    bottom: 13%;
+    width: 6.5rem;
+    height: 6.5rem;
+    border: 1px dashed rgba(6,182,212,.27);
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 1.25rem rgba(6,182,212,.025);
+    animation: decor-spin 28s linear infinite;
+  }
+
+  /* Proceso: engranaje abstracto de pasos. */
+  .decor-process::before {
+    right: -3.3rem;
+    top: 17%;
+    width: 7.5rem;
+    height: 7.5rem;
+    border: 1px solid rgba(124,58,237,.2);
+    border-radius: 1.6rem .45rem 1.6rem 1.6rem;
+    box-shadow: inset 0 0 0 1.15rem rgba(124,58,237,.025), 0 0 0 .65rem rgba(34,211,238,.025);
+    animation: decor-spin 34s linear infinite reverse;
+  }
+  .decor-process::after {
+    left: 2.4%;
+    bottom: 13%;
+    width: .55rem;
+    height: .55rem;
+    background: #22d3ee;
+    box-shadow: 1rem 0 #6366f1, 1rem 1rem #a78bfa, 0 2rem rgba(34,211,238,.45);
+    animation: decor-float 8s ease-in-out infinite;
+    opacity: .48;
+  }
+
+  /* Responsive: dispositivos superpuestos. */
+  .decor-responsive::before {
+    left: -2rem;
+    top: 20%;
+    width: 4.8rem;
+    height: 7rem;
+    border: 1px solid rgba(6,182,212,.24);
+    border-radius: 1rem;
+    box-shadow: 2.8rem 2.3rem 0 -1px #f8fafc, 2.8rem 2.3rem 0 0 rgba(99,102,241,.19);
+    animation: decor-tilt 14s ease-in-out infinite;
+  }
+  .decor-responsive::after {
+    right: -3rem;
+    bottom: 12%;
+    width: 7rem;
+    height: 7rem;
+    background-image: radial-gradient(circle, rgba(124,58,237,.28) 1.4px, transparent 1.6px);
+    background-size: 14px 14px;
+    animation: decor-spin 42s linear infinite;
+    opacity: .52;
+  }
+
+  /* Planes: órbitas concéntricas, asociadas a opciones y escala. */
+  .decor-pricing::before {
+    right: -4rem;
+    top: 15%;
+    width: 9rem;
+    height: 9rem;
+    border: 1px solid rgba(124,58,237,.2);
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 1.6rem rgba(124,58,237,.025), inset 0 0 0 3.1rem rgba(6,182,212,.018);
+    animation: decor-orbit 22s ease-in-out infinite reverse;
+  }
+  .decor-pricing::after {
+    left: -2.3rem;
+    bottom: 20%;
+    width: 5.2rem;
+    height: 5.2rem;
+    border: 1px dashed rgba(6,182,212,.28);
+    transform: rotate(45deg);
+    animation: decor-spin-diamond 31s linear infinite;
+  }
+
+  /* Checklist: globo de mensaje geométrico. */
+  .decor-message::before {
+    left: -3.5rem;
+    top: 23%;
+    width: 7.5rem;
+    height: 5.4rem;
+    border: 1px solid rgba(99,102,241,.2);
+    border-radius: 1.5rem 1.5rem .35rem 1.5rem;
+    background: linear-gradient(135deg, rgba(124,58,237,.035), rgba(34,211,238,.035));
+    animation: decor-float 10s ease-in-out infinite reverse;
+  }
+  .decor-message::after {
+    right: 2.6%;
+    top: 16%;
+    width: .5rem;
+    height: .5rem;
+    background: #22d3ee;
+    box-shadow: .9rem .9rem #6366f1, 1.8rem 0 #a78bfa;
+    opacity: .5;
+    animation: decor-tilt 11s ease-in-out infinite;
+  }
+}
+
+@keyframes decor-spin { to { transform: rotate(360deg); } }
+@keyframes decor-spin-diamond { from { transform: rotate(45deg); } to { transform: rotate(405deg); } }
+@keyframes decor-orbit {
+  0%,100% { transform: rotate(-4deg) translate3d(0,0,0); }
+  50% { transform: rotate(7deg) translate3d(.5rem,-.7rem,0); }
+}
+@keyframes decor-float {
+  0%,100% { transform: translate3d(0,0,0) rotate(0); }
+  50% { transform: translate3d(0,-1rem,0) rotate(9deg); }
+}
+@keyframes decor-tilt {
+  0%,100% { transform: rotate(-5deg) translate3d(0,0,0); }
+  50% { transform: rotate(5deg) translate3d(.35rem,-.5rem,0); }
+}
+
 /* Ritmo visual compartido: más compacto, consistente y con mayor profundidad. */
 .site-shell main > .reveal:nth-of-type(even) > section { background: rgba(255,255,255,.72); }
 .site-shell section h2 { letter-spacing: -.035em; }
@@ -358,6 +498,10 @@ button:focus-visible {
   * {
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
+  }
+  .decor-section::before,
+  .decor-section::after {
+    animation: none !important;
   }
 }
 

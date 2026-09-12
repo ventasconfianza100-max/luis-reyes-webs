@@ -61,7 +61,7 @@ function Check() {
 
 export default function Pricing() {
   return (
-    <Section id="planes">
+    <Section id="planes" className="pricing-section decor-section decor-pricing">
       <div className="text-center max-w-2xl mx-auto mb-9">
         <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600 mb-3">
           Planes

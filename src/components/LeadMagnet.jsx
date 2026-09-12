@@ -14,7 +14,7 @@ const items = [
 
 export default function LeadMagnet() {
   return (
-    <Section id="checklist">
+    <Section id="checklist" className="lead-section decor-section decor-message">
       <div className="rounded-3xl bg-brand-600 text-white shadow-lift p-10 md:p-14 text-center">
         <span className="inline-block text-3xl mb-3">🎁</span>
         <h2 className="font-display text-3xl md:text-4xl font-bold mb-2">Checklist gratis para tu web</h2>

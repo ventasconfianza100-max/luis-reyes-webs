@@ -32,7 +32,7 @@ function ProjectCard({ project }) {
 
 export default function ProjectsShowcase() {
   return (
-    <Section>
+    <Section className="projects-section decor-section decor-projects">
       <div className="mx-auto mb-8 max-w-3xl text-center">
         <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600">Portafolio real</span>
         <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">Lo que he construido</h2>

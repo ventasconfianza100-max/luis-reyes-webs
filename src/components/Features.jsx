@@ -33,7 +33,7 @@ const features = [
 
 export default function Features() {
   return (
-    <Section>
+    <Section className="features-section decor-section decor-responsive">
       <div className="bg-white rounded-3xl shadow-soft border border-slate-100 p-8 md:p-12">
         <div className="max-w-2xl mb-10">
           <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600 mb-3">
