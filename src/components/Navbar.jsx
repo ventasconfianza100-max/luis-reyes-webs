@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const links = [
   { label: 'Inicio', href: '#inicio' },
@@ -13,9 +13,39 @@ const links = [
 
 export default function Navbar({ onNavigate }) {
   const [open, setOpen] = useState(false)
+  const pendingScroll = useRef(null)
+
+  useEffect(() => () => {
+    if (pendingScroll.current) window.clearTimeout(pendingScroll.current)
+  }, [])
+
+  const scrollToSection = (hash) => {
+    const id = hash.replace('#', '')
+    const run = () => {
+      const target = document.getElementById(id)
+      if (!target) return
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      window.history.replaceState({}, '', id === 'inicio' ? '/' : `/#${id}`)
+    }
+
+    if (pendingScroll.current) window.clearTimeout(pendingScroll.current)
+    if (window.location.pathname !== '/') {
+      onNavigate('/')
+      pendingScroll.current = window.setTimeout(run, 80)
+    } else {
+      window.requestAnimationFrame(run)
+    }
+  }
 
   const handleClick = (event, link) => {
-    if (link.route) {
+    if (pendingScroll.current) {
+      window.clearTimeout(pendingScroll.current)
+      pendingScroll.current = null
+    }
+    if (link.href.startsWith('#')) {
+      event.preventDefault()
+      scrollToSection(link.href)
+    } else if (link.route) {
       event.preventDefault()
       onNavigate(link.href)
     }
@@ -23,7 +53,7 @@ export default function Navbar({ onNavigate }) {
   }
 
   return (
-    <nav className="site-nav sticky top-0 z-50 border-b border-white/70">
+    <nav className="site-nav sticky top-0 z-50 border-b border-white/70" aria-label="Navegación principal">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-[3.75rem] flex items-center justify-between">
         {/* Logo */}
         <a
@@ -33,14 +63,14 @@ export default function Navbar({ onNavigate }) {
             onNavigate('/')
             setOpen(false)
           }}
-          className="group flex items-center gap-3 font-display font-bold text-slate-950 text-base sm:text-lg tracking-tight"
+          className="group flex items-center gap-3 font-display font-bold text-slate-950 text-base sm:text-lg tracking-tight select-none"
         >
           <span className="grid h-8 w-8 place-items-center rounded-[.55rem_.55rem_.15rem_.55rem] bg-slate-950 text-[10px] font-extrabold tracking-widest text-cyan-300 shadow-[3px_3px_0_rgba(124,58,237,.22)] transition-transform group-hover:-rotate-3">LR</span>
           <span>Luis Reyes <span className="text-brand-600">Castro</span><small className="hidden lg:block font-sans text-[10px] font-semibold uppercase tracking-[.18em] text-slate-400 mt-0.5">Diseño & desarrollo web</small></span>
         </a>
 
         {/* Links — desktop */}
-        <div className="hidden items-center gap-0.5 rounded-2xl border border-white/80 bg-white/55 p-1 shadow-sm shadow-slate-900/5 md:flex">
+        <div className="nav-links hidden items-center gap-0.5 rounded-2xl border border-white/80 bg-white/55 p-1 shadow-sm shadow-slate-900/5 md:flex">
           {links.map((link) => (
             <a
               key={link.label}

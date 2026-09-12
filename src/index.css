@@ -21,7 +21,23 @@ body {
   background: rgba(248,250,252,.83);
   backdrop-filter: blur(18px) saturate(150%);
   box-shadow: 0 1px 0 rgba(15,23,42,.04);
+  transform: translateZ(0);
 }
+.nav-links { contain: layout paint; }
+.nav-links a { position: relative; isolation: isolate; }
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg,rgba(124,58,237,.07),rgba(34,211,238,.06));
+  transform: scale(.88);
+  opacity: 0;
+  transition: transform .18s ease, opacity .18s ease;
+}
+.nav-links a:not([target]):hover::before { transform: scale(1); opacity: 1; }
+.nav-links a:active { transform: scale(.97); }
 .site-nav::after {
   content: '';
   position: absolute;
