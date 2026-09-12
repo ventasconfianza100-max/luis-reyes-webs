@@ -58,9 +58,12 @@ export default function Footer({ onNavigate }) {
         <div className="grid gap-7 md:grid-cols-[0.9fr_1.5fr_0.9fr] md:gap-9">
           {/* Marca */}
           <div>
-            <p className="font-display text-xl font-bold text-white tracking-tight">
-              Luis Reyes <span className="text-brand-400">Castro</span>
-            </p>
+            <div className="flex items-center gap-3">
+              <span className="footer-mark" aria-hidden="true">LR</span>
+              <p className="font-display text-xl font-bold text-white tracking-tight">
+                Luis Reyes <span className="text-brand-400">Castro</span>
+              </p>
+            </div>
             <p className="mt-2 max-w-xs text-sm leading-relaxed text-slate-400">
               Diseño y desarrollo web para empresas, negocios y profesionales en Chile.
             </p>

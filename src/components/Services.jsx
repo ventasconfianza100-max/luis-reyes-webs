@@ -53,7 +53,7 @@ const microNotes = [
 
 export default function Services({ onNavigate }) {
   return (
-    <Section className="bg-gradient-to-b from-amber-50/40 via-white to-white">
+    <Section className="services-section bg-gradient-to-b from-amber-50/40 via-white to-white">
       <div className="max-w-2xl mx-auto text-center mb-9">
         <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600 mb-3">
           Servicios
@@ -71,12 +71,12 @@ export default function Services({ onNavigate }) {
         {services.map((s) => (
           <div
             key={s.num}
-            className="flex flex-col h-full rounded-3xl bg-white border border-slate-100 shadow-soft p-6 transition-all hover:-translate-y-1 hover:shadow-lift"
+            className="service-card group flex flex-col h-full rounded-3xl bg-white border border-slate-100 shadow-soft p-6 transition-all hover:-translate-y-1 hover:shadow-lift"
           >
             {/* Número + ícono discreto */}
             <div className="flex items-center justify-between mb-5">
-              <span className="font-display text-base font-bold text-slate-300">{s.num}</span>
-              <div className={`w-9 h-9 rounded-xl flex items-center justify-center ${s.accent}`}>
+              <span className="font-display text-[11px] font-extrabold tracking-[.18em] text-slate-300">/{s.num}</span>
+              <div className={`service-icon w-9 h-9 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-105 ${s.accent}`}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5">
                   {s.icon}
                 </svg>
@@ -113,7 +113,7 @@ export default function Services({ onNavigate }) {
       </div>
 
       {/* Franja destacada: software y aplicaciones a medida */}
-      <div className="mt-6 rounded-3xl border border-slate-100 bg-white shadow-soft p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-5 md:gap-8">
+      <div className="software-banner mt-6 rounded-3xl border border-slate-100 bg-white shadow-soft p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-5 md:gap-8">
         <div className="w-11 h-11 shrink-0 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />

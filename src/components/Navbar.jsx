@@ -35,7 +35,7 @@ export default function Navbar({ onNavigate }) {
           }}
           className="group flex items-center gap-3 font-display font-bold text-slate-950 text-base sm:text-lg tracking-tight"
         >
-          <span className="grid h-8 w-8 place-items-center rounded-[.65rem] bg-slate-950 text-[10px] font-extrabold tracking-widest text-white shadow-lg shadow-violet-900/20 transition-transform group-hover:-rotate-3">LR</span>
+          <span className="grid h-8 w-8 place-items-center rounded-[.55rem_.55rem_.15rem_.55rem] bg-slate-950 text-[10px] font-extrabold tracking-widest text-cyan-300 shadow-[3px_3px_0_rgba(124,58,237,.22)] transition-transform group-hover:-rotate-3">LR</span>
           <span>Luis Reyes <span className="text-brand-600">Castro</span><small className="hidden lg:block font-sans text-[10px] font-semibold uppercase tracking-[.18em] text-slate-400 mt-0.5">Diseño & desarrollo web</small></span>
         </a>
 

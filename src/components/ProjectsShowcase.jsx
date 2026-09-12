@@ -7,10 +7,10 @@ function Check() {
 
 function ProjectCard({ project }) {
   return (
-    <article className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-lift lg:col-span-3">
+    <article className="project-card group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-lift lg:col-span-3">
       <div className={`pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-br ${project.glow}`} />
       <div className="relative p-3 sm:p-4">
-        <a href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Visitar ${project.name}`} className="block overflow-hidden rounded-2xl border border-white/90 bg-slate-100 shadow-sm">
+        <a href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Visitar ${project.name}`} className="project-preview block overflow-hidden rounded-2xl border border-white/90 bg-slate-100 shadow-sm">
           <img src={project.image} alt={project.alt} width="1200" height="833" loading="lazy" decoding="async" className="aspect-[16/9] w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.025]" />
         </a>
       </div>

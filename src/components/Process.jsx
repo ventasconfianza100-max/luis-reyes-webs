@@ -44,8 +44,8 @@ export default function Process() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 md:gap-4">
           {steps.map((s) => (
-            <div key={s.n} className="relative text-center md:px-2">
-              <div className="relative z-10 mx-auto w-12 h-12 rounded-full bg-white border border-brand-100 shadow-sm flex items-center justify-center font-display text-lg font-extrabold text-brand-600 mb-4">
+            <div key={s.n} className="process-step relative text-center md:px-2">
+              <div className="process-number relative z-10 mx-auto w-12 h-12 bg-white border border-brand-100 shadow-sm flex items-center justify-center font-display text-sm font-extrabold text-brand-600 mb-4">
                 {s.n}
               </div>
               <h3 className="font-display text-lg font-bold text-slate-900 mb-1.5">{s.title}</h3>

@@ -2,14 +2,17 @@ export default function Hero({ onNavigate }) {
   const whatsapp = 'https://wa.me/56922012534?text=' + encodeURIComponent('Hola Luis, vi tu página y quiero cotizar una web para mi negocio.')
   return (
     <section className="hero-section relative overflow-hidden">
-      {/* Imagen a sangre completa en la mitad derecha (desktop) */}
-      <div className="hero-visual hidden md:block absolute inset-y-6 right-7 w-[46%] lg:w-[45%] rounded-[1.75rem] overflow-hidden border border-white/60 shadow-[0_32px_90px_-32px_rgba(15,23,42,0.55)]">
+      <div className="hero-pixel hero-pixel--one" aria-hidden="true" />
+      <div className="hero-pixel hero-pixel--two" aria-hidden="true" />
+
+      {/* Retrato de marca: la estética pixelada pasa a ser parte del sistema visual. */}
+      <div className="hero-portrait hidden md:block absolute inset-y-7 right-7 w-[43%] lg:w-[42%] overflow-hidden border border-white/15 shadow-[0_32px_90px_-28px_rgba(2,8,23,0.7)]">
         <picture>
-          <source srcSet="/hero-workspace.webp" type="image/webp" />
+          <source srcSet="/luis-reyes-retrato-2026.webp" type="image/webp" />
           <img
-            src="/hero-workspace.jpg"
-            alt="Escritorio de madera con una laptop mostrando un sitio web diseñado por Luis Reyes y un cuaderno con bocetos de wireframe — desarrollo web en Talca"
-            width="1200"
+            src="/luis-reyes-retrato-2026.jpg"
+            alt="Luis Reyes Castro, diseñador y desarrollador web en Talca"
+            width="900"
             height="900"
             loading="eager"
             fetchpriority="high"
@@ -17,16 +20,18 @@ export default function Hero({ onNavigate }) {
             className="w-full h-full object-cover"
           />
         </picture>
-        {/* Fundido suave solo en el borde izquierdo: el texto se lee sin tapar la imagen */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-slate-950/35 via-transparent to-transparent" />
-        <div className="absolute left-5 bottom-5 right-5 rounded-2xl bg-slate-950/82 backdrop-blur-xl border border-white/15 p-4 shadow-lg text-white">
-          <p className="text-[11px] font-semibold uppercase tracking-[.2em] text-cyan-300">Diseño con intención</p>
-          <p className="mt-1 text-sm font-semibold">Una web que explica, convence y facilita el contacto.</p>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#06152e]/85 via-transparent to-transparent" />
+        <div className="absolute inset-x-5 bottom-5 flex items-end justify-between gap-4 border-t border-white/20 pt-4 text-white">
+          <div>
+            <p className="text-[10px] font-extrabold uppercase tracking-[.22em] text-cyan-300">Diseño + código + estrategia</p>
+            <p className="mt-1 text-sm font-bold">Trabajo directo conmigo, sin intermediarios.</p>
+          </div>
+          <span className="hidden lg:inline-flex rounded-full border border-emerald-300/30 bg-emerald-400/10 px-3 py-1 text-[10px] font-bold text-emerald-200">Disponible</span>
         </div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 pt-8 pb-9 md:pt-9 md:pb-10">
-        <div className="md:w-[52%] md:pr-8">
+        <div className="md:w-[55%] md:pr-10">
           <span className="eyebrow inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.18em] text-brand-700 mb-5">
             <span className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_0_5px_rgba(34,211,238,.15)]" /> Desarrollo web · Talca, Chile
           </span>
@@ -69,39 +74,29 @@ export default function Hero({ onNavigate }) {
             {['Atención directa', '100% adaptable', 'Primera reunión gratis'].map((item) => <span key={item} className="inline-flex items-center gap-1.5"><span className="text-emerald-500">✓</span>{item}</span>)}
           </div>
 
-          {/* Imagen en móvil: a todo el ancho, debajo del texto */}
-          <div className="md:hidden mt-7 -mx-6 h-52 overflow-hidden">
+          {/* En móvil el retrato conserva protagonismo sin desplazar los CTA. */}
+          <div className="hero-portrait md:hidden mt-7 h-[21rem] overflow-hidden border border-white/15 shadow-[0_24px_60px_-28px_rgba(2,8,23,.75)]">
             <picture>
-              <source srcSet="/hero-workspace.webp" type="image/webp" />
+              <source srcSet="/luis-reyes-retrato-2026.webp" type="image/webp" />
               <img
-                src="/hero-workspace.jpg"
-                alt="Escritorio de madera con una laptop mostrando un sitio web diseñado por Luis Reyes y un cuaderno con bocetos de wireframe — desarrollo web en Talca"
-                width="1200"
+                src="/luis-reyes-retrato-2026.jpg"
+                alt="Luis Reyes Castro, diseñador y desarrollador web en Talca"
+                width="900"
                 height="900"
                 loading="eager"
                 decoding="async"
                 className="w-full h-full object-cover"
               />
             </picture>
+            <div className="absolute inset-x-4 bottom-4 border-t border-white/20 pt-3 text-white">
+              <p className="text-[10px] font-extrabold uppercase tracking-[.2em] text-cyan-300">Diseño + código + estrategia</p>
+              <p className="mt-1 text-xs font-bold">Trabajo directo conmigo, sin intermediarios.</p>
+            </div>
           </div>
 
           {/* Tira de credibilidad */}
-          <div className="mt-6 flex items-center gap-3 rounded-2xl border border-white/80 bg-white/55 p-3 backdrop-blur-sm max-w-xl">
-            <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-brand-200 shadow-sm flex-shrink-0">
-              <picture>
-                <source srcSet="/luis-reyes-retrato-2026.webp" type="image/webp" />
-                <img
-                  src="/luis-reyes-retrato-2026.jpg"
-                  alt="Luis Reyes Castro, desarrollador y diseñador web en Talca"
-                  width="48"
-                  height="48"
-                  loading="eager"
-                  fetchpriority="high"
-                  decoding="async"
-                  className="w-full h-full object-cover"
-                />
-              </picture>
-            </div>
+          <div className="hero-signature mt-6 flex items-center gap-3 border border-white/80 bg-white/65 p-3 backdrop-blur-sm max-w-xl">
+            <div className="hero-signature-mark flex-shrink-0" aria-hidden="true">LR</div>
             <div>
               <p className="text-sm text-slate-800 font-semibold leading-tight">
                 Luis Reyes Castro · Desarrollo web para negocios y profesionales
