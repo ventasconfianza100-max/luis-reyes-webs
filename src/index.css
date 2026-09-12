@@ -97,6 +97,22 @@ body {
   border-radius: 2.5rem;
   transform: rotate(24deg);
 }
+@media (min-width: 1024px) {
+  .page-hero::after { animation: decor-tilt 16s ease-in-out infinite; }
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 3.5%;
+    bottom: 14%;
+    width: .5rem;
+    height: .5rem;
+    background: #22d3ee;
+    box-shadow: 1rem 0 #6366f1, 1rem 1rem #a78bfa;
+    animation: decor-float 9s ease-in-out infinite;
+    opacity: .52;
+  }
+}
 .hero-section::before {
   content: '';
   position: absolute;
@@ -436,6 +452,28 @@ body {
     opacity: .55;
   }
 
+  /* Cotización: retícula de briefing y anillos de proceso. */
+  .decor-quote::before {
+    left: -3.5rem;
+    top: 12%;
+    width: 8rem;
+    height: 8rem;
+    border: 1px solid rgba(99,102,241,.22);
+    border-radius: 1.5rem .4rem 1.5rem 1.5rem;
+    box-shadow: inset 0 0 0 1.3rem rgba(124,58,237,.025);
+    animation: decor-tilt 18s ease-in-out infinite;
+  }
+  .decor-quote::after {
+    right: -3rem;
+    bottom: 10%;
+    width: 7rem;
+    height: 7rem;
+    border: 1px dashed rgba(6,182,212,.26);
+    border-radius: 50%;
+    background: radial-gradient(circle,rgba(34,211,238,.13) 0 2px,transparent 2.5px) center/16px 16px;
+    animation: decor-spin 36s linear infinite reverse;
+  }
+
   /* Planes: órbitas concéntricas, asociadas a opciones y escala. */
   .decor-pricing::before {
     right: -4rem;
@@ -731,12 +769,14 @@ button:focus-visible {
 .social-footer span { margin-left: .25rem; color: #8b5cf6; }
 
 /* Formulario de cotización */
-.quote-section { background: linear-gradient(135deg, rgba(245,243,255,.62), rgba(236,254,255,.48)); }
+.quote-section { position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(245,243,255,.62), rgba(236,254,255,.48)); }
+.quote-shell { border-radius: 1.5rem 1.5rem .4rem 1.5rem; }
+.quote-shell::before { content: ''; position: absolute; inset: 0 0 auto; z-index: 20; height: 2px; background: linear-gradient(90deg,#7c3aed,#22d3ee,transparent 72%); }
 .quote-field { display: block; }
 .quote-field > span { display: block; margin-bottom: .45rem; color: #1e293b; font-size: .82rem; font-weight: 700; }
 .quote-field b { color: #7c3aed; }
-.quote-field input, .quote-field select, .quote-field textarea { width: 100%; border: 1px solid #cbd5e1; border-radius: .9rem; background: #f8fafc; padding: .78rem .9rem; color: #0f172a; font-size: .875rem; outline: none; transition: border-color .18s ease, box-shadow .18s ease, background .18s ease; }
-.quote-field textarea { min-height: 7rem; resize: vertical; line-height: 1.5; }
+.quote-field input, .quote-field select, .quote-field textarea { width: 100%; border: 1px solid #cbd5e1; border-radius: .75rem .75rem .2rem .75rem; background: #f8fafc; padding: .7rem .85rem; color: #0f172a; font-size: .875rem; outline: none; transition: border-color .18s ease, box-shadow .18s ease, background .18s ease; }
+.quote-field textarea { min-height: 5.5rem; resize: vertical; line-height: 1.5; }
 .quote-field input::placeholder, .quote-field textarea::placeholder { color: #94a3b8; }
 .quote-field input:focus, .quote-field select:focus, .quote-field textarea:focus { border-color: #8b5cf6; background: #fff; box-shadow: 0 0 0 3px rgba(139,92,246,.12); }
 .quote-budget { display: flex; min-height: 2.9rem; cursor: pointer; align-items: center; gap: .7rem; border: 1px solid #e2e8f0; border-radius: .85rem; padding: .7rem .8rem; color: #475569; font-size: .78rem; font-weight: 650; transition: border-color .18s ease, background .18s ease, color .18s ease; }
