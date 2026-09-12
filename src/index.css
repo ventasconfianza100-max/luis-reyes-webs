@@ -269,6 +269,45 @@ body {
   border-radius: 50%;
   pointer-events: none;
 }
+.faq-section {
+  background:
+    radial-gradient(circle at 12% 22%, rgba(124,58,237,.075), transparent 24%),
+    radial-gradient(circle at 90% 82%, rgba(34,211,238,.075), transparent 25%),
+    #f8fafc;
+}
+.faq-panel { border-radius: 1.5rem 1.5rem .4rem 1.5rem; }
+.faq-intro {
+  background:
+    radial-gradient(circle at 15% 100%, rgba(124,58,237,.24), transparent 35%),
+    linear-gradient(145deg,#07172f,#0f172a 68%,#171338);
+}
+.faq-intro::after {
+  content: '?';
+  position: absolute;
+  right: -1rem;
+  bottom: -3.8rem;
+  color: rgba(103,232,249,.045);
+  font-family: 'Sora','Inter',sans-serif;
+  font-size: 13rem;
+  font-weight: 900;
+  line-height: 1;
+}
+.faq-item { transition: background .2s ease; }
+.faq-item.is-open { background: linear-gradient(90deg,rgba(245,243,255,.7),rgba(236,254,255,.35)); }
+.faq-toggle {
+  position: relative;
+  width: 1.8rem;
+  height: 1.8rem;
+  border: 1px solid #e2e8f0;
+  border-radius: .6rem .6rem .18rem .6rem;
+  background: white;
+}
+.faq-toggle::before,
+.faq-toggle::after { content: ''; position: absolute; left: 50%; top: 50%; width: .65rem; height: 1px; background: #7c3aed; transform: translate(-50%,-50%); transition: transform .2s ease; }
+.faq-toggle::after { transform: translate(-50%,-50%) rotate(90deg); }
+.faq-toggle.is-open::after { transform: translate(-50%,-50%) rotate(0); }
+.faq-answer { animation: faq-answer-in .22s ease-out both; }
+@keyframes faq-answer-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
 .pricing-pixels {
   width: .35rem;
   height: .35rem;
@@ -373,6 +412,28 @@ body {
     background-size: 14px 14px;
     animation: decor-spin 42s linear infinite;
     opacity: .52;
+  }
+
+  /* FAQ: órbitas y nodos de conversación. */
+  .decor-faq::before {
+    left: -3.2rem;
+    top: 16%;
+    width: 7.5rem;
+    height: 7.5rem;
+    border: 1px dashed rgba(124,58,237,.24);
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 1.35rem rgba(124,58,237,.025);
+    animation: decor-spin 32s linear infinite;
+  }
+  .decor-faq::after {
+    right: 2.8%;
+    bottom: 15%;
+    width: .5rem;
+    height: .5rem;
+    background: #22d3ee;
+    box-shadow: 1rem 0 #6366f1, 1rem 1rem #a78bfa, 0 2rem rgba(34,211,238,.5);
+    animation: decor-float 9s ease-in-out infinite reverse;
+    opacity: .55;
   }
 
   /* Planes: órbitas concéntricas, asociadas a opciones y escala. */
