@@ -1,46 +1,25 @@
 import Section from './Section'
+import { portfolioProjects } from '../portfolioProjects'
 
 const stats = [
-  {
-    title: 'Sitios reales funcionando',
-    sub: 'Tiendas, empresas y profesionales, hoy online.',
-    icon: (
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    ),
-  },
-  {
-    title: 'Atención directa',
-    sub: 'Hablas conmigo, no con una agencia.',
-    icon: (
-      <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
-    ),
-  },
-  {
-    title: 'Posicionamiento en Google',
-    sub: 'SEO local trabajado en cada proyecto.',
-    icon: (
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    ),
-  },
+  { value: String(portfolioProjects.length), title: 'Sitios reales publicados', sub: 'Tiendas, empresas y profesionales, hoy en línea.' },
+  { value: 'Talca', title: 'Clientes en todo Chile', sub: 'Reuniones por Meet, Zoom o WhatsApp.' },
+  { value: '1 a 1', title: 'Trato directo', sub: 'Hablas conmigo, no con una agencia.' },
 ]
 
 export default function Stats() {
   return (
     <Section spacing="py-6 md:py-8">
-      <div className="stats-strip grid grid-cols-1 sm:grid-cols-3 gap-3 rounded-3xl bg-slate-950 p-3 shadow-2xl shadow-violet-950/15">
-        {stats.map((s) => (
-          <div
-            key={s.title}
-            className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[.06] px-5 py-4"
-          >
-            <div className="w-11 h-11 rounded-xl bg-brand-500/20 text-brand-300 flex items-center justify-center flex-shrink-0">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5">
-                {s.icon}
-              </svg>
-            </div>
+      <div className="stats-strip relative grid grid-cols-1 overflow-hidden rounded-3xl bg-slate-950 p-2 shadow-2xl shadow-violet-950/15 sm:grid-cols-3">
+        <div className="pointer-events-none absolute -left-16 -top-24 h-56 w-72 rounded-full bg-brand-600/25 blur-3xl" aria-hidden="true" />
+        {stats.map((s, index) => (
+          <div key={s.title} className={`relative flex items-center gap-4 px-5 py-4 ${index > 0 ? 'border-t border-white/10 sm:border-l sm:border-t-0' : ''}`}>
+            <p className="font-display text-3xl font-extrabold tracking-tight">
+              <span className="bg-gradient-to-r from-brand-300 to-cyan-200 bg-clip-text text-transparent">{s.value}</span>
+            </p>
             <div>
-              <p className="font-semibold text-white text-sm leading-tight">{s.title}</p>
-              <p className="text-slate-400 text-xs mt-0.5 leading-snug">{s.sub}</p>
+              <p className="text-sm font-semibold leading-tight text-white">{s.title}</p>
+              <p className="mt-0.5 text-xs leading-snug text-slate-400">{s.sub}</p>
             </div>
           </div>
         ))}

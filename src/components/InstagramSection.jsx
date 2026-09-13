@@ -14,7 +14,6 @@ export default function InstagramSection() {
             <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-fuchsia-600 via-pink-600 to-orange-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-pink-900/15 transition-transform hover:-translate-y-0.5">
               Ver perfil en Instagram <span aria-hidden="true">↗</span>
             </a>
-            <span className="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-600"><span className="h-2 w-2 rounded-full bg-emerald-500" /> Perfil vinculado</span>
           </div>
         </div>
 

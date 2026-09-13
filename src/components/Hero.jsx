@@ -1,3 +1,8 @@
+import { portfolioProjects } from '../portfolioProjects'
+
+// Capturas con fotografía al centro: se reconocen mejor en miniatura.
+const proofProjects = ['Munay Cueros Chile', 'Cuchillos Bravo', 'Psicóloga Andrea Martínez'].map((name) => portfolioProjects.find((project) => project.name === name))
+
 export default function Hero({ onNavigate }) {
   const whatsapp = 'https://wa.me/56922012534?text=' + encodeURIComponent('Hola Luis, vi tu página y quiero cotizar una web para mi negocio.')
   return (
@@ -91,24 +96,20 @@ export default function Hero({ onNavigate }) {
             </div>
           </div>
 
-          {/* Tira de credibilidad */}
-          <div className="hero-signature mt-6 flex items-center gap-3 border border-white/80 bg-white/65 p-3 backdrop-blur-sm max-w-xl">
-            <div className="hero-signature-mark flex-shrink-0" aria-hidden="true">LR</div>
-            <div>
-              <p className="text-sm text-slate-800 font-semibold leading-tight">
-                Luis Reyes Castro · Desarrollo web para negocios y profesionales
-              </p>
-              <p className="text-sm text-slate-500 mt-0.5">
-                Talca, Región del Maule · Atención directa, sin intermediarios
-              </p>
-            </div>
+          <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
+            <a href="/proyectos" onClick={(event) => { event.preventDefault(); onNavigate('/proyectos') }} className="group inline-flex items-center gap-3 rounded-2xl border border-white/80 bg-white/70 py-2 pl-2 pr-4 shadow-sm backdrop-blur-sm transition hover:-translate-y-0.5 hover:border-brand-200">
+              <span className="flex -space-x-3" aria-hidden="true">
+                {proofProjects.map((project) => (
+                  <img key={project.name} src={project.image} alt="" width="40" height="40" loading="eager" decoding="async" className="h-10 w-10 rounded-full border-2 border-white object-cover shadow-sm" />
+                ))}
+              </span>
+              <span className="text-left leading-tight">
+                <span className="block text-sm font-bold text-slate-900">{portfolioProjects.length} sitios reales publicados</span>
+                <span className="block text-xs font-semibold text-brand-700 transition group-hover:text-brand-800">Ver portafolio →</span>
+              </span>
+            </a>
+            <a href="/diagnostico-web" onClick={(event) => { event.preventDefault(); onNavigate('/diagnostico-web') }} className="text-sm font-semibold text-slate-600 underline decoration-brand-300 decoration-2 underline-offset-4 transition hover:text-brand-700">¿No sabes qué necesitas? Haz el diagnóstico</a>
           </div>
-          <div className="mt-4 flex flex-wrap gap-2 text-xs font-semibold text-slate-600">
-            {['Web para profesionales', 'Catálogos y tiendas', 'Empresas de servicios'].map((item) => (
-              <span key={item} className="rounded-full border border-slate-200 bg-white/80 px-3 py-1.5 shadow-sm">{item}</span>
-            ))}
-          </div>
-          <a href="/diagnostico-web" onClick={(event) => { event.preventDefault(); onNavigate('/diagnostico-web') }} className="inline-flex mt-3 text-sm font-semibold text-brand-700 hover:text-brand-800">¿No sabes qué necesitas? Haz el diagnóstico web →</a>
         </div>
       </div>
     </section>
