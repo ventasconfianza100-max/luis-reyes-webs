@@ -60,6 +60,8 @@ export default function ProjectsShowcase() {
           <div><span className="portfolio-kicker"><span /> Portafolio real</span><h2>Lo que he construido</h2></div>
           <p>Proyectos reales que hoy están funcionando. Desliza, explora y entra a conocer cada experiencia.</p>
         </header>
+        <div className="portfolio-carousel">
+        <button type="button" className="portfolio-arrow portfolio-arrow--prev" onClick={() => showProject(activeIndex - 1)} aria-label="Proyecto anterior"><Arrow direction="left" /></button>
         <div className="portfolio-viewport" onTouchStart={(event) => { touchStart.current = event.touches[0].clientX }} onTouchEnd={onTouchEnd}>
           <div className="portfolio-track" style={{ transform: `translate3d(-${activeIndex * 100}%, 0, 0)` }}>
             {projects.map((project, index) => (
@@ -78,10 +80,10 @@ export default function ProjectsShowcase() {
             ))}
           </div>
         </div>
+        <button type="button" className="portfolio-arrow portfolio-arrow--next" onClick={() => showProject(activeIndex + 1)} aria-label="Proyecto siguiente"><Arrow /></button>
+        </div>
         <nav className="portfolio-controls" aria-label="Navegación de proyectos">
-          <button type="button" onClick={() => showProject(activeIndex - 1)} aria-label="Proyecto anterior"><Arrow direction="left" /></button>
           <div className="portfolio-tabs">{projects.map((project, index) => <button type="button" key={project.name} className={index === activeIndex ? 'is-active' : ''} onClick={() => showProject(index)} aria-label={`Ver ${project.name}`} aria-current={index === activeIndex ? 'true' : undefined}><span>{String(index + 1).padStart(2, '0')}</span><strong>{project.name}</strong></button>)}</div>
-          <button type="button" onClick={() => showProject(activeIndex + 1)} aria-label="Proyecto siguiente"><Arrow /></button>
         </nav>
         <p className="portfolio-swipe-hint">Desliza para descubrir <span aria-hidden="true">→</span></p>
       </div>
