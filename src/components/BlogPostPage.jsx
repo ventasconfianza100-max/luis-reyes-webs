@@ -51,7 +51,7 @@ function Block({ block }) {
       )
     case 'quote':
       return (
-        <blockquote className="border-l-4 border-violet-300 bg-violet-50/60 rounded-r-xl px-5 py-4 my-6 text-slate-700 italic">
+        <blockquote className="border-l-4 border-brand-300 bg-brand-50/60 rounded-r-xl px-5 py-4 my-6 text-slate-700 italic">
           {renderInline(block.text)}
         </blockquote>
       )
@@ -74,7 +74,7 @@ export default function BlogPostPage({ slug, onNavigate }) {
             event.preventDefault()
             onNavigate('/blog')
           }}
-          className="text-violet-500 hover:text-violet-600 font-semibold"
+          className="text-brand-500 hover:text-brand-600 font-semibold"
         >
           ← Volver al blog
         </a>
@@ -91,16 +91,16 @@ export default function BlogPostPage({ slug, onNavigate }) {
     <main className="max-w-2xl mx-auto px-4 py-8 md:py-12">
       <article className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg border border-white/60 p-7 md:p-10">
         <nav aria-label="Migas de pan" className="mb-7 flex flex-wrap items-center gap-2 text-sm">
-          <a href="/" onClick={(event) => { event.preventDefault(); onNavigate('/') }} className="font-semibold text-violet-600 hover:text-violet-700">Inicio</a>
+          <a href="/" onClick={(event) => { event.preventDefault(); onNavigate('/') }} className="font-semibold text-brand-600 hover:text-brand-700">Inicio</a>
           <span className="text-slate-300">/</span>
-          <a href="/blog" onClick={(event) => { event.preventDefault(); onNavigate('/blog') }} className="font-semibold text-violet-600 hover:text-violet-700">Blog</a>
+          <a href="/blog" onClick={(event) => { event.preventDefault(); onNavigate('/blog') }} className="font-semibold text-brand-600 hover:text-brand-700">Blog</a>
           <span className="text-slate-300">/</span>
           <span className="text-slate-500" aria-current="page">{post.category}</span>
         </nav>
 
         <header className="mb-8">
           <div className="flex flex-wrap items-center gap-3 mb-4">
-            <span className="text-xs font-semibold uppercase tracking-wide text-violet-500">
+            <span className="text-xs font-semibold uppercase tracking-wide text-brand-500">
               {post.category}
             </span>
             <span className="text-slate-300">·</span>
@@ -108,7 +108,7 @@ export default function BlogPostPage({ slug, onNavigate }) {
             <span className="text-slate-300">·</span>
             <span className="text-xs text-slate-400">{post.readingMinutes} min de lectura</span>
           </div>
-          <h1 className="text-3xl md:text-4xl font-extrabold text-slate-800 leading-tight">
+          <h1 className="font-display text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">
             {post.title}
           </h1>
         </header>
@@ -127,10 +127,10 @@ export default function BlogPostPage({ slug, onNavigate }) {
                 key={related.slug}
                 href={`/blog/${related.slug}`}
                 onClick={(event) => { event.preventDefault(); onNavigate(`/blog/${related.slug}`) }}
-                className="group rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 transition-colors hover:border-violet-300 hover:bg-violet-50"
+                className="group rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 transition-colors hover:border-brand-300 hover:bg-brand-50"
               >
-                <span className="text-xs font-semibold uppercase tracking-wide text-violet-600">{related.category}</span>
-                <span className="mt-1 flex items-center justify-between gap-3 font-semibold text-slate-800 group-hover:text-violet-800">
+                <span className="text-xs font-semibold uppercase tracking-wide text-brand-600">{related.category}</span>
+                <span className="mt-1 flex items-center justify-between gap-3 font-semibold text-slate-800 group-hover:text-brand-800">
                   {related.title}<span aria-hidden="true">→</span>
                 </span>
               </a>
@@ -139,7 +139,7 @@ export default function BlogPostPage({ slug, onNavigate }) {
         </aside>
 
         {/* Autor */}
-        <div className="mt-10 flex items-center gap-4 rounded-2xl border border-violet-100 bg-violet-50/50 p-5">
+        <div className="mt-10 flex items-center gap-4 rounded-2xl border border-brand-100 bg-brand-50/50 p-5">
           <picture>
             <source srcSet="/luis-reyes-retrato-2026.webp" type="image/webp" />
             <img
@@ -148,7 +148,7 @@ export default function BlogPostPage({ slug, onNavigate }) {
               width="56"
               height="56"
               loading="lazy"
-              className="w-14 h-14 rounded-full object-cover border-2 border-violet-200 shrink-0"
+              className="w-14 h-14 rounded-full object-cover border-2 border-brand-200 shrink-0"
             />
           </picture>
           <div>
@@ -160,9 +160,10 @@ export default function BlogPostPage({ slug, onNavigate }) {
         </div>
 
         {/* CTA */}
-        <div className="mt-8 rounded-2xl border border-white/70 bg-white/70 p-6 text-center">
-          <p className="text-slate-800 font-bold text-xl mb-2">¿Hablamos de tu página web?</p>
-          <p className="text-slate-500 text-sm mb-5">
+        <div className="relative mt-8 overflow-hidden rounded-2xl bg-slate-950 p-7 text-center text-white">
+          <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-brand-600/30 blur-3xl" aria-hidden="true" />
+          <p className="relative font-display text-xl font-bold mb-2">¿Hablamos de tu página web?</p>
+          <p className="relative text-slate-300 text-sm mb-5">
             Una reunión sin compromiso para ver cómo atraer más oportunidades desde Google.
           </p>
           <a
@@ -171,7 +172,7 @@ export default function BlogPostPage({ slug, onNavigate }) {
               event.preventDefault()
               onNavigate('/agenda')
             }}
-            className="inline-flex items-center gap-2 bg-violet-500 hover:bg-violet-600 text-white font-semibold px-6 py-3 rounded-xl text-sm transition-all shadow-sm"
+            className="relative inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white font-semibold px-6 py-3 rounded-xl text-sm transition-all"
           >
             Agenda una reunión
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
