@@ -4,8 +4,9 @@ import { PRIVATE_ROUTES, ROUTES, SITE_URL } from '../src/seo.js'
 const dist = path.resolve('dist')
 const titles = new Map()
 for (const route of ROUTES) {
-  const file = route === '/' ? path.join(dist, 'index.html') : path.join(dist, route.slice(1), 'index.html')
+  const file = route === '/' ? path.join(dist, 'index.html') : path.join(dist, `${route.slice(1)}.html`)
   if (!fs.existsSync(file)) throw new Error(`Falta prerender: ${route}`)
+  if (route !== '/' && fs.existsSync(path.join(dist, route.slice(1), 'index.html'))) throw new Error(`Prerender en carpeta (redirige a barra final): ${route}`)
   const html = fs.readFileSync(file, 'utf8')
   const title = html.match(/<title>(.*?)<\/title>/)?.[1]
   if (!title) throw new Error(`Falta title: ${route}`)
@@ -23,7 +24,7 @@ for (const route of ROUTES) {
 if (!fs.existsSync(path.join(dist, 'sitemap.xml'))) throw new Error('Falta sitemap')
 const sitemap = fs.readFileSync(path.join(dist, 'sitemap.xml'), 'utf8')
 for (const route of PRIVATE_ROUTES) {
-  const file = path.join(dist, route.slice(1), 'index.html')
+  const file = path.join(dist, `${route.slice(1)}.html`)
   if (!fs.existsSync(file)) throw new Error(`Falta prerender privado: ${route}`)
   const html = fs.readFileSync(file, 'utf8')
   if (!html.includes('name="robots" content="noindex, nofollow"')) throw new Error(`Noindex inválido: ${route}`)

@@ -67,10 +67,12 @@ for (const routePath of [...ROUTES, ...PRIVATE_ROUTES]) {
   let html = applyMeta(template, routePath)
   html = html.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
 
+  // `/ruta.html` (no `/ruta/index.html`): así Cloudflare Pages sirve `/ruta` sin
+  // redirigir a `/ruta/`, igual que las URL canónicas y el sitemap.
   const outPath =
     routePath === '/'
       ? path.join(distDir, 'index.html')
-      : path.join(distDir, routePath, 'index.html')
+      : path.join(distDir, `${routePath.slice(1)}.html`)
 
   fs.mkdirSync(path.dirname(outPath), { recursive: true })
   fs.writeFileSync(outPath, html)
