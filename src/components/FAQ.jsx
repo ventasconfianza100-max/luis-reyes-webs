@@ -32,7 +32,7 @@ export default function FAQ() {
   const [open, setOpen] = useState(null)
 
   return (
-    <Section id="faq" spacing="py-8 md:py-11" className="faq-section decor-section decor-faq">
+    <Section id="faq" spacing="py-8 md:py-11" className="faq-section">
       <div className="faq-panel grid overflow-hidden border border-slate-200/80 bg-white/85 shadow-[0_24px_70px_-40px_rgba(15,23,42,.38)] backdrop-blur-sm lg:grid-cols-[.72fr_1.28fr]">
         <div className="faq-intro relative overflow-hidden bg-slate-950 p-6 text-white md:p-8">
           <div className="relative z-10">

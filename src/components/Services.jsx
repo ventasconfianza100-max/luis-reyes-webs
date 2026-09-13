@@ -59,7 +59,7 @@ const microNotes = [
 
 export default function Services({ onNavigate }) {
   return (
-    <Section className="services-section decor-section decor-services bg-gradient-to-b from-amber-50/40 via-white to-white">
+    <Section className="services-section bg-gradient-to-b from-amber-50/40 via-white to-white">
       <div className="max-w-2xl mx-auto text-center mb-9">
         <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600 mb-3">
           Servicios
@@ -126,7 +126,7 @@ export default function Services({ onNavigate }) {
           </svg>
         </div>
         <div className="flex-1">
-          <p className="font-mono text-[9px] font-bold tracking-[.17em] text-cyan-300">CUSTOM_BUILD / 04</p>
+          <p className="text-[10px] font-bold uppercase tracking-[.17em] text-cyan-300">A medida</p>
           <h3 className="mt-1 font-display text-lg font-bold text-white">
             ¿Necesitas algo más que una web? Software y aplicaciones a medida
           </h3>

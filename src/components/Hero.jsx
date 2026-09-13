@@ -2,9 +2,6 @@ export default function Hero({ onNavigate }) {
   const whatsapp = 'https://wa.me/56922012534?text=' + encodeURIComponent('Hola Luis, vi tu página y quiero cotizar una web para mi negocio.')
   return (
     <section className="hero-section relative overflow-hidden">
-      <div className="hero-pixel hero-pixel--one" aria-hidden="true" />
-      <div className="hero-pixel hero-pixel--two" aria-hidden="true" />
-
       {/* Imagen de trabajo: comunica el servicio antes de presentar a la persona. */}
       <div className="hero-portrait hidden md:block absolute inset-y-7 right-7 w-[43%] lg:w-[42%] overflow-hidden border border-white/15 shadow-[0_32px_90px_-28px_rgba(2,8,23,0.7)]">
         <picture>

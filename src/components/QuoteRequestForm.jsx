@@ -21,13 +21,13 @@ export default function QuoteRequestForm() {
   }
 
   return (
-    <section id="cotizacion" className="quote-section decor-section decor-quote px-6 py-8 md:py-11" aria-labelledby="quote-title">
+    <section id="cotizacion" className="quote-section px-6 py-8 md:py-11" aria-labelledby="quote-title">
       <div className="quote-shell relative z-10 mx-auto grid max-w-6xl overflow-hidden border border-slate-200/80 bg-white shadow-[0_24px_70px_-40px_rgba(79,70,229,.45)] lg:grid-cols-[.7fr_1.3fr]">
         <div className="relative overflow-hidden bg-slate-950 p-6 text-white md:p-8">
           <div className="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-brand-600/30 blur-3xl" aria-hidden="true" />
           <div className="absolute -bottom-24 -left-20 h-56 w-56 rounded-full bg-cyan-500/20 blur-3xl" aria-hidden="true" />
           <div className="relative">
-            <p className="font-mono text-[10px] font-extrabold uppercase tracking-[.2em] text-cyan-300">PROJECT_BRIEF / 01</p>
+            <p className="text-[11px] font-extrabold uppercase tracking-[.2em] text-cyan-300">Cotización</p>
             <h2 id="quote-title" className="mt-3 font-display text-3xl font-extrabold tracking-[-.045em] md:text-[2.65rem] md:leading-[1.08]">Conversemos sobre lo que necesitas construir.</h2>
             <p className="mt-4 text-sm leading-relaxed text-slate-300">Completa los datos esenciales. Se preparará un mensaje en WhatsApp para que revisemos juntos el alcance, los tiempos y el valor real de tu proyecto.</p>
             <div className="mt-6 space-y-2.5 text-sm">
@@ -40,7 +40,7 @@ export default function QuoteRequestForm() {
 
         <form onSubmit={handleSubmit} className="quote-form p-5 md:p-7">
           <div className="mb-5 flex items-center justify-between border-b border-slate-100 pb-4">
-            <div><p className="font-mono text-[10px] font-bold tracking-[.16em] text-brand-600">DATOS DEL PROYECTO</p><p className="mt-1 text-xs text-slate-400">Completa solo lo esencial · 2 minutos</p></div>
+            <div><p className="text-[11px] font-bold uppercase tracking-[.16em] text-brand-600">Datos del proyecto</p><p className="mt-1 text-xs text-slate-400">Completa solo lo esencial · 2 minutos</p></div>
             <div className="hidden items-center gap-1.5 sm:flex" aria-hidden="true"><span className="h-1.5 w-6 rounded-full bg-brand-600" /><span className="h-1.5 w-6 rounded-full bg-brand-100" /><span className="h-1.5 w-6 rounded-full bg-cyan-100" /></div>
           </div>
           <div className="grid gap-5 sm:grid-cols-2">
