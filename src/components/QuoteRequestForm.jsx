@@ -1,9 +1,33 @@
 import { useState } from 'react'
 
-const budgets = ['Menos de $500.000', 'Entre $500.000 y $1.000.000', 'Entre $1.000.000 y $2.000.000', 'Más de $2.000.000', 'Prefiero conversarlo']
-const projectTypes = ['Página web profesional', 'Tienda o catálogo online', 'Web para empresa de servicios', 'Software o aplicación a medida', 'Mejorar una página existente', 'Aún no estoy seguro']
+const projectTypes = ['Página web profesional', 'Tienda o catálogo online', 'Web para empresa de servicios', 'Software o app a medida', 'Mejorar mi web actual', 'Aún no estoy seguro']
+// Espacios no separables: el corte de línea cae entre la frase y el monto, nunca dentro del monto.
+const budgets = ['Menos de $500 mil', '$500 mil a $1 millón', '$1 a $2 millones', 'Más de $2 millones', 'Prefiero conversarlo']
+
+const steps = [
+  ['Completas lo esencial', 'Tipo de proyecto, presupuesto y tu idea. Toma unos 2 minutos.'],
+  ['Se abre WhatsApp con tu mensaje', 'Queda redactado y listo. Tú decides si lo envías.'],
+  ['Te respondo personalmente', 'Revisamos juntos el alcance, los tiempos y el valor real.'],
+]
+
+function ChoiceGroup({ legend, name, options, value, onChange, className }) {
+  return (
+    <fieldset className="mt-5">
+      <legend className="quote-label">{legend} <b>*</b></legend>
+      <div className={`mt-2.5 grid gap-2 ${className}`}>
+        {options.map((option) => (
+          <label key={option} className={`quote-choice ${value === option ? 'is-selected' : ''}`}>
+            <input type="radio" name={name} value={option} required checked={value === option} onChange={() => onChange(option)} />
+            <span>{option}</span>
+          </label>
+        ))}
+      </div>
+    </fieldset>
+  )
+}
 
 export default function QuoteRequestForm() {
+  const [projectType, setProjectType] = useState('')
   const [budget, setBudget] = useState('')
 
   const handleSubmit = (event) => {
@@ -22,53 +46,52 @@ export default function QuoteRequestForm() {
 
   return (
     <section id="cotizacion" className="quote-section px-6 py-8 md:py-11" aria-labelledby="quote-title">
-      <div className="quote-shell relative z-10 mx-auto grid max-w-6xl overflow-hidden border border-slate-200/80 bg-white shadow-[0_24px_70px_-40px_rgba(79,70,229,.45)] lg:grid-cols-[.7fr_1.3fr]">
-        <div className="relative overflow-hidden bg-slate-950 p-6 text-white md:p-8">
-          <div className="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-brand-600/30 blur-3xl" aria-hidden="true" />
-          <div className="absolute -bottom-24 -left-20 h-56 w-56 rounded-full bg-cyan-500/20 blur-3xl" aria-hidden="true" />
+      <div className="quote-shell relative z-10 mx-auto grid max-w-6xl overflow-hidden border border-slate-200/80 bg-white shadow-[0_24px_70px_-40px_rgba(79,70,229,.45)] lg:grid-cols-[.78fr_1.22fr]">
+        <div className="quote-aside relative flex flex-col overflow-hidden bg-slate-950 p-6 text-white md:p-8">
+          <div className="quote-aside__glow" aria-hidden="true" />
           <div className="relative">
             <p className="text-[11px] font-extrabold uppercase tracking-[.2em] text-cyan-300">Cotización</p>
-            <h2 id="quote-title" className="mt-3 font-display text-3xl font-extrabold tracking-[-.045em] md:text-[2.65rem] md:leading-[1.08]">Conversemos sobre lo que necesitas construir.</h2>
-            <p className="mt-4 text-sm leading-relaxed text-slate-300">Completa los datos esenciales. Se preparará un mensaje en WhatsApp para que revisemos juntos el alcance, los tiempos y el valor real de tu proyecto.</p>
-            <div className="mt-6 space-y-2.5 text-sm">
-              {['Respuesta directa de Luis', 'Orientación según tu presupuesto', 'Tus datos no quedan almacenados'].map((item) => (
-                <p key={item} className="flex items-center gap-3"><span className="grid h-6 w-6 flex-none place-items-center rounded-full bg-emerald-400/15 text-xs text-emerald-300">✓</span><span className="text-slate-200">{item}</span></p>
-              ))}
+            <h2 id="quote-title" className="mt-3 font-display text-3xl font-extrabold leading-[1.1] tracking-[-.04em] md:text-[2.2rem]">Cuéntame qué quieres <span className="text-brand-300">construir</span></h2>
+            <p className="mt-3 text-sm leading-relaxed text-slate-300">Sin compromiso: con estos datos te puedo orientar desde el primer mensaje.</p>
+          </div>
+
+          <ol className="relative mt-7 hidden space-y-5 lg:block">
+            {steps.map(([title, text], index) => (
+              <li key={title} className="quote-step">
+                <span className="quote-step__number">{index + 1}</span>
+                <div>
+                  <p className="text-sm font-bold text-white">{title}</p>
+                  <p className="mt-0.5 text-[13px] leading-relaxed text-slate-400">{text}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+
+          <div className="relative mt-7 flex items-center gap-3 border-t border-white/10 pt-5 lg:mt-auto">
+            <img src="/luis-reyes-retrato-2026.webp" alt="" width="44" height="44" loading="lazy" decoding="async" className="h-11 w-11 flex-none rounded-full border-2 border-brand-400/60 object-cover" />
+            <div className="min-w-0">
+              <p className="text-sm font-bold text-white">Luis Reyes Castro</p>
+              <p className="text-xs text-slate-400">Tus datos no se guardan en el sitio.</p>
             </div>
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="quote-form p-5 md:p-7">
-          <div className="mb-5 flex items-center justify-between border-b border-slate-100 pb-4">
-            <div><p className="text-[11px] font-bold uppercase tracking-[.16em] text-brand-600">Datos del proyecto</p><p className="mt-1 text-xs text-slate-400">Completa solo lo esencial · 2 minutos</p></div>
-            <div className="hidden items-center gap-1.5 sm:flex" aria-hidden="true"><span className="h-1.5 w-6 rounded-full bg-brand-600" /><span className="h-1.5 w-6 rounded-full bg-brand-100" /><span className="h-1.5 w-6 rounded-full bg-cyan-100" /></div>
-          </div>
-          <div className="grid gap-5 sm:grid-cols-2">
-            <label className="quote-field"><span>Tu nombre <b>*</b></span><input name="name" type="text" autoComplete="name" required placeholder="¿Cómo te llamas?" /></label>
-            <label className="quote-field"><span>Negocio o proyecto</span><input name="business" type="text" autoComplete="organization" placeholder="Nombre de tu negocio" /></label>
+        <form onSubmit={handleSubmit} className="quote-form p-5 md:p-8">
+          <div className="grid gap-4 sm:grid-cols-2">
+            <label className="quote-field"><span className="quote-label">Tu nombre <b>*</b></span><input name="name" type="text" autoComplete="name" required placeholder="¿Cómo te llamas?" /></label>
+            <label className="quote-field"><span className="quote-label">Negocio o proyecto</span><input name="business" type="text" autoComplete="organization" placeholder="Nombre de tu negocio" /></label>
           </div>
 
-          <label className="quote-field mt-4"><span>¿Qué necesitas? <b>*</b></span><select name="projectType" required defaultValue=""><option value="" disabled>Selecciona una opción</option>{projectTypes.map((option) => <option key={option}>{option}</option>)}</select></label>
+          <ChoiceGroup legend="¿Qué necesitas?" name="projectType" options={projectTypes} value={projectType} onChange={setProjectType} className="grid-cols-2 sm:grid-cols-3" />
+          <ChoiceGroup legend="Presupuesto estimado" name="budget" options={budgets} value={budget} onChange={setBudget} className="quote-budgets grid-cols-2 sm:grid-cols-5" />
 
-          <fieldset className="mt-4">
-            <legend className="text-sm font-bold text-slate-800">Presupuesto estimado <b className="text-brand-600">*</b></legend>
-            <p className="mt-1 text-xs text-slate-500">Esto me permite recomendarte una solución realista desde el comienzo.</p>
-            <div className="mt-3 grid gap-2 sm:grid-cols-2">
-              {budgets.map((option) => (
-                <label key={option} className={`quote-budget ${budget === option ? 'is-selected' : ''}`}>
-                  <input type="radio" name="budget" value={option} required checked={budget === option} onChange={() => setBudget(option)} />
-                  <span className="quote-radio" aria-hidden="true" /><span>{option}</span>
-                </label>
-              ))}
-            </div>
-          </fieldset>
+          <label className="quote-field mt-5"><span className="quote-label">Cuéntame brevemente tu idea <b>*</b></span><textarea name="details" required rows="3" placeholder="Qué haces, qué quieres lograr y si ya tienes una página o redes sociales…" /></label>
 
-          <label className="quote-field mt-4"><span>Cuéntame brevemente tu idea <b>*</b></span><textarea name="details" required rows="3" placeholder="Qué haces, qué quieres lograr y si ya tienes una página o redes sociales…" /></label>
-          <button type="submit" className="primary-cta mt-5 inline-flex min-h-[3.1rem] w-full items-center justify-center gap-2 rounded-xl bg-slate-950 px-6 py-3 text-sm font-extrabold text-white shadow-lg shadow-slate-900/20 transition hover:-translate-y-0.5 hover:bg-brand-700 active:translate-y-0">
-            Preparar solicitud por WhatsApp
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+          <button type="submit" className="primary-cta mt-6 inline-flex min-h-[3.1rem] w-full items-center justify-center gap-2.5 rounded-xl bg-brand-600 px-6 py-3 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-brand-700 active:translate-y-0">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
+            Preparar mensaje en WhatsApp
           </button>
-          <p className="mt-3 text-center text-[11px] leading-relaxed text-slate-400">Al continuar se abrirá WhatsApp con tu solicitud lista. Tú decides si la envías.</p>
+          <p className="mt-3 text-center text-xs text-slate-400 lg:hidden">Se abrirá WhatsApp con tu mensaje listo. Tú decides si lo envías.</p>
         </form>
       </div>
     </section>
