@@ -52,7 +52,7 @@ export default function SchedulePage({ onNavigate }) {
             event.preventDefault()
             onNavigate('/')
           }}
-          className="inline-flex items-center gap-2 text-violet-500 hover:text-violet-600 font-semibold text-sm mb-8"
+          className="inline-flex items-center gap-2 text-brand-500 hover:text-brand-600 font-semibold text-sm mb-8"
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
             <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
@@ -61,7 +61,7 @@ export default function SchedulePage({ onNavigate }) {
         </a>
 
         <div className="text-center mb-8">
-          <div className="mx-auto mb-5 w-24 h-24 rounded-full border-4 border-violet-300 overflow-hidden shadow-md bg-violet-50">
+          <div className="mx-auto mb-5 w-24 h-24 rounded-full border-4 border-brand-300 overflow-hidden shadow-md bg-brand-50">
             <picture>
               <source srcSet="/luis-reyes-retrato-2026.webp" type="image/webp" />
               <img
@@ -75,7 +75,7 @@ export default function SchedulePage({ onNavigate }) {
               />
             </picture>
           </div>
-          <h1 className="text-3xl md:text-4xl font-extrabold text-slate-800 mb-3">
+          <h1 className="font-display text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 mb-3">
             Agenda una reunión conmigo
           </h1>
           <p className="text-slate-500 leading-relaxed">
@@ -91,23 +91,23 @@ export default function SchedulePage({ onNavigate }) {
               href={option.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-4 rounded-2xl border border-violet-200 bg-white/70 p-5 transition-all hover:border-violet-400 hover:bg-violet-50 hover:shadow-md"
+              className="group flex items-center gap-4 rounded-2xl border border-brand-200 bg-white/70 p-5 transition-all hover:border-brand-400 hover:bg-brand-50 hover:shadow-md"
             >
-              <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-violet-100 text-violet-500 transition-colors group-hover:bg-violet-500 group-hover:text-white">
+              <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-brand-100 text-brand-500 transition-colors group-hover:bg-brand-500 group-hover:text-white">
                 {option.icon}
               </span>
               <span className="flex-1">
                 <span className="flex items-center gap-2">
                   <span className="font-semibold text-slate-800">{option.label}</span>
                   {option.accent && (
-                    <span className="rounded-full bg-violet-100 px-2 py-0.5 text-xs font-semibold text-violet-500">
+                    <span className="rounded-full bg-brand-100 px-2 py-0.5 text-xs font-semibold text-brand-500">
                       {option.accent}
                     </span>
                   )}
                 </span>
                 <span className="mt-1 block text-sm text-slate-500">{option.description}</span>
               </span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5 flex-shrink-0 text-violet-300 transition-colors group-hover:text-violet-500">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5 flex-shrink-0 text-brand-300 transition-colors group-hover:text-brand-500">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
               </svg>
             </a>

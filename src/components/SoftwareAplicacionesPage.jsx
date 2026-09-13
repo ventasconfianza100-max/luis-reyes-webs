@@ -1,6 +1,8 @@
 import Navbar from './Navbar'
 import Footer from './Footer'
 import Section from './Section'
+import ProjectProof from './ProjectProof'
+import ClosingCta from './ClosingCta'
 
 const WHATSAPP = 'https://wa.me/56922012534?text=' +
   encodeURIComponent('Hola Luis, necesito un software o aplicación a medida. ¿Cómo avanzamos?')
@@ -60,39 +62,42 @@ export default function SoftwareAplicacionesPage({ onNavigate }) {
       <main>
         {/* Encabezado */}
         <Section width="wide" spacing="pt-10 pb-9 md:pt-12 md:pb-11" className="page-hero bg-gradient-to-br from-white via-white to-brand-50/70">
-          <div className="max-w-3xl">
-            <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600 mb-4">
-              Software y aplicaciones · Chile
-            </span>
-            <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight leading-[1.1] text-slate-900">
-              Creo <span className="text-brand-600">software, programas y aplicaciones</span> a medida
-            </h1>
-            <p className="mt-6 text-lg text-slate-600 leading-relaxed">
-              Además de páginas web, desarrollo programas y aplicaciones hechos a la medida de tu
-              negocio: sistemas de gestión, apps web, automatizaciones e integraciones. Nada de
-              plantillas genéricas: código propio pensado para resolver el problema concreto que te
-              está quitando tiempo.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="/agenda"
-                onClick={(e) => go(e, '/agenda')}
-                className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-7 py-3.5 rounded-2xl text-sm transition-all shadow-[0_8px_24px_-10px_rgba(124,58,237,0.6)] hover:-translate-y-0.5"
-              >
-                Cuéntame tu idea
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
-              </a>
-              <a
-                href={WHATSAPP}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-white/80 backdrop-blur border border-slate-200/80 text-slate-700 font-semibold px-7 py-3.5 rounded-2xl text-sm transition-all hover:border-brand-300 hover:text-brand-700 hover:bg-white hover:-translate-y-0.5"
-              >
-                Escríbeme por WhatsApp
-              </a>
+          <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_.9fr] lg:gap-12">
+            <div className="max-w-3xl">
+              <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600 mb-4">
+                Software y aplicaciones · Chile
+              </span>
+              <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight leading-[1.1] text-slate-900">
+                Creo <span className="text-brand-600">software, programas y aplicaciones</span> a medida
+              </h1>
+              <p className="mt-6 text-lg text-slate-600 leading-relaxed">
+                Además de páginas web, desarrollo programas y aplicaciones hechos a la medida de tu
+                negocio: sistemas de gestión, apps web, automatizaciones e integraciones. Nada de
+                plantillas genéricas: código propio pensado para resolver el problema concreto que te
+                está quitando tiempo.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href="/agenda"
+                  onClick={(e) => go(e, '/agenda')}
+                  className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-7 py-3.5 rounded-2xl text-sm transition-all shadow-[0_8px_24px_-10px_rgba(124,58,237,0.6)] hover:-translate-y-0.5"
+                >
+                  Cuéntame tu idea
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </a>
+                <a
+                  href={WHATSAPP}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-white/80 backdrop-blur border border-slate-200/80 text-slate-700 font-semibold px-7 py-3.5 rounded-2xl text-sm transition-all hover:border-brand-300 hover:text-brand-700 hover:bg-white hover:-translate-y-0.5"
+                >
+                  Escríbeme por WhatsApp
+                </a>
+              </div>
             </div>
+            <ProjectProof name="Escuela RDLF" label="Plataforma real publicada" />
           </div>
         </Section>
 
@@ -147,28 +152,12 @@ export default function SoftwareAplicacionesPage({ onNavigate }) {
           </div>
         </Section>
 
-        {/* Cierre / CTA */}
-        <Section spacing="pt-3 pb-12 md:pb-16">
-          <div className="rounded-3xl bg-ink text-white p-10 md:p-14 text-center">
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-3">
-              ¿Tienes una idea o un proceso que ordenar?
-            </h2>
-            <p className="text-slate-300 max-w-xl mx-auto mb-7 leading-relaxed">
-              Conversemos sin compromiso. Te digo si conviene un software a medida, cómo lo abordaría
-              y cuánto costaría, según lo que necesitas resolver.
-            </p>
-            <a
-              href="/agenda"
-              onClick={(e) => go(e, '/agenda')}
-              className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white font-semibold px-8 py-4 rounded-2xl text-sm transition-all"
-            >
-              Agenda una reunión gratis
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </a>
-          </div>
-        </Section>
+        <ClosingCta
+          title="¿Tienes una idea o un proceso que ordenar?"
+          text="Conversemos sin compromiso. Te digo si conviene un software a medida, cómo lo abordaría y cuánto costaría, según lo que necesitas resolver."
+          whatsapp={WHATSAPP}
+          onNavigate={onNavigate}
+        />
       </main>
 
       <Footer onNavigate={onNavigate} />

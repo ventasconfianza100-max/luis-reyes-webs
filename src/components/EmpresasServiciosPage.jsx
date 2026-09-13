@@ -1,6 +1,8 @@
 import Navbar from './Navbar'
 import Footer from './Footer'
 import Section from './Section'
+import ProjectProof from './ProjectProof'
+import ClosingCta from './ClosingCta'
 
 const WHATSAPP = 'https://wa.me/56922012534?text=' +
   encodeURIComponent('Hola Luis, quiero una página web para mi empresa de servicios. ¿Cómo avanzamos?')
@@ -42,38 +44,41 @@ export default function EmpresasServiciosPage({ onNavigate }) {
       <main>
         {/* Encabezado */}
         <Section width="wide" spacing="pt-10 pb-9 md:pt-12 md:pb-11" className="page-hero bg-gradient-to-br from-white via-white to-brand-50/70">
-          <div className="max-w-3xl">
-            <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600 mb-4">
-              Empresas y servicios · Chile
-            </span>
-            <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight leading-[1.1] text-slate-900">
-              Páginas web para <span className="text-brand-600">empresas de servicios</span>
-            </h1>
-            <p className="mt-6 text-lg text-slate-600 leading-relaxed">
-              He desarrollado sitios multipágina para empresas de servicios que necesitaban aparecer
-              en Google y recibir cotizaciones, no solo "estar en internet". Si vendes un servicio y
-              dependes del boca a boca, una web bien armada te trae clientes nuevos cada semana.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="/agenda"
-                onClick={(e) => go(e, '/agenda')}
-                className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-7 py-3.5 rounded-2xl text-sm transition-all shadow-[0_8px_24px_-10px_rgba(124,58,237,0.6)] hover:-translate-y-0.5"
-              >
-                Agenda una reunión
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
-              </a>
-              <a
-                href={WHATSAPP}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-white/80 backdrop-blur border border-slate-200/80 text-slate-700 font-semibold px-7 py-3.5 rounded-2xl text-sm transition-all hover:border-brand-300 hover:text-brand-700 hover:bg-white hover:-translate-y-0.5"
-              >
-                Escríbeme por WhatsApp
-              </a>
+          <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_.9fr] lg:gap-12">
+            <div className="max-w-3xl">
+              <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600 mb-4">
+                Empresas y servicios · Chile
+              </span>
+              <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight leading-[1.1] text-slate-900">
+                Páginas web para <span className="text-brand-600">empresas de servicios</span>
+              </h1>
+              <p className="mt-6 text-lg text-slate-600 leading-relaxed">
+                He desarrollado sitios multipágina para empresas de servicios que necesitaban aparecer
+                en Google y recibir cotizaciones, no solo "estar en internet". Si vendes un servicio y
+                dependes del boca a boca, una web bien armada te trae clientes nuevos cada semana.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href="/agenda"
+                  onClick={(e) => go(e, '/agenda')}
+                  className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-7 py-3.5 rounded-2xl text-sm transition-all shadow-[0_8px_24px_-10px_rgba(124,58,237,0.6)] hover:-translate-y-0.5"
+                >
+                  Agenda una reunión
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </a>
+                <a
+                  href={WHATSAPP}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-white/80 backdrop-blur border border-slate-200/80 text-slate-700 font-semibold px-7 py-3.5 rounded-2xl text-sm transition-all hover:border-brand-300 hover:text-brand-700 hover:bg-white hover:-translate-y-0.5"
+                >
+                  Escríbeme por WhatsApp
+                </a>
+              </div>
             </div>
+            <ProjectProof name="7ma Control" label="Empresa de servicios real" />
           </div>
         </Section>
 
@@ -136,28 +141,12 @@ export default function EmpresasServiciosPage({ onNavigate }) {
           </div>
         </Section>
 
-        {/* Cierre / CTA */}
-        <Section spacing="pt-3 pb-12 md:pb-16">
-          <div className="rounded-3xl bg-ink text-white p-10 md:p-14 text-center">
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-3">
-              ¿Quieres que tu empresa reciba más cotizaciones?
-            </h2>
-            <p className="text-slate-300 max-w-xl mx-auto mb-7 leading-relaxed">
-              Conversemos sin compromiso. Te muestro cómo ordenar tus servicios en una web que
-              aparezca en Google y convierta visitas en mensajes.
-            </p>
-            <a
-              href="/agenda"
-              onClick={(e) => go(e, '/agenda')}
-              className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white font-semibold px-8 py-4 rounded-2xl text-sm transition-all"
-            >
-              Agenda una reunión gratis
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </a>
-          </div>
-        </Section>
+        <ClosingCta
+          title="¿Quieres que tu empresa reciba más cotizaciones?"
+          text="Conversemos sin compromiso. Te muestro cómo ordenar tus servicios en una web que aparezca en Google y convierta visitas en mensajes."
+          whatsapp={WHATSAPP}
+          onNavigate={onNavigate}
+        />
       </main>
 
       <Footer onNavigate={onNavigate} />

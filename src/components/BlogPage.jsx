@@ -22,7 +22,7 @@ export default function BlogPage({ onNavigate }) {
             event.preventDefault()
             onNavigate('/')
           }}
-          className="inline-flex items-center gap-2 text-violet-500 hover:text-violet-600 font-semibold text-sm mb-8"
+          className="inline-flex items-center gap-2 text-brand-500 hover:text-brand-600 font-semibold text-sm mb-8"
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
             <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
@@ -31,8 +31,8 @@ export default function BlogPage({ onNavigate }) {
         </a>
 
         <div className="text-center max-w-2xl mx-auto mb-10">
-          <span className="text-xs font-semibold uppercase tracking-wide text-violet-400">Blog</span>
-          <h1 className="text-3xl md:text-5xl font-extrabold text-slate-800 mt-3 mb-4">
+          <span className="text-xs font-semibold uppercase tracking-wide text-brand-400">Blog</span>
+          <h1 className="font-display text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 mt-3 mb-4">
             Guías de diseño web, SEO y ventas online en Chile
           </h1>
           <p className="text-slate-500 leading-relaxed">
@@ -50,16 +50,16 @@ export default function BlogPage({ onNavigate }) {
                 event.preventDefault()
                 onNavigate(`/blog/${post.slug}`)
               }}
-              className="group rounded-3xl border border-violet-100 bg-violet-50/60 p-6 flex flex-col transition-all hover:-translate-y-1 hover:shadow-lg hover:border-violet-300"
+              className="group rounded-3xl border border-brand-100 bg-brand-50/60 p-6 flex flex-col transition-all hover:-translate-y-1 hover:shadow-lg hover:border-brand-300"
             >
               <div className="flex items-center justify-between gap-3 mb-4">
-                <span className="text-xs font-semibold uppercase tracking-wide text-violet-500">
+                <span className="text-xs font-semibold uppercase tracking-wide text-brand-500">
                   {post.category}
                 </span>
                 <span className="text-xs text-slate-400">{post.readingMinutes} min de lectura</span>
               </div>
 
-              <h2 className="text-xl font-extrabold text-slate-800 leading-tight mb-3">
+              <h2 className="font-display text-xl font-bold text-slate-900 leading-tight mb-3">
                 {post.title}
               </h2>
 
@@ -67,7 +67,7 @@ export default function BlogPage({ onNavigate }) {
 
               <div className="flex items-center justify-between mt-6">
                 <span className="text-xs text-slate-400">{formatDate(post.datePublished)}</span>
-                <span className="inline-flex items-center gap-1 text-violet-500 font-bold text-sm transition-transform group-hover:translate-x-1">
+                <span className="inline-flex items-center gap-1 text-brand-500 font-bold text-sm transition-transform group-hover:translate-x-1">
                   Leer
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -89,7 +89,7 @@ export default function BlogPage({ onNavigate }) {
               event.preventDefault()
               onNavigate('/agenda')
             }}
-            className="inline-flex items-center gap-2 bg-violet-500 hover:bg-violet-600 text-white font-semibold px-6 py-3 rounded-xl text-sm transition-all shadow-sm"
+            className="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white font-semibold px-6 py-3 rounded-xl text-sm transition-all shadow-sm"
           >
             Agenda una reunión
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
