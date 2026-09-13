@@ -59,13 +59,13 @@ const microNotes = [
 
 export default function Services({ onNavigate }) {
   return (
-    <Section className="services-section bg-gradient-to-b from-amber-50/40 via-white to-white">
+    <Section className="services-section bg-gradient-to-b from-brand-50/60 via-white/55 to-white/30">
       <div className="max-w-2xl mx-auto text-center mb-9">
         <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600 mb-3">
           Servicios
         </span>
         <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
-          El tipo de web depende de lo que vendes
+          El tipo de web depende de <span className="text-gradient">lo que vendes</span>
         </h2>
         <p className="mt-4 text-slate-500 leading-relaxed">
           No es lo mismo una tienda con productos, un profesional independiente o una empresa que necesita

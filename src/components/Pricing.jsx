@@ -70,7 +70,7 @@ export default function Pricing() {
           Planes
         </span>
         <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-3">
-          Planes claros, sin sorpresas
+          Planes <span className="text-gradient">claros</span>, sin sorpresas
         </h2>
         <p className="text-slate-500">
           Elige el punto de partida que se ajusta a tu momento. Todos incluyen reunión inicial sin costo; el alcance final se confirma contigo.
