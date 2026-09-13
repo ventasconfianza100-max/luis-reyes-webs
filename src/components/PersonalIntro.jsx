@@ -4,7 +4,7 @@ export default function PersonalIntro({ onNavigate }) {
   return (
     <section className="personal-intro-section px-6 py-12 md:py-16" aria-labelledby="personal-intro-title">
       <div className="mx-auto grid max-w-6xl items-center gap-8 md:grid-cols-[.82fr_1.18fr] md:gap-12">
-        <div className="relative mx-auto w-full max-w-[21rem]">
+        <div className="relative mx-auto hidden w-full max-w-[21rem] md:block">
           <div className="absolute -inset-3 -z-10 rotate-3 rounded-[2rem] bg-gradient-to-br from-brand-200/70 to-cyan-100/70" aria-hidden="true" />
           <div className="relative aspect-[4/4.35] overflow-hidden rounded-[1.7rem] border-4 border-white bg-slate-100 shadow-[0_24px_60px_-28px_rgba(79,70,229,.55)]">
             <img src="/luis-reyes-retrato-2026.webp" alt="Retrato de Luis Reyes Castro, diseñador y desarrollador web en Talca" width="420" height="457" loading="lazy" decoding="async" className="h-full w-full object-cover" />
@@ -19,30 +19,38 @@ export default function PersonalIntro({ onNavigate }) {
         </div>
 
         <div>
-          <p className="text-xs font-extrabold uppercase tracking-[.18em] text-brand-600">La persona detrás de cada proyecto</p>
-          <h2 id="personal-intro-title" className="mt-3 font-display text-3xl font-extrabold tracking-tight text-slate-950 md:text-4xl">
+          <div className="mb-4 flex items-center gap-3 md:hidden">
+            <img src="/luis-reyes-retrato-2026.webp" alt="" width="64" height="64" loading="lazy" decoding="async" className="h-16 w-16 flex-none rounded-2xl border-2 border-white object-cover shadow-[0_12px_28px_-14px_rgba(79,70,229,.6)]" />
+            <div className="min-w-0">
+              <p className="text-sm font-bold text-slate-900">Luis Reyes Castro</p>
+              <p className="text-xs text-slate-500">Psicólogo · Diseñador y desarrollador web</p>
+              <p className="mt-1 inline-flex items-center gap-1.5 text-[11px] font-bold text-emerald-700"><span className="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden="true" /> Atención directa</p>
+            </div>
+          </div>
+          <p className="hidden text-xs font-extrabold uppercase tracking-[.18em] text-brand-600 md:block">La persona detrás de cada proyecto</p>
+          <h2 id="personal-intro-title" className="md:mt-3 font-display text-3xl font-extrabold tracking-tight text-slate-950 md:text-4xl">
             Tu página la trabajo yo, de principio a fin.
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-slate-600">
+          <p className="mt-3 text-base leading-relaxed text-slate-600 md:mt-4">
             Soy <strong className="font-semibold text-slate-900">Luis Reyes Castro</strong>, psicólogo y desarrollador web en Talca. Combino tecnología con una mirada centrada en las personas para crear sitios claros, confiables y fáciles de usar.
           </p>
-          <p className="mt-3 text-sm leading-relaxed text-slate-600">
+          <p className="mt-3 hidden text-sm leading-relaxed text-slate-600 sm:block">
             Trabajamos directamente, sin intermediarios: escucho tu idea, te explico cada decisión con palabras simples y continúo disponible después de publicar.
           </p>
 
-          <div className="mt-6 grid gap-2.5 sm:grid-cols-3">
+          <div className="mt-4 grid grid-cols-3 gap-2 sm:mt-6 sm:gap-2.5">
             {['Comunicación clara', 'Proceso personalizado', 'Soporte posterior'].map((item) => (
-              <div key={item} className="flex items-center gap-2 rounded-xl border border-slate-200/80 bg-white px-3 py-2.5 text-xs font-bold text-slate-700 shadow-sm">
+              <div key={item} className="flex flex-col items-center gap-1 rounded-xl border border-slate-200/80 bg-white px-1.5 py-2 text-center text-[11px] font-bold leading-tight sm:flex-row sm:gap-2 sm:px-3 sm:py-2.5 sm:text-left sm:text-xs text-slate-700 shadow-sm">
                 <span className="grid h-5 w-5 flex-none place-items-center rounded-full bg-emerald-50 text-emerald-600" aria-hidden="true">✓</span>{item}
               </div>
             ))}
           </div>
 
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <a href="/sobre-luis" onClick={(event) => { event.preventDefault(); onNavigate('/sobre-luis') }} className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-slate-950 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-slate-950/15 transition hover:-translate-y-0.5 hover:bg-brand-700">
+          <div className="mt-4 flex flex-col gap-2 sm:mt-6 sm:flex-row sm:gap-3">
+            <a href="/sobre-luis" onClick={(event) => { event.preventDefault(); onNavigate('/sobre-luis') }} className="inline-flex min-h-11 items-center justify-center rounded-2xl bg-slate-950 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-slate-950/15 transition hover:-translate-y-0.5 hover:bg-brand-700">
               Conoce más sobre mí
             </a>
-            <a href={whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-brand-200 bg-brand-50/70 px-5 py-3 text-sm font-bold text-brand-700 transition hover:-translate-y-0.5 hover:bg-brand-100">
+            <a href={whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center rounded-2xl border border-brand-200 bg-brand-50/70 px-5 py-3 text-sm font-bold text-brand-700 transition hover:-translate-y-0.5 hover:bg-brand-100">
               Hablemos de tu proyecto
             </a>
           </div>

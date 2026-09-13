@@ -34,7 +34,7 @@ const features = [
 export default function Features() {
   return (
     <Section className="features-section">
-      <div className="text-center max-w-2xl mx-auto mb-9">
+      <div className="text-center max-w-2xl mx-auto mb-6 md:mb-9">
         <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600 mb-3">
           Qué incluye
         </span>
@@ -46,17 +46,17 @@ export default function Features() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
         {features.map((f) => (
-          <div key={f.title} className="feature-card group flex gap-4 rounded-3xl border border-slate-200/80 bg-white/90 p-5 transition hover:-translate-y-1 sm:flex-col sm:p-6">
-            <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl bg-brand-50 text-brand-600 transition group-hover:bg-brand-600 group-hover:text-white">
+          <div key={f.title} className="feature-card group flex gap-4 rounded-3xl border border-slate-200/80 bg-white/90 p-4 transition hover:-translate-y-1 sm:flex-col sm:p-6">
+            <div className="flex h-10 w-10 flex-shrink-0 sm:h-11 sm:w-11 items-center justify-center rounded-2xl bg-brand-50 text-brand-600 transition group-hover:bg-brand-600 group-hover:text-white">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-5 w-5" aria-hidden="true">
                 {f.icon}
               </svg>
             </div>
             <div>
               <h3 className="font-display text-base font-bold text-slate-900">{f.title}</h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-slate-500">{f.desc}</p>
+              <p className="mt-1 text-[13px] leading-relaxed text-slate-500 sm:mt-1.5 sm:text-sm">{f.desc}</p>
             </div>
           </div>
         ))}

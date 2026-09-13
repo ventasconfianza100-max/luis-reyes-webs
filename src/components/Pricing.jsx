@@ -65,7 +65,7 @@ function Check() {
 export default function Pricing() {
   return (
     <Section id="planes" className="pricing-section">
-      <div className="text-center max-w-2xl mx-auto mb-9">
+      <div className="text-center max-w-2xl mx-auto mb-6 md:mb-9">
         <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600 mb-3">
           Planes
         </span>
@@ -77,11 +77,11 @@ export default function Pricing() {
         </p>
       </div>
 
-      <div className="pricing-grid grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
+      <div className="pricing-grid mobile-rail -mx-4 flex snap-x snap-mandatory scroll-px-4 gap-3 overflow-x-auto px-4 pb-3 pt-1 md:mx-0 md:grid md:grid-cols-3 md:gap-4 md:overflow-visible md:p-0 items-stretch">
         {plans.map((plan) => (
           <div
             key={plan.name}
-            className={`pricing-card relative p-6 md:p-7 flex flex-col transition-all hover:-translate-y-1 ${
+            className={`pricing-card relative w-[85%] shrink-0 snap-start p-5 md:w-auto md:p-7 flex flex-col transition-all hover:-translate-y-1 ${
               plan.highlight
                 ? 'pricing-card--featured bg-slate-950 text-white shadow-[0_28px_70px_-32px_rgba(15,23,42,.8)] border border-cyan-300/20'
                 : 'bg-white/90 shadow-soft border border-slate-200/80'
@@ -93,7 +93,7 @@ export default function Pricing() {
               </span>
             )}
 
-            <div className="mb-7 flex items-center justify-between gap-3">
+            <div className="mb-4 flex items-center justify-between gap-3 md:mb-7">
               <span className={`text-[10px] font-bold uppercase tracking-[.17em] ${plan.highlight ? 'text-cyan-300' : 'text-brand-600'}`}>{plan.code}</span>
             </div>
 
@@ -102,10 +102,10 @@ export default function Pricing() {
               <span className={`font-display text-4xl font-extrabold tracking-[-.055em] ${plan.highlight ? 'text-white' : 'text-slate-950'}`}>{plan.price}</span>
               <span className={`text-[10px] font-bold tracking-[.14em] ${plan.highlight ? 'text-slate-400' : 'text-slate-400'}`}>CLP</span>
             </div>
-            <p className={`${plan.highlight ? 'text-slate-300' : 'text-slate-500'} text-sm leading-relaxed mb-6 min-h-[2.75rem]`}>{plan.pitch}</p>
+            <p className={`${plan.highlight ? 'text-slate-300' : 'text-slate-500'} text-sm leading-relaxed mb-4 min-h-[2.75rem] md:mb-6`}>{plan.pitch}</p>
 
-            <div className={`mb-5 h-px ${plan.highlight ? 'bg-gradient-to-r from-cyan-300/35 via-brand-400/25 to-transparent' : 'bg-gradient-to-r from-slate-200 to-transparent'}`} />
-            <ul className="space-y-3 mb-8 flex-1">
+            <div className={`mb-4 h-px md:mb-5 ${plan.highlight ? 'bg-gradient-to-r from-cyan-300/35 via-brand-400/25 to-transparent' : 'bg-gradient-to-r from-slate-200 to-transparent'}`} />
+            <ul className="space-y-2.5 mb-6 flex-1 md:space-y-3 md:mb-8">
               {plan.features.map((f) => (
                 <li key={f} className={`flex gap-2.5 text-sm leading-snug ${plan.highlight ? 'text-slate-300' : 'text-slate-600'}`}>
                   {plan.highlight ? <span className="mt-0.5 text-cyan-300">✓</span> : <Check />}
@@ -133,9 +133,10 @@ export default function Pricing() {
           </div>
         ))}
       </div>
+      <p className="mt-1 text-center text-[11px] font-semibold uppercase tracking-[.12em] text-slate-400 md:hidden">Desliza para ver los 3 planes <span aria-hidden="true">→</span></p>
 
       {/* Garantía / reversión de riesgo */}
-      <div className="pricing-assurance mt-7 max-w-4xl mx-auto border border-brand-100/80 bg-white/60 p-5 flex items-start gap-3 backdrop-blur-sm">
+      <div className="pricing-assurance mt-4 md:mt-7 max-w-4xl mx-auto border border-brand-100/80 bg-white/60 p-4 md:p-5 flex items-start gap-3 backdrop-blur-sm">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 text-brand-500 flex-shrink-0">
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
         </svg>
