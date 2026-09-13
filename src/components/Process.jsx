@@ -31,7 +31,7 @@ export default function Process() {
           Cómo trabajamos
         </span>
         <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-3">
-          Simple, claro y sin sorpresas
+          Simple, claro y <span className="text-gradient">sin sorpresas</span>
         </h2>
         <p className="text-slate-500">
           De la primera conversación a tu web publicada, paso a paso y siempre contigo.

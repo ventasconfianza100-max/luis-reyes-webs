@@ -57,7 +57,7 @@ export default function ProjectsShowcase() {
       }}>
         <div className="portfolio-aura" aria-hidden="true" />
         <header className="portfolio-heading">
-          <div><span className="portfolio-kicker"><span /> Portafolio real</span><h2>Lo que he construido</h2></div>
+          <div><span className="portfolio-kicker"><span /> Portafolio real</span><h2>Lo que he <span className="text-gradient">construido</span></h2></div>
           <p>Proyectos reales que hoy están funcionando. Desliza, explora y entra a conocer cada experiencia.</p>
         </header>
         <div className="portfolio-carousel">

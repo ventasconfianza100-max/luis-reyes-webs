@@ -40,7 +40,7 @@ export default function Features() {
             Qué incluye
           </span>
           <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
-            Lo importante, ya resuelto
+            Lo importante, <span className="text-gradient">ya resuelto</span>
           </h2>
           <p className="mt-3 text-slate-500 leading-relaxed">
             Sin paquetes confusos ni letra chica: esto viene incluido en todo lo que hago.
