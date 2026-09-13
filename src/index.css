@@ -82,21 +82,6 @@ body {
   box-shadow: inset 0 0 0 5px rgba(2,8,23,.09);
   pointer-events: none;
 }
-.hero-signature { border-radius: 1rem 1rem .25rem 1rem; box-shadow: 0 12px 34px -24px rgba(15,23,42,.45); }
-.hero-signature-mark {
-  display: grid;
-  width: 2.85rem;
-  height: 2.85rem;
-  place-items: center;
-  border-radius: .7rem .7rem .2rem .7rem;
-  background: #07172f;
-  color: #67e8f9;
-  font-family: 'Sora','Inter',sans-serif;
-  font-size: .7rem;
-  font-weight: 800;
-  letter-spacing: .12em;
-  box-shadow: 4px 4px 0 rgba(124,58,237,.2);
-}
 .page-hero {
   position: relative;
   isolation: isolate;
@@ -176,6 +161,8 @@ body {
 
 /* Lenguaje visual inspirado en el retrato: tecnología precisa, sin caer en lo retro. */
 .services-section { position: relative; }
+.feature-card { box-shadow: 0 1px 2px rgba(15,23,42,.03), 0 18px 44px -30px rgba(79,70,229,.38); }
+.feature-card:hover { border-color: rgba(139,92,246,.35); box-shadow: 0 1px 2px rgba(15,23,42,.03), 0 24px 50px -28px rgba(124,58,237,.45); }
 .service-card { position: relative; overflow: hidden; }
 .service-card { border-radius: 1.35rem 1.35rem .35rem 1.35rem; }
 .service-card--violet { background: linear-gradient(145deg,rgba(245,243,255,.82),#fff 42%); }

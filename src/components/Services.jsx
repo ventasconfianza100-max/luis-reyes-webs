@@ -51,12 +51,6 @@ const services = [
   },
 ]
 
-const microNotes = [
-  'Pensado para tu forma de vender',
-  'Estructura clara antes de diseñar',
-  'Contacto fácil desde el celular',
-]
-
 export default function Services({ onNavigate }) {
   return (
     <Section className="services-section bg-gradient-to-b from-brand-50/60 via-white/55 to-white/30">
@@ -148,16 +142,6 @@ export default function Services({ onNavigate }) {
             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
           </svg>
         </a>
-      </div>
-
-      {/* Micro-notas de cercanía */}
-      <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-slate-400">
-        {microNotes.map((note, i) => (
-          <span key={note} className="inline-flex items-center gap-2">
-            {i > 0 && <span className="hidden sm:inline w-1 h-1 rounded-full bg-slate-300" />}
-            {note}
-          </span>
-        ))}
       </div>
     </Section>
   )
