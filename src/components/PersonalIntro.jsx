@@ -2,13 +2,13 @@ export default function PersonalIntro({ onNavigate }) {
   const whatsapp = 'https://wa.me/56922012534?text=' + encodeURIComponent('Hola Luis, vi tu página y quiero conversar sobre mi proyecto web.')
 
   return (
-    <section className="personal-intro-section decor-home-section px-6 py-12 md:py-16" aria-labelledby="personal-intro-title">
+    <section className="personal-intro-section px-6 py-12 md:py-16" aria-labelledby="personal-intro-title">
       <div className="mx-auto grid max-w-6xl items-center gap-8 md:grid-cols-[.82fr_1.18fr] md:gap-12">
         <div className="relative mx-auto w-full max-w-[21rem]">
           <div className="absolute -inset-3 -z-10 rotate-3 rounded-[2rem] bg-gradient-to-br from-brand-200/70 to-cyan-100/70" aria-hidden="true" />
           <div className="relative aspect-[4/4.35] overflow-hidden rounded-[1.7rem] border-4 border-white bg-slate-100 shadow-[0_24px_60px_-28px_rgba(79,70,229,.55)]">
             <img src="/luis-reyes-retrato-2026.webp" alt="Retrato de Luis Reyes Castro, diseñador y desarrollador web en Talca" width="420" height="457" loading="lazy" decoding="async" className="h-full w-full object-cover" />
-            <div className="absolute inset-x-3 bottom-3 rounded-2xl border border-white/20 bg-slate-950/82 px-4 py-3 text-left text-white shadow-lg backdrop-blur-md">
+            <div className="absolute inset-x-3 bottom-3 rounded-2xl border border-white/20 bg-slate-950/80 px-4 py-3 text-left text-white shadow-lg backdrop-blur-md">
               <p className="text-sm font-bold">Luis Reyes Castro</p>
               <p className="mt-0.5 text-[11px] font-medium text-slate-300">Psicólogo · Diseñador y desarrollador web</p>
             </div>

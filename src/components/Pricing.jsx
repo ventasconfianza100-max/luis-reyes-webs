@@ -9,7 +9,7 @@ const wa = (plan) =>
 
 const plans = [
   {
-    code: 'START / 01',
+    code: 'Para empezar',
     name: 'Plan Esencial',
     price: '$90.000',
     pitch: 'Para el negocio o profesional que recién parte y necesita estar online ya.',
@@ -23,7 +23,7 @@ const plans = [
     highlight: false,
   },
   {
-    code: 'GROW / 02',
+    code: 'Para crecer',
     name: 'Plan Profesional',
     price: '$190.000',
     pitch: 'El más elegido: pensado para captar clientes de verdad.',
@@ -38,7 +38,7 @@ const plans = [
     highlight: true,
   },
   {
-    code: 'SCALE / 03',
+    code: 'Para escalar',
     name: 'Plan Premium',
     price: '$320.000',
     pitch: 'Para tiendas, empresas y negocios que quieren destacar y escalar.',
@@ -64,7 +64,7 @@ function Check() {
 
 export default function Pricing() {
   return (
-    <Section id="planes" className="pricing-section decor-section decor-pricing">
+    <Section id="planes" className="pricing-section">
       <div className="text-center max-w-2xl mx-auto mb-9">
         <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600 mb-3">
           Planes
@@ -94,8 +94,7 @@ export default function Pricing() {
             )}
 
             <div className="mb-7 flex items-center justify-between gap-3">
-              <span className={`font-mono text-[10px] font-bold tracking-[.17em] ${plan.highlight ? 'text-cyan-300' : 'text-brand-600'}`}>{plan.code}</span>
-              {!plan.highlight && <span className="pricing-pixels" aria-hidden="true" />}
+              <span className={`text-[10px] font-bold uppercase tracking-[.17em] ${plan.highlight ? 'text-cyan-300' : 'text-brand-600'}`}>{plan.code}</span>
             </div>
 
             <h3 className={`font-display text-xl font-bold ${plan.highlight ? 'text-white' : 'text-slate-900'}`}>{plan.name}</h3>
