@@ -54,27 +54,27 @@ const services = [
 export default function Services({ onNavigate }) {
   return (
     <Section className="services-section bg-gradient-to-b from-brand-50/60 via-white/55 to-white/30">
-      <div className="max-w-2xl mx-auto text-center mb-9">
+      <div className="max-w-2xl mx-auto text-center mb-6 md:mb-9">
         <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600 mb-3">
           Servicios
         </span>
         <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
           El tipo de web depende de <span className="text-gradient">lo que vendes</span>
         </h2>
-        <p className="mt-4 text-slate-500 leading-relaxed">
+        <p className="mt-3 text-slate-500 leading-relaxed md:mt-4">
           No es lo mismo una tienda con productos, un profesional independiente o una empresa que necesita
           cotizaciones. Por eso adapto la estructura, los textos y el diseño según el negocio.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="mobile-rail -mx-4 flex snap-x snap-mandatory scroll-px-4 gap-3 overflow-x-auto px-4 pb-3 pt-1 md:mx-0 md:grid md:grid-cols-3 md:gap-4 md:overflow-visible md:p-0">
         {services.map((s) => (
           <div
             key={s.num}
-            className={`service-card ${s.theme} group flex flex-col h-full border border-slate-100 shadow-soft p-6 transition-all hover:-translate-y-1 hover:shadow-lift`}
+            className={`service-card ${s.theme} group flex w-[85%] shrink-0 snap-start flex-col border border-slate-100 shadow-soft p-5 transition-all md:w-auto md:p-6 hover:-translate-y-1 hover:shadow-lift`}
           >
             {/* Número + ícono discreto */}
-            <div className="flex items-center justify-between mb-5">
+            <div className="flex items-center justify-between mb-4 md:mb-5">
               <div><span className="font-display text-[11px] font-extrabold tracking-[.18em] text-slate-300">/{s.num}</span><span className="ml-2 text-[9px] font-bold uppercase tracking-[.13em] text-slate-400">{s.tag}</span></div>
               <div className={`service-icon w-9 h-9 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-105 ${s.accent}`}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5">
@@ -88,7 +88,7 @@ export default function Services({ onNavigate }) {
             <p className="text-slate-500 text-sm leading-relaxed mt-3 flex-1">{s.description}</p>
 
             {/* Divisor + detalle */}
-            <div className="mt-5 pt-4 border-t border-slate-100">
+            <div className="mt-4 pt-3 border-t border-slate-100 md:mt-5 md:pt-4">
               <p className="text-xs text-slate-400 leading-relaxed">
                 <span className="font-semibold text-slate-500">Ideal si necesitas:</span> {s.detail}
               </p>
@@ -101,7 +101,7 @@ export default function Services({ onNavigate }) {
                 event.preventDefault()
                 onNavigate(s.ctaHref)
               }}
-              className="mt-5 inline-flex items-center gap-2 text-brand-600 font-semibold text-sm transition-transform hover:translate-x-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600 w-fit"
+              className="mt-4 md:mt-5 inline-flex items-center gap-2 text-brand-600 font-semibold text-sm transition-transform hover:translate-x-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600 w-fit"
             >
               {s.cta}
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
@@ -111,10 +111,11 @@ export default function Services({ onNavigate }) {
           </div>
         ))}
       </div>
+      <p className="mt-1 text-center text-[11px] font-semibold uppercase tracking-[.12em] text-slate-400 md:hidden">Desliza para ver los 3 tipos <span aria-hidden="true">→</span></p>
 
       {/* Franja destacada: software y aplicaciones a medida */}
-      <div className="software-banner mt-5 border border-slate-700/40 bg-slate-950 text-white shadow-[0_24px_60px_-35px_rgba(15,23,42,.8)] p-6 md:p-7 flex flex-col md:flex-row md:items-center gap-5 md:gap-8">
-        <div className="w-11 h-11 shrink-0 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center">
+      <div className="software-banner mt-4 md:mt-5 border border-slate-700/40 bg-slate-950 text-white shadow-[0_24px_60px_-35px_rgba(15,23,42,.8)] p-5 md:p-7 flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+        <div className="w-11 h-11 shrink-0 rounded-xl bg-brand-50 text-brand-600 hidden md:flex items-center justify-center">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
           </svg>

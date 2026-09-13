@@ -55,7 +55,7 @@ export default function Footer({ onNavigate }) {
     <footer className="relative overflow-hidden border-t border-white/10 bg-ink text-slate-300">
       <div aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-400/70 to-transparent" />
       <div className="max-w-6xl mx-auto px-5 py-7 sm:px-6 md:py-8">
-        <div className="grid gap-7 md:grid-cols-[0.9fr_1.5fr_0.9fr] md:gap-9">
+        <div className="grid gap-5 md:grid-cols-[0.9fr_1.5fr_0.9fr] md:gap-9">
           {/* Marca */}
           <div>
             <div className="flex items-center gap-3">
@@ -67,7 +67,7 @@ export default function Footer({ onNavigate }) {
             <p className="mt-2 max-w-xs text-sm leading-relaxed text-slate-400">
               Diseño y desarrollo web para empresas, negocios y profesionales en Chile.
             </p>
-            <div className="mt-4 flex gap-2.5">
+            <div className="mt-3 flex gap-2.5 md:mt-4">
               {socials.map((s) => (
                 <a
                   key={s.label}
@@ -86,13 +86,13 @@ export default function Footer({ onNavigate }) {
           {/* Navegación */}
           <div>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-white">Navegación</p>
-            <nav aria-label="Enlaces del sitio" className="grid grid-cols-2 gap-x-6 gap-y-2">
+            <nav aria-label="Enlaces del sitio" className="grid grid-cols-2 gap-x-6 gap-y-1.5 md:gap-y-2">
               {footerLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={(event) => go(event, link.href)}
-                  className="w-fit text-sm leading-snug text-slate-400 transition-colors hover:text-brand-300"
+                  className="w-fit text-[13px] leading-snug text-slate-400 md:text-sm transition-colors hover:text-brand-300"
                 >
                   {link.label}
                 </a>
@@ -103,7 +103,7 @@ export default function Footer({ onNavigate }) {
           {/* CTA */}
           <div className="md:border-l md:border-white/10 md:pl-7">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-white">¿Hablamos?</p>
-            <p className="mb-3 text-sm leading-relaxed text-slate-400">
+            <p className="mb-3 hidden text-sm leading-relaxed text-slate-400 sm:block">
               Cuéntame qué necesitas y te orientaré sin compromiso.
             </p>
             <a
@@ -117,16 +117,16 @@ export default function Footer({ onNavigate }) {
               href="https://wa.me/56922012534"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 block w-fit text-sm text-slate-400 transition-colors hover:text-brand-300"
+              className="ml-4 inline-block text-sm text-slate-400 sm:ml-0 sm:mt-3 sm:block sm:w-fit transition-colors hover:text-brand-300"
             >
               +56 9 2201 2534
             </a>
           </div>
         </div>
 
-        <div className="mt-6 flex flex-col gap-1.5 border-t border-white/10 pt-4 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-5 flex items-center justify-between gap-1.5 border-t border-white/10 pt-4 text-xs text-slate-500 md:mt-6">
           <span>© {new Date().getFullYear()} Luis Reyes Castro</span>
-          <span>Diseño y desarrollo web en Chile</span>
+          <span className="hidden sm:inline">Diseño y desarrollo web en Chile</span>
         </div>
       </div>
     </footer>

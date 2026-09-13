@@ -34,7 +34,7 @@ export default function FAQ() {
   return (
     <Section id="faq" spacing="py-8 md:py-11" className="faq-section">
       <div className="faq-panel grid overflow-hidden border border-slate-200/80 bg-white/85 shadow-[0_24px_70px_-40px_rgba(15,23,42,.38)] backdrop-blur-sm lg:grid-cols-[.72fr_1.28fr]">
-        <div className="faq-intro relative overflow-hidden bg-slate-950 p-6 text-white md:p-8">
+        <div className="faq-intro relative overflow-hidden bg-slate-950 p-5 text-white md:p-8">
           <div className="relative z-10">
           <span className="inline-block text-xs font-bold uppercase tracking-[.18em] text-cyan-300 mb-3">
             Preguntas frecuentes
@@ -42,10 +42,10 @@ export default function FAQ() {
           <h2 className="font-display text-3xl md:text-[2.65rem] font-bold tracking-[-.045em] leading-[1.08] text-white">
             Respuestas claras,<br className="hidden lg:block" /> antes de empezar.
           </h2>
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-300">Lo esencial sobre precios, tiempos, alcance y soporte para que puedas decidir con tranquilidad.</p>
+          <p className="mt-4 hidden max-w-sm text-sm leading-relaxed text-slate-300 sm:block">Lo esencial sobre precios, tiempos, alcance y soporte para que puedas decidir con tranquilidad.</p>
 
-          <div className="mt-6 border-t border-white/10 pt-5">
-            <p className="text-xs text-slate-400 mb-3">¿Tu pregunta no aparece aquí?</p>
+          <div className="mt-4 border-white/10 sm:mt-6 sm:border-t sm:pt-5">
+            <p className="mb-3 hidden text-xs text-slate-400 sm:block">¿Tu pregunta no aparece aquí?</p>
             <a
               href="https://wa.me/56922012534?text=Hola%20Luis%2C%20tengo%20una%20consulta%20sobre%20tu%20servicio%20de%20dise%C3%B1o%20web"
               target="_blank"
@@ -58,7 +58,7 @@ export default function FAQ() {
           </div>
         </div>
 
-        <div className="faq-list p-4 md:p-6">
+        <div className="faq-list p-2 md:p-6">
           {faqs.map((faq, i) => (
             <div
               key={i}
@@ -68,7 +68,7 @@ export default function FAQ() {
                 onClick={() => setOpen(open === i ? null : i)}
                 aria-expanded={open === i}
                 aria-controls={`faq-answer-${i}`}
-                className="group w-full text-left px-3 py-4 flex items-center justify-between gap-4 transition-colors hover:text-brand-700"
+                className="group w-full text-left px-3 py-3.5 md:py-4 flex items-center justify-between gap-4 transition-colors hover:text-brand-700"
               >
                 <span className="flex items-start gap-3 font-semibold text-slate-800 text-sm leading-snug">
                   <span className="font-mono text-[10px] font-bold tracking-wider text-brand-400">0{i + 1}</span>{faq.q}

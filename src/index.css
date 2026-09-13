@@ -161,6 +161,9 @@ body {
 
 /* Lenguaje visual inspirado en el retrato: tecnología precisa, sin caer en lo retro. */
 .services-section { position: relative; }
+/* Carruseles horizontales de móvil: se desplazan con el dedo, sin barra visible. */
+.mobile-rail { scrollbar-width: none; }
+.mobile-rail::-webkit-scrollbar { display: none; }
 .feature-card { box-shadow: 0 1px 2px rgba(15,23,42,.03), 0 18px 44px -30px rgba(79,70,229,.38); }
 .feature-card:hover { border-color: rgba(139,92,246,.35); box-shadow: 0 1px 2px rgba(15,23,42,.03), 0 24px 50px -28px rgba(124,58,237,.45); }
 .service-card { position: relative; overflow: hidden; }
@@ -451,7 +454,7 @@ body {
   .site-shell a[class*="px-7"], .site-shell button[class*="px-7"] { padding-left: 1.25rem; padding-right: 1.25rem; }
   .site-shell a[class*="py-3.5"], .site-shell button[class*="py-3.5"] { padding-top: .7rem; padding-bottom: .7rem; }
   .reveal { transform: translateY(8px); }
-  .personal-intro-section { padding-top: 2.75rem; padding-bottom: 3rem; }
+  .personal-intro-section { padding-top: 2rem; padding-bottom: 2rem; }
   .personal-intro-section h2 { font-size: 1.85rem; line-height: 1.15; }
   .personal-intro-section a { touch-action: manipulation; }
   .hero-portrait { position: relative; border-radius: 1.1rem 1.1rem .3rem 1.1rem; }
@@ -646,7 +649,11 @@ button:focus-visible {
 .quote-choice:active { transform: scale(.98); }
 .quote-choice input { position: absolute; inset: 0; opacity: 0; pointer-events: none; }
 .quote-choice:has(input:focus-visible) { outline: 2px solid #7c3aed; outline-offset: 2px; }
-@media (max-width: 639px) { .quote-budgets > :last-child { grid-column: 1 / -1; } }
+@media (max-width: 639px) {
+  .quote-budgets > :last-child { grid-column: 1 / -1; }
+  /* Línea que une los pasos del proceso cuando se apilan con el número a la izquierda. */
+  .process-step:not(:last-child)::before { content: ''; position: absolute; top: 2.75rem; bottom: -.75rem; left: 1.25rem; width: 1px; background: linear-gradient(180deg, rgba(167,139,250,.55), rgba(167,139,250,.1)); }
+}
 .quote-aside__glow { position: absolute; top: -30%; right: -40%; width: 110%; height: 80%; border-radius: 50%; background: radial-gradient(circle, rgba(124,58,237,.42), rgba(124,58,237,0) 65%); animation: portfolio-glow 18s ease-in-out infinite alternate-reverse; will-change: transform; pointer-events: none; }
 .quote-aside::after { content: ""; position: absolute; bottom: -30%; left: -30%; width: 80%; height: 60%; border-radius: 50%; background: radial-gradient(circle, rgba(34,211,238,.16), rgba(34,211,238,0) 65%); pointer-events: none; }
 .quote-step { position: relative; display: flex; gap: .85rem; }

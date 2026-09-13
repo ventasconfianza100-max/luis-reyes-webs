@@ -26,7 +26,7 @@ const steps = [
 export default function Process() {
   return (
     <Section className="process-section">
-      <div className="text-center max-w-2xl mx-auto mb-9">
+      <div className="text-center max-w-2xl mx-auto mb-6 md:mb-9">
         <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600 mb-3">
           Cómo trabajamos
         </span>
@@ -42,14 +42,16 @@ export default function Process() {
         {/* Línea conectora (desktop) */}
         <div className="hidden md:block absolute top-6 left-[12%] right-[12%] h-px bg-gradient-to-r from-transparent via-brand-200 to-transparent" />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 md:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-5 md:gap-4">
           {steps.map((s) => (
-            <div key={s.n} className="process-step relative text-center md:px-2">
-              <div className="process-number relative z-10 mx-auto w-12 h-12 bg-white border border-brand-100 shadow-sm flex items-center justify-center font-display text-sm font-extrabold text-brand-600 mb-4">
+            <div key={s.n} className="process-step relative flex gap-4 text-left sm:block sm:text-center md:px-2">
+              <div className="process-number relative z-10 w-10 h-10 shrink-0 bg-white border border-brand-100 shadow-sm flex items-center justify-center font-display text-sm font-extrabold text-brand-600 sm:mx-auto sm:w-12 sm:h-12 sm:mb-4">
                 {s.n}
               </div>
-              <h3 className="font-display text-lg font-bold text-slate-900 mb-1.5">{s.title}</h3>
-              <p className="text-slate-500 text-sm leading-relaxed max-w-[15rem] mx-auto">{s.text}</p>
+              <div>
+                <h3 className="font-display text-base font-bold text-slate-900 mb-1 sm:text-lg sm:mb-1.5">{s.title}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed sm:max-w-[15rem] sm:mx-auto">{s.text}</p>
+              </div>
             </div>
           ))}
         </div>
