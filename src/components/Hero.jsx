@@ -3,10 +3,37 @@ import { portfolioProjects } from '../portfolioProjects'
 // Capturas con fotografía al centro: se reconocen mejor en miniatura.
 const proofProjects = ['Munay Cueros Chile', 'Cuchillos Bravo', 'Psicóloga Andrea Martínez'].map((name) => portfolioProjects.find((project) => project.name === name))
 
+const codeTokens = ['</>', '{ }', '=>', '( )', '#', '< />', ';', '[ ]']
+
+const codeLines = [
+  [['k', 'const '], ['v', 'tuWeb'], ['p', ' = {']],
+  [['p', '  diseño: '], ['s', "'a medida'"], ['p', ',']],
+  [['p', '  velocidad: '], ['s', "'rápida'"], ['p', ',']],
+  [['p', '  google: '], ['k', 'true'], ['p', ',']],
+  [['p', '}']],
+  [['f', 'publicar'], ['p', '(tuWeb) '], ['c', '// ✓ en línea']],
+]
+
+function CodeWindow() {
+  return (
+    <div className="code-window" aria-hidden="true">
+      <div className="code-window__bar"><i /><i /><i /><span>proyecto.jsx</span></div>
+      <pre>{codeLines.map((line, index) => (
+        <span className="code-window__line" style={{ '--line': index, '--chars': Math.max(2, line.reduce((total, [, text]) => total + text.length, 0)) }} key={index}>
+          {line.map(([tone, text], part) => <span className={`tok-${tone}`} key={part}>{text}</span>)}
+        </span>
+      ))}</pre>
+    </div>
+  )
+}
+
 export default function Hero({ onNavigate }) {
   const whatsapp = 'https://wa.me/56922012534?text=' + encodeURIComponent('Hola Luis, vi tu página y quiero cotizar una web para mi negocio.')
   return (
     <section className="hero-section relative overflow-hidden">
+      <div className="hero-code-tokens" aria-hidden="true">
+        {codeTokens.map((token, index) => <span key={index} style={{ '--i': index, top: `${12 + ((index * 37) % 76)}%` }}>{token}</span>)}
+      </div>
       {/* Imagen de trabajo: comunica el servicio antes de presentar a la persona. */}
       <div className="hero-portrait hidden md:block absolute inset-y-7 right-7 w-[43%] lg:w-[42%] overflow-hidden border border-white/15 shadow-[0_32px_90px_-28px_rgba(2,8,23,0.7)]">
         <picture>
@@ -23,6 +50,7 @@ export default function Hero({ onNavigate }) {
           />
         </picture>
         <div className="absolute inset-0 bg-gradient-to-t from-[#06152e]/85 via-transparent to-transparent" />
+        <CodeWindow />
         <div className="absolute inset-x-5 bottom-5 flex items-end justify-between gap-4 border-t border-white/20 pt-4 text-white">
           <div>
             <p className="text-[10px] font-extrabold uppercase tracking-[.22em] text-cyan-300">Diseño + código + estrategia</p>
