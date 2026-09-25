@@ -47,7 +47,7 @@ const plans = [
       'Agendamiento + integraciones a medida',
       'Copy persuasivo de toda la web',
       'SEO avanzado y optimización de velocidad',
-      '1 mes de soporte y mejoras incluido',
+      '1 mes de mejoras incluidas, además del soporte habitual',
     ],
     cta: 'Quiero el Premium',
     highlight: false,
@@ -142,8 +142,7 @@ export default function Pricing() {
         </svg>
         <p className="text-sm text-slate-600 leading-relaxed">
           <strong className="text-slate-800">Sin riesgo para ti:</strong> partimos con una reunión
-          gratuita y sin compromiso. Incluyo revisiones hasta que tu web quede como la necesitas, y no
-          desaparezco el día de la entrega.
+          gratuita y sin compromiso. Incluyo revisiones hasta que tu web quede como la necesitas.
         </p>
       </div>
     </Section>

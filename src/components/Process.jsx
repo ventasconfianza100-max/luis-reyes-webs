@@ -19,7 +19,7 @@ const steps = [
   {
     n: '04',
     title: 'Entrega y soporte',
-    text: 'Publico tu sitio con dominio y SEO listos. Y no desaparezco: te acompaño con dudas y mejoras.',
+    text: 'Publico tu sitio con dominio y SEO listos, y te acompaño con dudas y mejoras.',
   },
 ]
 
@@ -31,7 +31,7 @@ export default function Process() {
           Cómo trabajamos
         </span>
         <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-3">
-          Simple, claro y <span className="text-gradient">sin sorpresas</span>
+          Simple, claro y <span className="text-gradient">paso a paso</span>
         </h2>
         <p className="text-slate-500">
           De la primera conversación a tu web publicada, paso a paso y siempre contigo.

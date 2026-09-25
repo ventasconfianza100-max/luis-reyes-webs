@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 const projectTypes = ['Página web profesional', 'Tienda o catálogo online', 'Web para empresa de servicios', 'Software o app a medida', 'Mejorar mi web actual', 'Aún no estoy seguro']
 // Espacios no separables: el corte de línea cae entre la frase y el monto, nunca dentro del monto.
-const budgets = ['Menos de $500 mil', '$500 mil a $1 millón', '$1 a $2 millones', 'Más de $2 millones', 'Prefiero conversarlo']
+const budgets = ['Hasta $150 mil', '$150 a $350 mil', 'Más de $350 mil', 'Software a medida', 'Prefiero conversarlo']
 
 const steps = [
   ['Completas lo esencial', 'Tipo de proyecto, presupuesto y tu idea. Toma unos 2 minutos.'],

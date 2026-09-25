@@ -39,7 +39,7 @@ export default function Hero({ onNavigate }) {
           </span>
 
           <h1 className="font-display text-[2.45rem] sm:text-5xl lg:text-[3.15rem] font-extrabold tracking-[-0.045em] leading-[1.05] text-slate-950">
-            Páginas web que hacen ver <span className="text-gradient">mejor a tu negocio</span>
+            Sitios web a medida que <span className="text-gradient">traen clientes</span>
           </h1>
 
           <p className="mt-3 sm:mt-5 text-base text-slate-600 leading-relaxed max-w-xl">

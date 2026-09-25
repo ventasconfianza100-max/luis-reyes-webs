@@ -3,7 +3,7 @@ import { portfolioProjects } from '../portfolioProjects'
 
 const stats = [
   { value: String(portfolioProjects.length), title: 'Sitios reales publicados', sub: 'Tiendas, empresas y profesionales, hoy en línea.' },
-  { value: 'Talca', title: 'Clientes en todo Chile', sub: 'Reuniones por Meet, Zoom o WhatsApp.' },
+  { value: '100%', title: 'Código propio', sub: 'Sin plantillas ni mensualidades de plataformas.' },
   { value: '1 a 1', title: 'Trato directo', sub: 'Hablas conmigo, no con una agencia.' },
 ]
 
