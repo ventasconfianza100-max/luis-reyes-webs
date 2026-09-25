@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     q: '¿Qué pasa después de que me entregan la página web?',
-    a: 'Ofrezco soporte post-entrega. Si algo no funciona, si quieres cambiar un texto o tienes dudas, puedes escribirme. No desaparezco el día de la entrega.',
+    a: 'Ofrezco soporte post-entrega. Si algo no funciona, si quieres cambiar un texto o tienes dudas, puedes escribirme.',
   },
   {
     q: '¿Mi página web va a aparecer en Google?',

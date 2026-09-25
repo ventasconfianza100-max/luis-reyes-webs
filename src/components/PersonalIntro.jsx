@@ -10,7 +10,7 @@ export default function PersonalIntro({ onNavigate }) {
             <img src="/luis-reyes-retrato-2026.webp" alt="Retrato de Luis Reyes Castro, diseñador y desarrollador web en Talca" width="420" height="457" loading="lazy" decoding="async" className="h-full w-full object-cover" />
             <div className="absolute inset-x-3 bottom-3 rounded-2xl border border-white/20 bg-slate-950/80 px-4 py-3 text-left text-white shadow-lg backdrop-blur-md">
               <p className="text-sm font-bold">Luis Reyes Castro</p>
-              <p className="mt-0.5 text-[11px] font-medium text-slate-300">Psicólogo · Diseñador y desarrollador web</p>
+              <p className="mt-0.5 text-[11px] font-medium text-slate-300">Desarrollador web · Psicólogo</p>
             </div>
           </div>
           <div className="absolute -right-2 top-5 flex items-center gap-2 rounded-full border border-emerald-100 bg-white px-3 py-2 text-[11px] font-bold text-slate-700 shadow-lg md:-right-7">
@@ -23,7 +23,7 @@ export default function PersonalIntro({ onNavigate }) {
             <img src="/luis-reyes-retrato-2026.webp" alt="" width="64" height="64" loading="lazy" decoding="async" className="h-16 w-16 flex-none rounded-2xl border-2 border-white object-cover shadow-[0_12px_28px_-14px_rgba(79,70,229,.6)]" />
             <div className="min-w-0">
               <p className="text-sm font-bold text-slate-900">Luis Reyes Castro</p>
-              <p className="text-xs text-slate-500">Psicólogo · Diseñador y desarrollador web</p>
+              <p className="text-xs text-slate-500">Desarrollador web · Psicólogo</p>
               <p className="mt-1 inline-flex items-center gap-1.5 text-[11px] font-bold text-emerald-700"><span className="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden="true" /> Atención directa</p>
             </div>
           </div>
