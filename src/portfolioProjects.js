@@ -41,4 +41,11 @@ export const portfolioProjects = [
     image: '/portfolio-andrea.webp', alt: 'Portada actual de la psicóloga Andrea Martínez desarrollada por Luis Reyes',
     chip: 'border-stone-200 bg-stone-50 text-stone-700', glow: 'from-orange-300/20 via-rose-200/10 to-transparent',
   },
+  {
+    name: 'RZ Juguetería', domain: 'RZ Juguetería', url: 'https://rzjugueteria.psi-luisreyes.workers.dev/', type: 'E-commerce de juguetes',
+    summary: 'Tienda online para una juguetería de Talca, con juguetes, material sensorial y educativo, y pago seguro con Webpay.',
+    built: ['Catálogo por categoría y edad', 'Guía según lo que quieres potenciar', 'Carrito y pago con Webpay', 'Envíos a Chile y retiro en Talca'],
+    image: '/portfolio-rz-jugueteria.webp', alt: 'Portada actual de RZ Juguetería, tienda de juguetes en Talca desarrollada por Luis Reyes',
+    chip: 'border-pink-200 bg-pink-50 text-pink-700', glow: 'from-pink-400/20 via-teal-300/10 to-transparent',
+  },
 ]
