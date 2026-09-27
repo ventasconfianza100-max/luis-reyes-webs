@@ -48,6 +48,9 @@ export default function ProjectCaseStudyPage({ slug, onNavigate }) {
 
       <section className="px-5 pb-14 md:pb-16">
         <div className="mx-auto max-w-6xl">
+          {['trabalengua', '7ma-control', 'escuela-rdlf', 'cuchillos-bravo', 'rz-jugueteria'].includes(project.slug) && (
+            <p className="mb-8 rounded-2xl border border-brand-200 bg-brand-50 px-5 py-4 text-sm text-slate-700">Este es uno de los proyectos de <a href="/diseno-web-talca" onClick={(e) => go(e, '/diseno-web-talca')} className="font-bold text-brand-700 underline underline-offset-2">diseño web en Talca</a> y el Maule. ¿Tienes un negocio en la zona? Conversemos.</p>
+          )}
           <h2 className="font-display text-xl font-bold text-slate-950">Otros proyectos</h2>
           <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
             {others.map((item) => (

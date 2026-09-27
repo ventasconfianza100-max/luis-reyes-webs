@@ -3,6 +3,8 @@ import Footer from './Footer'
 import Section from './Section'
 import ProjectProof from './ProjectProof'
 import ClosingCta from './ClosingCta'
+import { portfolioProjects } from '../portfolioProjects'
+import { talcaFaq } from '../seo'
 
 const WHATSAPP = 'https://wa.me/56922012534?text=' +
   encodeURIComponent('Hola Luis, quiero una página web para mi negocio en Talca. ¿Cómo avanzamos?')
@@ -30,6 +32,16 @@ const incluye = [
   'Acompañamiento después de la entrega',
 ]
 
+const proyectosMaule = ['trabalengua', '7ma-control', 'escuela-rdlf', 'cuchillos-bravo', 'rz-jugueteria']
+
+const planes = [
+  { name: 'Esencial', price: '$90.000', text: 'Página de una sección con WhatsApp, formulario de contacto y SEO básico.' },
+  { name: 'Profesional', price: '$190.000', text: 'Sitio de 3 a 4 secciones con SEO local y configuración de tu ficha de Google Business.' },
+  { name: 'Premium', price: '$320.000', text: 'Sitio de varias páginas con SEO avanzado, integraciones y 1 mes de mejoras incluidas.' },
+]
+
+const comunas = ['Talca', 'Maule', 'San Clemente', 'Pencahue', 'Curicó', 'Linares', 'Constitución', 'San Javier', 'Molina', 'Cauquenes']
+
 export default function DisenoWebTalcaPage({ onNavigate }) {
   const go = (event, href) => {
     event.preventDefault()
@@ -49,12 +61,12 @@ export default function DisenoWebTalcaPage({ onNavigate }) {
                 Diseño web · Talca, Región del Maule
               </span>
               <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight leading-[1.1] text-slate-900">
-                Diseño y desarrollo web en <span className="text-brand-600">Talca</span>
+                Diseño web en <span className="text-brand-600">Talca</span>: páginas web que traen clientes
               </h1>
               <p className="mt-6 text-lg text-slate-600 leading-relaxed">
-                Soy Luis Reyes Castro, desarrollador web en Talca. Hago páginas rápidas y bien
-                posicionadas para negocios de la zona: tiendas online, empresas de servicios y
-                profesionales que quieren que los encuentren en Google y reciban más clientes.
+                Soy Luis Reyes Castro, desarrollador web en Talca. Si buscas una página web en Talca
+                para tu negocio, hago sitios rápidos y bien posicionados para tiendas, empresas de
+                servicios y profesionales que quieren que los encuentren en Google y reciban más clientes.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
@@ -148,6 +160,71 @@ export default function DisenoWebTalcaPage({ onNavigate }) {
                 </li>
               ))}
             </ul>
+          </div>
+        </Section>
+
+        {/* Proyectos de la zona */}
+        <Section>
+          <div className="max-w-2xl mb-8">
+            <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
+              Páginas web hechas en Talca y el Maule
+            </h2>
+            <p className="mt-3 text-slate-500 leading-relaxed">
+              Negocios reales de la región que ya tienen su web funcionando. Entra a cada uno para ver qué se hizo.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {portfolioProjects.filter((p) => proyectosMaule.includes(p.slug)).map((p) => (
+              <a key={p.slug} href={`/proyectos/${p.slug}`} onClick={(e) => go(e, `/proyectos/${p.slug}`)} className="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:-translate-y-1 hover:border-brand-300">
+                <img src={p.image} alt={p.alt} width="1200" height="833" loading="lazy" decoding="async" className="aspect-[16/10] w-full object-cover object-top" />
+                <span className="block p-3.5"><strong className="block text-sm text-slate-900">{p.name}</strong><span className="text-xs text-slate-500">{p.type}</span></span>
+              </a>
+            ))}
+          </div>
+        </Section>
+
+        {/* Precios */}
+        <Section>
+          <div className="max-w-2xl mb-8">
+            <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
+              ¿Cuánto cuesta una página web en Talca?
+            </h2>
+            <p className="mt-3 text-slate-500 leading-relaxed">
+              Tres planes claros, sin letra chica. En una reunión gratuita vemos cuál le conviene a tu negocio.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {planes.map((plan) => (
+              <div key={plan.name} className="rounded-3xl border border-slate-200 bg-white p-6">
+                <p className="text-xs font-bold uppercase tracking-[.14em] text-brand-600">{plan.name}</p>
+                <p className="mt-2 font-display text-3xl font-extrabold text-slate-950">{plan.price}</p>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">{plan.text}</p>
+              </div>
+            ))}
+          </div>
+          <a href="/#planes" className="mt-5 inline-flex text-sm font-semibold text-brand-600">Ver qué incluye cada plan →</a>
+        </Section>
+
+        {/* Preguntas frecuentes */}
+        <Section>
+          <div className="grid gap-8 lg:grid-cols-[.8fr_1.2fr]">
+            <div>
+              <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
+                Preguntas sobre tu página web en Talca
+              </h2>
+              <p className="mt-3 text-slate-500 leading-relaxed">Trabajo con negocios de toda la Región del Maule:</p>
+              <p className="mt-3 flex flex-wrap gap-2">
+                {comunas.map((c) => <span key={c} className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-semibold text-slate-600">{c}</span>)}
+              </p>
+            </div>
+            <div className="space-y-3">
+              {talcaFaq.map((item) => (
+                <details key={item.q} className="group rounded-2xl border border-slate-200 bg-white p-5">
+                  <summary className="cursor-pointer list-none font-semibold text-slate-900">{item.q}</summary>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600">{item.a}</p>
+                </details>
+              ))}
+            </div>
           </div>
         </Section>
 

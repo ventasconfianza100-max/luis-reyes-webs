@@ -15,9 +15,9 @@ export const metaByPath = {
     description: 'Encuentra la página web, WhatsApp, Instagram, TikTok, LinkedIn y Facebook de Luis Reyes, diseñador y desarrollador web en Talca, Chile.',
   },
   '/diseno-web-talca': {
-    title: 'Diseño Web en Talca | Páginas web para negocios — Luis Reyes Castro',
+    title: 'Diseño Web en Talca | Página web para tu negocio desde $90.000',
     description:
-      'Diseño y desarrollo de páginas web en Talca: tiendas online, empresas de servicios y profesionales. Sitios rápidos, optimizados para Google y pensados para captar clientes en Talca y la Región del Maule.',
+      '¿Buscas una página web en Talca? Diseño web profesional para negocios, tiendas y profesionales del Maule: sitios rápidos, listos para Google y WhatsApp. Reunión gratis.',
   },
   '/tienda-online-chile': {
     title: 'Tienda Online en Chile | Catálogo y e-commerce a medida — Luis Reyes Castro',
@@ -236,6 +236,16 @@ const businessSchema = {
   },
   sameAs: SAME_AS,
 }
+
+// Preguntas visibles en /diseno-web-talca (se usan también para su FAQPage).
+export const talcaFaq = [
+  { q: '¿Cuánto cuesta una página web en Talca?', a: 'Trabajo con tres planes: Esencial ($90.000), Profesional ($190.000) y Premium ($320.000). En una reunión gratuita vemos cuál le conviene a tu negocio; una tienda online o un proyecto especial se cotiza aparte según el alcance.' },
+  { q: '¿Cuánto tiempo tarda en estar lista?', a: 'El promedio es de 2 semanas desde que confirmamos el proyecto y tenemos los textos e imágenes.' },
+  { q: '¿Cómo nos reunimos?', a: 'Por Google Meet, Zoom o WhatsApp, cuando te acomode. La primera reunión es gratis y sin compromiso.' },
+  { q: '¿Mi página va a aparecer en Google cuando busquen en Talca?', a: 'Cada página se entrega con títulos, velocidad y estructura cuidados para Google, y orientada a las búsquedas de tu zona. Además te oriento para configurar tu ficha de Google Business Profile, que es clave para aparecer en el mapa.' },
+  { q: '¿Solo trabajas con negocios de Talca?', a: 'No. Estoy en Talca y trabajo con negocios de toda la Región del Maule y del resto de Chile.' },
+  { q: '¿Puedo actualizar mi página después?', a: 'Sí. Según el proyecto puedes tener un panel para cambiar textos, precios o productos, y después de la entrega sigo disponible para ajustes y dudas.' },
+]
 
 // FAQ — SOLO en la home, que es donde se muestra el contenido visible.
 // (Google pide que el FAQ estructurado solo esté en páginas que lo muestran.)
@@ -469,6 +479,13 @@ export function jsonLdFor(path) {
   })
 
   if (serviceNames[path]) schemas.push(serviceSchema(path))
+  if (path === '/diseno-web-talca') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: talcaFaq.map((item) => ({ '@type': 'Question', name: item.q, acceptedAnswer: { '@type': 'Answer', text: item.a } })),
+    })
+  }
 
   if (path === '/sobre-luis') {
     schemas.push({
