@@ -66,6 +66,14 @@ export const metaByPath = {
     description:
       'Agenda una reunión sin compromiso con Luis Reyes Castro por Google Meet, Zoom o WhatsApp para cotizar la página web o solución digital de tu negocio.',
   },
+  '/privacidad': {
+    title: 'Política de privacidad | Luis Reyes Web',
+    description: 'Qué datos se tratan en luisreyesweb.cl y en los servicios de Luis Reyes Castro, para qué se usan y cómo ejercer tus derechos según la ley chilena.',
+  },
+  '/terminos': {
+    title: 'Términos y condiciones | Luis Reyes Web',
+    description: 'Condiciones generales de los servicios de diseño y desarrollo web de Luis Reyes Castro: cotización, pagos, plazos, garantía y uso del sitio.',
+  },
   '/blog': {
     title: 'Blog de diseño web y negocios online | Luis Reyes Castro',
     description:
@@ -316,6 +324,8 @@ const breadcrumbLabels = {
   '/proyectos': 'Portafolio de proyectos web',
   '/agenda': 'Agenda una reunión',
   '/blog': 'Blog',
+  '/privacidad': 'Política de privacidad',
+  '/terminos': 'Términos y condiciones',
 }
 
 for (const project of portfolioProjects) {
