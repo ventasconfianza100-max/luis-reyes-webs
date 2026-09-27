@@ -1049,3 +1049,7 @@ html.dark .quote-label { color: #e2e8f0; }
   .text-gradient { animation: none; }
   .ig-glow, .portfolio-aura::before { animation: none; filter: none; }
 }
+
+/* Accesibilidad: contraste del tipo de proyecto y enlaces del pie fáciles de tocar */
+html.dark .portfolio-type { background: color-mix(in srgb, var(--project-primary) 22%, #131b2e); border-color: color-mix(in srgb, var(--project-primary) 45%, transparent); color: color-mix(in srgb, var(--project-primary) 35%, #ffffff); }
+footer nav a, footer .border-t a { display: inline-flex; align-items: center; min-height: 24px; }
