@@ -30,6 +30,8 @@ import AboutPage from './components/AboutPage'
 import DiagnosticPage from './components/DiagnosticPage'
 import InstagramSection from './components/InstagramSection'
 import GrowthLandingPage from './components/GrowthLandingPage'
+import RubroTalcaPage from './components/RubroTalcaPage'
+import { rubroByPath } from './rubrosTalca'
 import AdminAccess from './components/AdminAccess'
 import SocialLinksPage from './components/SocialLinksPage'
 import PersonalIntro from './components/PersonalIntro'
@@ -101,6 +103,8 @@ export default function App({ initialPath }) {
     content = <><Navbar onNavigate={navigateTo} /><CommercialLandingPage kind="catalog" onNavigate={navigateTo} /><Footer onNavigate={navigateTo} /></>
   } else if (path === '/paginas-web-pymes-chile') {
     content = <GrowthLandingPage kind="pymes" onNavigate={navigateTo} />
+  } else if (rubroByPath[path]) {
+    content = <RubroTalcaPage path={path} onNavigate={navigateTo} />
   } else if (path === '/seo-local-talca') {
     content = <GrowthLandingPage kind="seo" onNavigate={navigateTo} />
   } else if (path === '/sobre-luis') {

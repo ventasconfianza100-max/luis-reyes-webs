@@ -97,6 +97,7 @@ function sitemapMeta(routePath) {
     return { priority: '0.9', changefreq: 'weekly' }
   if (['/diseno-web-talca', '/tienda-online-chile', '/paginas-web-empresas-servicios', '/desarrollo-software-aplicaciones', '/catalogo-online-con-whatsapp', '/paginas-web-pymes-chile', '/seo-local-talca'].includes(routePath))
     return { priority: '0.8', changefreq: 'monthly' }
+  if (routePath.startsWith('/pagina-web-') && routePath.endsWith('-talca')) return { priority: '0.8', changefreq: 'monthly' }
   if (routePath === '/blog') return { priority: '0.8', changefreq: 'weekly' }
   if (routePath.startsWith('/blog/')) return { priority: '0.7', changefreq: 'monthly' }
   if (routePath === '/agenda') return { priority: '0.6', changefreq: 'monthly' }

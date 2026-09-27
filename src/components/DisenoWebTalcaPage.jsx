@@ -5,6 +5,7 @@ import ProjectProof from './ProjectProof'
 import ClosingCta from './ClosingCta'
 import { portfolioProjects } from '../portfolioProjects'
 import { talcaFaq } from '../seo'
+import { rubrosTalca } from '../rubrosTalca'
 
 const WHATSAPP = 'https://wa.me/56922012534?text=' +
   encodeURIComponent('Hola Luis, quiero una página web para mi negocio en Talca. ¿Cómo avanzamos?')
@@ -160,6 +161,20 @@ export default function DisenoWebTalcaPage({ onNavigate }) {
                 </li>
               ))}
             </ul>
+          </div>
+        </Section>
+
+        {/* Por rubro */}
+        <Section>
+          <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Página web según tu rubro</h2>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {rubrosTalca.map((r) => (
+              <a key={r.path} href={r.path} onClick={(e) => go(e, r.path)} className="rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:border-brand-300">
+                <strong className="block text-slate-900">{r.label}</strong>
+                <span className="mt-1 block text-sm text-slate-500">{r.h1}</span>
+                <span className="mt-3 inline-block text-sm font-semibold text-brand-600">Ver más →</span>
+              </a>
+            ))}
           </div>
         </Section>
 
