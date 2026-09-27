@@ -24,7 +24,7 @@ function ProjectCard({ project }) {
         <ul className="mt-4 grid gap-2 border-t border-slate-100 pt-4 sm:grid-cols-2">
           {project.built.map((item) => <li key={item} className="flex gap-2 text-sm text-slate-600"><Check /><span>{item}</span></li>)}
         </ul>
-        <a href={project.url} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-700 transition-colors hover:text-brand-900">Ver proyecto en {project.domain}<span className="transition-transform group-hover:translate-x-1">↗</span></a>
+        <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2"><a href={`/proyectos/${project.slug}`} className="inline-flex items-center gap-2 rounded-xl bg-slate-950 px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-brand-700">Ver caso completo →</a><a href={project.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-bold text-brand-700 transition-colors hover:text-brand-900">Ver proyecto en {project.domain}<span className="transition-transform group-hover:translate-x-1">↗</span></a></div>
       </div>
     </article>
   )
