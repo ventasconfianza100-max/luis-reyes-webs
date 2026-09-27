@@ -308,7 +308,7 @@ const allBlogPosts = [
     slug: 'pagina-web-para-tu-negocio-en-talca',
     title: 'Página web para tu negocio en Talca: por dónde empezar',
     description:
-      'Guía simple para tener la página web de tu negocio en Talca: qué tipo de sitio necesitas, cómo aparecer en Google localmente y los pasos para partir sin complicarte.',
+      'Guía simple para la página web de tu negocio en Talca: qué sitio necesitas, cómo aparecer en Google en tu ciudad y los pasos para partir sin complicarte.',
     category: 'Negocios',
     datePublished: '2026-06-26',
     dateModified: '2026-06-26',
@@ -367,12 +367,13 @@ const allBlogPosts = [
   },
   {
     slug: 'pagina-web-o-instagram-psicologos',
+    audience: 'psicologos',
     title: '¿Necesito una página web si ya tengo Instagram? (psicólogos)',
     description:
-      '¿Basta con Instagram para captar pacientes, o un psicólogo necesita página web propia? Diferencias reales en confianza, posicionamiento en Google y control de tu presencia.',
+      '¿Basta con Instagram para captar pacientes o un psicólogo necesita web propia? Diferencias en confianza, visibilidad en Google y control de tu presencia.',
     category: 'Presencia digital',
     datePublished: '2026-06-04',
-    dateModified: '2026-06-04',
+    dateModified: '2026-09-27',
     readingMinutes: 6,
     excerpt:
       'Instagram te da alcance, pero no aparece bien en Google ni transmite la misma seriedad. Te explico cuándo basta con redes y cuándo necesitas una web.',
@@ -435,12 +436,13 @@ const allBlogPosts = [
 
   {
     slug: 'que-debe-tener-pagina-web-psicologo',
+    audience: 'psicologos',
     title: 'Qué debe tener la página web de un psicólogo para generar confianza',
     description:
-      'Los elementos que toda página web de psicólogo necesita para transmitir confianza y convertir visitas en pacientes: enfoque claro, rostro visible, contacto simple y SEO.',
+      'Lo que toda web de psicólogo necesita para transmitir confianza y convertir visitas en pacientes: enfoque claro, rostro visible, contacto simple y SEO.',
     category: 'Diseño web',
     datePublished: '2026-06-04',
-    dateModified: '2026-06-04',
+    dateModified: '2026-09-27',
     readingMinutes: 6,
     excerpt:
       'Una web bonita no sirve si no genera confianza. Estos son los elementos que hacen que un visitante decida escribirte a ti y no a otro profesional.',
@@ -504,12 +506,13 @@ const allBlogPosts = [
   },
   {
     slug: 'cuanto-cuesta-una-pagina-web-para-psicologos',
+    audience: 'psicologos',
     title: '¿Cuánto cuesta una página web para psicólogos en Chile?',
     description:
-      '¿Cuánto vale una página web para psicólogos en Chile? Te explico los rangos de precio, de qué depende y qué incluye una web profesional pensada para captar pacientes.',
+      '¿Cuánto vale una página web para psicólogos en Chile? Rangos de precio, de qué dependen y qué incluye una web pensada para captar pacientes.',
     category: 'Precios',
     datePublished: '2026-06-05',
-    dateModified: '2026-06-05',
+    dateModified: '2026-09-27',
     readingMinutes: 6,
     excerpt:
       'El precio de una web para psicólogos varía según lo que necesites. Te muestro los rangos reales en Chile y qué debería incluir para que valga la pena.',
@@ -554,12 +557,13 @@ const allBlogPosts = [
   },
   {
     slug: 'como-conseguir-mas-pacientes-como-psicologo',
+    audience: 'psicologos',
     title: 'Cómo conseguir más pacientes como psicólogo (guía práctica)',
     description:
-      '¿Cómo conseguir más pacientes siendo psicólogo en Chile? Estrategias reales de presencia online, Google, redes y web para llenar tu agenda sin depender solo del boca a boca.',
+      'Cómo conseguir más pacientes siendo psicólogo en Chile: estrategias reales con Google, redes y página web para llenar tu agenda sin depender del boca a boca.',
     category: 'Captar pacientes',
     datePublished: '2026-06-05',
-    dateModified: '2026-06-05',
+    dateModified: '2026-09-27',
     readingMinutes: 7,
     excerpt:
       'El boca a boca es valioso, pero impredecible. Te muestro cómo construir un sistema para que lleguen pacientes de forma constante, sin depender de la suerte.',
@@ -609,12 +613,13 @@ const allBlogPosts = [
   },
   {
     slug: 'como-aparecer-en-google-siendo-psicologo',
+    audience: 'psicologos',
     title: 'Cómo aparecer en Google cuando buscan un psicólogo',
     description:
       '¿Quieres que tus pacientes te encuentren en Google? Te explico, en simple, qué necesitas para aparecer en las búsquedas de "psicólogo": ficha de Google, web y SEO.',
     category: 'SEO',
     datePublished: '2026-06-05',
-    dateModified: '2026-06-05',
+    dateModified: '2026-09-27',
     readingMinutes: 6,
     excerpt:
       'Aparecer en Google no es magia ni suerte. Te explico, sin tecnicismos, los pasos para que te encuentren cuando alguien busca un psicólogo.',
@@ -660,12 +665,13 @@ const allBlogPosts = [
   },
   {
     slug: 'errores-comunes-en-la-web-de-un-psicologo',
+    audience: 'psicologos',
     title: '5 errores en la página web de un psicólogo (y cómo evitarlos)',
     description:
       'Los errores más comunes en las webs de psicólogos que hacen perder pacientes: contacto escondido, textos fríos, lentitud y más. Aprende a evitarlos.',
     category: 'Diseño web',
     datePublished: '2026-06-05',
-    dateModified: '2026-06-05',
+    dateModified: '2026-09-27',
     readingMinutes: 6,
     excerpt:
       'Una web puede estar bonita y aun así espantar pacientes. Estos son los 5 errores que veo más seguido en webs de psicólogos, y cómo solucionarlos.',
@@ -711,12 +717,13 @@ const allBlogPosts = [
   },
   {
     slug: 'plantilla-wix-o-web-a-medida-psicologos',
+    audience: 'psicologos',
     title: '¿Plantilla (Wix) o web a medida? Qué le conviene a un psicólogo',
     description:
       '¿Hacer tu web en Wix con una plantilla o encargar una a medida? Comparo costos, tiempo, confianza y posicionamiento en Google para psicólogos en Chile.',
     category: 'Diseño web',
     datePublished: '2026-06-05',
-    dateModified: '2026-06-05',
+    dateModified: '2026-09-27',
     readingMinutes: 6,
     excerpt:
       'Una plantilla parece más barata, pero tiene un costo oculto. Comparo plantilla vs. web a medida para que decidas con criterio, no por impulso.',
@@ -770,12 +777,13 @@ const allBlogPosts = [
   },
   {
     slug: 'que-poner-en-la-web-de-tu-consulta-psicologica',
+    audience: 'psicologos',
     title: 'Qué poner en la página web de tu consulta psicológica',
     description:
       'Las secciones imprescindibles que toda web de psicólogo debería tener: presentación, especialidades, cómo es la terapia, contacto y más. Guía práctica.',
     category: 'Diseño web',
     datePublished: '2026-06-05',
-    dateModified: '2026-06-05',
+    dateModified: '2026-09-27',
     readingMinutes: 6,
     excerpt:
       '¿No sabes qué secciones incluir en tu web? Te dejo la estructura que mejor funciona para una consulta psicológica, pensada para generar confianza.',
@@ -836,6 +844,14 @@ const activeBlogSlugs = new Set([
   'cuanto-cuesta-una-pagina-web-en-chile',
   'pagina-web-para-tu-negocio-en-talca',
   'como-aparecer-en-google-maps-talca',
+  'pagina-web-o-instagram-psicologos',
+  'que-debe-tener-pagina-web-psicologo',
+  'cuanto-cuesta-una-pagina-web-para-psicologos',
+  'como-conseguir-mas-pacientes-como-psicologo',
+  'como-aparecer-en-google-siendo-psicologo',
+  'errores-comunes-en-la-web-de-un-psicologo',
+  'plantilla-wix-o-web-a-medida-psicologos',
+  'que-poner-en-la-web-de-tu-consulta-psicologica',
 ])
 
 export const blogPosts = allBlogPosts.filter((post) => activeBlogSlugs.has(post.slug))

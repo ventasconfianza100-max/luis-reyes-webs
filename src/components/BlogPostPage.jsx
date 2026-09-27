@@ -82,9 +82,13 @@ export default function BlogPostPage({ slug, onNavigate }) {
     )
   }
 
+  const forPsychologists = post.audience === 'psicologos'
+  const service = forPsychologists
+    ? { href: '/pagina-web-psicologo-talca', title: '¿Quieres una web así para tu consulta?', text: 'Diseño páginas para psicólogos pensadas desde la lógica del paciente que está decidiendo.', label: 'Ver página web para psicólogos' }
+    : { href: '/diseno-web-talca', title: '¿Quieres una web que haga esto por tu negocio?', text: 'Diseño páginas rápidas, listas para Google y WhatsApp, para negocios de Talca y todo Chile.', label: 'Ver diseño web en Talca' }
   const relatedPosts = blogPosts
     .filter((candidate) => candidate.slug !== post.slug)
-    .sort((a, b) => Number(b.category === post.category) - Number(a.category === post.category))
+    .sort((a, b) => Number(b.audience === post.audience) - Number(a.audience === post.audience) || Number(b.category === post.category) - Number(a.category === post.category))
     .slice(0, 3)
 
   return (
@@ -117,6 +121,12 @@ export default function BlogPostPage({ slug, onNavigate }) {
           {post.blocks.map((block, i) => (
             <Block key={i} block={block} />
           ))}
+        </div>
+
+        <div className="mt-9 rounded-2xl border border-brand-200 bg-brand-50 p-6">
+          <p className="font-display text-lg font-bold text-slate-900">{service.title}</p>
+          <p className="mt-1 text-sm leading-relaxed text-slate-600">{service.text}</p>
+          <a href={service.href} onClick={(event) => { event.preventDefault(); onNavigate(service.href) }} className="mt-4 inline-flex rounded-xl bg-brand-600 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-700">{service.label} →</a>
         </div>
 
         <aside className="mt-9 border-t border-slate-200 pt-7" aria-labelledby="related-title">
@@ -154,7 +164,7 @@ export default function BlogPostPage({ slug, onNavigate }) {
           <div>
             <p className="font-bold text-slate-800 text-sm">Luis Reyes Castro</p>
             <p className="text-slate-500 text-sm">
-              Diseñador y desarrollador web para empresas, negocios y profesionales en Chile.
+              {forPsychologists ? 'Psicólogo titulado de la Universidad de Talca y diseñador web para psicólogos.' : 'Diseñador y desarrollador web para empresas, negocios y profesionales en Chile.'}
             </p>
           </div>
         </div>
