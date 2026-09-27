@@ -1,4 +1,11 @@
+import { useState } from 'react'
 import { blogPosts } from '../blogPosts'
+
+const filters = [
+  ['todos', 'Todos'],
+  ['negocios', 'Negocios y empresas'],
+  ['psicologos', 'Para psicólogos'],
+]
 
 function formatDate(iso) {
   try {
@@ -13,6 +20,9 @@ function formatDate(iso) {
 }
 
 export default function BlogPage({ onNavigate }) {
+  const [filter, setFilter] = useState('todos')
+  const visible = blogPosts.filter((post) => filter === 'todos' || (filter === 'psicologos') === (post.audience === 'psicologos'))
+
   return (
     <main className="max-w-4xl mx-auto px-4 py-8 md:py-12">
       <section className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg border border-white/60 p-8 md:p-10">
@@ -37,12 +47,19 @@ export default function BlogPage({ onNavigate }) {
           </h1>
           <p className="text-slate-500 leading-relaxed">
             Consejos prácticos para empresas, negocios y profesionales que quieren aparecer en
-            Google, mejorar su página y conseguir más consultas o ventas por internet.
+            Google, mejorar su página y conseguir más consultas o ventas por internet. También hay
+            una sección especial para psicólogos.
           </p>
         </div>
 
+        <div className="mb-6 flex flex-wrap justify-center gap-2" role="group" aria-label="Filtrar artículos">
+          {filters.map(([id, label]) => (
+            <button key={id} type="button" onClick={() => setFilter(id)} aria-pressed={filter === id} className={`rounded-full border px-4 py-1.5 text-sm font-semibold transition ${filter === id ? 'border-brand-600 bg-brand-600 text-white' : 'border-slate-200 bg-white text-slate-600 hover:border-brand-300'}`}>{label}</button>
+          ))}
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {blogPosts.map((post) => (
+          {visible.map((post) => (
             <a
               key={post.slug}
               href={`/blog/${post.slug}`}

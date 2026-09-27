@@ -20,6 +20,93 @@
 
 const allBlogPosts = [
   {
+    slug: 'como-aparecer-en-google-maps-talca',
+    title: 'Cómo aparecer en Google Maps con tu negocio en Talca',
+    description:
+      'Guía paso a paso para que tu negocio aparezca en Google Maps en Talca: ficha de Google Business Profile, opiniones, fotos, publicaciones y página web.',
+    category: 'SEO',
+    datePublished: '2026-09-27',
+    dateModified: '2026-09-27',
+    readingMinutes: 6,
+    excerpt:
+      'Cuando alguien busca "cerca de mí" o "en Talca", Google muestra primero un mapa con tres negocios. Te explico qué hace falta para estar ahí.',
+    blocks: [
+      {
+        t: 'p',
+        text: 'Cuando alguien busca "ferretería en Talca", "psicólogo en Talca" o "fumigación cerca de mí", lo primero que muestra Google es un **mapa con tres negocios**. Esos tres se llevan la mayoría de las llamadas y visitas. La buena noticia: estar ahí no depende de pagar publicidad, sino de hacer bien algunas cosas.',
+      },
+      { t: 'h2', text: '1. Crea y verifica tu ficha de Google Business Profile' },
+      {
+        t: 'p',
+        text: 'Todo parte con tu **ficha de negocio en Google** (Google Business Profile). Es gratuita y se crea buscando "Google Business Profile" con la cuenta de Google que usarás para administrarla. Google te pedirá verificarla, normalmente con un código o un video corto del lugar.',
+      },
+      {
+        t: 'ul',
+        items: [
+          '**Nombre real del negocio**, igual al que usas en tu letrero y en tu web. No agregues palabras clave al nombre: Google puede suspender la ficha.',
+          '**Categoría principal precisa**: es de lo que más pesa. Elige la que mejor describe lo que haces, y suma categorías secundarias si corresponde.',
+          '**Dirección o zona de servicio**: si atiendes en un local, pon la dirección. Si vas donde el cliente, configura tu zona de servicio (Talca y comunas cercanas).',
+          '**Teléfono, horario y sitio web**: siempre actualizados.',
+        ],
+      },
+      { t: 'h2', text: '2. Consigue opiniones reales' },
+      {
+        t: 'p',
+        text: 'Las opiniones son una de las señales más fuertes para el mapa, y además son lo primero que mira un posible cliente. Desde tu ficha puedes copiar un **enlace para pedir opiniones** y enviarlo por WhatsApp a tus clientes satisfechos.',
+      },
+      {
+        t: 'ul',
+        items: [
+          'Pídelas justo después de un buen trabajo, cuando el cliente está contento.',
+          'Si mencionan tu servicio y la ciudad ("excelente atención en Talca"), mejor.',
+          'Responde todas, las buenas y las malas, con respeto. Google valora las fichas activas.',
+          'Nunca compres opiniones ni las escribas tú: Google las detecta y puede penalizar la ficha.',
+        ],
+      },
+      { t: 'h2', text: '3. Sube fotos y publica novedades' },
+      {
+        t: 'p',
+        text: 'Una ficha con fotos recientes transmite que el negocio está vivo. Sube fotos de tu local, tu equipo, tus productos o tus trabajos terminados, y renuévalas cada cierto tiempo. Las **publicaciones** (ofertas, novedades, trabajos recientes) también ayudan: una por semana o cada quince días es suficiente.',
+      },
+      { t: 'h2', text: '4. Completa servicios o productos' },
+      {
+        t: 'p',
+        text: 'En tu ficha puedes listar tus **servicios o productos**, con descripción y precio. Esto ayuda a que Google te muestre para búsquedas más específicas, y al cliente a decidir sin tener que preguntar.',
+      },
+      { t: 'h2', text: '5. Ten una página web que respalde tu ficha' },
+      {
+        t: 'p',
+        text: 'Google cruza la información de tu ficha con tu página web. Una web que explica **qué haces, dónde trabajas y cómo contactarte**, con el mismo nombre, teléfono y dirección que tu ficha, refuerza tu posición en el mapa y en los resultados normales.',
+      },
+      {
+        t: 'ul',
+        items: [
+          'Una página por cada servicio importante, mencionando Talca o las comunas donde trabajas.',
+          'Tu teléfono, WhatsApp y dirección visibles, iguales a los de la ficha.',
+          'Una web rápida en el celular: la mayoría de las búsquedas locales se hacen desde el teléfono.',
+        ],
+      },
+      { t: 'h2', text: '6. Aparece en otros sitios de la ciudad' },
+      {
+        t: 'p',
+        text: 'Directorios locales, cámaras de comercio, asociaciones de tu rubro o medios de la región: cada lugar que menciona tu negocio con los **mismos datos** suma confianza. Revisa que tu nombre, teléfono y dirección estén escritos exactamente igual en todos.',
+      },
+      { t: 'h2', text: '¿Cuánto tiempo toma?' },
+      {
+        t: 'p',
+        text: 'Una ficha nueva y bien completada puede empezar a aparecer en pocas semanas para búsquedas con tu nombre. Para búsquedas más competidas, como el rubro más la ciudad, lo normal es ver avances en uno a tres meses, siempre que sigas sumando opiniones, fotos y publicaciones.',
+      },
+      {
+        t: 'quote',
+        text: 'Resumen: ficha verificada y completa, opiniones reales, fotos y publicaciones frecuentes, y una página web con los mismos datos. Con eso ya estás por delante de la mayoría de los negocios de Talca.',
+      },
+      {
+        t: 'p',
+        text: 'Si quieres una página web pensada para aparecer en Google en Talca, o que revise tu ficha, escríbeme y lo vemos juntos, sin compromiso.',
+      },
+    ],
+  },
+  {
     slug: 'como-aparecer-en-google-con-tu-negocio',
     title: 'Cómo aparecer en Google con tu negocio (guía simple)',
     description:
@@ -221,7 +308,7 @@ const allBlogPosts = [
     slug: 'pagina-web-para-tu-negocio-en-talca',
     title: 'Página web para tu negocio en Talca: por dónde empezar',
     description:
-      'Guía simple para tener la página web de tu negocio en Talca: qué tipo de sitio necesitas, cómo aparecer en Google localmente y los pasos para partir sin complicarte.',
+      'Guía simple para la página web de tu negocio en Talca: qué sitio necesitas, cómo aparecer en Google en tu ciudad y los pasos para partir sin complicarte.',
     category: 'Negocios',
     datePublished: '2026-06-26',
     dateModified: '2026-06-26',
@@ -280,12 +367,13 @@ const allBlogPosts = [
   },
   {
     slug: 'pagina-web-o-instagram-psicologos',
+    audience: 'psicologos',
     title: '¿Necesito una página web si ya tengo Instagram? (psicólogos)',
     description:
-      '¿Basta con Instagram para captar pacientes, o un psicólogo necesita página web propia? Diferencias reales en confianza, posicionamiento en Google y control de tu presencia.',
+      '¿Basta con Instagram para captar pacientes o un psicólogo necesita web propia? Diferencias en confianza, visibilidad en Google y control de tu presencia.',
     category: 'Presencia digital',
     datePublished: '2026-06-04',
-    dateModified: '2026-06-04',
+    dateModified: '2026-09-27',
     readingMinutes: 6,
     excerpt:
       'Instagram te da alcance, pero no aparece bien en Google ni transmite la misma seriedad. Te explico cuándo basta con redes y cuándo necesitas una web.',
@@ -348,12 +436,13 @@ const allBlogPosts = [
 
   {
     slug: 'que-debe-tener-pagina-web-psicologo',
+    audience: 'psicologos',
     title: 'Qué debe tener la página web de un psicólogo para generar confianza',
     description:
-      'Los elementos que toda página web de psicólogo necesita para transmitir confianza y convertir visitas en pacientes: enfoque claro, rostro visible, contacto simple y SEO.',
+      'Lo que toda web de psicólogo necesita para transmitir confianza y convertir visitas en pacientes: enfoque claro, rostro visible, contacto simple y SEO.',
     category: 'Diseño web',
     datePublished: '2026-06-04',
-    dateModified: '2026-06-04',
+    dateModified: '2026-09-27',
     readingMinutes: 6,
     excerpt:
       'Una web bonita no sirve si no genera confianza. Estos son los elementos que hacen que un visitante decida escribirte a ti y no a otro profesional.',
@@ -417,12 +506,13 @@ const allBlogPosts = [
   },
   {
     slug: 'cuanto-cuesta-una-pagina-web-para-psicologos',
+    audience: 'psicologos',
     title: '¿Cuánto cuesta una página web para psicólogos en Chile?',
     description:
-      '¿Cuánto vale una página web para psicólogos en Chile? Te explico los rangos de precio, de qué depende y qué incluye una web profesional pensada para captar pacientes.',
+      '¿Cuánto vale una página web para psicólogos en Chile? Rangos de precio, de qué dependen y qué incluye una web pensada para captar pacientes.',
     category: 'Precios',
     datePublished: '2026-06-05',
-    dateModified: '2026-06-05',
+    dateModified: '2026-09-27',
     readingMinutes: 6,
     excerpt:
       'El precio de una web para psicólogos varía según lo que necesites. Te muestro los rangos reales en Chile y qué debería incluir para que valga la pena.',
@@ -467,12 +557,13 @@ const allBlogPosts = [
   },
   {
     slug: 'como-conseguir-mas-pacientes-como-psicologo',
+    audience: 'psicologos',
     title: 'Cómo conseguir más pacientes como psicólogo (guía práctica)',
     description:
-      '¿Cómo conseguir más pacientes siendo psicólogo en Chile? Estrategias reales de presencia online, Google, redes y web para llenar tu agenda sin depender solo del boca a boca.',
+      'Cómo conseguir más pacientes siendo psicólogo en Chile: estrategias reales con Google, redes y página web para llenar tu agenda sin depender del boca a boca.',
     category: 'Captar pacientes',
     datePublished: '2026-06-05',
-    dateModified: '2026-06-05',
+    dateModified: '2026-09-27',
     readingMinutes: 7,
     excerpt:
       'El boca a boca es valioso, pero impredecible. Te muestro cómo construir un sistema para que lleguen pacientes de forma constante, sin depender de la suerte.',
@@ -522,12 +613,13 @@ const allBlogPosts = [
   },
   {
     slug: 'como-aparecer-en-google-siendo-psicologo',
+    audience: 'psicologos',
     title: 'Cómo aparecer en Google cuando buscan un psicólogo',
     description:
       '¿Quieres que tus pacientes te encuentren en Google? Te explico, en simple, qué necesitas para aparecer en las búsquedas de "psicólogo": ficha de Google, web y SEO.',
     category: 'SEO',
     datePublished: '2026-06-05',
-    dateModified: '2026-06-05',
+    dateModified: '2026-09-27',
     readingMinutes: 6,
     excerpt:
       'Aparecer en Google no es magia ni suerte. Te explico, sin tecnicismos, los pasos para que te encuentren cuando alguien busca un psicólogo.',
@@ -573,12 +665,13 @@ const allBlogPosts = [
   },
   {
     slug: 'errores-comunes-en-la-web-de-un-psicologo',
+    audience: 'psicologos',
     title: '5 errores en la página web de un psicólogo (y cómo evitarlos)',
     description:
       'Los errores más comunes en las webs de psicólogos que hacen perder pacientes: contacto escondido, textos fríos, lentitud y más. Aprende a evitarlos.',
     category: 'Diseño web',
     datePublished: '2026-06-05',
-    dateModified: '2026-06-05',
+    dateModified: '2026-09-27',
     readingMinutes: 6,
     excerpt:
       'Una web puede estar bonita y aun así espantar pacientes. Estos son los 5 errores que veo más seguido en webs de psicólogos, y cómo solucionarlos.',
@@ -624,12 +717,13 @@ const allBlogPosts = [
   },
   {
     slug: 'plantilla-wix-o-web-a-medida-psicologos',
+    audience: 'psicologos',
     title: '¿Plantilla (Wix) o web a medida? Qué le conviene a un psicólogo',
     description:
       '¿Hacer tu web en Wix con una plantilla o encargar una a medida? Comparo costos, tiempo, confianza y posicionamiento en Google para psicólogos en Chile.',
     category: 'Diseño web',
     datePublished: '2026-06-05',
-    dateModified: '2026-06-05',
+    dateModified: '2026-09-27',
     readingMinutes: 6,
     excerpt:
       'Una plantilla parece más barata, pero tiene un costo oculto. Comparo plantilla vs. web a medida para que decidas con criterio, no por impulso.',
@@ -683,12 +777,13 @@ const allBlogPosts = [
   },
   {
     slug: 'que-poner-en-la-web-de-tu-consulta-psicologica',
+    audience: 'psicologos',
     title: 'Qué poner en la página web de tu consulta psicológica',
     description:
       'Las secciones imprescindibles que toda web de psicólogo debería tener: presentación, especialidades, cómo es la terapia, contacto y más. Guía práctica.',
     category: 'Diseño web',
     datePublished: '2026-06-05',
-    dateModified: '2026-06-05',
+    dateModified: '2026-09-27',
     readingMinutes: 6,
     excerpt:
       '¿No sabes qué secciones incluir en tu web? Te dejo la estructura que mejor funciona para una consulta psicológica, pensada para generar confianza.',
@@ -748,6 +843,15 @@ const activeBlogSlugs = new Set([
   'tienda-online-o-instagram-negocio',
   'cuanto-cuesta-una-pagina-web-en-chile',
   'pagina-web-para-tu-negocio-en-talca',
+  'como-aparecer-en-google-maps-talca',
+  'pagina-web-o-instagram-psicologos',
+  'que-debe-tener-pagina-web-psicologo',
+  'cuanto-cuesta-una-pagina-web-para-psicologos',
+  'como-conseguir-mas-pacientes-como-psicologo',
+  'como-aparecer-en-google-siendo-psicologo',
+  'errores-comunes-en-la-web-de-un-psicologo',
+  'plantilla-wix-o-web-a-medida-psicologos',
+  'que-poner-en-la-web-de-tu-consulta-psicologica',
 ])
 
 export const blogPosts = allBlogPosts.filter((post) => activeBlogSlugs.has(post.slug))

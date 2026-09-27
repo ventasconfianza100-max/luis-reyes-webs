@@ -4,11 +4,13 @@ import Section from './Section'
 import ClosingCta from './ClosingCta'
 import { portfolioProjects } from '../portfolioProjects'
 import { rubroByPath, rubrosTalca } from '../rubrosTalca'
+import { blogPosts } from '../blogPosts'
 
 export default function RubroTalcaPage({ path, onNavigate }) {
   const rubro = rubroByPath[path]
   const projects = portfolioProjects.filter((p) => rubro.projects.includes(p.slug))
   const others = rubrosTalca.filter((r) => r.path !== path)
+  const articles = rubro.blogAudience ? blogPosts.filter((p) => p.audience === rubro.blogAudience) : []
   const whatsapp = `https://wa.me/56922012534?text=${encodeURIComponent(`Hola Luis, quiero una página web para mi ${rubro.label.toLowerCase()} en Talca.`)}`
   const go = (event, href) => { event.preventDefault(); onNavigate(href) }
 
@@ -84,6 +86,21 @@ export default function RubroTalcaPage({ path, onNavigate }) {
             </div>
           </div>
         </Section>
+
+        {articles.length > 0 && (
+          <Section>
+            <h2 className="font-display text-3xl font-bold tracking-tight text-slate-900">Guías para tu consulta</h2>
+            <p className="mt-3 max-w-2xl text-slate-600">Artículos que escribí, como psicólogo y diseñador web, para ayudarte a tener una presencia digital que genere confianza.</p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              {articles.map((p) => (
+                <a key={p.slug} href={`/blog/${p.slug}`} onClick={(e) => go(e, `/blog/${p.slug}`)} className="rounded-2xl border border-slate-200 bg-white p-4 transition hover:-translate-y-0.5 hover:border-brand-300">
+                  <span className="text-xs font-semibold uppercase tracking-wide text-brand-600">{p.category} · {p.readingMinutes} min</span>
+                  <strong className="mt-1 block text-slate-900">{p.title} <span aria-hidden="true">→</span></strong>
+                </a>
+              ))}
+            </div>
+          </Section>
+        )}
 
         <ClosingCta title="Conversemos sobre tu página" text="Te digo qué necesita tu negocio y cuánto costaría, sin compromiso y sin tecnicismos." whatsapp={whatsapp} onNavigate={onNavigate} />
       </main>

@@ -59,6 +59,7 @@ export const rubrosTalca = [
     ],
     includes: ['Presentación de tu enfoque, formación y especialidades', 'Modalidades de atención: online y presencial', 'Agenda y contacto por WhatsApp siempre visibles', 'Preguntas frecuentes para resolver dudas antes de la primera sesión', 'Cuidado de la privacidad y el lenguaje profesional'],
     projects: ['psicologa-andrea-martinez'],
+    blogAudience: 'psicologos',
     faq: [
       { q: '¿Por qué trabajar con un psicólogo que hace webs?', a: 'Porque entiendo tu profesión desde adentro: cómo hablarle a un posible paciente, qué información genera confianza y qué cuidados éticos considerar en tu presentación.' },
       { q: '¿Sirve si atiendo solo online?', a: 'Sí. La web se orienta tanto a búsquedas locales en Talca como a personas de todo Chile que buscan atención online.' },
