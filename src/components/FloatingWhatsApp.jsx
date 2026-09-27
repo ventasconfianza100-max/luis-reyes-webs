@@ -2,6 +2,15 @@ const whatsapp =
   'https://wa.me/56922012534?text=' +
   encodeURIComponent('Hola Luis, quiero información sobre una página web para mi negocio o proyecto.')
 
+// Mensaje según la página donde está el visitante, para que la conversación parta con contexto.
+function messageFor(path, title) {
+  const page = title.split('|')[0].trim()
+  if (path.startsWith('/proyectos/')) return `Hola Luis, vi el proyecto ${page.split(':')[0]} en tu web y quiero algo similar para mi negocio.`
+  if (path.startsWith('/pagina-web-')) return `Hola Luis, vi tu página "${page}" y quiero cotizar una web.`
+  if (path.startsWith('/blog/')) return `Hola Luis, leí tu artículo "${page}" y quiero conversar sobre mi página web.`
+  return 'Hola Luis, quiero información sobre una página web para mi negocio o proyecto.'
+}
+
 export default function FloatingWhatsApp() {
   return (
     <>
@@ -15,6 +24,7 @@ export default function FloatingWhatsApp() {
     </a>
     <a
       href={whatsapp}
+      onClick={(event) => { event.currentTarget.href = 'https://wa.me/56922012534?text=' + encodeURIComponent(messageFor(window.location.pathname, document.title)) }}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Escríbeme por WhatsApp"

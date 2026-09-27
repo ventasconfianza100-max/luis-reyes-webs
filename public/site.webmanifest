@@ -1,17 +1,35 @@
 {
-  "name": "Luis Reyes Castro — Diseño Web para Psicólogos",
-  "short_name": "Luis Reyes Webs",
-  "description": "Diseño web para psicólogos en Chile",
+  "name": "Luis Reyes Castro — Diseño y Desarrollo Web",
+  "short_name": "Luis Reyes Web",
+  "description": "Diseño y desarrollo de páginas web, tiendas online y software a medida en Talca y todo Chile.",
+  "lang": "es-CL",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f5f3ff",
-  "theme_color": "#7c3aed",
+  "background_color": "#0b1020",
+  "theme_color": "#0b1020",
   "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
     {
       "src": "/favicon.svg",
       "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "type": "image/svg+xml"
     }
   ]
 }
