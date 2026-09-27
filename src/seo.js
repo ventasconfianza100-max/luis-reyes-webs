@@ -83,7 +83,7 @@ for (const post of blogPosts) {
 for (const project of portfolioProjects) {
   metaByPath[`/proyectos/${project.slug}`] = {
     title: `${project.name}: ${project.type} | Proyecto de Luis Reyes Castro`,
-    description: `${project.summary} Stack: ${project.stack.slice(0, 3).join(', ')}.`,
+    description: project.summary,
   }
 }
 
@@ -520,7 +520,6 @@ export function jsonLdFor(path) {
       url: canonicalFor(path),
       image: `${SITE_URL}${project.image}`,
       genre: project.type,
-      keywords: project.stack.join(', '),
       sameAs: project.url,
       creator: { '@id': `${SITE_URL}/#luis-reyes` },
       isPartOf: { '@id': `${SITE_URL}/#website` },

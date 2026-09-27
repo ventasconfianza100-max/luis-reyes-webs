@@ -11,6 +11,31 @@ const links = [
   { label: 'Contacto', href: 'https://wa.me/56922012534', external: true },
 ]
 
+function ThemeToggle() {
+  const [dark, setDark] = useState(false)
+
+  useEffect(() => { setDark(document.documentElement.classList.contains('dark')) }, [])
+
+  const toggle = () => {
+    const next = !dark
+    document.documentElement.classList.toggle('dark', next)
+    try { localStorage.setItem('tema', next ? 'oscuro' : 'claro') } catch (e) {}
+    setDark(next)
+  }
+
+  return (
+    <button type="button" onClick={toggle} className="theme-toggle" aria-label={dark ? 'Activar tema claro' : 'Activar tema oscuro'} title={dark ? 'Tema claro' : 'Tema oscuro'}>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-[18px] w-[18px]" aria-hidden="true">
+        {dark ? (
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.36.39-1.59 1.59M21 12h-2.25m-.39 6.36-1.59-1.59M12 18.75V21m-4.77-4.23-1.59 1.59M5.25 12H3m4.23-4.77L5.64 5.64M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+        ) : (
+          <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 15.002A9.72 9.72 0 0 1 18 15.75 9.75 9.75 0 0 1 8.25 6c0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25 9.75 9.75 0 0 0 12.75 21a9.753 9.753 0 0 0 9-5.998Z" />
+        )}
+      </svg>
+    </button>
+  )
+}
+
 export default function Navbar({ onNavigate }) {
   const [open, setOpen] = useState(false)
   const pendingScroll = useRef(null)
@@ -89,6 +114,8 @@ export default function Navbar({ onNavigate }) {
           ))}
         </div>
 
+        <div className="flex items-center gap-1">
+        <ThemeToggle />
         {/* Botón hamburguesa — móvil */}
         <button
           type="button"
@@ -105,6 +132,7 @@ export default function Navbar({ onNavigate }) {
             )}
           </svg>
         </button>
+        </div>
       </div>
 
       {/* Panel móvil */}

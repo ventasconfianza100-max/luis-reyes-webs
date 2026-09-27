@@ -40,8 +40,7 @@ export default function ProjectCaseStudyPage({ slug, onNavigate }) {
             </div>
           </div>
           <aside className="space-y-5 lg:sticky lg:top-24 lg:self-start">
-            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft"><h2 className="text-xs font-bold uppercase tracking-[.16em] text-slate-500">Stack técnico</h2><ul className="mt-3 flex flex-wrap gap-2">{project.stack.map((item) => <li key={item} className="rounded-lg bg-slate-50 px-2.5 py-1.5 text-xs font-semibold text-slate-700">{item}</li>)}</ul></div>
-            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft"><h2 className="text-xs font-bold uppercase tracking-[.16em] text-slate-500">Funcionalidades</h2><ul className="mt-3 space-y-2 text-sm text-slate-700">{project.built.map((item) => <li key={item} className="flex gap-2"><span className="text-brand-600">✓</span>{item}</li>)}</ul></div>
+            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft"><h2 className="text-xs font-bold uppercase tracking-[.16em] text-slate-500">Lo que incluye</h2><ul className="mt-3 space-y-2 text-sm text-slate-700">{project.built.map((item) => <li key={item} className="flex gap-2"><span className="text-brand-600">✓</span>{item}</li>)}</ul></div>
             <div className="rounded-2xl bg-slate-950 p-5 text-white"><h2 className="text-xs font-bold uppercase tracking-[.16em] text-cyan-300">Resultado</h2><ul className="mt-3 space-y-2 text-sm">{project.results.map((item) => <li key={item}>{item}</li>)}</ul><a href={project.url} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex text-sm font-bold text-cyan-300 hover:text-white">Visitar {project.domain} ↗</a></div>
           </aside>
         </div>
