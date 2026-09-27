@@ -825,3 +825,63 @@ html.dark .social-card h1 span { background-image: linear-gradient(105deg,#c4b5f
 html.dark .social-intro, html.dark .social-link-copy small { color: #94a3b8; }
 html.dark .social-link--website { background: rgba(124,58,237,.16); }
 html.dark .social-link--instagram .social-link-icon, html.dark .social-link--tiktok .social-link-icon { background: rgba(255,255,255,.08); }
+
+/* ── Fondo decorativo del tema oscuro ── */
+.ambient__grid, .ambient__stars, .ambient__beam { display: none; }
+html.dark .ambient__grid {
+  display: block; position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(139,92,246,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(139,92,246,.07) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 10%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 10%, transparent 75%);
+}
+html.dark .ambient__stars {
+  display: block; position: absolute; inset: 0;
+  background-image:
+    radial-gradient(1.2px 1.2px at 12% 18%, rgba(196,181,253,.7), transparent),
+    radial-gradient(1px 1px at 28% 72%, rgba(103,232,249,.55), transparent),
+    radial-gradient(1.4px 1.4px at 46% 34%, rgba(255,255,255,.45), transparent),
+    radial-gradient(1px 1px at 63% 12%, rgba(196,181,253,.6), transparent),
+    radial-gradient(1.3px 1.3px at 78% 58%, rgba(103,232,249,.5), transparent),
+    radial-gradient(1px 1px at 88% 26%, rgba(255,255,255,.4), transparent),
+    radial-gradient(1.2px 1.2px at 36% 88%, rgba(196,181,253,.5), transparent),
+    radial-gradient(1px 1px at 92% 84%, rgba(255,255,255,.35), transparent);
+  background-size: 640px 640px;
+  animation: stars-twinkle 7s ease-in-out infinite alternate;
+}
+html.dark .ambient__beam {
+  display: block; position: absolute; top: -20vh; left: 55%; width: 38vmax; height: 140vh;
+  background: linear-gradient(180deg, rgba(139,92,246,.12), rgba(34,211,238,.05) 45%, transparent 75%);
+  filter: blur(40px); transform: rotate(18deg); transform-origin: top center;
+  animation: beam-sway 26s ease-in-out infinite alternate;
+}
+html.dark .ambient__orb--1 { opacity: .8; }
+html.dark .ambient__orb--4 { opacity: .9; }
+@keyframes stars-twinkle { from { opacity: .45; } to { opacity: 1; } }
+@keyframes beam-sway { from { transform: rotate(14deg) translateX(-2vw); } to { transform: rotate(24deg) translateX(3vw); } }
+
+/* ── Botón flotante de WhatsApp ── */
+.wsp-float {
+  background: linear-gradient(120deg, #25d366, #10b981, #06b6d4, #8b5cf6, #25d366);
+  background-size: 300% 100%;
+  box-shadow: 0 10px 30px -8px rgba(37,211,102,.6), 0 0 0 1px rgba(255,255,255,.15) inset;
+  animation: wsp-shift 6s linear infinite;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.wsp-float::before {
+  content: ''; position: absolute; inset: 0; z-index: -1; border-radius: inherit;
+  background: inherit; filter: blur(14px); opacity: .55;
+}
+.wsp-float::after {
+  content: ''; position: absolute; inset: -4px; border-radius: inherit;
+  border: 2px solid rgba(37,211,102,.55);
+  animation: wsp-ring 2.4s ease-out infinite; pointer-events: none;
+}
+.wsp-float:hover { transform: translateY(-2px) scale(1.05); box-shadow: 0 16px 38px -8px rgba(139,92,246,.6), 0 0 0 1px rgba(255,255,255,.2) inset; }
+.wsp-float:active { transform: scale(.96); }
+@keyframes wsp-shift { to { background-position: 300% 0; } }
+@keyframes wsp-ring { 0% { transform: scale(1); opacity: .8; } 100% { transform: scale(1.35); opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html.dark .ambient__stars, html.dark .ambient__beam, .wsp-float, .wsp-float::after { animation: none; }
+}

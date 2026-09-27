@@ -8,6 +8,9 @@ export default function Decorations() {
         <span className="ambient__orb ambient__orb--2" />
         <span className="ambient__orb ambient__orb--3" />
         <span className="ambient__orb ambient__orb--4" />
+        <span className="ambient__grid" />
+        <span className="ambient__stars" />
+        <span className="ambient__beam" />
         {/* grano sutil */}
         <div
           className="absolute inset-0 opacity-[0.025] mix-blend-multiply"

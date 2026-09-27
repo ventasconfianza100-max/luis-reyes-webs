@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" class="dark">
   <head>
     <meta charset="UTF-8" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DP4VBDZ3L3"></script>
     <script>
       document.documentElement.classList.add('page-loading');
-      try { if (localStorage.getItem('tema') === 'oscuro') document.documentElement.classList.add('dark') } catch (e) {}
+      try { if (localStorage.getItem('tema') === 'claro') document.documentElement.classList.remove('dark') } catch (e) {}
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -17,7 +17,7 @@
     <link rel="apple-touch-icon" href="/favicon.svg" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="preload" as="image" href="/hero-workspace.webp" type="image/webp" fetchpriority="high" />
-    <meta name="theme-color" content="#7c3aed" />
+    <meta name="theme-color" content="#0b1020" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
       .page-loading body{opacity:0}.page-ready body{opacity:1;transition:opacity .18s ease-out}
