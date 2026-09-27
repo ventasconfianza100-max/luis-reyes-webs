@@ -1,0 +1,9 @@
+# Configuración de Cloudflare Pages (proyecto luis-reyes-webs).
+# El bucket R2 guarda los videos compartidos con clientes desde /admin.
+name = "luis-reyes-webs"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-07-28"
+
+[[r2_buckets]]
+binding = "VIDEOS"
+bucket_name = "luis-reyes-videos"

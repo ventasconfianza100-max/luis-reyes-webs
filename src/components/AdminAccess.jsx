@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import AdminPanel from './AdminPanel'
+import AdminVideos from './AdminVideos'
 
 const SESSION_KEY = 'lrw-admin-unlocked'
+const KEY_STORAGE = 'lrw-admin-key'
 const PASSWORD_HASH = '3155e25041de4d7c2be0f8c8826f0d49bd4bc6e0c7eb44454511756bd3d0f56b'
 
 async function hash(value) {
@@ -15,9 +17,12 @@ export default function AdminAccess() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [visible, setVisible] = useState(false)
+  const [adminKey, setAdminKey] = useState('')
+  const [section, setSection] = useState('documentos')
 
   useEffect(() => {
     setUnlocked(window.sessionStorage.getItem(SESSION_KEY) === 'yes')
+    setAdminKey(window.sessionStorage.getItem(KEY_STORAGE) || '')
   }, [])
 
   const submit = async (event) => {
@@ -28,16 +33,33 @@ export default function AdminAccess() {
       return
     }
     window.sessionStorage.setItem(SESSION_KEY, 'yes')
+    window.sessionStorage.setItem(KEY_STORAGE, password)
+    setAdminKey(password)
     setUnlocked(true)
   }
 
   const logout = () => {
     window.sessionStorage.removeItem(SESSION_KEY)
+    window.sessionStorage.removeItem(KEY_STORAGE)
+    setAdminKey('')
     setUnlocked(false)
     setPassword('')
   }
 
-  if (unlocked) return <AdminPanel onLogout={logout} />
+  if (unlocked) {
+    return (
+      <>
+        <div className="admin-oculto-impresion flex justify-center gap-1 border-b border-slate-200 bg-slate-50 p-2">
+          {[['documentos', 'Documentos y boletas'], ['videos', 'Videos para clientes']].map(([id, label]) => (
+            <button key={id} type="button" onClick={() => setSection(id)} className={`rounded-lg px-4 py-1.5 text-sm font-semibold ${section === id ? 'bg-brand-600 text-white' : 'text-slate-600 hover:bg-white'}`}>{label}</button>
+          ))}
+        </div>
+        {section === 'videos'
+          ? (adminKey ? <AdminVideos adminKey={adminKey} /> : <p className="p-8 text-center text-sm text-slate-600">Vuelve a ingresar tu clave para gestionar videos. <button type="button" onClick={logout} className="font-semibold text-brand-700 underline">Cerrar sesión</button></p>)
+          : <AdminPanel onLogout={logout} />}
+      </>
+    )
+  }
 
   return (
     <main className="admin-login grid min-h-screen place-items-center overflow-hidden bg-slate-950 px-5 py-10">
