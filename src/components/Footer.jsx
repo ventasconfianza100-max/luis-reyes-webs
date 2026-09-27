@@ -125,6 +125,9 @@ export default function Footer({ onNavigate }) {
             >
               +56 9 2201 2534
             </a>
+            <a href="mailto:luisreyeswebcl@gmail.com" className="ml-4 inline-block text-sm text-slate-400 sm:ml-0 sm:mt-1.5 sm:block sm:w-fit transition-colors hover:text-brand-300">
+              luisreyeswebcl@gmail.com
+            </a>
           </div>
         </div>
 

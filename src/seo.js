@@ -185,6 +185,7 @@ const businessSchema = {
   image: `${SITE_URL}/og-image.jpg`,
   logo: `${SITE_URL}/luis-reyes-retrato-2026.jpg`,
   telephone: '+56922012534',
+  email: 'luisreyeswebcl@gmail.com',
   priceRange: '$$',
   currenciesAccepted: 'CLP',
   address: {

@@ -20,6 +20,93 @@
 
 const allBlogPosts = [
   {
+    slug: 'como-aparecer-en-google-maps-talca',
+    title: 'Cómo aparecer en Google Maps con tu negocio en Talca',
+    description:
+      'Guía paso a paso para que tu negocio aparezca en Google Maps en Talca: ficha de Google Business Profile, opiniones, fotos, publicaciones y página web.',
+    category: 'SEO',
+    datePublished: '2026-09-27',
+    dateModified: '2026-09-27',
+    readingMinutes: 6,
+    excerpt:
+      'Cuando alguien busca "cerca de mí" o "en Talca", Google muestra primero un mapa con tres negocios. Te explico qué hace falta para estar ahí.',
+    blocks: [
+      {
+        t: 'p',
+        text: 'Cuando alguien busca "ferretería en Talca", "psicólogo en Talca" o "fumigación cerca de mí", lo primero que muestra Google es un **mapa con tres negocios**. Esos tres se llevan la mayoría de las llamadas y visitas. La buena noticia: estar ahí no depende de pagar publicidad, sino de hacer bien algunas cosas.',
+      },
+      { t: 'h2', text: '1. Crea y verifica tu ficha de Google Business Profile' },
+      {
+        t: 'p',
+        text: 'Todo parte con tu **ficha de negocio en Google** (Google Business Profile). Es gratuita y se crea buscando "Google Business Profile" con la cuenta de Google que usarás para administrarla. Google te pedirá verificarla, normalmente con un código o un video corto del lugar.',
+      },
+      {
+        t: 'ul',
+        items: [
+          '**Nombre real del negocio**, igual al que usas en tu letrero y en tu web. No agregues palabras clave al nombre: Google puede suspender la ficha.',
+          '**Categoría principal precisa**: es de lo que más pesa. Elige la que mejor describe lo que haces, y suma categorías secundarias si corresponde.',
+          '**Dirección o zona de servicio**: si atiendes en un local, pon la dirección. Si vas donde el cliente, configura tu zona de servicio (Talca y comunas cercanas).',
+          '**Teléfono, horario y sitio web**: siempre actualizados.',
+        ],
+      },
+      { t: 'h2', text: '2. Consigue opiniones reales' },
+      {
+        t: 'p',
+        text: 'Las opiniones son una de las señales más fuertes para el mapa, y además son lo primero que mira un posible cliente. Desde tu ficha puedes copiar un **enlace para pedir opiniones** y enviarlo por WhatsApp a tus clientes satisfechos.',
+      },
+      {
+        t: 'ul',
+        items: [
+          'Pídelas justo después de un buen trabajo, cuando el cliente está contento.',
+          'Si mencionan tu servicio y la ciudad ("excelente atención en Talca"), mejor.',
+          'Responde todas, las buenas y las malas, con respeto. Google valora las fichas activas.',
+          'Nunca compres opiniones ni las escribas tú: Google las detecta y puede penalizar la ficha.',
+        ],
+      },
+      { t: 'h2', text: '3. Sube fotos y publica novedades' },
+      {
+        t: 'p',
+        text: 'Una ficha con fotos recientes transmite que el negocio está vivo. Sube fotos de tu local, tu equipo, tus productos o tus trabajos terminados, y renuévalas cada cierto tiempo. Las **publicaciones** (ofertas, novedades, trabajos recientes) también ayudan: una por semana o cada quince días es suficiente.',
+      },
+      { t: 'h2', text: '4. Completa servicios o productos' },
+      {
+        t: 'p',
+        text: 'En tu ficha puedes listar tus **servicios o productos**, con descripción y precio. Esto ayuda a que Google te muestre para búsquedas más específicas, y al cliente a decidir sin tener que preguntar.',
+      },
+      { t: 'h2', text: '5. Ten una página web que respalde tu ficha' },
+      {
+        t: 'p',
+        text: 'Google cruza la información de tu ficha con tu página web. Una web que explica **qué haces, dónde trabajas y cómo contactarte**, con el mismo nombre, teléfono y dirección que tu ficha, refuerza tu posición en el mapa y en los resultados normales.',
+      },
+      {
+        t: 'ul',
+        items: [
+          'Una página por cada servicio importante, mencionando Talca o las comunas donde trabajas.',
+          'Tu teléfono, WhatsApp y dirección visibles, iguales a los de la ficha.',
+          'Una web rápida en el celular: la mayoría de las búsquedas locales se hacen desde el teléfono.',
+        ],
+      },
+      { t: 'h2', text: '6. Aparece en otros sitios de la ciudad' },
+      {
+        t: 'p',
+        text: 'Directorios locales, cámaras de comercio, asociaciones de tu rubro o medios de la región: cada lugar que menciona tu negocio con los **mismos datos** suma confianza. Revisa que tu nombre, teléfono y dirección estén escritos exactamente igual en todos.',
+      },
+      { t: 'h2', text: '¿Cuánto tiempo toma?' },
+      {
+        t: 'p',
+        text: 'Una ficha nueva y bien completada puede empezar a aparecer en pocas semanas para búsquedas con tu nombre. Para búsquedas más competidas, como el rubro más la ciudad, lo normal es ver avances en uno a tres meses, siempre que sigas sumando opiniones, fotos y publicaciones.',
+      },
+      {
+        t: 'quote',
+        text: 'Resumen: ficha verificada y completa, opiniones reales, fotos y publicaciones frecuentes, y una página web con los mismos datos. Con eso ya estás por delante de la mayoría de los negocios de Talca.',
+      },
+      {
+        t: 'p',
+        text: 'Si quieres una página web pensada para aparecer en Google en Talca, o que revise tu ficha, escríbeme y lo vemos juntos, sin compromiso.',
+      },
+    ],
+  },
+  {
     slug: 'como-aparecer-en-google-con-tu-negocio',
     title: 'Cómo aparecer en Google con tu negocio (guía simple)',
     description:
@@ -748,6 +835,7 @@ const activeBlogSlugs = new Set([
   'tienda-online-o-instagram-negocio',
   'cuanto-cuesta-una-pagina-web-en-chile',
   'pagina-web-para-tu-negocio-en-talca',
+  'como-aparecer-en-google-maps-talca',
 ])
 
 export const blogPosts = allBlogPosts.filter((post) => activeBlogSlugs.has(post.slug))
