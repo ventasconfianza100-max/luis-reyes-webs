@@ -6,6 +6,7 @@ import {
   PRIVATE_ROUTES,
   getMeta,
   canonicalFor,
+  SITE_URL,
   jsonLdScriptsFor,
   ogTypeFor,
   articleMetaTagsFor,
@@ -45,6 +46,12 @@ function applyMeta(html, routePath) {
   html = replaceAttr(html, '<meta property="og:title" content="', meta.title)
   html = replaceAttr(html, '<meta property="og:description" content="', meta.description)
   html = replaceAttr(html, '<meta property="og:url" content="', canonical)
+  if (meta.image) {
+    html = replaceAttr(html, '<meta property="og:image" content="', `${SITE_URL}${meta.image}`)
+    html = replaceAttr(html, '<meta name="twitter:image" content="', `${SITE_URL}${meta.image}`)
+    html = replaceAttr(html, '<meta property="og:image:alt" content="', meta.title)
+    html = replaceAttr(html, '<meta name="twitter:image:alt" content="', meta.title)
+  }
   html = replaceAttr(html, '<meta property="og:type" content="', ogTypeFor(routePath))
   html = replaceAttr(html, '<meta name="robots" content="', meta.noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1')
 

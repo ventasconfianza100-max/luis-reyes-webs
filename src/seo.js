@@ -93,11 +93,12 @@ for (const project of portfolioProjects) {
   metaByPath[`/proyectos/${project.slug}`] = {
     title: `${project.name}: ${project.type} | Luis Reyes Web`,
     description: project.summary,
+    image: `/og/proyecto-${project.slug}.jpg`,
   }
 }
 
 for (const rubro of rubrosTalca) {
-  metaByPath[rubro.path] = { title: rubro.title, description: rubro.description }
+  metaByPath[rubro.path] = { title: rubro.title, description: rubro.description, image: `/og${rubro.path}.jpg` }
 }
 
 // Rutas privadas: no se prerenderizan ni entran al sitemap, y van noindex.
