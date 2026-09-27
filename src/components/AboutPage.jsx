@@ -2,7 +2,7 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 import Section from './Section'
 import ClosingCta from './ClosingCta'
-import { portfolioProjects } from '../portfolioProjects'
+import { portfolioProjects, srcSetFor } from '../portfolioProjects'
 
 const principles = [
   ['Claridad antes que adorno', 'Primero ordenamos la oferta, el público y la acción que quieres que realice la visita.'],
@@ -93,7 +93,7 @@ export default function AboutPage({ onNavigate }) {
       <div className="mt-7 grid gap-5 md:grid-cols-3">
         {portfolioProjects.slice(0, 3).map((project) => (
           <a key={project.name} href={`/proyectos/${project.slug}`} onClick={(e) => go(e, `/proyectos/${project.slug}`)} className="group overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-soft transition hover:-translate-y-1 hover:shadow-lift">
-            <img src={project.image} alt={project.alt} width="1200" height="833" loading="lazy" decoding="async" className="aspect-[16/10] w-full object-cover object-top" />
+            <img src={project.image} srcSet={srcSetFor(project.image)} sizes="(min-width: 768px) 33vw, 100vw" alt={project.alt} width="1200" height="833" loading="lazy" decoding="async" className="aspect-[16/10] w-full object-cover object-top" />
             <div className="p-5"><p className="text-[11px] font-bold uppercase tracking-[.14em] text-brand-600">{project.type}</p><p className="mt-1 font-display text-lg font-bold text-slate-900">{project.name}</p><p className="mt-1 text-xs font-semibold text-brand-600">Ver qué se hizo →</p></div>
           </a>
         ))}

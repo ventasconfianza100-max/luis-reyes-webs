@@ -1028,3 +1028,9 @@ html.dark .via-brand-50\/25 { --tw-gradient-stops: var(--tw-gradient-from), rgba
   .ambient__orb { animation: none; }
   .wsp-float::before { display: none; }
 }
+
+/* Accesibilidad: contraste de etiquetas y botones del carrusel fáciles de tocar */
+html.dark .quote-label { color: #e2e8f0; }
+@media (max-width: 700px) {
+  .portfolio-tabs button { box-sizing: content-box; padding: .6rem !important; background-clip: content-box !important; }
+}

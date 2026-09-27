@@ -2,7 +2,7 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 import Section from './Section'
 import ClosingCta from './ClosingCta'
-import { portfolioProjects } from '../portfolioProjects'
+import { portfolioProjects, srcSetFor } from '../portfolioProjects'
 import { rubroByPath, rubrosTalca } from '../rubrosTalca'
 import { blogPosts } from '../blogPosts'
 
@@ -58,7 +58,7 @@ export default function RubroTalcaPage({ path, onNavigate }) {
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 {projects.map((p) => (
                   <a key={p.slug} href={`/proyectos/${p.slug}`} onClick={(e) => go(e, `/proyectos/${p.slug}`)} className="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:-translate-y-1 hover:border-brand-300">
-                    <img src={p.image} alt={p.alt} width="1200" height="833" loading="lazy" decoding="async" className="aspect-[16/10] w-full object-cover object-top" />
+                    <img src={p.image} srcSet={srcSetFor(p.image)} sizes="(min-width: 640px) 40vw, 100vw" alt={p.alt} width="1200" height="833" loading="lazy" decoding="async" className="aspect-[16/10] w-full object-cover object-top" />
                     <span className="block p-4"><strong className="block text-slate-900">{p.name}</strong><span className="mt-1 block text-sm text-slate-500">{p.summary}</span><span className="mt-2 inline-block text-sm font-semibold text-brand-600">Ver qué se hizo →</span></span>
                   </a>
                 ))}

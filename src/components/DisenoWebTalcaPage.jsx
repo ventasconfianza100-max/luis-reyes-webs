@@ -3,7 +3,7 @@ import Footer from './Footer'
 import Section from './Section'
 import ProjectProof from './ProjectProof'
 import ClosingCta from './ClosingCta'
-import { portfolioProjects } from '../portfolioProjects'
+import { portfolioProjects, srcSetFor } from '../portfolioProjects'
 import { talcaFaq } from '../seo'
 import { rubrosTalca } from '../rubrosTalca'
 
@@ -191,7 +191,7 @@ export default function DisenoWebTalcaPage({ onNavigate }) {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {portfolioProjects.filter((p) => proyectosMaule.includes(p.slug)).map((p) => (
               <a key={p.slug} href={`/proyectos/${p.slug}`} onClick={(e) => go(e, `/proyectos/${p.slug}`)} className="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:-translate-y-1 hover:border-brand-300">
-                <img src={p.image} alt={p.alt} width="1200" height="833" loading="lazy" decoding="async" className="aspect-[16/10] w-full object-cover object-top" />
+                <img src={p.image} srcSet={srcSetFor(p.image)} sizes="(min-width: 1024px) 20vw, (min-width: 640px) 50vw, 100vw" alt={p.alt} width="1200" height="833" loading="lazy" decoding="async" className="aspect-[16/10] w-full object-cover object-top" />
                 <span className="block p-3.5"><strong className="block text-sm text-slate-900">{p.name}</strong><span className="text-xs text-slate-500">{p.type}</span></span>
               </a>
             ))}

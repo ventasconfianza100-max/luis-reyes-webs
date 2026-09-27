@@ -77,3 +77,9 @@ export const portfolioProjects = [
     chip: 'border-pink-200 bg-pink-50 text-pink-700', glow: 'from-pink-400/20 via-teal-300/10 to-transparent',
   },
 ]
+
+// srcSet con las versiones de 480 y 800 px (scripts/create-responsive-images.mjs).
+export const srcSetFor = (image) => {
+  const base = image.replace(/\.webp$/, '')
+  return `${base}-480.webp 480w, ${base}-800.webp 800w, ${image} 1200w`
+}
