@@ -130,7 +130,11 @@ export default function Footer({ onNavigate }) {
 
         <div className="mt-5 flex items-center justify-between gap-1.5 border-t border-white/10 pt-4 text-xs text-slate-500 md:mt-6">
           <span>© {new Date().getFullYear()} Luis Reyes Castro</span>
-          <span className="hidden sm:inline">Diseño y desarrollo web en Chile</span>
+          <span className="flex flex-wrap items-center gap-x-4 gap-y-1">
+            <a href="/privacidad" onClick={(e) => go(e, '/privacidad')} className="transition-colors hover:text-slate-300">Política de privacidad</a>
+            <a href="/terminos" onClick={(e) => go(e, '/terminos')} className="transition-colors hover:text-slate-300">Términos y condiciones</a>
+            <span className="hidden sm:inline">Diseño y desarrollo web en Chile</span>
+          </span>
         </div>
       </div>
     </footer>
