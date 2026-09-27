@@ -885,3 +885,13 @@ html.dark .ambient__orb--4 { opacity: .9; }
 @media (prefers-reduced-motion: reduce) {
   html.dark .ambient__stars, html.dark .ambient__beam, .wsp-float, .wsp-float::after { animation: none; }
 }
+
+/* Pulido del tema oscuro */
+html.dark .bg-slate-950, html.dark .bg-ink { background-color: #141a33; }
+html.dark footer.bg-ink { background: linear-gradient(180deg, #0d1226, #080c1a); border-top-color: rgba(139,92,246,.18); }
+html.dark a.bg-slate-950, html.dark span.bg-slate-950.text-white { background-image: linear-gradient(135deg, #7c3aed, #6366f1); box-shadow: 0 8px 22px -10px rgba(124,58,237,.7); }
+html.dark a.bg-slate-950:hover { background-image: linear-gradient(135deg, #8b5cf6, #22d3ee); }
+html.dark .stats-strip, html.dark .software-banner, html.dark .pricing-card--featured { box-shadow: 0 0 0 1px rgba(139,92,246,.22), 0 24px 60px -30px rgba(124,58,237,.55); }
+html.dark .faq-toggle { background: rgba(124,58,237,.16); border-color: rgba(167,139,250,.3); }
+html.dark .faq-toggle::before, html.dark .faq-toggle::after { background: #c4b5fd; }
+html.dark .faq-item.is-open { background: linear-gradient(90deg, rgba(124,58,237,.14), rgba(34,211,238,.05)); }
