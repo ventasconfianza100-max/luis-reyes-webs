@@ -4,13 +4,6 @@ import AdminVideos from './AdminVideos'
 
 const SESSION_KEY = 'lrw-admin-unlocked'
 const KEY_STORAGE = 'lrw-admin-key'
-const PASSWORD_HASH = '3155e25041de4d7c2be0f8c8826f0d49bd4bc6e0c7eb44454511756bd3d0f56b'
-
-async function hash(value) {
-  const bytes = new TextEncoder().encode(value)
-  const digest = await crypto.subtle.digest('SHA-256', bytes)
-  return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, '0')).join('')
-}
 
 export default function AdminAccess() {
   const [unlocked, setUnlocked] = useState(false)
@@ -27,7 +20,8 @@ export default function AdminAccess() {
 
   const submit = async (event) => {
     event.preventDefault()
-    if (await hash(password) !== PASSWORD_HASH) {
+    const res = await fetch('/api/admin/login', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ key: password }) }).catch(() => null)
+    if (!res || !res.ok) {
       setError('La clave no es correcta. Inténtalo nuevamente.')
       setPassword('')
       return

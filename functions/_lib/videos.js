@@ -1,9 +1,9 @@
 // Utilidades compartidas por las funciones de videos para clientes.
 // Los videos viven en el bucket R2 enlazado como VIDEOS, bajo "videos/<id>".
 
-// Hash SHA-256 de la clave del panel (el mismo que usa /admin).
+// Hash SHA-256 de la clave del panel /admin. Solo vive en el servidor.
 // Se puede reemplazar con la variable de entorno ADMIN_HASH.
-const DEFAULT_HASH = '3155e25041de4d7c2be0f8c8826f0d49bd4bc6e0c7eb44454511756bd3d0f56b'
+const DEFAULT_HASH = 'ade736490d35726c05a6b1e740a1bd091b4f3cb303c3e908e0e44506dd62f681'
 
 export const keyFor = (id) => `videos/${id}`
 
@@ -21,12 +21,15 @@ async function sha256(value) {
   return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, '0')).join('')
 }
 
+export async function isAdminKey(key, env) {
+  return Boolean(key) && (await sha256(key)) === (env.ADMIN_HASH || DEFAULT_HASH)
+}
+
 // Devuelve una respuesta de error si la petición no trae la clave del panel.
 export async function requireAdmin(request, env) {
   if (!env.VIDEOS) return json({ error: 'El almacenamiento de videos no está configurado.' }, 503)
   const auth = request.headers.get('authorization') || ''
-  const key = auth.startsWith('Bearer ') ? auth.slice(7) : ''
-  if (!key || (await sha256(key)) !== (env.ADMIN_HASH || DEFAULT_HASH)) {
+  if (!(await isAdminKey(auth.startsWith('Bearer ') ? auth.slice(7) : '', env))) {
     return json({ error: 'No autorizado.' }, 401)
   }
   return null
