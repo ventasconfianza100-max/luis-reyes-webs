@@ -3,14 +3,19 @@ import { portfolioProjects } from '../portfolioProjects'
 export default function ProjectsPage({ onNavigate }) {
   return (
     <main>
-      <section className="page-hero px-5 py-10 md:py-14">
+      <section className="page-hero px-5 py-8 md:py-10">
         <div className="mx-auto max-w-6xl">
           <nav aria-label="Migas de pan" className="mb-5 flex items-center gap-2 text-sm"><a href="/" onClick={(event) => { event.preventDefault(); onNavigate('/') }} className="font-semibold text-brand-700 hover:text-brand-800">Inicio</a><span className="text-slate-300">/</span><span className="text-slate-500">Proyectos</span></nav>
-          <div className="max-w-3xl"><span className="inline-flex rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-bold uppercase tracking-[.16em] text-brand-700">Trabajo seleccionado</span><h1 className="mt-4 font-display text-4xl font-extrabold tracking-[-.04em] text-slate-950 md:text-5xl">Proyectos reales, publicados y listos para explorar</h1><p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-600 md:text-lg">Una selección de plataformas, catálogos y sitios comerciales creados para operaciones muy distintas. Cada tarjeta enlaza al proyecto en línea.</p></div>
+          <div className="grid items-center gap-8 lg:grid-cols-[1.35fr_.9fr]"><div><span className="inline-flex rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-bold uppercase tracking-[.16em] text-brand-700">Trabajo seleccionado</span><h1 className="mt-4 font-display text-4xl font-extrabold tracking-[-.04em] text-slate-950 md:text-5xl">Proyectos reales, publicados y listos para explorar</h1><p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-600 md:text-lg">Una selección de plataformas, catálogos y sitios comerciales creados para operaciones muy distintas. Cada tarjeta enlaza al proyecto en línea.</p></div>
+          <ul className="grid grid-cols-2 gap-2 rounded-3xl border border-white/80 bg-white/70 p-3 shadow-soft backdrop-blur">
+            {portfolioProjects.map((project) => (
+              <li key={project.name}><a href={project.url} target="_blank" rel="noopener noreferrer" className="flex h-full flex-col rounded-2xl px-3 py-2.5 transition-colors hover:bg-brand-50"><span className="text-sm font-bold text-slate-900">{project.name}</span><span className="text-xs text-slate-500">{project.type}</span></a></li>
+            ))}
+          </ul></div>
         </div>
       </section>
 
-      <section className="px-5 py-10 md:py-12">
+      <section className="px-5 py-8 md:py-10">
         <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-2">
           {portfolioProjects.map((project, index) => (
             <article key={project.name} className={`group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-soft transition-all hover:-translate-y-1 hover:border-brand-300 hover:shadow-lift ${index === 0 ? 'md:col-span-2 md:grid md:grid-cols-[1.25fr_.75fr]' : ''}`}>
