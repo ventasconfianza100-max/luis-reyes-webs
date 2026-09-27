@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import AdminPanel from './AdminPanel'
 import AdminVideos from './AdminVideos'
+import useCloudSync from './useCloudSync'
 
 const SESSION_KEY = 'lrw-admin-unlocked'
 const KEY_STORAGE = 'lrw-admin-key'
@@ -12,6 +13,7 @@ export default function AdminAccess() {
   const [visible, setVisible] = useState(false)
   const [adminKey, setAdminKey] = useState('')
   const [section, setSection] = useState('documentos')
+  const sync = useCloudSync(unlocked ? adminKey : '')
 
   useEffect(() => {
     setUnlocked(window.sessionStorage.getItem(SESSION_KEY) === 'yes')
@@ -43,14 +45,22 @@ export default function AdminAccess() {
   if (unlocked) {
     return (
       <>
-        <div className="admin-oculto-impresion flex justify-center gap-1 border-b border-slate-200 bg-slate-50 p-2">
+        <div className="admin-oculto-impresion flex flex-wrap items-center justify-center gap-1 border-b border-slate-200 bg-slate-50 p-2">
           {[['documentos', 'Documentos y boletas'], ['videos', 'Videos para clientes']].map(([id, label]) => (
             <button key={id} type="button" onClick={() => setSection(id)} className={`rounded-lg px-4 py-1.5 text-sm font-semibold ${section === id ? 'bg-brand-600 text-white' : 'text-slate-600 hover:bg-white'}`}>{label}</button>
           ))}
+          {adminKey && (
+            <span className={`ml-2 rounded-full px-3 py-1 text-xs font-semibold ${['error', 'conflicto'].includes(sync.status.state) ? 'bg-red-50 text-red-700' : 'bg-emerald-50 text-emerald-700'}`}>
+              {sync.status.state === 'cargando' && 'Sincronizando…'}
+              {sync.status.state === 'guardado' && `☁ Guardado en la nube${sync.status.at ? ` · ${new Date(sync.status.at).toLocaleTimeString('es-CL', { hour: '2-digit', minute: '2-digit' })}` : ''}`}
+              {sync.status.state === 'error' && 'Sin conexión con la nube: los cambios quedan en este equipo'}
+              {sync.status.state === 'conflicto' && <>Hay cambios más nuevos desde otro equipo. <button type="button" onClick={() => window.location.reload()} className="underline">Recargar</button></>}
+            </span>
+          )}
         </div>
         {section === 'videos'
           ? (adminKey ? <AdminVideos adminKey={adminKey} /> : <p className="p-8 text-center text-sm text-slate-600">Vuelve a ingresar tu clave para gestionar videos. <button type="button" onClick={logout} className="font-semibold text-brand-700 underline">Cerrar sesión</button></p>)
-          : <AdminPanel onLogout={logout} />}
+          : (sync.ready ? <AdminPanel onLogout={logout} /> : <p className="p-8 text-center text-sm text-slate-500">Cargando tus datos…</p>)}
       </>
     )
   }

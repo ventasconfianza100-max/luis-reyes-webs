@@ -711,8 +711,8 @@ export default function AdminPanel({ onLogout }) {
         {pestana === 'datos' && (
           <Tarjeta titulo="Respaldo de la información">
             <p className="mb-4 text-sm text-slate-600">
-              Los datos se guardan solo en este navegador. Exporta un respaldo antes de limpiar el historial o cambiar
-              de equipo.
+              Los datos se sincronizan solos con la nube, así que los verás desde cualquier equipo al entrar con tu
+              clave. Además se guarda una copia por hora. El respaldo JSON queda como copia extra.
             </p>
             <div className="flex flex-wrap gap-3">
               <button
