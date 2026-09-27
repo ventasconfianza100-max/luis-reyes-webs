@@ -80,6 +80,13 @@ for (const post of blogPosts) {
   }
 }
 
+for (const project of portfolioProjects) {
+  metaByPath[`/proyectos/${project.slug}`] = {
+    title: `${project.name}: ${project.type} | Proyecto de Luis Reyes Castro`,
+    description: `${project.summary} Stack: ${project.stack.slice(0, 3).join(', ')}.`,
+  }
+}
+
 // Rutas privadas: no se prerenderizan ni entran al sitemap, y van noindex.
 export const privateMetaByPath = {
   '/admin': {
@@ -296,6 +303,10 @@ const breadcrumbLabels = {
   '/blog': 'Blog',
 }
 
+for (const project of portfolioProjects) {
+  breadcrumbLabels[`/proyectos/${project.slug}`] = project.name
+}
+
 // Etiqueta de cada artículo para las migas de pan.
 for (const post of blogPosts) {
   breadcrumbLabels[`/blog/${post.slug}`] = post.title
@@ -485,15 +496,34 @@ export function jsonLdFor(path) {
           '@type': 'ListItem',
           position: index + 1,
           item: {
-            '@type': 'WebSite',
+            '@type': 'CreativeWork',
             name: project.name,
-            url: project.url,
+            url: `${SITE_URL}/proyectos/${project.slug}`,
+            sameAs: project.url,
             description: project.summary,
             image: `${SITE_URL}${project.image}`,
             creator: { '@id': `${SITE_URL}/#luis-reyes` },
           },
         })),
       },
+    })
+  }
+
+  const project = portfolioProjects.find((p) => path === `/proyectos/${p.slug}`)
+  if (project) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'CreativeWork',
+      name: project.name,
+      headline: getMeta(path).title,
+      description: project.summary,
+      url: canonicalFor(path),
+      image: `${SITE_URL}${project.image}`,
+      genre: project.type,
+      keywords: project.stack.join(', '),
+      sameAs: project.url,
+      creator: { '@id': `${SITE_URL}/#luis-reyes` },
+      isPartOf: { '@id': `${SITE_URL}/#website` },
     })
   }
 

@@ -16,6 +16,7 @@ import FAQ from './components/FAQ'
 import Footer from './components/Footer'
 import Decorations from './components/Decorations'
 import ProjectsPage from './components/ProjectsPage'
+import ProjectCaseStudyPage from './components/ProjectCaseStudyPage'
 import SchedulePage from './components/SchedulePage'
 import BlogPage from './components/BlogPage'
 import BlogPostPage from './components/BlogPostPage'
@@ -114,6 +115,8 @@ export default function App({ initialPath }) {
     content = <><Navbar onNavigate={navigateTo} /><BlogPostPage slug={path.replace('/blog/', '')} onNavigate={navigateTo} /><Footer onNavigate={navigateTo} /></>
   } else if (path === '/proyectos') {
     content = <><Navbar onNavigate={navigateTo} /><ProjectsPage onNavigate={navigateTo} /><Footer onNavigate={navigateTo} /></>
+  } else if (path.startsWith('/proyectos/')) {
+    content = <><Navbar onNavigate={navigateTo} /><ProjectCaseStudyPage slug={path.replace('/proyectos/', '')} onNavigate={navigateTo} /><Footer onNavigate={navigateTo} /></>
   } else if (path === '/proyectos-empresas') {
     content = <><Navbar onNavigate={navigateTo} /><ProjectsPage onNavigate={navigateTo} /><Footer onNavigate={navigateTo} /></>
   } else if (path === '/') {

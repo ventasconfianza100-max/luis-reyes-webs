@@ -74,7 +74,7 @@ export default function ProjectsShowcase() {
                   <div className="portfolio-story__topline"><span className="portfolio-number">{String(index + 1).padStart(2, '0')}</span><span className="portfolio-type">{project.type}</span><span className="portfolio-status"><i /> En línea</span></div>
                   <h3>{project.name}</h3><p>{project.summary}</p>
                   <ul>{project.built.map((item) => <li key={item}><Check /><span>{item}</span></li>)}</ul>
-                  <a className="portfolio-cta" href={project.url} target="_blank" rel="noopener noreferrer" tabIndex={index === activeIndex ? 0 : -1}>Explorar {project.domain} <ExternalArrow /></a>
+                  <div className="flex flex-wrap items-center gap-x-5 gap-y-2"><a className="portfolio-cta" href={`/proyectos/${project.slug}`} tabIndex={index === activeIndex ? 0 : -1}>Ver caso completo →</a><a className="portfolio-cta" href={project.url} target="_blank" rel="noopener noreferrer" tabIndex={index === activeIndex ? 0 : -1}>Explorar {project.domain} <ExternalArrow /></a></div>
                 </div>
               </article>
             ))}
