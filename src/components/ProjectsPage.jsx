@@ -1,4 +1,4 @@
-import { portfolioProjects } from '../portfolioProjects'
+import { portfolioProjects, srcSetFor } from '../portfolioProjects'
 import CountUp from './CountUp'
 
 const stats = [
@@ -46,7 +46,7 @@ export default function ProjectsPage({ onNavigate }) {
               <a href={`/proyectos/${project.slug}`} onClick={(event) => go(event, `/proyectos/${project.slug}`)} className={`project-tile__media relative block bg-gradient-to-br ${project.glow} p-3 sm:p-4`}>
                 <div className="project-window h-full overflow-hidden rounded-2xl border border-white/80 bg-white shadow-sm">
                   <div className="project-window__bar flex items-center gap-1.5 px-3 py-2"><i /><i /><i /><span className="ml-2 truncate text-[10px] font-medium text-slate-400">{project.domain}</span></div>
-                  <img src={project.image} alt={project.alt} width="1200" height="833" loading={index === 0 ? 'eager' : 'lazy'} decoding="async" className={`w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03] ${index === 0 ? 'aspect-[16/9]' : 'aspect-[16/10]'}`} />
+                  <img src={project.image} srcSet={srcSetFor(project.image)} sizes="(min-width: 768px) 50vw, 100vw" alt={project.alt} width="1200" height="833" loading={index === 0 ? 'eager' : 'lazy'} decoding="async" className={`w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03] ${index === 0 ? 'aspect-[16/9]' : 'aspect-[16/10]'}`} />
                 </div>
               </a>
               <div className="relative flex flex-col justify-center p-5 sm:p-6">

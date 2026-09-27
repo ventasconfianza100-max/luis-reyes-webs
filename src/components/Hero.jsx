@@ -129,7 +129,7 @@ export default function Hero({ onNavigate }) {
             <a href="/proyectos" onClick={(event) => { event.preventDefault(); onNavigate('/proyectos') }} className="group inline-flex items-center gap-3 rounded-2xl border border-white/80 bg-white/70 py-2 pl-2 pr-4 shadow-sm backdrop-blur-sm transition hover:-translate-y-0.5 hover:border-brand-200">
               <span className="flex -space-x-3" aria-hidden="true">
                 {proofProjects.map((project) => (
-                  <img key={project.name} src={project.image} alt="" width="40" height="40" loading="eager" decoding="async" className="h-10 w-10 rounded-full border-2 border-white object-cover shadow-sm" />
+                  <img key={project.name} src={project.image.replace('.webp', '-480.webp')} alt="" width="40" height="40" loading="eager" decoding="async" className="h-10 w-10 rounded-full border-2 border-white object-cover shadow-sm" />
                 ))}
               </span>
               <span className="text-left leading-tight">

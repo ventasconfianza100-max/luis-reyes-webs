@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import Section from './Section'
-import { portfolioProjects } from '../portfolioProjects'
+import { portfolioProjects, srcSetFor } from '../portfolioProjects'
 
 const projectPalettes = [
   ['#fb7185', '#fb923c', '#fff1f2'], ['#ef4444', '#22d3ee', '#fff1f2'],
@@ -66,8 +66,8 @@ export default function ProjectsShowcase() {
           <div className="portfolio-track" style={{ transform: `translate3d(-${activeIndex * 100}%, 0, 0)` }}>
             {projects.map((project, index) => (
               <article className={`portfolio-slide ${index === activeIndex ? 'is-active' : ''}`} key={project.name} aria-hidden={index !== activeIndex}>
-                <a className="portfolio-visual" href={project.url} target="_blank" rel="noopener noreferrer" tabIndex={index === activeIndex ? 0 : -1} aria-label={`Abrir ${project.name}`}>
-                  <img src={project.image} alt={project.alt} width="1200" height="833" loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />
+                <a className="portfolio-visual" href={project.url} target="_blank" rel="noopener noreferrer" tabIndex={index === activeIndex ? 0 : -1}>
+                  <img src={project.image} srcSet={srcSetFor(project.image)} sizes="(min-width: 900px) 60vw, 100vw" alt={project.alt} width="1200" height="833" loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />
                   <span className="portfolio-visual__hint">Ver sitio en vivo <ExternalArrow /></span>
                 </a>
                 <div className="portfolio-story">
