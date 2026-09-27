@@ -80,6 +80,13 @@ for (const post of blogPosts) {
   }
 }
 
+for (const project of portfolioProjects) {
+  metaByPath[`/proyectos/${project.slug}`] = {
+    title: `${project.name}: ${project.type} | Proyecto de Luis Reyes Castro`,
+    description: `${project.summary} Stack: ${project.stack.slice(0, 3).join(', ')}.`,
+  }
+}
+
 // Rutas privadas: no se prerenderizan ni entran al sitemap, y van noindex.
 export const privateMetaByPath = {
   '/admin': {
@@ -294,6 +301,10 @@ const breadcrumbLabels = {
   '/proyectos': 'Portafolio de proyectos web',
   '/agenda': 'Agenda una reunión',
   '/blog': 'Blog',
+}
+
+for (const project of portfolioProjects) {
+  breadcrumbLabels[`/proyectos/${project.slug}`] = project.name
 }
 
 // Etiqueta de cada artículo para las migas de pan.
