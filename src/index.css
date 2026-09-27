@@ -895,3 +895,46 @@ html.dark .stats-strip, html.dark .software-banner, html.dark .pricing-card--fea
 html.dark .faq-toggle { background: rgba(124,58,237,.16); border-color: rgba(167,139,250,.3); }
 html.dark .faq-toggle::before, html.dark .faq-toggle::after { background: #c4b5fd; }
 html.dark .faq-item.is-open { background: linear-gradient(90deg, rgba(124,58,237,.14), rgba(34,211,238,.05)); }
+
+/* ── Acabado premium del tema oscuro ── */
+html.dark .text-gradient { background-image: linear-gradient(105deg, #a78bfa 0%, #c4b5fd 25%, #818cf8 50%, #22d3ee 75%, #a78bfa 100%); }
+html.dark h1:not(:has(.text-gradient)), html.dark .site-shell section h2:not(:has(.text-gradient)):not(:has(span[class*="text-"])) {
+  background-image: linear-gradient(180deg, #ffffff 35%, #c7cdf5);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+/* Tarjetas tipo vidrio: reflejo superior y borde luminoso al pasar el mouse */
+html.dark .rounded-2xl.bg-white, html.dark .rounded-3xl.bg-white, html.dark .feature-card, html.dark .service-card, html.dark .faq-panel, html.dark .portfolio-experience {
+  background-image: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,0) 45%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 18px 50px -30px rgba(0,0,0,.8);
+}
+html.dark .service-card--violet, html.dark .service-card--amber, html.dark .service-card--cyan {
+  background-image: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,0) 45%), linear-gradient(145deg, rgba(124,58,237,.16), #131b2e 45%);
+}
+html.dark .rounded-2xl.bg-white:hover, html.dark .rounded-3xl.bg-white:hover, html.dark .feature-card:hover, html.dark .service-card:hover {
+  border-color: rgba(167,139,250,.45);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 0 0 1px rgba(139,92,246,.18), 0 22px 60px -28px rgba(124,58,237,.55);
+}
+
+/* Botones principales con halo */
+html.dark .bg-brand-600 { background-image: linear-gradient(135deg, #7c3aed, #6366f1); box-shadow: 0 10px 28px -12px rgba(124,58,237,.85), inset 0 1px 0 rgba(255,255,255,.18); }
+html.dark .bg-brand-600:hover, html.dark .hover\:bg-brand-700:hover { background-image: linear-gradient(135deg, #8b5cf6, #06b6d4); }
+
+/* Etiquetas de sección con brillo */
+html.dark .site-shell section > div > div.text-center > span,
+html.dark .site-shell section > div > div.max-w-2xl > span { background: rgba(124,58,237,.14); border-color: rgba(167,139,250,.3); box-shadow: 0 0 22px -6px rgba(139,92,246,.55); color: #c4b5fd; }
+
+/* Línea de luz al pie de cada portada y separadores de sección */
+html.dark .hero-section, html.dark .page-hero { position: relative; }
+html.dark .hero-section::after, html.dark .page-hero::before {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; z-index: 1; pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(139,92,246,.55) 30%, rgba(34,211,238,.45) 70%, transparent);
+  box-shadow: 0 0 18px 1px rgba(139,92,246,.35);
+}
+html.dark .site-shell main > section:not(.hero-section):not(.page-hero) { border-top-color: rgba(139,92,246,.1); }
+
+/* Imágenes de proyectos y retratos con marco luminoso */
+html.dark .portfolio-visual, html.dark .project-preview, html.dark .hero-portrait { box-shadow: 0 0 0 1px rgba(167,139,250,.2), 0 30px 70px -35px rgba(124,58,237,.6); }
+
+/* Barra de navegación con filo de color */
+html.dark .site-nav::after { background: linear-gradient(90deg, transparent, rgba(139,92,246,.45), rgba(34,211,238,.35), transparent); }
