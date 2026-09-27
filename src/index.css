@@ -263,7 +263,7 @@ body {
 .portfolio-cta { align-self:flex-start; display:inline-flex; align-items:center; gap:.55rem; margin-top:1.4rem; border-radius:.9rem .9rem .25rem .9rem; background:#0f172a; padding:.8rem 1rem; color:white; font-size:.75rem; font-weight:750; box-shadow:0 14px 32px -18px rgba(15,23,42,.75); transition:transform .2s ease,background .5s ease; }
 .portfolio-cta:hover { transform:translateY(-2px); background:color-mix(in srgb,var(--project-primary) 65%,#0f172a); }
 .portfolio-controls { display:flex; justify-content:center; border-top:1px solid rgba(148,163,184,.16); padding:.8rem 2.75rem .95rem; }
-.portfolio-tabs { display:grid; width:100%; max-width:62rem; grid-template-columns:repeat(7,minmax(0,1fr)); gap:.5rem; }
+.portfolio-tabs { display:grid; width:100%; max-width:68rem; grid-template-columns:repeat(8,minmax(0,1fr)); gap:.5rem; }
 .portfolio-tabs button { position:relative; min-width:0; border-radius:.75rem; padding:.6rem .5rem; color:#94a3b8; text-align:center; transition:color .3s ease,background .3s ease; }
 .portfolio-tabs button::before { content:''; position:absolute; inset:0 0 auto; height:2px; border-radius:999px; background:#cbd5e1; }
 .portfolio-tabs button:hover { color:#6d28d9; background:rgba(245,243,255,.7); }
