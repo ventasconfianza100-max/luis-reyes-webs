@@ -1017,3 +1017,14 @@ html.dark .border-rose-200, html.dark .border-red-200, html.dark .border-amber-2
 html.dark .from-amber-50\/40, html.dark .from-pink-50, html.dark .from-slate-50\/80 { --tw-gradient-from: rgba(124,58,237,.08) var(--tw-gradient-from-position); --tw-gradient-to: transparent var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
 html.dark .to-amber-50\/60 { --tw-gradient-to: rgba(34,211,238,.05) var(--tw-gradient-to-position); }
 html.dark .via-brand-50\/25 { --tw-gradient-stops: var(--tw-gradient-from), rgba(124,58,237,.08) var(--tw-gradient-via-position), var(--tw-gradient-to); }
+
+/* Botón de llamada (solo celular) */
+.call-float { background: linear-gradient(135deg, #7c3aed, #6366f1); box-shadow: 0 10px 26px -10px rgba(124,58,237,.8), 0 0 0 1px rgba(255,255,255,.15) inset; transition: transform .2s ease; }
+.call-float:active { transform: scale(.94); }
+
+/* Celular: menos efectos pesados para que la página cargue y se desplace fluida */
+@media (max-width: 767px) {
+  html.dark .ambient__beam, html.dark .shooting-star--2, html.dark .shooting-star--3 { display: none; }
+  .ambient__orb { animation: none; }
+  .wsp-float::before { display: none; }
+}
