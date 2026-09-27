@@ -259,7 +259,7 @@ body {
 .portfolio-cta { align-self:flex-start; display:inline-flex; align-items:center; gap:.55rem; margin-top:1.4rem; border-radius:.9rem .9rem .25rem .9rem; background:#0f172a; padding:.8rem 1rem; color:white; font-size:.75rem; font-weight:750; box-shadow:0 14px 32px -18px rgba(15,23,42,.75); transition:transform .2s ease,background .5s ease; }
 .portfolio-cta:hover { transform:translateY(-2px); background:color-mix(in srgb,var(--project-primary) 65%,#0f172a); }
 .portfolio-controls { display:flex; justify-content:center; border-top:1px solid rgba(148,163,184,.16); padding:.8rem 2.75rem .95rem; }
-.portfolio-tabs { display:grid; width:100%; max-width:54rem; grid-template-columns:repeat(6,minmax(0,1fr)); gap:.5rem; }
+.portfolio-tabs { display:grid; width:100%; max-width:62rem; grid-template-columns:repeat(7,minmax(0,1fr)); gap:.5rem; }
 .portfolio-tabs button { position:relative; min-width:0; border-radius:.75rem; padding:.6rem .5rem; color:#94a3b8; text-align:center; transition:color .3s ease,background .3s ease; }
 .portfolio-tabs button::before { content:''; position:absolute; inset:0 0 auto; height:2px; border-radius:999px; background:#cbd5e1; }
 .portfolio-tabs button:hover { color:#6d28d9; background:rgba(245,243,255,.7); }
@@ -938,3 +938,49 @@ html.dark .portfolio-visual, html.dark .project-preview, html.dark .hero-portrai
 
 /* Barra de navegación con filo de color */
 html.dark .site-nav::after { background: linear-gradient(90deg, transparent, rgba(139,92,246,.45), rgba(34,211,238,.35), transparent); }
+
+/* ── Estrellas fugaces (tema oscuro) ── */
+.shooting-star { display: none; }
+html.dark .shooting-star {
+  display: block; position: absolute; width: 140px; height: 2px; border-radius: 999px; opacity: 0;
+  background: linear-gradient(90deg, rgba(255,255,255,.95), rgba(196,181,253,.55) 30%, rgba(34,211,238,0));
+  filter: drop-shadow(0 0 6px rgba(196,181,253,.9));
+  transform: rotate(-32deg) translateX(0);
+  animation: shooting-star 9s cubic-bezier(.3,.1,.3,1) infinite;
+}
+html.dark .shooting-star::before {
+  content: ''; position: absolute; left: -2px; top: 50%; width: 5px; height: 5px; border-radius: 50%;
+  background: #fff; box-shadow: 0 0 10px 3px rgba(196,181,253,.9); transform: translateY(-50%);
+}
+html.dark .shooting-star--1 { top: 12%; left: 78%; animation-delay: 1.5s; }
+html.dark .shooting-star--2 { top: 38%; left: 96%; animation-delay: 6s; animation-duration: 11s; }
+html.dark .shooting-star--3 { top: 4%; left: 48%; animation-delay: 10s; animation-duration: 13s; width: 100px; }
+@keyframes shooting-star {
+  0% { opacity: 0; transform: rotate(-32deg) translateX(0); }
+  2% { opacity: 1; }
+  12% { opacity: 0; transform: rotate(-32deg) translateX(-55vw); }
+  100% { opacity: 0; transform: rotate(-32deg) translateX(-55vw); }
+}
+
+/* ── Instagram ── */
+.ig-gradient-text { color: transparent; background: linear-gradient(100deg, #f97316, #ec4899 45%, #a855f7); -webkit-background-clip: text; background-clip: text; }
+.ig-button { background: linear-gradient(110deg, #f97316, #ec4899 40%, #a855f7 75%, #6366f1); background-size: 200% 100%; box-shadow: 0 10px 26px -10px rgba(236,72,153,.7); transition: background-position .5s ease, transform .2s ease; }
+.ig-button:hover { background-position: 100% 0; }
+.ig-story-ring { background: conic-gradient(from 0deg, #f97316, #ec4899, #a855f7, #f97316); animation: ig-ring 6s linear infinite; }
+.ig-stage { isolation: isolate; }
+.ig-glow { position: absolute; inset: 8% -4% -6%; z-index: -1; border-radius: 3rem; background: radial-gradient(circle at 30% 20%, rgba(236,72,153,.35), transparent 55%), radial-gradient(circle at 75% 80%, rgba(168,85,247,.35), transparent 55%); filter: blur(30px); animation: ig-glow 10s ease-in-out infinite alternate; }
+.ig-frame { box-shadow: 0 0 0 1px rgba(236,72,153,.18), 0 30px 70px -35px rgba(168,85,247,.55); }
+.ig-frame::before { content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; background: linear-gradient(135deg, #f97316, #ec4899, #a855f7, #22d3ee); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+.ig-topic { transition: border-color .2s ease, transform .2s ease; }
+.ig-topic:hover { border-color: rgba(236,72,153,.4); transform: translateY(-2px); }
+.nav-instagram:hover { color: #ec4899 !important; background: rgba(236,72,153,.12) !important; }
+html.dark .ig-frame { background: #131b2e; }
+html.dark .ig-badge { background: rgba(236,72,153,.12); border-color: rgba(236,72,153,.35); color: #f9a8d4; box-shadow: 0 0 20px -6px rgba(236,72,153,.6); }
+html.dark .ig-topic:hover { border-color: rgba(236,72,153,.45); }
+@keyframes ig-ring { to { filter: hue-rotate(360deg); } }
+@keyframes ig-glow { from { transform: scale(.96); opacity: .7; } to { transform: scale(1.04); opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html.dark .shooting-star { animation: none; opacity: 0; }
+  .ig-story-ring, .ig-glow { animation: none; }
+}
