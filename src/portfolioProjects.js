@@ -66,6 +66,17 @@ export const portfolioProjects = [
     chip: 'border-stone-200 bg-stone-50 text-stone-700', glow: 'from-orange-300/20 via-rose-200/10 to-transparent',
   },
   {
+    slug: 'psicologo-luis-reyes',
+    challenge: "Mi propia consulta de psicología online necesitaba una web que transmitiera calma y confianza, explicara en palabras simples cómo funciona la terapia por videollamada y facilitara dar el primer paso a personas de todo Chile.",
+    sections: [["Una primera impresión serena", "Colores suaves, mucho aire y un tono cercano, pensados para alguien que llega con ansiedad o cansancio y necesita sentirse tranquilo desde la primera pantalla."], ["Cada motivo de consulta, explicado", "Ansiedad, depresión, estrés y autoestima tienen su propia sección y su propia página, con un lenguaje claro para que la persona se reconozca y sepa que puede pedir ayuda."], ["Primer paso sin fricción", "La primera sesión gratuita, la agenda y el contacto por WhatsApp están siempre a mano, y se explica paso a paso cómo funciona la terapia online."], ["Recursos que acompañan", "Consejos de prevención, un ejercicio guiado de respiración, un mini test de bienestar y un blog con artículos sobre salud mental."], ["Visible en Google", "Páginas y artículos orientados a lo que las personas buscan cuando necesitan un psicólogo online en Chile."]],
+    results: ["Una consulta online que genera confianza", "Agendar la primera sesión es simple", "Contenido útil que atrae visitas desde Google"],
+    name: 'Psicólogo Luis Reyes', domain: 'luisreyespsicologo.cl', url: 'https://www.luisreyespsicologo.cl/', type: 'Consulta psicológica online',
+    summary: 'Web de mi propia consulta de psicología online, con un tono sereno y cercano para acompañar a personas de todo Chile a dar el primer paso.',
+    built: ['Páginas por motivo de consulta', 'Agenda y primera sesión gratuita', 'Ejercicio de respiración y mini test', 'Blog de salud mental'],
+    image: '/portfolio-psicologo-luis-reyes.webp', alt: 'Portada actual de la web del psicólogo Luis Reyes Castro, consulta de psicología online',
+    chip: 'border-emerald-200 bg-emerald-50 text-emerald-700', glow: 'from-emerald-300/20 via-teal-200/10 to-transparent',
+  },
+  {
     slug: 'rz-jugueteria',
     challenge: "Una juguetería de Talca vendía con una tienda en línea lenta y difícil de mantener. Necesitaban una tienda rápida, fácil de administrar y lista para recibir pagos en línea.",
     sections: [["Todo el catálogo, renovado", "Los productos y fotos de la tienda anterior se trasladaron a la nueva, con imágenes optimizadas para cargar rápido."], ["Encontrar el juguete ideal", "Secciones con filtros por categoría y edad, buscador y fichas de producto claras."], ["Pago en línea seguro", "El pago se hace a través de Webpay, la plataforma que los clientes chilenos ya conocen. La tienda nunca ve los datos de la tarjeta."], ["Panel para el negocio", "Productos, inventario y pedidos se administran desde un panel propio."], ["Envíos y retiro", "Opciones de envío a todo Chile o retiro en Talca, coordinadas de forma directa."]],

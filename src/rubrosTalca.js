@@ -58,7 +58,7 @@ export const rubrosTalca = [
       ['Poca visibilidad local', 'Quien busca "psicólogo en Talca" o atención online necesita encontrarte en Google.'],
     ],
     includes: ['Presentación de tu enfoque, formación y especialidades', 'Modalidades de atención: online y presencial', 'Agenda y contacto por WhatsApp siempre visibles', 'Preguntas frecuentes para resolver dudas antes de la primera sesión', 'Cuidado de la privacidad y el lenguaje profesional'],
-    projects: ['psicologa-andrea-martinez'],
+    projects: ['psicologa-andrea-martinez', 'psicologo-luis-reyes'],
     blogAudience: 'psicologos',
     faq: [
       { q: '¿Por qué trabajar con un psicólogo que hace webs?', a: 'Porque entiendo tu profesión desde adentro: cómo hablarle a un posible paciente, qué información genera confianza y qué cuidados éticos considerar en tu presentación.' },

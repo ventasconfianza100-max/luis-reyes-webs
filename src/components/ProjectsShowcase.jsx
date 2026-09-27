@@ -5,7 +5,7 @@ import { portfolioProjects, srcSetFor } from '../portfolioProjects'
 const projectPalettes = [
   ['#fb7185', '#fb923c', '#fff1f2'], ['#ef4444', '#22d3ee', '#fff1f2'],
   ['#d97706', '#facc15', '#fffbeb'], ['#10b981', '#84cc16', '#ecfdf5'],
-  ['#f97316', '#f59e0b', '#fff7ed'], ['#c084fc', '#fb7185', '#faf5ff'], ['#db2777', '#14b8a6', '#fdf2f8'],
+  ['#f97316', '#f59e0b', '#fff7ed'], ['#c084fc', '#fb7185', '#faf5ff'], ['#10b981', '#2dd4bf', '#ecfdf5'], ['#db2777', '#14b8a6', '#fdf2f8'],
 ]
 
 function Arrow({ direction = 'right' }) {
