@@ -1,0 +1,21 @@
+# Cabeceras de Cloudflare Pages.
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+
+# Archivos con huella en el nombre: nunca cambian.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Imágenes: un mes (cambian poco).
+/*.webp
+  Cache-Control: public, max-age=2592000
+
+/og/*
+  Cache-Control: public, max-age=2592000
