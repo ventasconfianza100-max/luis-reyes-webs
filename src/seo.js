@@ -1,5 +1,6 @@
 import { blogPosts } from './blogPosts.js'
 import { portfolioProjects } from './portfolioProjects.js'
+import { rubrosTalca, rubroByPath } from './rubrosTalca.js'
 
 // URL base del sitio
 export const SITE_URL = 'https://www.luisreyesweb.cl'
@@ -85,6 +86,10 @@ for (const project of portfolioProjects) {
     title: `${project.name}: ${project.type} | Proyecto de Luis Reyes Castro`,
     description: project.summary,
   }
+}
+
+for (const rubro of rubrosTalca) {
+  metaByPath[rubro.path] = { title: rubro.title, description: rubro.description }
 }
 
 // Rutas privadas: no se prerenderizan ni entran al sitemap, y van noindex.
@@ -317,6 +322,10 @@ for (const project of portfolioProjects) {
   breadcrumbLabels[`/proyectos/${project.slug}`] = project.name
 }
 
+for (const rubro of rubrosTalca) {
+  breadcrumbLabels[rubro.path] = rubro.h1
+}
+
 // Etiqueta de cada artículo para las migas de pan.
 for (const post of blogPosts) {
   breadcrumbLabels[`/blog/${post.slug}`] = post.title
@@ -479,6 +488,23 @@ export function jsonLdFor(path) {
   })
 
   if (serviceNames[path]) schemas.push(serviceSchema(path))
+  const rubro = rubroByPath[path]
+  if (rubro) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: rubro.h1,
+      description: rubro.description,
+      url: canonicalFor(path),
+      provider: { '@id': `${SITE_URL}/#business` },
+      areaServed: [{ '@type': 'City', name: 'Talca' }, { '@type': 'AdministrativeArea', name: 'Región del Maule' }],
+    })
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: rubro.faq.map((item) => ({ '@type': 'Question', name: item.q, acceptedAnswer: { '@type': 'Answer', text: item.a } })),
+    })
+  }
   if (path === '/diseno-web-talca') {
     schemas.push({
       '@context': 'https://schema.org',
