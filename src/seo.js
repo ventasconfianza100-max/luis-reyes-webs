@@ -72,7 +72,7 @@ export const metaByPath = {
   },
   '/terminos': {
     title: 'Términos y condiciones | Luis Reyes Web',
-    description: 'Condiciones generales de los servicios de diseño y desarrollo web de Luis Reyes Castro: cotización, pagos, plazos, garantía y uso del sitio.',
+    description: 'Condiciones generales de los servicios de diseño y desarrollo web de Luis Reyes Castro: cotización, alcance, plazos, garantía y uso del sitio.',
   },
   '/blog': {
     title: 'Blog de diseño web y negocios online | Luis Reyes Castro',

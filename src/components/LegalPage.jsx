@@ -9,7 +9,7 @@ const pages = {
     title: 'Política de privacidad',
     intro: 'Esta política explica qué datos se tratan cuando visitas luisreyesweb.cl o contratas un servicio, para qué se usan y cuáles son tus derechos. Se rige por la ley chilena de protección de la vida privada (Ley N° 19.628) y sus modificaciones.',
     sections: [
-      ['Responsable', ['Luis Reyes Castro, diseñador y desarrollador web independiente, con domicilio en Talca, Región del Maule, Chile. Puedes contactarme por WhatsApp al +56 9 2201 2534.']],
+      ['Responsable', ['Luis Reyes Castro, diseñador y desarrollador web independiente, con domicilio en Talca, Región del Maule, Chile. Puedes contactarme por WhatsApp al +56 9 2201 2534 o al correo luisreyeswebcl@gmail.com.']],
       ['Qué datos se recogen en este sitio', [
         'Este sitio no tiene formularios que guarden tus datos. Cuando usas el cotizador, el diagnóstico o cualquier botón de contacto, se prepara un mensaje que tú decides enviar por WhatsApp; esa conversación queda sujeta a las políticas de WhatsApp.',
         'Se usan datos de navegación anónimos (páginas visitadas, tipo de dispositivo, ciudad aproximada) mediante Google Analytics, para saber qué contenidos son útiles y mejorar el sitio.',
@@ -26,7 +26,7 @@ const pages = {
         'Google Analytics e Instagram pueden usar cookies para medir visitas o mostrar su contenido. El sitio guarda en tu navegador solo preferencias, como el tema claro u oscuro. Puedes borrar o bloquear las cookies desde la configuración de tu navegador; el sitio seguirá funcionando.',
       ]],
       ['Tus derechos', [
-        'Puedes pedir en cualquier momento saber qué datos tuyos tengo, corregirlos, eliminarlos u oponerte a su uso. Escríbeme por WhatsApp y te respondo a la brevedad.',
+        'Puedes pedir en cualquier momento saber qué datos tuyos tengo, corregirlos, eliminarlos u oponerte a su uso. Escríbeme por WhatsApp o a luisreyeswebcl@gmail.com y te respondo a la brevedad.',
       ]],
       ['Cambios a esta política', ['Si esta política cambia, publicaré la nueva versión en esta misma página con su fecha de actualización.']],
     ],
@@ -43,9 +43,6 @@ const pages = {
         'Cada proyecto parte con una cotización que detalla el alcance, el valor, los plazos y las rondas de revisión incluidas. Las cotizaciones tienen una vigencia indicada en el mismo documento.',
         'Los cambios o funciones que no estén en el alcance acordado se cotizan por separado antes de realizarse.',
       ]],
-      ['Pagos', [
-        'Salvo que la cotización diga otra cosa, el pago se hace en dos partes: un anticipo para comenzar el trabajo y el saldo al momento de la entrega o publicación. Los servicios se documentan con boleta de honorarios.',
-      ]],
       ['Plazos y colaboración', [
         'Los plazos se cuentan en días hábiles desde que se confirma el proyecto y se cuenta con los textos, imágenes y accesos necesarios. Los retrasos en la entrega de estos materiales pueden mover la fecha de entrega.',
       ]],
@@ -55,7 +52,7 @@ const pages = {
       ['Servicios de terceros', [
         'Algunos servicios dependen de proveedores externos, como dominios, alojamiento, pagos en línea o redes sociales. Su funcionamiento, precios y condiciones dependen de cada proveedor.',
       ]],
-      ['Contacto', ['Para cualquier consulta sobre estos términos, escríbeme por WhatsApp al +56 9 2201 2534.']],
+      ['Contacto', ['Para cualquier consulta sobre estos términos, escríbeme por WhatsApp al +56 9 2201 2534 o a luisreyeswebcl@gmail.com.']],
     ],
   },
 }
@@ -81,6 +78,8 @@ export default function LegalPage({ kind, onNavigate }) {
           ))}
           <div className="mt-10 rounded-2xl border border-slate-200 bg-white p-5 text-sm text-slate-600">
             ¿Dudas? <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-700 underline underline-offset-2">Escríbeme por WhatsApp</a>
+            {' · '}
+            <a href="mailto:luisreyeswebcl@gmail.com" className="font-semibold text-brand-700 underline underline-offset-2">luisreyeswebcl@gmail.com</a>
             {' · '}
             <a href={kind === 'privacidad' ? '/terminos' : '/privacidad'} onClick={(e) => go(e, kind === 'privacidad' ? '/terminos' : '/privacidad')} className="font-semibold text-brand-700 underline underline-offset-2">{kind === 'privacidad' ? 'Términos y condiciones' : 'Política de privacidad'}</a>
           </div>
