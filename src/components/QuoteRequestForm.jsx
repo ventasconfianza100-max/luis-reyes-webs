@@ -1,8 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const projectTypes = ['Página web profesional', 'Tienda o catálogo online', 'Web para empresa de servicios', 'Software o app a medida', 'Mejorar mi web actual', 'Aún no estoy seguro']
 // Espacios no separables: el corte de línea cae entre la frase y el monto, nunca dentro del monto.
 const budgets = ['Hasta $150 mil', '$150 a $350 mil', 'Más de $350 mil', 'Software a medida', 'Prefiero conversarlo']
+
+// Nombre de ejemplo distinto en cada visita (se elige en el navegador para no alterar el HTML prerenderizado).
+const exampleNames = ['Camila', 'Matías', 'Valentina', 'Benjamín', 'Javiera', 'Tomás', 'Fernanda', 'Diego', 'Antonia', 'Joaquín', 'Isidora', 'Vicente', 'Martín', 'Josefa', 'Sebastián', 'Florencia', 'Nicolás', 'Constanza', 'Felipe']
 
 const steps = [
   ['Completas lo esencial', 'Tipo de proyecto, presupuesto y tu idea. Toma unos 2 minutos.'],
@@ -28,6 +31,11 @@ function ChoiceGroup({ legend, name, options, value, onChange, className }) {
 
 export default function QuoteRequestForm() {
   const [projectType, setProjectType] = useState('')
+  const [exampleName, setExampleName] = useState('tu nombre')
+
+  useEffect(() => {
+    setExampleName(exampleNames[Math.floor(Math.random() * exampleNames.length)])
+  }, [])
   const [budget, setBudget] = useState('')
 
   const handleSubmit = (event) => {
@@ -78,7 +86,7 @@ export default function QuoteRequestForm() {
 
         <form onSubmit={handleSubmit} className="quote-form p-5 md:p-8">
           <div className="grid grid-cols-2 gap-3 sm:gap-4">
-            <label className="quote-field"><span className="quote-label">Tu nombre <b>*</b></span><input name="name" type="text" autoComplete="name" required placeholder="Ej: Carolina" /></label>
+            <label className="quote-field"><span className="quote-label">Tu nombre <b>*</b></span><input name="name" type="text" autoComplete="name" required placeholder={`Ej: ${exampleName}`} /></label>
             <label className="quote-field"><span className="quote-label">Negocio o proyecto</span><input name="business" type="text" autoComplete="organization" placeholder="Opcional" /></label>
           </div>
 
