@@ -72,6 +72,11 @@ export const portfolioProjects = [
     chip: 'border-stone-200 bg-stone-50 text-stone-700', glow: 'from-orange-300/20 via-rose-200/10 to-transparent',
   },
   {
+    slug: 'rz-jugueteria',
+    stack: ["HTML, CSS y JavaScript", "Cloudflare Workers", "Cloudflare R2", "Webpay Plus (Transbank)", "Node.js (herramientas y pruebas)"],
+    challenge: "Una juguetería de Talca vendía con un WordPress + WooCommerce lento y difícil de mantener. Necesitaba una tienda rápida, fácil de administrar y preparada para cobrar en línea con medios de pago chilenos.",
+    sections: [["Migración desde WooCommerce", "Scripts propios extrajeron el catálogo del WordPress anterior (39 productos y 63 fotos), convirtieron las imágenes a WebP y las subieron a Cloudflare R2."], ["Tienda sin framework", "HTML, CSS y JavaScript sin build: portada, cinco secciones con filtros por categoría y edad, fichas de producto, buscador y carrito. Un generador en Node crea las páginas de sección, producto y búsqueda."], ["Checkout preparado para Webpay Plus", "El resumen de compra se recalcula en el servidor antes de pagar, para que el precio no pueda alterarse desde el navegador. El pago se hace en el formulario de Transbank; el sitio nunca maneja datos de tarjeta."], ["Worker con API y panel", "Un Cloudflare Worker sirve la tienda y la API del panel de administración, donde se gestionan productos, inventario y pedidos privados guardados en R2."], ["Pruebas automatizadas", "Pruebas con el runner nativo de Node para el checkout, el frontend del carrito y el inventario, ejecutadas antes de cada publicación del flujo de pago."]],
+    results: ["Catálogo migrado completo con imágenes optimizadas", "Tienda y panel sin base de datos ni WordPress", "Flujo de pago cubierto por pruebas automatizadas"],
     name: 'RZ Juguetería', domain: 'RZ Juguetería', url: 'https://rzjugueteria.psi-luisreyes.workers.dev/', type: 'E-commerce de juguetes',
     summary: 'Tienda online para una juguetería de Talca, con juguetes, material sensorial y educativo, y pago seguro con Webpay.',
     built: ['Catálogo por categoría y edad', 'Guía según lo que quieres potenciar', 'Carrito y pago con Webpay', 'Envíos a Chile y retiro en Talca'],

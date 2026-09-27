@@ -496,15 +496,34 @@ export function jsonLdFor(path) {
           '@type': 'ListItem',
           position: index + 1,
           item: {
-            '@type': 'WebSite',
+            '@type': 'CreativeWork',
             name: project.name,
-            url: project.url,
+            url: `${SITE_URL}/proyectos/${project.slug}`,
+            sameAs: project.url,
             description: project.summary,
             image: `${SITE_URL}${project.image}`,
             creator: { '@id': `${SITE_URL}/#luis-reyes` },
           },
         })),
       },
+    })
+  }
+
+  const project = portfolioProjects.find((p) => path === `/proyectos/${p.slug}`)
+  if (project) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'CreativeWork',
+      name: project.name,
+      headline: getMeta(path).title,
+      description: project.summary,
+      url: canonicalFor(path),
+      image: `${SITE_URL}${project.image}`,
+      genre: project.type,
+      keywords: project.stack.join(', '),
+      sameAs: project.url,
+      creator: { '@id': `${SITE_URL}/#luis-reyes` },
+      isPartOf: { '@id': `${SITE_URL}/#website` },
     })
   }
 
