@@ -29,14 +29,8 @@ async function boot() {
 
 boot()
 
-// La analítica no compite con el contenido ni con la respuesta táctil inicial.
-const startAnalytics = () => import('@vercel/analytics').then(({ inject, track }) => {
-  inject()
-  document.addEventListener('click', (event) => {
-    const target = event.target.closest('[data-analytics]')
-    if (target) track(target.dataset.analytics)
-  })
+// Clics importantes (WhatsApp, Instagram…) como eventos de Google Analytics.
+document.addEventListener('click', (event) => {
+  const target = event.target.closest('[data-analytics]')
+  if (target && typeof window.gtag === 'function') window.gtag('event', target.dataset.analytics)
 })
-
-if ('requestIdleCallback' in window) window.requestIdleCallback(startAnalytics, { timeout: 2500 })
-else window.setTimeout(startAnalytics, 1200)

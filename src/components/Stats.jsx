@@ -1,4 +1,5 @@
 import Section from './Section'
+import CountUp from './CountUp'
 import { portfolioProjects } from '../portfolioProjects'
 
 const stats = [
@@ -15,7 +16,7 @@ export default function Stats() {
         {stats.map((s, index) => (
           <div key={s.title} className={`relative flex flex-col items-center gap-0.5 px-1.5 py-3 text-center sm:flex-row sm:gap-4 sm:px-5 sm:py-4 sm:text-left ${index > 0 ? 'border-l border-white/10' : ''}`}>
             <p className="font-display text-2xl font-extrabold tracking-tight sm:text-3xl">
-              <span className="bg-gradient-to-r from-brand-300 to-cyan-200 bg-clip-text text-transparent">{s.value}</span>
+              <span className="bg-gradient-to-r from-brand-300 to-cyan-200 bg-clip-text text-transparent"><CountUp value={s.value} /></span>
             </p>
             <div>
               <p className="text-[11px] font-semibold leading-tight text-white sm:text-sm">{s.title}</p>

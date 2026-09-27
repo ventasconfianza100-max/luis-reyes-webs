@@ -1,4 +1,5 @@
 import { portfolioProjects } from '../portfolioProjects'
+import CountUp from './CountUp'
 
 const stats = [
   { value: portfolioProjects.length, label: 'proyectos publicados' },
@@ -23,7 +24,7 @@ export default function ProjectsPage({ onNavigate }) {
                 {stats.map((stat) => (
                   <div key={stat.label} className="rounded-2xl border border-slate-200 bg-white px-4 py-3">
                     <dt className="sr-only">{stat.label}</dt>
-                    <dd className="projects-stat-value font-display text-2xl font-extrabold text-slate-950 md:text-3xl">{stat.value}</dd>
+                    <dd className="projects-stat-value font-display text-2xl font-extrabold text-slate-950 md:text-3xl"><CountUp value={stat.value} /></dd>
                     <dd className="text-xs text-slate-500">{stat.label}</dd>
                   </div>
                 ))}
