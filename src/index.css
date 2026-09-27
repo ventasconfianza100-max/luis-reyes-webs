@@ -984,3 +984,33 @@ html.dark .ig-topic:hover { border-color: rgba(236,72,153,.45); }
   html.dark .shooting-star { animation: none; opacity: 0; }
   .ig-story-ring, .ig-glow { animation: none; }
 }
+
+/* ── Página de proyectos ── */
+.project-window__bar { background: #f1f5f9; border-bottom: 1px solid #e2e8f0; }
+.project-window__bar i { width: .5rem; height: .5rem; border-radius: 50%; background: #f87171; }
+.project-window__bar i:nth-child(2) { background: #fbbf24; }
+.project-window__bar i:nth-child(3) { background: #34d399; }
+.project-tile__num { position: absolute; top: 1rem; right: 1.25rem; font-family: 'Sora','Inter',sans-serif; font-size: 3.2rem; font-weight: 800; line-height: 1; color: transparent; -webkit-text-stroke: 1px rgba(124,58,237,.18); pointer-events: none; }
+
+html.dark .projects-page .page-hero { background: radial-gradient(circle at 15% 20%, rgba(124,58,237,.32), transparent 38%), radial-gradient(circle at 85% 70%, rgba(34,211,238,.14), transparent 35%), linear-gradient(135deg, #100d2a, #0f1629 60%, #0b1a2c); }
+html.dark .projects-stats > div { background: linear-gradient(160deg, rgba(124,58,237,.18), rgba(19,27,46,.6)); border-color: rgba(167,139,250,.25); }
+html.dark .projects-stat-value { background: linear-gradient(100deg, #c4b5fd, #818cf8 50%, #22d3ee); -webkit-background-clip: text; background-clip: text; color: transparent; }
+html.dark .projects-index { background: linear-gradient(160deg, rgba(124,58,237,.16), rgba(19,27,46,.75)); border-color: rgba(167,139,250,.22); box-shadow: 0 0 0 1px rgba(139,92,246,.08), 0 30px 70px -35px rgba(124,58,237,.6); }
+html.dark .projects-index-num { color: #a78bfa; }
+
+html.dark .project-tile { background: linear-gradient(165deg, rgba(124,58,237,.1), #111830 40%, #0f1529); border-color: rgba(167,139,250,.16); }
+html.dark .project-tile::before { content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px; background: linear-gradient(135deg, rgba(167,139,250,.55), rgba(34,211,238,.25) 40%, transparent 65%, rgba(236,72,153,.35)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: .45; transition: opacity .3s ease; pointer-events: none; z-index: 2; }
+html.dark .project-tile:hover::before { opacity: 1; }
+html.dark .project-tile:hover { box-shadow: 0 0 0 1px rgba(139,92,246,.25), 0 30px 80px -30px rgba(124,58,237,.7); }
+html.dark .project-tile__media { background: radial-gradient(circle at 20% 15%, rgba(139,92,246,.45), transparent 55%), radial-gradient(circle at 85% 90%, rgba(34,211,238,.25), transparent 50%), linear-gradient(135deg, #1b1442, #111830); }
+html.dark .project-window { border-color: rgba(255,255,255,.1); background: #0f1529; box-shadow: 0 24px 50px -24px rgba(0,0,0,.9), 0 0 0 1px rgba(167,139,250,.15); }
+html.dark .project-window__bar { background: #161e36; border-bottom-color: rgba(255,255,255,.06); }
+html.dark .project-window img { filter: brightness(.86) saturate(1.05); transition: transform .7s ease, filter .4s ease; }
+html.dark .project-tile:hover .project-window img { filter: none; }
+html.dark .project-tile__num { -webkit-text-stroke: 1px rgba(167,139,250,.3); }
+html.dark .project-tag { background: rgba(124,58,237,.12); color: #d4cdf5; border: 1px solid rgba(167,139,250,.14); }
+html.dark .projects-cta { background: radial-gradient(circle at 10% 10%, rgba(236,72,153,.28), transparent 40%), radial-gradient(circle at 90% 90%, rgba(34,211,238,.25), transparent 45%), linear-gradient(120deg, #4c1d95, #312e81 55%, #1e1b4b); box-shadow: 0 0 0 1px rgba(167,139,250,.3), 0 40px 90px -40px rgba(124,58,237,.8); }
+html.dark .projects-cta .bg-brand-600 { background-image: linear-gradient(135deg, #ffffff, #e9e5ff); color: #4c1d95; }
+html.dark .text-rose-700 { color: #fda4af; } html.dark .text-red-700 { color: #fca5a5; } html.dark .text-amber-800 { color: #fcd34d; }
+html.dark .text-emerald-700 { color: #6ee7b7; } html.dark .text-orange-800 { color: #fdba74; } html.dark .text-stone-700 { color: #e7e5e4; } html.dark .text-pink-700 { color: #f9a8d4; }
+html.dark .border-rose-200, html.dark .border-red-200, html.dark .border-amber-200, html.dark .border-emerald-200, html.dark .border-orange-200, html.dark .border-stone-200, html.dark .border-pink-200 { border-color: rgba(255,255,255,.16); }
