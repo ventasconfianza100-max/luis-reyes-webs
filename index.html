@@ -6,6 +6,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DP4VBDZ3L3"></script>
     <script>
       document.documentElement.classList.add('page-loading');
+      try { if (localStorage.getItem('tema') === 'oscuro') document.documentElement.classList.add('dark') } catch (e) {}
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());

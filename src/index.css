@@ -734,3 +734,94 @@ button:focus-visible {
   .social-orb { filter: none; animation-duration: 14s; opacity: .72; }
   .social-card { animation-duration: .38s; }
 }
+
+/* ── Tema oscuro ─────────────────────────────────────────── */
+html.dark { color-scheme: dark; }
+html.dark body, html.dark .site-shell { background: #0b1020; color: #e2e8f0; }
+html.dark ::selection { background: #6d28d9; color: #fff; }
+html.dark .site-nav { background: rgba(11,16,32,.82); box-shadow: 0 1px 0 rgba(255,255,255,.05); }
+html.dark .nav-links { background: rgba(30,41,59,.55); border-color: rgba(255,255,255,.08); }
+html.dark .ambient__orb { opacity: .55; }
+html.dark .hero-section,
+html.dark .page-hero,
+html.dark .instagram-section,
+html.dark .personal-intro-section {
+  background:
+    radial-gradient(circle at 8% 14%, rgba(124,58,237,.22), transparent 30%),
+    radial-gradient(circle at 86% 88%, rgba(34,211,238,.1), transparent 26%),
+    linear-gradient(135deg, #0f1629 0%, #111831 60%, #0e1a2e 100%);
+}
+html.dark .site-shell main > .reveal:nth-of-type(even) > section { background: rgba(15,23,42,.55); }
+
+/* Superficies */
+html.dark .bg-white { background-color: #131b2e; }
+html.dark .bg-white\/95, html.dark .bg-white\/90 { background-color: rgba(19,27,46,.95); }
+html.dark .bg-white\/80, html.dark .bg-white\/70 { background-color: rgba(19,27,46,.78); }
+html.dark .bg-white\/60, html.dark .bg-white\/55, html.dark .bg-white\/50 { background-color: rgba(19,27,46,.6); }
+html.dark .bg-slate-50, html.dark .bg-slate-50\/80 { background-color: #1a2338; }
+html.dark .bg-slate-100 { background-color: #1e293b; }
+html.dark .bg-slate-200 { background-color: #273449; }
+html.dark .bg-slate-950, html.dark .bg-ink { background-color: #1d1446; }
+html.dark .bg-brand-50, html.dark .bg-violet-50 { background-color: rgba(124,58,237,.16); }
+html.dark .bg-brand-100 { background-color: rgba(124,58,237,.24); }
+html.dark .hover\:bg-white:hover, html.dark .hover\:bg-brand-50:hover, html.dark .hover\:bg-slate-50:hover { background-color: rgba(124,58,237,.14); }
+html.dark .from-white { --tw-gradient-from: #131b2e var(--tw-gradient-from-position); --tw-gradient-to: rgba(19,27,46,0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+html.dark .via-white { --tw-gradient-to: rgba(19,27,46,0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), #131b2e var(--tw-gradient-via-position), var(--tw-gradient-to); }
+html.dark .to-white { --tw-gradient-to: #131b2e var(--tw-gradient-to-position); }
+html.dark .to-brand-50\/70 { --tw-gradient-to: rgba(124,58,237,.1) var(--tw-gradient-to-position); }
+
+/* Texto */
+html.dark .text-slate-950, html.dark .text-slate-900, html.dark .text-ink { color: #f1f5f9; }
+html.dark .text-slate-800 { color: #e2e8f0; }
+html.dark .text-slate-700 { color: #cbd5e1; }
+html.dark .text-slate-600 { color: #aab6c8; }
+html.dark .text-slate-500 { color: #94a3b8; }
+html.dark .text-slate-400 { color: #7c8aa0; }
+html.dark .text-brand-800, html.dark .text-brand-700, html.dark .text-brand-600 { color: #c4b5fd; }
+html.dark .hover\:text-brand-700:hover, html.dark .hover\:text-brand-800:hover, html.dark .hover\:text-brand-900:hover { color: #ddd6fe; }
+
+/* Bordes y sombras */
+html.dark .border-slate-100, html.dark .border-slate-200, html.dark .border-slate-200\/80, html.dark .border-slate-200\/60 { border-color: rgba(148,163,184,.16); }
+html.dark .border-slate-300 { border-color: rgba(148,163,184,.28); }
+html.dark .border-white, html.dark .border-white\/90, html.dark .border-white\/80, html.dark .border-white\/70, html.dark .border-white\/60 { border-color: rgba(255,255,255,.08); }
+html.dark .border-brand-100, html.dark .border-brand-200, html.dark .border-violet-100 { border-color: rgba(167,139,250,.28); }
+html.dark .hover\:border-brand-200:hover, html.dark .hover\:border-brand-300:hover { border-color: rgba(167,139,250,.5); }
+html.dark .shadow-soft { box-shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.28); }
+
+/* Componentes con color propio */
+html.dark .service-card--violet, html.dark .service-card--amber, html.dark .service-card--cyan { background: linear-gradient(145deg, rgba(124,58,237,.16), #131b2e 45%); }
+html.dark .portfolio-stage { background: transparent; }
+html.dark .portfolio-experience { background: rgba(19,27,46,.85); border-color: rgba(255,255,255,.08); }
+html.dark .portfolio-aura { background: radial-gradient(circle at 8% 5%, color-mix(in srgb, var(--project-primary) 22%, transparent), transparent 31%), radial-gradient(circle at 92% 75%, color-mix(in srgb, var(--project-secondary) 14%, transparent), transparent 28%), #131b2e; }
+html.dark .portfolio-heading h2, html.dark .portfolio-story h3, html.dark .portfolio-tabs button.is-active, html.dark .social-link-copy strong { color: #f1f5f9; }
+html.dark .portfolio-heading p, html.dark .portfolio-status, html.dark .portfolio-story > p, html.dark .portfolio-story li { color: #aab6c8; }
+html.dark .portfolio-arrow { background: rgba(30,41,59,.94); color: #f1f5f9; border-color: rgba(255,255,255,.1); }
+html.dark .portfolio-tabs button.is-active, html.dark .portfolio-tabs button:hover { background: rgba(124,58,237,.18); }
+html.dark .portfolio-tabs button::before { background: #334155; }
+html.dark .quote-field input, html.dark .quote-field textarea { background: #0f1629; border-color: #334155; color: #f1f5f9; }
+html.dark .quote-field input:focus, html.dark .quote-field textarea:focus { background: #131b2e; }
+html.dark .quote-choice { background: #131b2e; border-color: #334155; color: #cbd5e1; }
+html.dark .quote-choice:hover, html.dark .quote-choice.is-selected { background: rgba(124,58,237,.2); color: #ddd6fe; }
+html.dark .social-link { background: rgba(19,27,46,.9); }
+
+.theme-toggle { display: grid; width: 2.25rem; height: 2.25rem; place-items: center; border-radius: .75rem; color: #475569; transition: background .2s ease, color .2s ease; }
+.theme-toggle:hover { background: rgba(124,58,237,.1); color: #6d28d9; }
+html.dark .theme-toggle { color: #cbd5e1; }
+html.dark .theme-toggle:hover { color: #ddd6fe; }
+
+html.dark .quote-section, html.dark .faq-section { background: rgba(15,23,42,.45); }
+html.dark .bg-white\/85 { background-color: rgba(19,27,46,.85); }
+html.dark .bg-brand-50\/50, html.dark .bg-brand-50\/60, html.dark .bg-brand-50\/70, html.dark .bg-violet-50 { background-color: rgba(124,58,237,.14); }
+html.dark .bg-slate-50\/60 { background-color: rgba(26,35,56,.6); }
+html.dark .bg-emerald-50, html.dark .bg-cyan-50, html.dark .bg-pink-50, html.dark .bg-sky-50, html.dark .bg-amber-50, html.dark .bg-rose-50, html.dark .bg-orange-50, html.dark .bg-red-50, html.dark .bg-stone-50 { background-color: rgba(255,255,255,.06); }
+html.dark .from-brand-50\/60 { --tw-gradient-from: rgba(124,58,237,.1) var(--tw-gradient-from-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+html.dark .via-white\/55 { --tw-gradient-stops: var(--tw-gradient-from), transparent var(--tw-gradient-via-position), var(--tw-gradient-to); }
+html.dark .to-white\/30 { --tw-gradient-to: transparent var(--tw-gradient-to-position); }
+html.dark, html.dark .site-shell main > section:nth-of-type(3n + 2), html.dark .site-shell main > .reveal:nth-of-type(3n + 2) > section { background-image: linear-gradient(135deg, rgba(124,58,237,.1), rgba(15,23,42,0) 55%, rgba(34,211,238,.05)); }
+html.dark { background-color: #0b1020; background-image: none; }
+html.dark .social-page { background: linear-gradient(rgba(11,16,32,.8), rgba(11,16,32,.92)), linear-gradient(rgba(139,92,246,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(139,92,246,.08) 1px, transparent 1px), #0b1020; background-size: auto, 34px 34px, 34px 34px, auto; }
+html.dark .social-card h1 { color: #f1f5f9; }
+html.dark .social-card h1 span { background-image: linear-gradient(105deg,#c4b5fd,#a5b4fc 58%,#67e8f9); }
+html.dark .social-intro, html.dark .social-link-copy small { color: #94a3b8; }
+html.dark .social-link--website { background: rgba(124,58,237,.16); }
+html.dark .social-link--instagram .social-link-icon, html.dark .social-link--tiktok .social-link-icon { background: rgba(255,255,255,.08); }
