@@ -11,6 +11,9 @@ export default function Decorations() {
         <span className="ambient__grid" />
         <span className="ambient__stars" />
         <span className="ambient__beam" />
+        <span className="shooting-star shooting-star--1" />
+        <span className="shooting-star shooting-star--2" />
+        <span className="shooting-star shooting-star--3" />
         {/* grano sutil */}
         <div
           className="absolute inset-0 opacity-[0.025] mix-blend-multiply"
