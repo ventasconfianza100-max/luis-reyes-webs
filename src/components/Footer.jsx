@@ -1,6 +1,10 @@
 const footerLinks = [
   { label: 'Inicio', href: '/' },
   { label: 'Diseño web en Talca', href: '/diseno-web-talca' },
+  { label: 'Web para tiendas en Talca', href: '/pagina-web-tienda-talca' },
+  { label: 'Web para servicios en Talca', href: '/pagina-web-empresa-servicios-talca' },
+  { label: 'Web para psicólogos en Talca', href: '/pagina-web-psicologo-talca' },
+  { label: 'Web para clubes y colegios', href: '/pagina-web-club-deportivo-talca' },
   { label: 'Tienda online en Chile', href: '/tienda-online-chile' },
   { label: 'Web para empresas de servicios', href: '/paginas-web-empresas-servicios' },
   { label: 'Software y aplicaciones', href: '/desarrollo-software-aplicaciones' },

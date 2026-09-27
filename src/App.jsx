@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Stats from './components/Stats'
@@ -32,12 +32,14 @@ import InstagramSection from './components/InstagramSection'
 import GrowthLandingPage from './components/GrowthLandingPage'
 import RubroTalcaPage from './components/RubroTalcaPage'
 import { rubroByPath } from './rubrosTalca'
-import AdminAccess from './components/AdminAccess'
 import SocialLinksPage from './components/SocialLinksPage'
 import PersonalIntro from './components/PersonalIntro'
 import QuoteRequestForm from './components/QuoteRequestForm'
 
 import { getMeta, canonicalFor } from './seo'
+
+// El panel interno se descarga solo al entrar a /admin.
+const AdminAccess = lazy(() => import('./components/AdminAccess'))
 
 const normalizePath = (value) => {
   if (!value || value === '/') return '/'
@@ -85,7 +87,7 @@ export default function App({ initialPath }) {
 
   // El panel interno vive fuera del layout publico (sin navbar, footer ni WhatsApp).
   if (path === '/admin') {
-    return <AdminAccess />
+    return <Suspense fallback={null}><AdminAccess /></Suspense>
   }
 
   let content

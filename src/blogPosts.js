@@ -145,7 +145,7 @@ const allBlogPosts = [
     slug: 'cuanto-cuesta-una-pagina-web-en-chile',
     title: '¿Cuánto cuesta una página web en Chile en 2026?',
     description:
-      'Cuánto cuesta una página web en Chile en 2026: rangos reales según el tipo de sitio (landing, web de empresa o tienda online), qué influye en el precio y cómo no pagar de más.',
+      'Cuánto cuesta una página web en Chile en 2026: precios reales según el tipo de sitio (landing, web de empresa o tienda) y cómo no pagar de más.',
     category: 'Precios',
     datePublished: '2026-06-27',
     dateModified: '2026-06-27',
