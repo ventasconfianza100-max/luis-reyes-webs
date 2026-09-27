@@ -9,7 +9,7 @@ export const metaByPath = {
   '/': {
     title: 'Diseño y Desarrollo Web en Talca, Chile | Luis Reyes Castro',
     description:
-      'Diseño y programación de páginas web para negocios en Chile: tiendas online, empresas de servicios y profesionales. Sitios rápidos, optimizados para Google y pensados para captar clientes. Talca, Región del Maule.',
+      'Diseño web en Talca para negocios de todo Chile: páginas rápidas, listas para Google y WhatsApp. Tiendas online, empresas y profesionales. Reunión gratis.',
   },
   '/redes': {
     title: 'Luis Reyes Web | Contacto y redes sociales',
@@ -18,22 +18,22 @@ export const metaByPath = {
   '/diseno-web-talca': {
     title: 'Diseño Web en Talca | Página web para tu negocio desde $90.000',
     description:
-      '¿Buscas una página web en Talca? Diseño web profesional para negocios, tiendas y profesionales del Maule: sitios rápidos, listos para Google y WhatsApp. Reunión gratis.',
+      '¿Buscas una página web en Talca? Diseño web profesional para negocios del Maule: sitios rápidos, listos para Google y WhatsApp. Reunión gratis.',
   },
   '/tienda-online-chile': {
-    title: 'Tienda Online en Chile | Catálogo y e-commerce a medida — Luis Reyes Castro',
+    title: 'Tienda Online a Medida en Chile | Luis Reyes Web',
     description:
-      'Tiendas online y catálogos a medida en Chile: categorías, tallas, stock, carrito o consulta por WhatsApp y panel de administración propio, sin mensualidades. Envíos a todo Chile.',
+      'Tiendas online y catálogos a medida en Chile: stock, carrito, pago o pedido por WhatsApp y panel propio, sin mensualidades. Envíos a todo Chile.',
   },
   '/paginas-web-empresas-servicios': {
-    title: 'Páginas Web para Empresas de Servicios en Chile | Luis Reyes Castro',
+    title: 'Páginas Web para Empresas de Servicios | Luis Reyes Web',
     description:
-      'Páginas web para empresas de servicios en Chile: fumigación, mantención, salud, educación, limpieza y servicios técnicos. Sitios multipágina con SEO local que captan cotizaciones por WhatsApp.',
+      'Páginas web para empresas de servicios en Chile: una página por servicio, SEO local y cotizaciones por WhatsApp. Fumigación, mantención, salud y más.',
   },
   '/desarrollo-software-aplicaciones': {
-    title: 'Desarrollo de Software y Aplicaciones a Medida en Chile | Luis Reyes Castro',
+    title: 'Software y Aplicaciones a Medida en Chile | Luis Reyes Web',
     description:
-      'Creación de software, programas y aplicaciones a medida en Chile: sistemas de gestión, apps web, automatizaciones e integraciones para tu negocio. Desarrollo propio, sin plantillas.',
+      'Software y aplicaciones a medida en Chile: sistemas de gestión, apps web y automatizaciones para tu negocio. Desarrollo propio, sin plantillas.',
   },
   '/catalogo-online-con-whatsapp': {
     title: 'Catálogo online con WhatsApp en Chile | Luis Reyes Web',
@@ -59,7 +59,7 @@ export const metaByPath = {
   '/proyectos': {
     title: 'Portafolio de Proyectos Web Reales | Luis Reyes Castro',
     description:
-      'Conoce proyectos web reales de Luis Reyes Castro: Trabalengua, 7ma Control, Munay Cueros, Escuela RDLF, Cuchillos Bravo y Psicóloga Andrea Martínez.',
+      'Proyectos web reales de Luis Reyes Castro en Talca y Chile: tiendas online, empresas de servicios, escuelas y profesionales. Mira qué se hizo en cada uno.',
   },
   '/agenda': {
     title: 'Agenda una reunión — Meet, Zoom o WhatsApp | Luis Reyes Castro',
@@ -67,7 +67,7 @@ export const metaByPath = {
       'Agenda una reunión sin compromiso con Luis Reyes Castro por Google Meet, Zoom o WhatsApp para cotizar la página web o solución digital de tu negocio.',
   },
   '/blog': {
-    title: 'Blog sobre diseño web, negocios y presencia online | Luis Reyes Castro',
+    title: 'Blog de diseño web y negocios online | Luis Reyes Castro',
     description:
       'Artículos prácticos sobre diseño web, precios, presencia digital y cómo captar más clientes para tu negocio en Chile. Tiendas online, empresas y profesionales.',
   },
@@ -76,14 +76,14 @@ export const metaByPath = {
 // Agrega automáticamente una entrada de meta por cada artículo del blog.
 for (const post of blogPosts) {
   metaByPath[`/blog/${post.slug}`] = {
-    title: `${post.title} | Luis Reyes Castro`,
+    title: post.title.length > 46 ? post.title : `${post.title} | Luis Reyes Web`,
     description: post.description,
   }
 }
 
 for (const project of portfolioProjects) {
   metaByPath[`/proyectos/${project.slug}`] = {
-    title: `${project.name}: ${project.type} | Proyecto de Luis Reyes Castro`,
+    title: `${project.name}: ${project.type} | Luis Reyes Web`,
     description: project.summary,
   }
 }

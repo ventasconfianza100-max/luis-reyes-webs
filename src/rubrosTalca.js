@@ -5,7 +5,7 @@ export const rubrosTalca = [
   {
     path: '/pagina-web-tienda-talca',
     label: 'Tiendas y comercios',
-    title: 'Página Web para Tiendas y Comercios en Talca | Luis Reyes Castro',
+    title: 'Página Web para Tiendas y Comercios en Talca | Luis Reyes Web',
     description: 'Página web o tienda online para tu comercio en Talca: catálogo con fotos y precios, pedidos por WhatsApp o pago en línea, y lista para aparecer en Google.',
     eyebrow: 'Tiendas y comercios · Talca',
     h1: 'Página web para tiendas y comercios en Talca',
@@ -26,7 +26,7 @@ export const rubrosTalca = [
   {
     path: '/pagina-web-empresa-servicios-talca',
     label: 'Empresas de servicios',
-    title: 'Página Web para Empresas de Servicios en Talca | Luis Reyes Castro',
+    title: 'Página Web para Empresas de Servicios en Talca | Luis Reyes Web',
     description: 'Página web para empresas de servicios en Talca: una página por servicio, cotización por WhatsApp y contenido pensado para aparecer en Google en la Región del Maule.',
     eyebrow: 'Empresas de servicios · Talca',
     h1: 'Página web para empresas de servicios en Talca',
